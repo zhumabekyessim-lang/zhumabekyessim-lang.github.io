@@ -3,422 +3,209 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Инженер-технолог · Автоматизация процессов и AI-системы</title>
-<meta name="description" content="Автоматизирую процессы, в которых работал руками. Инженер-технолог: пятнадцать лет производства, восемь собственных инструментов, AI-системы, которые остаются в работе.">
-<meta name="theme-color" content="#0a0b0c">
-<!-- ⚠️ ВРЕМЕННО. Пока в CONFIG стоят заглушки («Имя Фамилия», стаж наугад),
-     страница закрыта от поисковиков: попасть в индекс с ненастоящим именем —
-     хуже, чем не попасть вообще. УДАЛИТЕ ЭТУ СТРОКУ, когда заполните данные. -->
-<meta name="robots" content="noindex, nofollow">
+<title>Жумабек Есим — технолог-конструктор · торговое оборудование, POSM, мебель</title>
+<meta name="description" content="Технолог-конструктор, 16 лет опыта. Проектирую торговое оборудование, POSM и мебель — от эскиза до готового изделия на полке: чертежи, 3D, файлы для ЧПУ, контроль на производстве.">
+<meta name="theme-color" content="#0c0d10">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Автоматизирую то, в чём работал руками">
-<meta property="og:description" content="Большинство AI-внедрений умирает через месяц. Я строю те, что остаются.">
+<meta property="og:title" content="Жумабек Есим — технолог-конструктор">
+<meta property="og:description" content="16 лет проектирую торговое оборудование, POSM и мебель. От эскиза до полки в магазине.">
 <meta property="og:locale" content="ru_RU">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════════
-   ТОКЕНЫ ДИЗАЙН-СИСТЕМЫ
-   Всё, что можно менять глобально, — здесь.
+   ТОКЕНЫ. Меняешь тут — меняется весь сайт.
    ═══════════════════════════════════════════════════════════ */
 :root{
-  /* Цвет. Графит + бумага + один сигнальный акцент.
-     Осознанно НЕТ фиолетового градиента — это язык инфобиза. */
-  --bg:#0a0b0c;
-  --bg-1:#0f1113;
-  --bg-2:#15181b;
-  --fg:#e9e7e2;
-  --fg-2:#9ba1a8;
-  --fg-3:#5f666d;
-  --line:rgba(233,231,226,.09);
-  --line-2:rgba(233,231,226,.16);
-  --accent:#ff5a1f;
-  --accent-2:#ff8352;
-  --accent-soft:rgba(255,90,31,.12);
-  --steel:#7b8794;
-  --ok:#5fb37a;
+  --bg:#0c0d10;
+  --bg-1:#141619;
+  --bg-2:#1c1f24;
+  --fg:#edeef0;
+  --fg-2:#a2a8b0;
+  --fg-3:#656b74;
+  --line:rgba(255,255,255,.08);
+  --line-2:rgba(255,255,255,.15);
+  --accent:#4d8cff;      /* «чертёжный» синий — сигнал CAD/инженерии */
+  --accent-2:#84acff;
+  --accent-soft:rgba(77,140,255,.13);
 
-  /* Типографика */
   --font:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,'SF Mono',Consolas,monospace;
 
-  /* Шкала отступов — база 4px */
-  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
-  --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:140px;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;
+  --s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:132px;
 
-  /* Радиус: намеренно малый. Чертёж, а не пузырь. */
-  --r1:2px; --r2:4px; --r3:8px;
+  --r1:3px;--r2:6px;--r3:12px;
+  --maxw:1180px;--pad:24px;
 
-  /* Сетка */
-  --maxw:1180px;
-  --pad:24px;
-
-  /* Движение */
   --ease:cubic-bezier(.22,1,.36,1);
-  --ease-io:cubic-bezier(.65,0,.35,1);
-  --t-fast:.18s; --t:.4s; --t-slow:.7s;
+  --t-fast:.18s;--t:.4s;--t-slow:.7s;
 }
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   background:var(--bg);color:var(--fg);
-  font-family:var(--font);font-size:17px;line-height:1.6;
-  font-weight:400;letter-spacing:-.01em;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  font-family:var(--font);font-size:17px;line-height:1.6;letter-spacing:-.01em;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-button,input,textarea,select{font:inherit;color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
 
-/* ─── Фон-чертёж: сетка + мягкое свечение акцента ─── */
+/* фон-«миллиметровка» только у шапки страницы */
 .bg-grid{
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:
-    linear-gradient(var(--line) 1px,transparent 1px),
-    linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:64px 64px;
-  mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 0%,transparent 75%);
-  opacity:.55;
+  position:fixed;inset:0 0 auto;height:80vh;z-index:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000,transparent 72%);opacity:.6;
 }
 .bg-glow{
-  position:fixed;top:-30vh;left:50%;width:130vw;height:90vh;
-  transform:translateX(-50%);z-index:0;pointer-events:none;
-  background:radial-gradient(ellipse at center,rgba(255,90,31,.10),transparent 62%);
-  filter:blur(30px);
+  position:fixed;top:-32vh;left:50%;width:120vw;height:80vh;transform:translateX(-50%);
+  z-index:0;pointer-events:none;filter:blur(30px);
+  background:radial-gradient(ellipse at center,rgba(77,140,255,.10),transparent 60%);
 }
-
-/* ═══ КОМПОНЕНТЫ ═══ */
-
 .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);position:relative;z-index:1}
 
-/* — Навигация — */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  border-bottom:1px solid transparent;
-  transition:background var(--t) var(--ease),border-color var(--t) var(--ease),backdrop-filter var(--t);
-}
-.nav.stuck{
-  background:rgba(10,11,12,.72);
-  backdrop-filter:blur(16px) saturate(140%);
-  -webkit-backdrop-filter:blur(16px) saturate(140%);
-  border-bottom-color:var(--line);
-}
+/* ── навигация ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid transparent;transition:background var(--t),border-color var(--t),backdrop-filter var(--t)}
+.nav.stuck{background:rgba(12,13,16,.72);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em}
-.brand-mark{
-  width:26px;height:26px;border:1.5px solid var(--accent);border-radius:var(--r1);
-  display:grid;place-items:center;font-family:var(--mono);font-size:11px;
-  color:var(--accent);flex:none;position:relative;
-}
-.brand-mark::after{
-  content:'';position:absolute;inset:-4px;border:1px solid var(--line-2);border-radius:var(--r2);
-  opacity:0;transition:opacity var(--t) var(--ease);
-}
-.brand:hover .brand-mark::after{opacity:1}
+.brand{display:flex;align-items:center;gap:11px;font-weight:600;letter-spacing:-.02em}
+.brand-mark{width:30px;height:30px;border:1.5px solid var(--accent);border-radius:var(--r1);display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--accent);flex:none}
+.brand small{display:block;font-family:var(--mono);font-size:11px;color:var(--fg-3);font-weight:400;letter-spacing:0}
 .nav-links{display:flex;gap:var(--s6);align-items:center}
-.nav-links a{
-  font-size:14.5px;color:var(--fg-2);position:relative;padding:4px 0;
-  transition:color var(--t-fast) var(--ease);
-}
-.nav-links a::after{
-  content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;
-  background:var(--accent);transform:scaleX(0);transform-origin:right;
-  transition:transform var(--t) var(--ease);
-}
+.nav-links a{font-size:14.5px;color:var(--fg-2);position:relative;padding:4px 0;transition:color var(--t-fast)}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform var(--t) var(--ease)}
 .nav-links a:hover{color:var(--fg)}
 .nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
 .nav-cta{display:flex;align-items:center;gap:var(--s4)}
-.burger{display:none;width:40px;height:40px;background:none;border:1px solid var(--line-2);border-radius:var(--r2);cursor:pointer;place-items:center}
+.burger{display:none;width:40px;height:40px;background:none;border:1px solid var(--line-2);border-radius:var(--r2);place-items:center}
 .burger span{display:block;width:16px;height:1.5px;background:var(--fg);position:relative}
-.burger span::before,.burger span::after{content:'';position:absolute;left:0;width:16px;height:1.5px;background:var(--fg);transition:transform var(--t) var(--ease)}
+.burger span::before,.burger span::after{content:'';position:absolute;left:0;width:16px;height:1.5px;background:var(--fg)}
 .burger span::before{top:-5px}.burger span::after{top:5px}
 
-/* — Кнопки — */
-.btn{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:12px 20px;border-radius:var(--r2);border:1px solid transparent;
-  font-size:15px;font-weight:500;cursor:pointer;white-space:nowrap;
-  transition:transform var(--t-fast) var(--ease),background var(--t-fast),border-color var(--t-fast),color var(--t-fast);
-}
+/* ── кнопки ── */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:var(--r2);border:1px solid transparent;font-size:15px;font-weight:500;white-space:nowrap;transition:transform var(--t-fast),background var(--t-fast),border-color var(--t-fast),color var(--t-fast)}
 .btn:active{transform:translateY(1px)}
-.btn-1{background:var(--accent);color:#0a0b0c;font-weight:600}
+.btn-1{background:var(--accent);color:#07101f;font-weight:600}
 .btn-1:hover{background:var(--accent-2)}
 .btn-2{border-color:var(--line-2);color:var(--fg)}
 .btn-2:hover{border-color:var(--fg-3);background:var(--bg-2)}
 .btn-lg{padding:15px 26px;font-size:16px}
-.btn .arw{transition:transform var(--t) var(--ease)}
+.btn .arw{transition:transform var(--t)}
 .btn:hover .arw{transform:translateX(3px)}
 
-/* — Заголовки секций — */
+/* ── типографика ── */
 .sec{padding:var(--s10) 0;position:relative}
-.sec-head{margin-bottom:var(--s8);max-width:760px}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--mono);font-size:12px;letter-spacing:.08em;
-  color:var(--fg-3);text-transform:uppercase;margin-bottom:var(--s5);
-}
+.sec-head{margin-bottom:var(--s8);max-width:780px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--fg-3);text-transform:uppercase;margin-bottom:var(--s5)}
 .eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
 h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.08}
-h1{font-size:clamp(38px,6.4vw,74px);letter-spacing:-.045em}
+h1{font-size:clamp(38px,6.2vw,72px);letter-spacing:-.045em}
 h2{font-size:clamp(28px,4vw,46px)}
 h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
-.lead{font-size:clamp(17px,2vw,20px);color:var(--fg-2);line-height:1.55;max-width:66ch}
-.hr{height:1px;background:var(--line);border:0}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--fg-2);line-height:1.55;max-width:64ch}
 
-/* — HERO — */
-.hero{padding:170px 0 var(--s9);position:relative}
-.hero h1{max-width:15ch;margin-bottom:var(--s5)}
+/* ── HERO ── */
+.hero{padding:150px 0 var(--s9)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s8);align-items:center}
+.hero h1{margin-bottom:var(--s5)}
 .hero h1 .hl{color:var(--accent)}
-.hero-sub{font-size:clamp(17px,2.1vw,21px);color:var(--fg-2);max-width:60ch;line-height:1.5;margin-bottom:var(--s7)}
-.hero-cta{display:flex;gap:var(--s3);flex-wrap:wrap;margin-bottom:var(--s9)}
-.hero-meta{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-  background:var(--line);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;
-}
-.meta-cell{background:var(--bg);padding:var(--s5)}
-.meta-n{font-family:var(--mono);font-size:clamp(24px,3vw,32px);color:var(--fg);letter-spacing:-.03em;line-height:1;margin-bottom:8px}
-.meta-n em{color:var(--accent);font-style:normal}
-.meta-l{font-size:13.5px;color:var(--fg-3);line-height:1.35}
+.hero-sub{font-size:clamp(17px,2.1vw,20px);color:var(--fg-2);max-width:52ch;line-height:1.5;margin-bottom:var(--s7)}
+.hero-cta{display:flex;gap:var(--s3);flex-wrap:wrap;margin-bottom:var(--s8)}
+.hero-stats{display:flex;gap:var(--s7);flex-wrap:wrap}
+.hstat b{display:block;font-family:var(--mono);font-size:clamp(26px,3vw,34px);letter-spacing:-.03em;line-height:1;margin-bottom:7px}
+.hstat b em{color:var(--accent);font-style:normal}
+.hstat span{font-size:13px;color:var(--fg-3);line-height:1.35;display:block;max-width:16ch}
+/* featured image справа */
+.hero-media{position:relative}
+.hero-frame{position:relative;border:1px solid var(--line-2);border-radius:var(--r3);overflow:hidden;background:var(--bg-1);aspect-ratio:4/3;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+.hero-frame img{width:100%;height:100%;object-fit:cover}
+.hero-corner{position:absolute;width:14px;height:14px;z-index:2}
+.hero-corner.tl{top:10px;left:10px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)}
+.hero-corner.br{bottom:10px;right:10px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)}
+.hero-chip{position:absolute;left:-14px;bottom:22px;background:var(--bg-2);border:1px solid var(--line-2);border-radius:var(--r2);padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 16px 40px -12px rgba(0,0,0,.7)}
+.hero-chip b{font-family:var(--mono);font-size:22px;color:var(--accent);letter-spacing:-.02em}
+.hero-chip span{font-size:12.5px;color:var(--fg-2);line-height:1.3;max-width:14ch}
 
-/* — Манифест — */
-.manifest{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:var(--s9) 0}
-.manifest p{
-  font-size:clamp(22px,3.2vw,36px);font-weight:500;letter-spacing:-.035em;
-  line-height:1.25;max-width:19ch;
-}
-.manifest p + p{margin-top:var(--s5);color:var(--fg-3);max-width:26ch}
-.manifest .hl{color:var(--accent)}
+/* ── галерея работ ── */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+.gcard{position:relative;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;background:var(--bg-1);aspect-ratio:4/3;transition:border-color var(--t),transform var(--t)}
+.gcard.wide{grid-column:span 2;aspect-ratio:16/9}
+.gcard img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow) var(--ease),opacity var(--t)}
+.gcard:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.gcard:hover img{transform:scale(1.045)}
+.gcard-info{position:absolute;inset:auto 0 0;padding:var(--s6) var(--s4) var(--s4);background:linear-gradient(transparent,rgba(8,9,11,.9) 68%);opacity:0;transform:translateY(6px);transition:opacity var(--t),transform var(--t)}
+.gcard:hover .gcard-info,.gcard:focus-visible .gcard-info{opacity:1;transform:none}
+.gcard-info b{display:block;font-size:15px;font-weight:500;letter-spacing:-.02em;margin-bottom:3px}
+.gcard-info span{font-family:var(--mono);font-size:11.5px;color:var(--fg-2);letter-spacing:.02em}
+.gtag{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:100px;background:rgba(12,13,16,.72);backdrop-filter:blur(6px);border:1px solid var(--line-2);color:var(--fg-2)}
+.gtag.photo{color:#8fe0a8;border-color:rgba(95,179,122,.4);background:rgba(20,40,28,.7)}
+.gal-more{display:flex;justify-content:center;margin-top:var(--s7)}
 
-/* — Карточки причин — */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s4)}
-.card{
-  background:var(--bg-1);border:1px solid var(--line);border-radius:var(--r2);
-  padding:var(--s6);position:relative;overflow:hidden;
-  transition:border-color var(--t) var(--ease),transform var(--t) var(--ease),background var(--t) var(--ease);
-}
-.card::before{
-  /* угловая метка — как на чертеже */
-  content:'';position:absolute;top:0;left:0;width:12px;height:12px;
-  border-top:1px solid var(--accent);border-left:1px solid var(--accent);
-  opacity:0;transition:opacity var(--t) var(--ease);
-}
-.card:hover{border-color:var(--line-2);transform:translateY(-2px);background:var(--bg-2)}
-.card:hover::before{opacity:1}
-.card-n{font-family:var(--mono);font-size:12px;color:var(--fg-3);margin-bottom:var(--s5);letter-spacing:.05em}
-.card h3{margin-bottom:var(--s3)}
-.card p{font-size:15px;color:var(--fg-2);line-height:1.55}
+/* ── что умею (capabilities) ── */
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+.cap{background:var(--bg-1);border:1px solid var(--line);border-radius:var(--r2);padding:var(--s6);transition:border-color var(--t),background var(--t),transform var(--t);position:relative;overflow:hidden}
+.cap::before{content:'';position:absolute;top:0;left:0;width:12px;height:12px;border-top:1px solid var(--accent);border-left:1px solid var(--accent);opacity:0;transition:opacity var(--t)}
+.cap:hover{border-color:var(--line-2);background:var(--bg-2);transform:translateY(-2px)}
+.cap:hover::before{opacity:1}
+.cap-n{font-family:var(--mono);font-size:12px;color:var(--fg-3);margin-bottom:var(--s5);letter-spacing:.05em}
+.cap h3{margin-bottom:var(--s3)}
+.cap p{font-size:14.5px;color:var(--fg-2);line-height:1.55}
 
-/* — РАЗБОР (интерактив) — */
-.teardown{
-  border:1px solid var(--line);border-radius:var(--r3);background:var(--bg-1);
-  overflow:hidden;
-}
-.td-step{padding:var(--s6);border-bottom:1px solid var(--line)}
-.td-label{
-  display:flex;align-items:center;gap:10px;
-  font-family:var(--mono);font-size:12px;color:var(--fg-3);
-  letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--s4);
-}
-.td-label b{
-  width:20px;height:20px;border-radius:var(--r1);background:var(--bg-2);
-  border:1px solid var(--line-2);display:grid;place-items:center;
-  font-size:11px;color:var(--fg-2);font-weight:500;
-}
-.chips{display:flex;flex-wrap:wrap;gap:var(--s2)}
-.chip{
-  padding:9px 15px;border:1px solid var(--line-2);border-radius:100px;
-  background:transparent;font-size:14.5px;color:var(--fg-2);cursor:pointer;
-  transition:all var(--t-fast) var(--ease);
-}
-.chip:hover{border-color:var(--fg-3);color:var(--fg)}
-.chip[aria-pressed="true"]{
-  background:var(--accent);border-color:var(--accent);color:#0a0b0c;font-weight:500;
-}
-.td-out{padding:var(--s6);min-height:220px}
-.td-empty{
-  display:grid;place-items:center;min-height:180px;text-align:center;
-  color:var(--fg-3);font-size:15px;gap:var(--s3);
-}
-.td-empty svg{opacity:.35}
-.td-title{
-  display:flex;align-items:baseline;gap:var(--s3);flex-wrap:wrap;
-  margin-bottom:var(--s6);padding-bottom:var(--s4);border-bottom:1px solid var(--line);
-}
-.td-title h3{font-size:17px}
-.td-title span{font-family:var(--mono);font-size:12px;color:var(--fg-3)}
+/* ── автоматизация (преимущество) ── */
+.auto{border:1px solid var(--line-2);border-radius:var(--r3);background:linear-gradient(160deg,var(--accent-soft),transparent 60%),var(--bg-1);padding:var(--s8);position:relative;overflow:hidden}
+.auto-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--s8);align-items:center}
+.auto .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(77,140,255,.35);background:var(--accent-soft);padding:4px 11px;border-radius:100px;margin-bottom:var(--s5)}
+.auto h2{font-size:clamp(24px,3vw,34px);margin-bottom:var(--s4);max-width:20ch}
+.auto p{color:var(--fg-2);line-height:1.6;margin-bottom:var(--s4);max-width:54ch}
+.auto p strong{color:var(--fg);font-weight:500}
+.auto-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.astat{background:var(--bg-1);padding:var(--s6) var(--s5)}
+.astat b{display:block;font-family:var(--mono);font-size:clamp(24px,2.6vw,30px);color:var(--accent);letter-spacing:-.03em;margin-bottom:7px}
+.astat span{font-size:13px;color:var(--fg-3);line-height:1.35;display:block}
 
-/* Схема: колонка узлов с соединительной линией */
-.flow{position:relative;padding-left:var(--s6)}
-.flow::before{
-  content:'';position:absolute;left:11px;top:10px;bottom:10px;width:1px;
-  background:linear-gradient(180deg,transparent,rgba(233,231,226,.28) 8%,rgba(233,231,226,.28) 92%,transparent);
-  transform-origin:top;animation:growLine .7s var(--ease) both;
-}
-@keyframes growLine{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-.node{
-  position:relative;padding:0 0 var(--s5) 0;
-  animation:nodeIn .5s var(--ease) both;
-}
-.node:last-child{padding-bottom:0}
-@keyframes nodeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.node-dot{
-  position:absolute;left:calc(-1 * var(--s6) + 6px);top:5px;
-  width:11px;height:11px;border-radius:50%;
-  background:var(--bg-1);border:1.5px solid var(--fg-3);
-}
-.node[data-t="ai"] .node-dot{border-color:var(--accent);background:var(--accent)}
-.node[data-t="human"] .node-dot{border-color:var(--ok);background:var(--bg-1);box-shadow:0 0 0 3px rgba(95,179,122,.14)}
-.node[data-t="trigger"] .node-dot{border-color:var(--fg);background:var(--fg)}
-.node-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:3px}
-.node-h b{font-size:15.5px;font-weight:500;letter-spacing:-.015em}
-.tag{
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
-  padding:2px 7px;border-radius:var(--r1);border:1px solid var(--line-2);color:var(--fg-3);
-}
-.node[data-t="ai"] .tag{color:var(--accent);border-color:rgba(255,90,31,.35);background:var(--accent-soft)}
-.node[data-t="human"] .tag{color:var(--ok);border-color:rgba(95,179,122,.35);background:rgba(95,179,122,.1)}
-.node p{font-size:14px;color:var(--fg-3);line-height:1.5}
-.td-side{display:flex;flex-direction:column;gap:var(--s5)}
-.td-panel{border:1px solid var(--line);border-radius:var(--r2);padding:var(--s5);background:var(--bg)}
-.td-panel h4{font-size:13px;font-family:var(--mono);color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em;font-weight:400;margin-bottom:var(--s4)}
-.td-panel ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.td-panel li{font-size:14.5px;color:var(--fg-2);display:flex;gap:10px;line-height:1.45}
-.td-panel li::before{content:'—';color:var(--accent);flex:none}
-.td-note{font-size:13.5px;color:var(--fg-3);line-height:1.5;padding-top:var(--s4);border-top:1px solid var(--line);margin-top:var(--s5)}
-.td-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:var(--s7)}
+/* ── опыт (таймлайн) ── */
+.tl{position:relative;padding-left:0}
+.job{display:grid;grid-template-columns:210px 1fr;gap:var(--s6);padding:var(--s6) 0;border-top:1px solid var(--line);transition:background var(--t)}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job:hover{background:linear-gradient(90deg,var(--bg-1),transparent)}
+.job-when{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);line-height:1.5}
+.job-when b{display:block;color:var(--accent);font-weight:500;margin-top:4px;font-size:12px}
+.job-what h3{margin-bottom:4px}
+.job-role{font-family:var(--mono);font-size:12.5px;color:var(--fg-2);text-transform:uppercase;letter-spacing:.04em;margin-bottom:var(--s3)}
+.job-what p{font-size:14.5px;color:var(--fg-2);line-height:1.55;max-width:70ch}
 
-/* — Услуги — */
-.svc{border-top:1px solid var(--line)}
-.svc-row{
-  display:grid;grid-template-columns:56px 1fr 1.15fr auto;gap:var(--s5);
-  align-items:start;padding:var(--s6) 0;border-bottom:1px solid var(--line);
-  transition:background var(--t) var(--ease);position:relative;
-}
-.svc-row::after{
-  content:'';position:absolute;left:-24px;right:-24px;top:0;bottom:0;
-  background:var(--bg-1);opacity:0;transition:opacity var(--t) var(--ease);
-  z-index:-1;border-radius:var(--r2);
-}
-.svc-row:hover::after{opacity:1}
-.svc-n{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);padding-top:5px}
-.svc-t h3{margin-bottom:6px}
-.svc-t p{font-size:14px;color:var(--fg-3)}
-.svc-d p{font-size:15px;color:var(--fg-2);line-height:1.55;margin-bottom:var(--s3)}
-.svc-tags{display:flex;flex-wrap:wrap;gap:6px}
-.svc-tags span{font-family:var(--mono);font-size:11px;color:var(--fg-3);border:1px solid var(--line);padding:2px 7px;border-radius:var(--r1)}
-.svc-p{text-align:right;font-family:var(--mono);font-size:13px;color:var(--fg-2);white-space:nowrap;padding-top:5px}
+/* ── навыки ── */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s6)}
+.skill-col h4{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em;font-weight:400;margin-bottom:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
+.tags{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.tags span{font-family:var(--mono);font-size:13px;color:var(--fg-2);border:1px solid var(--line);border-radius:var(--r1);padding:7px 12px;transition:border-color var(--t-fast),color var(--t-fast)}
+.tags span:hover{border-color:var(--accent);color:var(--fg)}
+.langs{display:flex;flex-direction:column;gap:var(--s3)}
+.lang{display:flex;justify-content:space-between;align-items:baseline;font-size:14.5px;padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
+.lang b{font-weight:500}
+.lang span{font-family:var(--mono);font-size:12px;color:var(--fg-3)}
 
-/* — Процесс — */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
-.step{background:var(--bg);padding:var(--s6);transition:background var(--t) var(--ease)}
-.step:hover{background:var(--bg-1)}
-.step-n{font-family:var(--mono);font-size:12px;color:var(--accent);margin-bottom:var(--s5)}
-.step h3{font-size:17px;margin-bottom:var(--s3)}
-.step p{font-size:14.5px;color:var(--fg-3);line-height:1.5}
-.step small{display:block;margin-top:var(--s4);font-family:var(--mono);font-size:11.5px;color:var(--fg-3);padding-top:var(--s3);border-top:1px solid var(--line)}
+/* ── о себе ── */
+.about-grid{display:grid;grid-template-columns:1fr;gap:var(--s6);max-width:760px}
+.about-grid p{font-size:17.5px;line-height:1.65;color:var(--fg-2)}
+.about-grid p strong{color:var(--fg);font-weight:500}
 
-/* — Доказательство / кейс — */
-.proof{background:var(--bg-1);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden}
-.proof-top{padding:var(--s7);border-bottom:1px solid var(--line)}
-.proof-badge{
-  display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;
-  letter-spacing:.06em;text-transform:uppercase;color:var(--accent);
-  border:1px solid rgba(255,90,31,.3);background:var(--accent-soft);
-  padding:4px 10px;border-radius:100px;margin-bottom:var(--s5);
-}
-.proof-top h3{font-size:clamp(22px,3vw,30px);margin-bottom:var(--s4);max-width:22ch}
-.proof-top p{font-size:16.5px;color:var(--fg-2);max-width:64ch;line-height:1.55}
-.proof-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
-.pstat{background:var(--bg-1);padding:var(--s6) var(--s5)}
-.pstat b{display:block;font-family:var(--mono);font-size:clamp(22px,2.6vw,28px);color:var(--accent);letter-spacing:-.03em;margin-bottom:6px;font-weight:500}
-.pstat span{font-size:13.5px;color:var(--fg-3);line-height:1.35;display:block}
-.proof-chain{padding:var(--s6) var(--s7);border-top:1px solid var(--line);display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap}
-.link-pill{font-family:var(--mono);font-size:12.5px;color:var(--fg-2);border:1px solid var(--line-2);padding:5px 11px;border-radius:var(--r1)}
-.chain-arw{color:var(--fg-3);font-size:12px}
+/* ── контакты ── */
+.contact{border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s9);align-items:start}
+.contact h2{margin-bottom:var(--s5);max-width:14ch}
+.cways{display:flex;flex-direction:column;gap:var(--s3)}
+.cway{display:flex;align-items:center;gap:var(--s4);padding:var(--s5);border:1px solid var(--line);border-radius:var(--r2);background:var(--bg-1);transition:border-color var(--t),background var(--t),transform var(--t)}
+.cway:hover{border-color:var(--line-2);background:var(--bg-2);transform:translateX(3px)}
+.cway-ic{width:44px;height:44px;flex:none;border:1px solid var(--line-2);border-radius:var(--r2);display:grid;place-items:center;color:var(--accent)}
+.cway-ic svg{width:20px;height:20px}
+.cway-t small{display:block;font-family:var(--mono);font-size:11px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.cway-t b{font-size:17px;font-weight:500;letter-spacing:-.01em}
 
-/* — О себе — */
-.about{display:grid;grid-template-columns:1fr 1.5fr;gap:var(--s9);align-items:start}
-.photo{
-  aspect-ratio:4/5;border:1px solid var(--line);border-radius:var(--r2);
-  background:var(--bg-1);display:grid;place-items:center;text-align:center;
-  color:var(--fg-3);font-size:13px;padding:var(--s5);position:relative;overflow:hidden;
-}
-.photo img{width:100%;height:100%;object-fit:cover;border-radius:var(--r2)}
-.photo-ph{display:flex;flex-direction:column;gap:var(--s3);align-items:center;font-family:var(--mono);line-height:1.5}
-.story p{font-size:17px;line-height:1.65;color:var(--fg-2);margin-bottom:var(--s5);max-width:64ch}
-.story p strong{color:var(--fg);font-weight:500}
-.story .pull{
-  font-size:20px;color:var(--fg);border-left:2px solid var(--accent);
-  padding:var(--s2) 0 var(--s2) var(--s5);margin:var(--s6) 0;line-height:1.45;
-}
-
-/* — Не подхожу — */
-.filter-box{border:1px solid var(--line);border-radius:var(--r2);background:var(--bg-1);padding:var(--s7)}
-.filter-box ul{list-style:none;display:flex;flex-direction:column;gap:var(--s4);margin-top:var(--s5)}
-.filter-box li{display:flex;gap:var(--s4);font-size:16px;color:var(--fg-2);line-height:1.5}
-.filter-box li::before{content:'✕';color:var(--fg-3);font-size:13px;flex:none;padding-top:4px}
-
-/* — Стек — */
-.stack{display:flex;flex-wrap:wrap;gap:var(--s2)}
-.stack span{
-  font-family:var(--mono);font-size:13px;color:var(--fg-2);
-  border:1px solid var(--line);border-radius:var(--r1);padding:7px 13px;
-  transition:border-color var(--t-fast),color var(--t-fast);
-}
-.stack span:hover{border-color:var(--accent);color:var(--fg)}
-
-/* — FAQ — */
-.faq{border-top:1px solid var(--line)}
-.q{border-bottom:1px solid var(--line)}
-.q-btn{
-  width:100%;background:none;border:0;cursor:pointer;text-align:left;
-  padding:var(--s5) 0;display:flex;justify-content:space-between;align-items:center;gap:var(--s5);
-  font-size:17px;font-weight:500;letter-spacing:-.02em;
-  transition:color var(--t-fast);
-}
-.q-btn:hover{color:var(--accent)}
-.q-ic{flex:none;width:18px;height:18px;position:relative}
-.q-ic::before,.q-ic::after{
-  content:'';position:absolute;background:currentColor;left:50%;top:50%;
-  transition:transform var(--t) var(--ease);
-}
-.q-ic::before{width:11px;height:1.5px;transform:translate(-50%,-50%)}
-.q-ic::after{width:1.5px;height:11px;transform:translate(-50%,-50%)}
-.q[data-open="1"] .q-ic::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
-.q-a{overflow:hidden;height:0;transition:height var(--t) var(--ease)}
-.q-a-in{padding:0 0 var(--s5);font-size:15.5px;color:var(--fg-2);line-height:1.6;max-width:70ch}
-
-/* — Финальный CTA — */
-.final{border-top:1px solid var(--line);padding:var(--s10) 0}
-.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s9);align-items:start}
-.final h2{margin-bottom:var(--s5);max-width:13ch}
-.final .lead{margin-bottom:var(--s6)}
-.direct{display:flex;flex-direction:column;gap:var(--s3);margin-top:var(--s6);padding-top:var(--s6);border-top:1px solid var(--line)}
-.direct a{
-  display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:14px;
-  color:var(--fg-2);transition:color var(--t-fast);width:fit-content;
-}
-.direct a:hover{color:var(--accent)}
-form{display:flex;flex-direction:column;gap:var(--s4)}
-.field label{display:block;font-family:var(--mono);font-size:11.5px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-.field input,.field textarea{
-  width:100%;background:var(--bg-1);border:1px solid var(--line);border-radius:var(--r2);
-  padding:13px 15px;font-size:15.5px;transition:border-color var(--t-fast),background var(--t-fast);
-  outline:none;resize:vertical;
-}
-.field input::placeholder,.field textarea::placeholder{color:var(--fg-3)}
-.field input:focus,.field textarea:focus{border-color:var(--accent);background:var(--bg-2)}
-.form-note{font-size:13px;color:var(--fg-3);line-height:1.5}
-.form-ok{
-  border:1px solid rgba(95,179,122,.35);background:rgba(95,179,122,.08);
-  border-radius:var(--r2);padding:var(--s5);font-size:15px;color:var(--fg-2);
-}
-
-/* — Подвал — */
+/* ── подвал ── */
 footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-index:1}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);flex-wrap:wrap}
 .foot p{font-size:13.5px;color:var(--fg-3)}
@@ -426,33 +213,40 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 .foot-links a{font-size:13.5px;color:var(--fg-3);transition:color var(--t-fast)}
 .foot-links a:hover{color:var(--fg)}
 
-/* ═══ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ ═══ */
+/* ── лайтбокс ── */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(7,8,10,.95);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:var(--s6)}
+.lb.open{display:flex}
+.lb-img{max-width:min(1180px,94vw);max-height:82vh;border-radius:var(--r2);object-fit:contain;box-shadow:0 30px 90px -20px #000}
+.lb-cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:var(--fg-2);font-size:14.5px}
+.lb-cap b{color:var(--fg);font-weight:500}
+.lb-cap span{font-family:var(--mono);font-size:12px;color:var(--fg-3);display:block;margin-top:4px}
+.lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(28,31,36,.8);border:1px solid var(--line-2);color:var(--fg);font-size:22px;display:grid;place-items:center;transition:background var(--t-fast),border-color var(--t-fast)}
+.lb-btn:hover{background:var(--bg-2);border-color:var(--accent)}
+.lb-prev{left:20px}.lb-next{right:20px}
+.lb-close{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(28,31,36,.8);border:1px solid var(--line-2);color:var(--fg);font-size:20px;display:grid;place-items:center}
+.lb-close:hover{border-color:var(--accent)}
+.lb-count{position:absolute;top:26px;left:24px;font-family:var(--mono);font-size:13px;color:var(--fg-3)}
+
+/* ── появление ── */
 .rv{opacity:0;transform:translateY(18px);transition:opacity var(--t-slow) var(--ease),transform var(--t-slow) var(--ease)}
 .rv.in{opacity:1;transform:none}
 
-/* ═══ АДАПТИВ ═══ */
+/* ── адаптив ── */
 @media(max-width:1000px){
-  .td-grid{grid-template-columns:1fr;gap:var(--s6)}
-  .about{grid-template-columns:1fr;gap:var(--s7)}
-  .photo{max-width:340px}
-  .final-grid{grid-template-columns:1fr;gap:var(--s7)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .proof-stats{grid-template-columns:repeat(2,1fr)}
-  .svc-row{grid-template-columns:40px 1fr;gap:var(--s4) var(--s3)}
-  .svc-d{grid-column:2}
-  .svc-p{grid-column:2;text-align:left}
+  .hero-grid{grid-template-columns:1fr;gap:var(--s7)}
+  .hero-media{max-width:520px}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .gcard.wide{grid-column:span 2}
+  .caps{grid-template-columns:repeat(2,1fr)}
+  .auto-grid{grid-template-columns:1fr;gap:var(--s6)}
+  .skills{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:var(--s7)}
+  .job{grid-template-columns:1fr;gap:var(--s2)}
+  .job-when{display:flex;gap:var(--s4);align-items:baseline}
+  .job-when b{margin-top:0}
 }
-/* Шапка сворачивается в бургер раньше, чем ломается вёрстка:
-   на 760–940px ссылки + CTA уже не помещаются рядом с именем. */
 @media(max-width:940px){
-  .nav-links{
-    position:fixed;inset:66px 0 auto;flex-direction:column;align-items:stretch;
-    gap:0;background:rgba(10,11,12,.97);backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border-bottom:1px solid var(--line);padding:var(--s3) var(--pad) var(--s5);
-    transform:translateY(-8px);opacity:0;pointer-events:none;
-    transition:opacity var(--t) var(--ease),transform var(--t) var(--ease);
-  }
+  .nav-links{position:fixed;inset:66px 0 auto;flex-direction:column;align-items:stretch;gap:0;background:rgba(12,13,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:var(--s3) var(--pad) var(--s5);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity var(--t),transform var(--t)}
   .nav-links.open{opacity:1;transform:none;pointer-events:auto}
   .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
   .nav-links a::after{display:none}
@@ -461,33 +255,22 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 @media(max-width:760px){
   :root{--s9:64px;--s10:80px;--pad:20px}
   body{font-size:16px}
-  /* CTA НЕ прячем: мобильный — основной трафик, кнопка должна быть
-     доступна всегда. Уменьшаем, а не убираем. */
   .nav-cta .btn{padding:9px 14px;font-size:13.5px}
-  .hero{padding:120px 0 var(--s9)}
-  .hero-meta{grid-template-columns:1fr}
-  .grid-3,.grid-2{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}
-  .proof-stats{grid-template-columns:1fr}
-  .proof-top,.proof-chain{padding:var(--s6) var(--s5)}
-  .filter-box{padding:var(--s5)}
+  .hero{padding:112px 0 var(--s9)}
   .hero-cta .btn{flex:1;justify-content:center}
-  .manifest p{max-width:none}
+  .hero-stats{gap:var(--s5)}
+  .gal{grid-template-columns:1fr}
+  .gcard,.gcard.wide{grid-column:auto;aspect-ratio:4/3}
+  .caps{grid-template-columns:1fr}
+  .auto-stats{grid-template-columns:1fr}
+  .auto{padding:var(--s6)}
+  .lb-prev{left:8px}.lb-next{right:8px}
+  .gcard-info{opacity:1;transform:none;background:linear-gradient(transparent,rgba(8,9,11,.82) 60%)}
 }
-@media(max-width:430px){
-  /* На узких экранах имя уступает место кнопке — знак остаётся */
-  .brand span:not(.brand-mark){display:none}
-}
-
-/* ═══ ДОСТУПНОСТЬ ═══ */
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-  html{scroll-behavior:auto}
-  .rv{opacity:1;transform:none}
-}
+@media(max-width:430px){.brand small{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r1)}
-::selection{background:var(--accent);color:#0a0b0c}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+::selection{background:var(--accent);color:#07101f}
 </style>
 </head>
 <body>
@@ -495,22 +278,21 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
 
-<!-- ══════════ НАВИГАЦИЯ ══════════ -->
+<!-- НАВИГАЦИЯ -->
 <nav class="nav" id="nav">
   <div class="wrap nav-in">
     <a href="#top" class="brand">
       <span class="brand-mark" data-cfg="initials">—</span>
-      <span data-cfg="name">Имя Фамилия</span>
+      <span><span data-cfg="name">Имя</span><small data-cfg="role">роль</small></span>
     </a>
     <div class="nav-links" id="navlinks">
-      <a href="#razbor">Разбор</a>
-      <a href="#services">Услуги</a>
-      <a href="#proof">Доказательство</a>
+      <a href="#works">Работы</a>
+      <a href="#skills-do">Что умею</a>
+      <a href="#experience">Опыт</a>
       <a href="#about">О себе</a>
-      <a href="#faq">Вопросы</a>
     </div>
     <div class="nav-cta">
-      <a href="#contact" class="btn btn-1">Обсудить задачу</a>
+      <a href="#contact" class="btn btn-1">Связаться</a>
       <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -518,368 +300,212 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 
 <main id="top">
 
-<!-- ══════════ HERO ══════════ -->
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow" data-cfg="eyebrow">Инженер-технолог · Автоматизация процессов</div>
-    <h1 class="rv">Большинство AI-внедрений <span class="hl">умирает через месяц</span></h1>
-    <p class="hero-sub rv">
-      Я строю те, что остаются. Потому что пришёл из производства, где сломанный процесс
-      видно сразу — по браку на складе.
-    </p>
-    <div class="hero-cta rv">
-      <a href="#razbor" class="btn btn-1 btn-lg">Разобрать мой процесс <span class="arw">→</span></a>
-      <a href="#proof" class="btn btn-2 btn-lg">Что я уже построил</a>
-    </div>
-    <div class="hero-meta rv">
-      <div class="meta-cell">
-        <div class="meta-n"><em data-cfg="years">15</em> лет</div>
-        <div class="meta-l">в производстве POSM и торгового оборудования — до того, как начал его автоматизировать</div>
-      </div>
-      <div class="meta-cell">
-        <div class="meta-n"><em>8</em> инструментов</div>
-        <div class="meta-l">собственная система проектирования в ежедневной эксплуатации, десятки итераций</div>
-      </div>
-      <div class="meta-cell">
-        <div class="meta-n"><em>0</em> обещаний</div>
-        <div class="meta-l">которые я не могу проверить. Если задача решается таблицей — я так и скажу</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ МАНИФЕСТ ══════════ -->
-<section class="manifest">
-  <div class="wrap">
-    <p class="rv">Я не продаю нейросети.<br>Я убираю <span class="hl">ручные шаги</span> из процессов, в которых работал сам.</p>
-    <p class="rv">Технология выбирается последней. Сначала нужно понять, где процесс врёт.</p>
-  </div>
-</section>
-
-<!-- ══════════ ПОЧЕМУ УМИРАЕТ ══════════ -->
-<section class="sec" id="why">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">01 / Диагноз</div>
-      <h2>Почему автоматизация не доживает до второго месяца</h2>
-      <p class="lead" style="margin-top:24px">
-        Дело почти никогда не в технологии. За последние два года инструменты стали настолько
-        доступны, что собрать сценарий может кто угодно. Ломается всё в другом месте.
-      </p>
-    </div>
-    <div class="grid-3">
-      <div class="card rv">
-        <div class="card-n">ПРИЧИНА 01</div>
-        <h3>Автоматизировали регламент, а не работу</h3>
-        <p>
-          На созвоне вам рассказали, как процесс должен работать. Автоматизатор это записал и собрал.
-          Но реальные люди делают иначе — обходят шаги, держат исключения в голове, договариваются
-          в мессенджере. Система встречается с реальностью и встаёт.
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow" data-cfg="eyebrow">Технолог-конструктор · Алматы</div>
+        <h1 class="rv">От эскиза до <span class="hl">полки в магазине</span></h1>
+        <p class="hero-sub rv">
+          16 лет проектирую торговое оборудование, POSM и мебель — и довожу до готового изделия:
+          чертежи, 3D, файлы для станка, контроль на производстве. Ищу команду, которой нужен
+          конструктор полного цикла.
         </p>
+        <div class="hero-cta rv">
+          <a href="#works" class="btn btn-1 btn-lg">Смотреть работы <span class="arw">→</span></a>
+          <a href="#contact" class="btn btn-2 btn-lg">Связаться</a>
+        </div>
+        <div class="hero-stats rv">
+          <div class="hstat"><b><em>16</em> лет</b><span>в конструкторской работе</span></div>
+          <div class="hstat"><b><em>143</em></b><span>проекта в портфолио</span></div>
+          <div class="hstat"><b><em>10</em> лет</b><span>на одном производстве</span></div>
+        </div>
       </div>
-      <div class="card rv">
-        <div class="card-n">ПРИЧИНА 02</div>
-        <h3>Человека выкинули из контура</h3>
-        <p>
-          Продавали «полную автоматизацию», поэтому убрали проверку. Первая же ошибка модели
-          уходит в договор, в заказ, в раскрой. Один такой случай — и вся система выключается
-          навсегда, потому что доверие не восстанавливается.
-        </p>
-      </div>
-      <div class="card rv">
-        <div class="card-n">ПРИЧИНА 03</div>
-        <h3>Систему невозможно поддержать без автора</h3>
-        <p>
-          Сценарий собран на чужом аккаунте, без документации, логика в голове подрядчика.
-          Он ушёл — система стала чёрным ящиком. Через месяц что-то поменялось в бизнесе,
-          и починить это некому.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ РАЗБОР (ИНТЕРАКТИВ) ══════════ -->
-<section class="sec" id="razbor" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">02 / Разбор</div>
-      <h2>Соберите схему своего процесса</h2>
-      <p class="lead" style="margin-top:24px">
-        Выберите свой бизнес и то, что съедает больше всего времени. Я покажу, как выглядит
-        архитектура решения — та самая, с которой начинается любой мой проект. Без регистрации
-        и без почты: это просто то, как я думаю.
-      </p>
-    </div>
-
-    <div class="teardown rv">
-      <div class="td-step">
-        <div class="td-label"><b>1</b> Что у вас за бизнес</div>
-        <div class="chips" id="chips-biz"></div>
-      </div>
-      <div class="td-step">
-        <div class="td-label"><b>2</b> Что съедает больше всего времени</div>
-        <div class="chips" id="chips-rt"></div>
-      </div>
-      <div class="td-out" id="td-out">
-        <div class="td-empty">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-            <path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/>
-          </svg>
-          <span>Выберите два пункта выше — схема соберётся здесь</span>
+      <div class="hero-media rv">
+        <div class="hero-frame">
+          <span class="hero-corner tl"></span><span class="hero-corner br"></span>
+          <img src="assets/work/02-shelftalker.jpg" alt="Шелфтокер для торгового зала — 3D-визуализация" width="1600" height="1002">
+        </div>
+        <div class="hero-chip">
+          <b>143</b><span>работы на ArtStation</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ УСЛУГИ ══════════ -->
-<section class="sec" id="services">
+<!-- РАБОТЫ -->
+<section class="sec" id="works">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">03 / Услуги</div>
-      <h2>Четыре формата работы</h2>
+      <div class="eyebrow">01 / Работы</div>
+      <h2>Что стоит в магазинах</h2>
       <p class="lead" style="margin-top:24px">
-        Почти всегда начинаем с первого. Я не берусь строить, пока не увижу процесс своими глазами —
-        это не осторожность, это единственный способ не выбросить ваши деньги.
+        Торговое оборудование, POSM и городская мебель для реальных брендов. Часть — рендеры на этапе
+        проектирования, часть — фото уже с производства и из торговых залов. Нажмите, чтобы увеличить.
       </p>
     </div>
-    <div class="svc" id="svc-list"></div>
-  </div>
-</section>
-
-<!-- ══════════ ПРОЦЕСС ══════════ -->
-<section class="sec" id="process" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">04 / Процесс</div>
-      <h2>Как это происходит</h2>
-    </div>
-    <div class="steps rv">
-      <div class="step">
-        <div class="step-n">ШАГ 01</div>
-        <h3>Смотрю, как есть</h3>
-        <p>Не по регламенту, а по факту. Сижу рядом с теми, кто делает работу руками. Записываю каждый шаг, включая те, о которых вы не знаете.</p>
-        <small>1–2 недели</small>
-      </div>
-      <div class="step">
-        <div class="step-n">ШАГ 02</div>
-        <h3>Показываю карту</h3>
-        <p>Где теряется время, где данные вводятся дважды, где ошибка всплывает поздно. Часть находок вы увидите впервые. Отсюда — что автоматизируем, а что нет.</p>
-        <small>Отчёт + встреча</small>
-      </div>
-      <div class="step">
-        <div class="step-n">ШАГ 03</div>
-        <h3>Собираю на одном участке</h3>
-        <p>Не всё сразу. Один процесс, до конца, до продакшена. Работает — идём дальше. Не работает — вы потеряли месяц, а не полгода.</p>
-        <small>3–6 недель</small>
-      </div>
-      <div class="step">
-        <div class="step-n">ШАГ 04</div>
-        <h3>Передаю вам</h3>
-        <p>Доступы ваши, документация написана, ваш человек обучен. Я остаюсь на поддержке, если нужно — но система не должна от меня зависеть.</p>
-        <small>Передача + опция поддержки</small>
-      </div>
+    <div class="gal rv" id="gal"></div>
+    <div class="gal-more rv">
+      <a href="#" data-cfg-href="artstation" target="_blank" rel="noopener" class="btn btn-2 btn-lg">
+        Все 143 работы на ArtStation <span class="arw">→</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ══════════ ДОКАЗАТЕЛЬСТВО ══════════ -->
-<section class="sec" id="proof">
+<!-- ЧТО УМЕЮ -->
+<section class="sec" id="skills-do" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">05 / Доказательство</div>
-      <h2>Первым делом я автоматизировал себя</h2>
+      <div class="eyebrow">02 / Полный цикл</div>
+      <h2>Что делаю под ключ</h2>
       <p class="lead" style="margin-top:24px">
-        Я не показываю чужие логотипы. Показываю систему, которую построил для собственной
-        работы и которой пользуюсь каждый день. Её можно посмотреть, а не поверить на слово.
+        Беру изделие от идеи и довожу до цеха. Не только «нарисовать красиво» — но и сделать так,
+        чтобы это собралось, встало на станок и не рассыпалось на монтаже.
       </p>
     </div>
+    <div class="caps rv" id="caps"></div>
+  </div>
+</section>
 
-    <div class="proof rv">
-      <div class="proof-top">
-        <div class="proof-badge">● Живая система · в ежедневной работе</div>
-        <h3>POSM Engine — проектирование торгового оборудования без ручной рутины</h3>
-        <p>
-          Проектирование POSM — это тысячи повторяющихся операций: расставить крепёж, нарезать
-          соединения, назначить кромки, переименовать детали под спецификацию. Каждая — на пару минут.
-          Вместе — недели в год и стабильный источник ошибок, которые вылезают уже на раскрое,
-          когда материал испорчен. Я разобрал этот процесс на шаги и убрал те, что не требуют решения человека.
-        </p>
-      </div>
-      <div class="proof-stats">
-        <div class="pstat"><b>8</b><span>инструментов в сквозном workflow</span></div>
-        <div class="pstat"><b>120+</b><span>параметров, сведённых в одну модель проекта</span></div>
-        <div class="pstat"><b>V61</b><span>версия ключевого модуля — десятки итераций на реальных заказах</span></div>
-        <div class="pstat"><b>4</b><span>несовместимые среды, связанные в один конвейер</span></div>
-      </div>
-      <div class="proof-chain">
-        <span class="link-pill">CorelDRAW</span><span class="chain-arw">→</span>
-        <span class="link-pill">Fusion 360 · Python API</span><span class="chain-arw">→</span>
-        <span class="link-pill">3ds Max</span><span class="chain-arw">→</span>
-        <span class="link-pill">Unreal Engine</span>
-        <a href="#" data-cfg-href="github" class="btn btn-2" style="margin-left:auto">Как устроена система <span class="arw">→</span></a>
-      </div>
-    </div>
-
-    <div class="grid-2" style="margin-top:16px">
-      <div class="card rv">
-        <div class="card-n">ЧТО ЭТО ДОКАЗЫВАЕТ</div>
-        <h3>Я довожу до эксплуатации, а не до демо</h3>
-        <p>
-          Версия V61 означает, что инструмент шестьдесят раз встретился с реальностью и был переделан.
-          Демо собирается за вечер. Работающая система — это те самые шестьдесят итераций,
-          которых не видно в презентации.
-        </p>
-      </div>
-      <div class="card rv">
-        <div class="card-n">ПОЧЕМУ ЭТО ВАЖНО ВАМ</div>
-        <h3>Я автоматизировал процесс, в котором сам работал</h3>
-        <p>
-          Это единственное, что нельзя изобразить. Человек, который не стоял внутри процесса,
-          автоматизирует его описание. Я знаю, где описание расходится с реальностью, — потому что
-          пятнадцать лет был тем, кто эту разницу расхлёбывал.
-        </p>
+<!-- АВТОМАТИЗАЦИЯ -->
+<section class="sec" id="automation" style="padding-top:0">
+  <div class="wrap">
+    <div class="auto rv">
+      <div class="auto-grid">
+        <div>
+          <div class="badge">● Редкое преимущество</div>
+          <h2>Часть рутины я переложил на скрипты</h2>
+          <p>
+            Проектирование — это тысячи повторяющихся операций: расставить крепёж, нарезать
+            соединения, назначить кромки, переименовать детали под спецификацию. Я написал под
+            Fusion 360 <strong>собственную систему из восьми инструментов</strong>, которая делает
+            это за меня.
+          </p>
+          <p>
+            Для работодателя это прямая экономия: меньше ручных часов на однотипной работе и меньше
+            ошибок, которые всплывают на раскрое, когда материал уже испорчен. Среди конструкторов
+            такой навык встречается редко — и это то, что я приношу сверх ремесла.
+          </p>
+        </div>
+        <div class="auto-stats">
+          <div class="astat"><b>8</b><span>собственных инструментов в ежедневной работе</span></div>
+          <div class="astat"><b>120+</b><span>параметров изделия в одной модели проекта</span></div>
+          <div class="astat"><b>ЧПУ</b><span>готовые файлы для фрезеровки и лазера без ручной доводки</span></div>
+          <div class="astat"><b>−ручной труд</b><span>однотипные операции убраны из процесса</span></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ О СЕБЕ ══════════ -->
+<!-- ОПЫТ -->
+<section class="sec" id="experience" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">03 / Опыт</div>
+      <h2>16 лет у станка и за чертежом</h2>
+      <p class="lead" style="margin-top:24px">
+        Мебельное производство, торговое оборудование, реклама, городская мебель. Десять лет — на
+        одном производстве: это про надёжность, а не про перебежки.
+      </p>
+    </div>
+    <div class="tl rv" id="tl"></div>
+  </div>
+</section>
+
+<!-- НАВЫКИ -->
+<section class="sec" id="stack" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:40px">
+      <div class="eyebrow">04 / Инструменты</div>
+      <h2 style="font-size:clamp(22px,2.6vw,30px)">Чем работаю</h2>
+    </div>
+    <div class="skills rv">
+      <div class="skill-col">
+        <h4>CAD и конструирование</h4>
+        <div class="tags" id="sk-cad"></div>
+      </div>
+      <div class="skill-col">
+        <h4>3D и визуализация</h4>
+        <div class="tags" id="sk-3d"></div>
+      </div>
+      <div class="skill-col">
+        <h4>Компетенции</h4>
+        <div class="tags" id="sk-comp"></div>
+      </div>
+    </div>
+    <div class="skills rv" style="margin-top:48px">
+      <div class="skill-col">
+        <h4>Языки</h4>
+        <div class="langs" id="langs"></div>
+      </div>
+      <div class="skill-col" style="grid-column:span 2">
+        <h4>Производство</h4>
+        <div class="tags" id="sk-prod"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- О СЕБЕ -->
 <section class="sec" id="about" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">06 / О себе</div>
-      <h2>Короткая версия</h2>
+      <div class="eyebrow">05 / О себе</div>
+      <h2>Коротко</h2>
     </div>
-    <div class="about">
-      <div class="rv">
-        <div class="photo" id="photo">
-          <div class="photo-ph">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
-            <span>ЗАГЛУШКА<br>Фото в рабочей обстановке:<br>цех, станок или монитор с Fusion.<br>Не в костюме на фоне города.</span>
-          </div>
-        </div>
-      </div>
-      <div class="story rv">
-        <p>
-          Я <strong data-cfg="years-inline">пятнадцать</strong> лет проектировал POSM и торговое оборудование.
-          Стойки, дисплеи, промо-зоны — то, что вы видите в магазине и не замечаете. Работа, в которой
-          ошибка не остаётся на экране: она приезжает на склад в виде испорченного листа МДФ.
-        </p>
-        <p>
-          В какой-то момент я поймал себя на том, что делаю одно и то же движение мышью в десятитысячный раз.
-          Расставить крепёж. Нарезать паз. Переименовать деталь. Каждая операция — две минуты, каждый проект —
-          сотни операций. Никакой инженерии в этом уже не было. Была ручная работа, которую я почему-то
-          продолжал делать сам.
-        </p>
-        <div class="pull">
-          Я не программист. Я инженер: я не пишу код руками — я проектирую систему и управляю тем,
-          кто её собирает. Раньше это были подрядчики. Теперь — AI.
-        </div>
-        <p>
-          Так появился POSM Engine. Сначала один скрипт, потом восемь, потом мост, который позволяет
-          собирать инструменты прямо внутри CAD-системы. <strong>Мою работу теперь делает система, которую
-          я спроектировал, но не написал руками.</strong> И это оказалось не фокусом, а методом —
-          воспроизводимым, объяснимым и переносимым на чужой бизнес.
-        </p>
-        <p>
-          Именно поэтому я работаю не так, как остальные. Я не прихожу с готовым решением, к которому
-          нужно подогнать ваш процесс. Я прихожу смотреть, как процесс устроен на самом деле, — потому
-          что <strong>сам пятнадцать лет был тем человеком, чью работу теперь автоматизирую.</strong>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ ФИЛЬТР ══════════ -->
-<section class="sec" id="filter" style="padding-top:0">
-  <div class="wrap">
-    <div class="filter-box rv">
-      <div class="eyebrow">07 / Честно</div>
-      <h2 style="font-size:clamp(24px,3vw,34px)">Я не подхожу, если</h2>
-      <ul>
-        <li>вам нужно «внедрить нейросети», но вы не можете назвать процесс, который болит;</li>
-        <li>вы ищете подрядчика на разовую задачу за фиксированную цену без разбора;</li>
-        <li>решение нужно было на прошлой неделе;</li>
-        <li>вы не готовы показать, как работа устроена на самом деле, а не по регламенту;</li>
-        <li>вы хотите сократить людей. Я убираю у людей рутину. Кого сокращать — решаете вы, и это не моя работа.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ СТЕК ══════════ -->
-<section class="sec" id="stack" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv" style="margin-bottom:32px">
-      <div class="eyebrow">08 / Инструменты</div>
-      <h2 style="font-size:clamp(22px,2.6vw,30px)">Чем собираю</h2>
-      <p class="lead" style="margin-top:16px;font-size:16px">
-        Список неполный и намеренно скучный. Инструмент выбирается под задачу и в последнюю очередь —
-        если вам продают конкретную технологию до разбора процесса, вам продают то, что подрядчик умеет,
-        а не то, что вам нужно.
+    <div class="about-grid rv">
+      <p>
+        Меня зовут Жумабек. Шестнадцать лет я проектирую то, что вы видите в магазинах и не замечаете:
+        стойки, дисплеи, барные зоны, прикассы, мебель. Работа, где ошибка не остаётся на экране —
+        она приезжает на склад в виде испорченного листа и сорванного монтажа.
+      </p>
+      <p>
+        Я прошёл весь путь: от эскиза и 3D-модели до файлов для станка и контроля собираемости в цеху
+        рядом с макетчиками. <strong>Могу просчитать тендер, собрать презентацию с 3D-визуализацией,
+        подготовить конструкторскую документацию и файлы для производства</strong> — и продумать
+        технологию так, чтобы убрать лишний ручной труд.
+      </p>
+      <p>
+        Последнее — отдельная история: часть повторяющейся работы я переложил на собственные скрипты,
+        которые пишу под свою же рутину. Это не отдельная профессия, а способ делать конструкторскую
+        работу быстрее и точнее. <strong>Ищу постоянную работу технологом-конструктором в команде,
+        где ценят и ремесло, и голову.</strong>
       </p>
     </div>
-    <div class="stack rv" id="stack-list"></div>
   </div>
 </section>
 
-<!-- ══════════ FAQ ══════════ -->
-<section class="sec" id="faq" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">09 / Вопросы</div>
-      <h2>Что обычно спрашивают</h2>
-    </div>
-    <div class="faq rv" id="faq-list"></div>
-  </div>
-</section>
-
-<!-- ══════════ КОНТАКТ ══════════ -->
-<section class="final" id="contact">
-  <div class="wrap">
-    <div class="final-grid">
+<!-- КОНТАКТЫ -->
+<section class="contact" id="contact">
+  <div class="sec wrap">
+    <div class="contact-grid">
       <div class="rv">
-        <div class="eyebrow">10 / Дальше</div>
-        <h2>Расскажите, что делается руками</h2>
+        <div class="eyebrow">06 / Контакты</div>
+        <h2>Давайте познакомимся</h2>
         <p class="lead">
-          Не нужно готовить техзадание — его всё равно придётся переписать после разбора. Опишите
-          своими словами, какая работа съедает время. Отвечаю сам, обычно в течение дня.
+          Если вам нужен конструктор, который закрывает весь цикл сам, — позвоните или напишите.
+          Отвечаю сам. Портфолио целиком — на ArtStation, резюме пришлю по запросу.
         </p>
-        <p class="form-note">
-          Первый разговор — 40 минут, бесплатно и без презентации. Если увижу, что задача решается
-          без меня, я так и скажу и объясню как. Это случается чаще, чем вы думаете.
-        </p>
-        <div class="direct">
-          <a href="#" data-cfg-href="telegram">→ Telegram: <span data-cfg="telegram-label">@username</span></a>
-          <a href="#" data-cfg-href="email">→ Почта: <span data-cfg="email-label">mail@example.com</span></a>
-          <a href="#" data-cfg-href="github">→ Разбор системы: <span data-cfg="github-label">github.com/…</span></a>
-        </div>
       </div>
       <div class="rv">
-        <form id="form">
-          <div class="field">
-            <label for="f-name">Как вас зовут</label>
-            <input id="f-name" name="name" required placeholder="Имя">
-          </div>
-          <div class="field">
-            <label for="f-contact">Telegram или почта</label>
-            <input id="f-contact" name="contact" required placeholder="@username или mail@company.ru">
-          </div>
-          <div class="field">
-            <label for="f-task">Что делается руками</label>
-            <textarea id="f-task" name="task" rows="5" required placeholder="Например: менеджер вручную собирает КП по прайсу и чертежу — три дня на заявку, половина заказов уходит к тем, кто ответил быстрее."></textarea>
-          </div>
-          <button type="submit" class="btn btn-1 btn-lg" style="justify-content:center">
-            Отправить <span class="arw">→</span>
-          </button>
-          <p class="form-note">
-            Никаких рассылок. Данные нужны только чтобы ответить.
-          </p>
-        </form>
-        <div id="form-done" class="form-ok" hidden></div>
+        <div class="cways">
+          <a class="cway" data-cfg-href="phone">
+            <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
+            <span class="cway-t"><small>Телефон · звонок или WhatsApp</small><b data-cfg="phone-label">+7 000 000-00-00</b></span>
+          </a>
+          <a class="cway" data-cfg-href="email">
+            <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span class="cway-t"><small>Почта</small><b data-cfg="email-label">mail@example.com</b></span>
+          </a>
+          <a class="cway" data-cfg-href="artstation" target="_blank" rel="noopener">
+            <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16h11l1.5 2.5h4L13 4h-3L4 16zm6-9l3.5 6h-7L10 7z"/></svg></span>
+            <span class="cway-t"><small>Портфолио · 143 работы</small><b data-cfg="artstation-label">ArtStation</b></span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -889,371 +515,161 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 
 <footer>
   <div class="wrap foot">
-    <p><span data-cfg="name">Имя Фамилия</span> · <span data-cfg="role">инженер-технолог</span> · <span data-cfg="city">Город</span> · 2026</p>
+    <p><span data-cfg="name">Имя</span> · <span data-cfg="role">технолог-конструктор</span> · 2026</p>
     <div class="foot-links">
-      <a href="#razbor">Разбор</a>
-      <a href="#services">Услуги</a>
-      <a href="#contact">Контакт</a>
-      <a href="#" data-cfg-href="github">GitHub</a>
+      <a href="#works">Работы</a>
+      <a href="#experience">Опыт</a>
+      <a href="#contact">Контакты</a>
+      <a href="#" data-cfg-href="artstation" target="_blank" rel="noopener">ArtStation</a>
     </div>
   </div>
 </footer>
 
+<!-- ЛАЙТБОКС -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр работы">
+  <button class="lb-close" id="lb-close" aria-label="Закрыть">✕</button>
+  <span class="lb-count" id="lb-count"></span>
+  <button class="lb-btn lb-prev" id="lb-prev" aria-label="Предыдущая">‹</button>
+  <img class="lb-img" id="lb-img" alt="">
+  <button class="lb-btn lb-next" id="lb-next" aria-label="Следующая">›</button>
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
 <script>
 /* ═══════════════════════════════════════════════════════════
-   ▼▼▼ ЕДИНСТВЕННОЕ МЕСТО, КОТОРОЕ НУЖНО ОТРЕДАКТИРОВАТЬ ▼▼▼
-   Замените значения на настоящие. Остальной файл трогать не нужно.
+   ▼▼▼ ЕДИНСТВЕННОЕ, ЧТО НУЖНО РЕДАКТИРОВАТЬ ▼▼▼
    ═══════════════════════════════════════════════════════════ */
 const CONFIG = {
-  name:      'Имя Фамилия',        // TODO 🔴 ваше имя
-  initials:  'ИФ',                 // TODO 🔴 инициалы для знака в шапке
-  role:      'инженер-технолог',   // TODO
-  city:      'Город',              // TODO
-  years:     '15',                 // TODO 🔴 РЕАЛЬНЫЙ стаж — я поставил наугад, проверьте
-  yearsWord: 'пятнадцать',         // TODO 🔴 то же прописью для текста «О себе»
-  telegram:  'username',           // TODO 🔴 без символа @
-  email:     'mail@example.com',   // TODO 🔴
-  github:    'https://github.com/', // TODO витрина POSM Engine: README + скриншоты, без кода
-
-  // Куда уходит форма. Пока пусто — форма открывает Telegram с готовым текстом.
-  // Простой вариант: заведите форму на formspree.io и вставьте сюда её адрес.
-  formEndpoint: ''
+  name:       'Жумабек Есим',
+  initials:   'ЖЕ',
+  role:       'технолог-конструктор',
+  city:       'Алматы',
+  phone:      '+7 777 577-4405',           // отображается как есть
+  phoneRaw:   '+77775774405',              // для ссылки звонка/WhatsApp (только цифры и +)
+  email:      'zhumabekyessim@gmail.com',
+  artstation: 'https://user-7854171.artstation.com/'
 };
 /* ═══════════════════════════════════════════════════════════
    ▲▲▲ НИЖЕ РЕДАКТИРОВАТЬ НЕ НУЖНО ▲▲▲
    ═══════════════════════════════════════════════════════════ */
 
-/* ─── Подстановка CONFIG в разметку ─── */
-(function applyConfig(){
-  const t = {
-    'name': CONFIG.name,
-    'initials': CONFIG.initials,
-    'role': CONFIG.role,
-    'city': CONFIG.city,
-    'years': CONFIG.years,
-    'years-inline': CONFIG.yearsWord,
-    'eyebrow': CONFIG.role.charAt(0).toUpperCase()+CONFIG.role.slice(1)+' · Автоматизация процессов',
-    'telegram-label': '@'+CONFIG.telegram,
-    'email-label': CONFIG.email,
-    'github-label': CONFIG.github.replace(/^https?:\/\//,'').replace(/\/$/,'')
-  };
-  for (const [k,v] of Object.entries(t))
-    document.querySelectorAll(`[data-cfg="${k}"]`).forEach(el => el.textContent = v);
+/* работы: thumb — превью для сетки, full — оригинал для лайтбокса */
+const WORKS = [
+  {f:'02-shelftalker', t:'Шелфтокер «Старый Мельник»', tag:'Полочный POSM · пиво',        photo:false, wide:true},
+  {f:'01-pyramid',     t:'Прикассовый дисплей «LemoBoom»', tag:'Прикасса · напитки',       photo:false, wide:false},
+  {f:'09-display',     t:'Дисплей-стойка EFES',        tag:'Концепт → конструктив',        photo:false, wide:false},
+  {f:'07-pallet',      t:'Паллетный дисплей «LemoBoom»', tag:'В торговой сети',            photo:true,  wide:true},
+  {f:'03-display',     t:'Напольный дисплей «Party Club»', tag:'Дисплей · вино',           photo:false, wide:false},
+  {f:'05-display',     t:'Дисплей «Всё в Дом»',        tag:'Реализовано в цеху',           photo:true,  wide:false},
+  {f:'04-parasite',    t:'Полочный дисплей EFES',      tag:'«Паразит» · пиво',             photo:false, wide:false},
+  {f:'10-display',     t:'Дисплей для вина',           tag:'Торговое оборудование · дерево',photo:false, wide:true},
+  {f:'08-candyrack',   t:'Стеллаж-развал',             tag:'Оборудование · дерево + металл',photo:false, wide:false},
+  {f:'06-bin',         t:'Уличная урна',               tag:'Городская мебель · металл',    photo:false, wide:false}
+];
 
-  const h = {
-    'telegram': 'https://t.me/'+CONFIG.telegram,
-    'email': 'mailto:'+CONFIG.email,
-    'github': CONFIG.github
-  };
-  for (const [k,v] of Object.entries(h))
-    document.querySelectorAll(`[data-cfg-href="${k}"]`).forEach(el => el.href = v);
+const CAPS = [
+  {n:'01', t:'Проектирование и КД', d:'Чертежи, 3D-модели, спецификации на новые изделия и модификации. Разработка узлов и сборочных единиц для производственного участка.'},
+  {n:'02', t:'Файлы для производства', d:'Подготовка под ЧПУ-фрезеровку, лазерную и плоттерную резку, широкоформатную печать. Готово к станку без ручной доводки.'},
+  {n:'03', t:'Технологическая подготовка', d:'Маршрутные и операционные карты, карты раскроя, расчёт габаритов, прочности, веса и материалоёмкости под возможности цеха.'},
+  {n:'04', t:'Формовка и 3D-печать', d:'Проектирование матриц для вакуумной формовки пластика. Подготовка файлов для 3D-печати прототипов и производственных образцов.'},
+  {n:'05', t:'3D-визуализация', d:'Фотореалистичный рендер для презентации клиенту и защиты в тендере. 3ds Max, Corona — картинка, по которой продают идею.'},
+  {n:'06', t:'Сопровождение производства', d:'Авторский надзор, проверка собираемости и технологичности вместе с макетчиками. Изделие доходит до полки таким, как задумано.'}
+];
 
-  document.title = CONFIG.name+' — '+CONFIG.role+' · Автоматизация процессов и AI-системы';
+const JOBS = [
+  {from:'Апр 2025', to:'Мар 2026', dur:'1 год', co:'TTG', role:'Дизайнер-конструктор', d:'Адаптация международных бренд- и POSM-гайдлайнов под рынок Казахстана. КД и 3D торгового оборудования и рекламных конструкций, файлы для ЧПУ, лазера, термоформовки и печати. Сопровождение производства.'},
+  {from:'Фев 2024', to:'Мар 2025', dur:'1 год 2 мес', co:'Urbantrend', role:'Инженер-конструктор', d:'КД (чертежи, 3D, спецификации) на металлическую мебель и городскую уличную мебель. Технологическая документация и карты раскроя, расчёт параметров, испытания опытных образцов, повышение технологичности.'},
+  {from:'Авг 2023', to:'Янв 2024', dur:'6 мес', co:'ТОО «Пиарика»', role:'Инженер-конструктор', d:'КД для производства торгового оборудования и рекламы из разных материалов. Просчёт материалов, консультирование исполнителей на участке.'},
+  {from:'Июн 2021', to:'Июн 2023', dur:'2 года 1 мес', co:'ТОО «Европос»', role:'Дизайнер-конструктор', d:'Проектирование торгового оборудования и рекламной продукции для серийного производства. Выпуск КД: чертежи, карты кроя, схемы присадки. Фотореалистичный рендер для презентаций клиенту.'},
+  {from:'Сен 2010', to:'Сен 2020', dur:'10 лет 1 мес', co:'ПК «Exclusive»', role:'Конструктор мебели', d:'Дизайн мебели и архитектурных форм, предпроизводственная подготовка файлов. Работа с клиентом, выезд на замер, просчёт сметной стоимости. Десять лет на одном производстве.'},
+  {from:'Авг 2008', to:'Сен 2010', dur:'2 года 2 мес', co:'РА «MBA group»', role:'Дизайнер-консультант', d:'Разработка фирменного стиля, вёрстка печатной продукции, дизайн вывесок, объёмных букв, лайтбоксов и табличек. Предпроизводственная подготовка файлов.'}
+];
+
+const SK = {
+  cad:  ['SolidWorks','SolidWorks Swood','Fusion 360','CorelDRAW'],
+  d3:   ['3ds Max','Corona Renderer','Adobe Photoshop','3D-моделирование','Текстурирование'],
+  comp: ['Разработка КД','Чтение чертежей','Авторский надзор','Производственный контроль','Проектная документация'],
+  prod: ['ЧПУ-фрезеровка','Лазерная резка','Плоттерная резка','Широкоформатная печать','Вакуумная формовка','3D-печать','Карты раскроя','Схемы присадки']
+};
+const LANGS = [
+  {l:'Казахский', lv:'родной'},
+  {l:'Русский',   lv:'C2 — свободно'},
+  {l:'Английский',lv:'B1 — средний'}
+];
+
+/* ── подстановка CONFIG ── */
+(function(){
+  const t={
+    'name':CONFIG.name,'initials':CONFIG.initials,'role':CONFIG.role,
+    'eyebrow':CONFIG.role.charAt(0).toUpperCase()+CONFIG.role.slice(1)+' · '+CONFIG.city,
+    'phone-label':CONFIG.phone,'email-label':CONFIG.email,
+    'artstation-label':CONFIG.artstation.replace(/^https?:\/\//,'').replace(/\/$/,'')
+  };
+  for(const[k,v]of Object.entries(t))document.querySelectorAll(`[data-cfg="${k}"]`).forEach(e=>e.textContent=v);
+  const h={'phone':'tel:'+CONFIG.phoneRaw,'email':'mailto:'+CONFIG.email,'artstation':CONFIG.artstation};
+  for(const[k,v]of Object.entries(h))document.querySelectorAll(`[data-cfg-href="${k}"]`).forEach(e=>e.href=v);
+  document.title=CONFIG.name+' — '+CONFIG.role+' · торговое оборудование, POSM, мебель';
 })();
 
-/* ─── Навигация: фон при скролле + мобильное меню ─── */
-const nav = document.getElementById('nav');
-const onScroll = () => nav.classList.toggle('stuck', scrollY > 20);
-addEventListener('scroll', onScroll, {passive:true}); onScroll();
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-const burger = document.getElementById('burger'), navlinks = document.getElementById('navlinks');
-burger.addEventListener('click', () => {
-  const open = navlinks.classList.toggle('open');
-  burger.setAttribute('aria-expanded', open);
-});
-navlinks.addEventListener('click', e => {
-  if (e.target.tagName === 'A') { navlinks.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
-});
+/* ── галерея ── */
+document.getElementById('gal').innerHTML = WORKS.map((w,i)=>`
+  <button class="gcard${w.wide?' wide':''}" data-i="${i}" aria-label="${esc(w.t)}">
+    <span class="gtag${w.photo?' photo':''}">${w.photo?'Фото':'3D'}</span>
+    <img src="assets/work/thumb/${w.f}.jpg" alt="${esc(w.t)}" loading="lazy">
+    <span class="gcard-info"><b>${esc(w.t)}</b><span>${esc(w.tag)}</span></span>
+  </button>`).join('');
 
-/* ─── Появление при скролле ─── */
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((en,i) => {
-    if (!en.isIntersecting) return;
-    setTimeout(() => en.target.classList.add('in'), i*70);
-    io.unobserve(en.target);
-  });
-}, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach(el => io.observe(el));
+/* ── что умею ── */
+document.getElementById('caps').innerHTML = CAPS.map(c=>`
+  <div class="cap"><div class="cap-n">${c.n}</div><h3>${esc(c.t)}</h3><p>${esc(c.d)}</p></div>`).join('');
 
-/* ═══════════════════════════════════════════════════════════
-   РАЗБОР — данные архитектур
-   Это ядро сайта: посетитель видит, что вы поняли его процесс.
-   Чтобы добавить отрасль или рутину — дополните массивы ниже.
-   ═══════════════════════════════════════════════════════════ */
-const BIZ = [
-  {id:'prod',   label:'Производство',       trig:'Заявка: ТЗ, эскиз, спецификация от клиента', sys:'1С / CAD / почта'},
-  {id:'service',label:'Услуги и бэк-офис',  trig:'Обращение: звонок, форма, мессенджер',       sys:'CRM / почта / Excel'},
-  {id:'school', label:'Онлайн-школа',       trig:'Заявка с лендинга или из Telegram',          sys:'CRM / GetCourse'},
-  {id:'agency', label:'Агентство',          trig:'Бриф от клиента',                            sys:'CRM / таск-трекер'},
-  {id:'ecom',   label:'E-commerce',         trig:'Заказ или вопрос с маркетплейса',            sys:'Маркетплейс / склад'}
-];
+/* ── опыт ── */
+document.getElementById('tl').innerHTML = JOBS.map(j=>`
+  <div class="job">
+    <div class="job-when">${j.from} — ${j.to}<b>${j.dur}</b></div>
+    <div class="job-what"><h3>${esc(j.co)}</h3><div class="job-role">${esc(j.role)}</div><p>${esc(j.d)}</p></div>
+  </div>`).join('');
 
-const RT = [
-  {id:'leads',   label:'Обработка заявок'},
-  {id:'docs',    label:'Документы и КП'},
-  {id:'reports', label:'Отчёты'},
-  {id:'support', label:'Поддержка клиентов'},
-  {id:'procure', label:'Закупки и снабжение'},
-  {id:'content', label:'Контент'}
-];
+/* ── навыки ── */
+const tagHtml=a=>a.map(s=>`<span>${esc(s)}</span>`).join('');
+document.getElementById('sk-cad').innerHTML=tagHtml(SK.cad);
+document.getElementById('sk-3d').innerHTML=tagHtml(SK.d3);
+document.getElementById('sk-comp').innerHTML=tagHtml(SK.comp);
+document.getElementById('sk-prod').innerHTML=tagHtml(SK.prod);
+document.getElementById('langs').innerHTML=LANGS.map(l=>`<div class="lang"><b>${esc(l.l)}</b><span>${esc(l.lv)}</span></div>`).join('');
 
-// Типы узлов: trigger | step | ai | check | human | action
-const ARCH = {
-  leads: {
-    title: 'Обработка входящей заявки',
-    nodes: b => [
-      {t:'trigger', tag:'Вход',      h:'{TRIG}',                     p:'Единая точка приёма. Сейчас заявки живут в трёх местах — это первое, что чиним.'},
-      {t:'step',    tag:'Данные',    h:'Нормализация',               p:'Разные форматы приводятся к одной структуре: что, сколько, когда, для кого.'},
-      {t:'ai',      tag:'AI',        h:'Извлечение сути',            p:'Модель вытаскивает из свободного текста и вложений параметры: объём, сроки, требования.'},
-      {t:'check',   tag:'Проверка',  h:'Сверка с базой',             p:'Прайс, остатки, загрузка, типовые ограничения. Здесь ловится 80% будущих ошибок.'},
-      {t:'step',    tag:'Расчёт',    h:'Черновик ответа и цены',     p:'Собирается предварительный расчёт по вашим правилам, а не по догадке модели.'},
-      {t:'human',   tag:'Человек',   h:'Подтверждение менеджером',   p:'Обязательный шаг. Менеджер видит расчёт и источники, правит и отпускает. Автоматизация без этого шага живёт до первой ошибки.'},
-      {t:'action',  tag:'Действие',  h:'Отправка + запись в {SYS}',  p:'Ответ клиенту и след в системе. Ничего не теряется, всё видно в отчёте.'}
-    ],
-    removes: ['Ручное перекладывание заявок из почты и мессенджеров','Повторный ввод одних и тех же данных в CRM','Расчёт «на глаз», когда прайс поменялся неделю назад','Заявки, найденные через три дня во вкладке «Спам»']
-  },
-  docs: {
-    title: 'Документы: КП, договоры, спецификации',
-    nodes: b => [
-      {t:'trigger', tag:'Вход',      h:'Данные проекта',             p:'Берутся из уже существующих источников, а не вводятся заново.'},
-      {t:'step',    tag:'Правила',   h:'Шаблон и ваши правила',      p:'Ваша структура, ваши формулировки, ваши юридические ограничения.'},
-      {t:'ai',      tag:'AI',        h:'Сборка текста',              p:'Модель формулирует переменную часть — описание работ, условия — в вашем стиле.'},
-      {t:'check',   tag:'Проверка',  h:'Контроль обязательных полей',p:'Ни один документ не уходит без реквизитов, сроков и подписанта. Проверка формальная, не «на усмотрение модели».'},
-      {t:'step',    tag:'Вывод',     h:'Генерация PDF / DOCX',       p:'Готовый файл в вашем оформлении, с нумерацией и версией.'},
-      {t:'human',   tag:'Человек',   h:'Утверждение',                p:'Вы или ответственный видите итог до отправки. Всегда.'},
-      {t:'action',  tag:'Действие',  h:'Отправка + архив в {SYS}',   p:'Документ уходит клиенту и ложится в архив с историей версий.'}
-    ],
-    removes: ['Копирование прошлого КП и правка «по месту» — с чужой фамилией внутри','Три часа на документ, который отличается от прошлого на 10%','Разные версии договора у менеджеров','Поиск «а что мы им отправляли в марте»']
-  },
-  reports: {
-    title: 'Регулярная отчётность',
-    nodes: b => [
-      {t:'trigger', tag:'Вход',      h:'Расписание',                 p:'Отчёт собирается сам, а не когда вспомнили. Каждое утро либо каждый понедельник.'},
-      {t:'step',    tag:'Сбор',      h:'Забор из источников',        p:'{SYS}, таблицы, склад, реклама, банк — всё, что у вас есть, в одном месте.'},
-      {t:'step',    tag:'Данные',    h:'Сведение и сверка',          p:'Расхождения между источниками не прячутся, а показываются явно.'},
-      {t:'ai',      tag:'AI',        h:'Интерпретация отклонений',   p:'Модель не считает цифры — она объясняет, что изменилось и на что смотреть. Считает арифметика, а не нейросеть.'},
-      {t:'check',   tag:'Проверка',  h:'Пороги и аномалии',          p:'Если цифра выходит за границы — отчёт помечает это, а не прячет в строке 47.'},
-      {t:'action',  tag:'Действие',  h:'Отчёт в Telegram и почту',   p:'Короткая сводка там, где вы её прочитаете. Детали — по ссылке.'}
-    ],
-    removes: ['Полдня на сбор цифр из пяти систем','Отчёт, который читают через неделю после того, как он устарел','Ошибки копипаста, из-за которых принимаются решения','Вопрос «а почему у нас две разные цифры выручки»']
-  },
-  support: {
-    title: 'Поддержка клиентов',
-    nodes: b => [
-      {t:'trigger', tag:'Вход',      h:'Вопрос клиента',             p:'Все каналы сводятся в один поток.'},
-      {t:'step',    tag:'Знания',    h:'Поиск по вашей базе (RAG)',  p:'Ответы строятся только на ваших документах, а не на том, что модель знает о мире.'},
-      {t:'ai',      tag:'AI',        h:'Ответ со ссылками',          p:'Каждое утверждение снабжено источником. Ответ без источника не отправляется.'},
-      {t:'check',   tag:'Проверка',  h:'Оценка уверенности',         p:'Модель обязана признать, что не знает. Это настраивается, и это важнее скорости.'},
-      {t:'human',   tag:'Человек',   h:'Эскалация оператору',        p:'Всё, в чём система не уверена, уходит человеку. Клиент не должен спорить с ботом.'},
-      {t:'action',  tag:'Действие',  h:'Ответ + пополнение базы',    p:'Ответ оператора возвращается в базу знаний. Система умнеет от собственной работы.'}
-    ],
-    removes: ['Один и тот же ответ на один и тот же вопрос по двести раз в месяц','Клиенты, ждущие ответа до утра','Знания, живущие в голове одного сотрудника','Бот, который бесит клиента и которого приходится отключать']
-  },
-  procure: {
-    title: 'Закупки и снабжение',
-    nodes: b => [
-      {t:'trigger', tag:'Вход',      h:'Потребность: заказ или остаток',p:'Триггер — заказ в работе или падение остатка ниже нормы.'},
-      {t:'step',    tag:'Расчёт',    h:'Потребность по нормам',      p:'Считается из спецификации и норм расхода, а не «на глаз кладовщика».'},
-      {t:'step',    tag:'Рынок',     h:'Сбор прайсов поставщиков',   p:'Актуальные цены и сроки собираются автоматически, а не запрашиваются письмами.'},
-      {t:'ai',      tag:'AI',        h:'Сравнение условий',          p:'Цена, срок, минимальная партия, история срывов — в одну таблицу с рекомендацией.'},
-      {t:'human',   tag:'Человек',   h:'Утверждение снабженцем',     p:'Решение остаётся за человеком. Система готовит выбор, а не делает его.'},
-      {t:'action',  tag:'Действие',  h:'Заказ + отслеживание',       p:'Заказ уходит, срок ставится на контроль, просрочка сама напомнит о себе.'}
-    ],
-    removes: ['Закупка «как в прошлый раз», когда цены изменились','Срыв сроков, обнаруженный в день монтажа','Переплата, потому что сравнивать было некогда','Остатки, о которых узнают, когда они кончились']
-  },
-  content: {
-    title: 'Производство контента',
-    nodes: b => [
-      {t:'trigger', tag:'Вход',      h:'Бриф или источник',          p:'Тема, факты, ваш материал. Не «придумай что-нибудь».'},
-      {t:'step',    tag:'Стиль',     h:'Ваш стиль как правило',      p:'Модель работает по вашим прошлым текстам, а не по усреднённому интернету. Разница видна сразу.'},
-      {t:'ai',      tag:'AI',        h:'Черновик',                   p:'Именно черновик. Пятьдесят процентов работы, а не сто — и это честная цифра.'},
-      {t:'check',   tag:'Проверка',  h:'Факты и тон',                p:'Сверка утверждений с источником. Всё, что модель придумала, помечается.'},
-      {t:'human',   tag:'Человек',   h:'Правка редактором',          p:'Финальный текст всегда проходит через человека. Иначе через месяц вас будет не отличить от всех остальных.'},
-      {t:'action',  tag:'Действие',  h:'Публикация по расписанию',   p:'Выход по календарю, сбор реакции обратно в систему.'}
-    ],
-    removes: ['Чистый лист каждое утро','Тексты, написанные «когда будет время», то есть никогда','Разнобой в тоне между авторами','Час на пост, который читают полторы минуты']
-  }
-};
+/* ── навигация ── */
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('stuck',scrollY>20);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const burger=document.getElementById('burger'),navlinks=document.getElementById('navlinks');
+burger.addEventListener('click',()=>{const o=navlinks.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+navlinks.addEventListener('click',e=>{if(e.target.tagName==='A'){navlinks.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
 
-/* ─── Отрисовка чипов ─── */
-let selBiz = null, selRt = null;
-const cBiz = document.getElementById('chips-biz'), cRt = document.getElementById('chips-rt');
+/* ── появление ── */
+const io=new IntersectionObserver((ents)=>{ents.forEach((en,i)=>{if(!en.isIntersecting)return;setTimeout(()=>en.target.classList.add('in'),i*60);io.unobserve(en.target)})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 
-const renderChips = (host, items, get, set) => {
-  host.innerHTML = '';
-  items.forEach(it => {
-    const b = document.createElement('button');
-    b.className = 'chip'; b.type = 'button'; b.textContent = it.label;
-    b.setAttribute('aria-pressed', 'false');
-    b.addEventListener('click', () => {
-      set(get() === it.id ? null : it.id);
-      [...host.children].forEach(c => c.setAttribute('aria-pressed', String(c === b && get() === it.id)));
-      render();
-    });
-    host.appendChild(b);
-  });
-};
-renderChips(cBiz, BIZ, () => selBiz, v => selBiz = v);
-renderChips(cRt,  RT,  () => selRt,  v => selRt  = v);
-
-/* ─── Сборка схемы ─── */
-const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-
-function render(){
-  const out = document.getElementById('td-out');
-  if (!selBiz || !selRt){
-    out.innerHTML = `<div class="td-empty">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-        <path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/>
-      </svg>
-      <span>Выберите два пункта выше — схема соберётся здесь</span></div>`;
-    return;
-  }
-  const b = BIZ.find(x => x.id === selBiz);
-  const a = ARCH[selRt];
-  const fill = s => s.replace('{TRIG}', b.trig).replace('{SYS}', b.sys);
-
-  const nodes = a.nodes(b).map((n,i) => `
-    <div class="node" data-t="${n.t}" style="animation-delay:${i*80}ms">
-      <span class="node-dot"></span>
-      <div class="node-h"><b>${esc(fill(n.h))}</b><span class="tag">${esc(n.tag)}</span></div>
-      <p>${esc(fill(n.p))}</p>
-    </div>`).join('');
-
-  out.innerHTML = `
-    <div class="td-title">
-      <h3>${esc(a.title)}</h3>
-      <span>${esc(b.label)} · черновая архитектура</span>
-    </div>
-    <div class="td-grid">
-      <div class="flow">${nodes}</div>
-      <div class="td-side">
-        <div class="td-panel">
-          <h4>Что уходит из работы людей</h4>
-          <ul>${a.removes.map(r => `<li>${esc(r)}</li>`).join('')}</ul>
-        </div>
-        <div class="td-panel">
-          <h4>Честная оговорка</h4>
-          <p class="td-note" style="margin:0;padding:0;border:0">
-            Это схема, а не проект. Настоящая архитектура отличается всегда — потому что в вашем
-            процессе есть исключения, о которых не пишут в регламенте. Именно за ними я и прихожу
-            смотреть. Сроки и экономию я называю после разбора, а не до: цифра, названная сейчас,
-            была бы выдумана.
-          </p>
-        </div>
-        <a href="#contact" class="btn btn-1" style="justify-content:center">
-          Разобрать мой процесс <span class="arw">→</span>
-        </a>
-      </div>
-    </div>`;
+/* ── лайтбокс ── */
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),lbCount=document.getElementById('lb-count');
+let cur=0;
+function openLB(i){cur=i;show();lb.classList.add('open');document.body.style.overflow='hidden'}
+function closeLB(){lb.classList.remove('open');document.body.style.overflow=''}
+function show(){
+  const w=WORKS[cur];
+  lbImg.src='assets/work/'+w.f+'.jpg';lbImg.alt=w.t;
+  lbCap.innerHTML=`<b>${esc(w.t)}</b><span>${esc(w.tag)}</span>`;
+  lbCount.textContent=(cur+1)+' / '+WORKS.length;
 }
-
-/* ═══ Услуги ═══ */
-const SERVICES = [
-  {
-    t:'Разбор процесса',
-    sub:'С этого начинается почти всё',
-    d:'Прихожу и смотрю, как работа делается на самом деле — не по регламенту. Показываю карту процесса с точками потери времени и источниками ошибок. На выходе вы знаете, что автоматизировать, что чинить руками, а что не трогать вообще.',
-    tags:['Наблюдение','Карта процесса','План с приоритетами'],
-    p:'1–2 недели'
-  },
-  {
-    t:'Сборка системы',
-    sub:'Один процесс, до продакшена',
-    d:'Беру один участок и довожу его до рабочего состояния. Не «пилот на посмотреть», а то, чем люди пользуются в понедельник. С логами, с обработкой ошибок, с человеком в контуре и с планом отката.',
-    tags:['n8n','LLM-интеграции','Telegram','API'],
-    p:'3–6 недель'
-  },
-  {
-    t:'AI-агенты и ассистенты',
-    sub:'Там, где нужно решение, а не сценарий',
-    d:'Агент нужен реже, чем принято думать — обычно хватает сценария. Но если задача требует рассуждения над вашими данными, строю агента с ограниченными правами, с проверяемыми источниками и с обязательной эскалацией на человека.',
-    tags:['RAG','GPT / Claude','База знаний','Эскалация'],
-    p:'4–8 недель'
-  },
-  {
-    t:'Инженерная автоматизация',
-    sub:'Редкая специализация. Моя основная',
-    d:'CAD, спецификации, раскрой, номенклатура, подготовка производства. То, что делает конструктор руками тысячу раз. Здесь я работаю не как автоматизатор, а как коллега, который пятнадцать лет делал ровно эту работу.',
-    tags:['Fusion 360','Python','CorelDRAW','BOM'],
-    p:'от 4 недель'
-  }
-];
-document.getElementById('svc-list').innerHTML = SERVICES.map((s,i) => `
-  <div class="svc-row rv">
-    <div class="svc-n">0${i+1}</div>
-    <div class="svc-t"><h3>${s.t}</h3><p>${s.sub}</p></div>
-    <div class="svc-d"><p>${s.d}</p><div class="svc-tags">${s.tags.map(t=>`<span>${t}</span>`).join('')}</div></div>
-    <div class="svc-p">${s.p}</div>
-  </div>`).join('');
-
-/* ═══ Стек ═══ */
-document.getElementById('stack-list').innerHTML = [
-  'n8n','Make','Python','GPT','Claude','RAG','Telegram Bot API','Whisper',
-  'PostgreSQL','Google Sheets','1С (обмен)','REST / Webhooks','Fusion 360 API',
-  'CorelDRAW VBA','Supabase','Docker'
-].map(s => `<span>${s}</span>`).join('');
-
-/* ═══ FAQ ═══ */
-const FAQ = [
-  {q:'Сколько это стоит?', a:'Разбор процесса — фиксированная сумма, называю сразу после первого разговора. Сборка системы считается от объёма и обсуждается только после разбора. Я не называю цену до того, как увидел процесс: любая такая цифра — либо страховка от собственного незнания, либо обман. Ориентир по порядку величины могу дать на первом созвоне.'},
-  {q:'У нас уникальный процесс, его нельзя автоматизировать', a:'Процесс целиком — почти никогда. Отдельные шаги в нём — почти всегда. Я и не предлагаю автоматизировать всё: я предлагаю убрать те шаги, которые не требуют решения человека. Обычно их больше половины, и именно они съедают время.'},
-  {q:'Мы уже пробовали, не взлетело', a:'Это самая частая фраза, которую я слышу, и обычно причина одна из трёх: автоматизировали регламент вместо реальной работы, выкинули человека из контура, или систему стало невозможно поддержать без автора. Если расскажете, что именно было, я почти наверняка назову, какая из трёх.'},
-  {q:'Данные клиентов нельзя отдавать в GPT', a:'Правильное опасение, и его нужно решать на уровне архитектуры, а не обещаний. Варианты есть: обезличивание до отправки, локальные модели для чувствительных участков, обработка на вашей стороне и отправка наружу только того, что не жалко. Это обсуждается на разборе, до того как что-то построено, а не после.'},
-  {q:'Что будет, если вы пропадёте?', a:'Все доступы изначально ваши — я работаю в вашем контуре, а не на своём аккаунте. К каждой системе идёт документация и обученный человек с вашей стороны. Незаменимость подрядчика — это дефект, а не преимущество, и я специально строю так, чтобы меня можно было заменить.'},
-  {q:'Вы сами пишете код?', a:'Я инженер, а не разработчик. Я проектирую систему и управляю тем, кто её собирает — раньше это были подрядчики, сейчас AI под моим контролем. Архитектуру всё равно должен спроектировать человек, который понимает процесс, и вся ценность именно здесь. Работающая система, которую можно посмотреть, — в разделе «Доказательство».'},
-  {q:'Сколько времени нужно от меня?', a:'На разборе — много: несколько часов вашего времени и доступ к людям, которые делают работу руками. Без этого разбор бессмысленен. Дальше — примерно час в неделю на встречу. Если у вас нет этих часов, честнее не начинать: проекты, где заказчик недоступен, срываются в 100% случаев.'},
-  {q:'Работаете удалённо?', a:'Сборка — да. Разбор производственного процесса — нет: смотреть, как работают руками, по зуму нельзя. Для офисных процессов удалённый разбор возможен, но всё равно с записью экрана и разговорами с исполнителями, а не по презентации от руководства.'}
-];
-document.getElementById('faq-list').innerHTML = FAQ.map((f,i) => `
-  <div class="q" data-open="0">
-    <button class="q-btn" aria-expanded="false" aria-controls="a${i}">
-      <span>${f.q}</span><span class="q-ic"></span>
-    </button>
-    <div class="q-a" id="a${i}"><div class="q-a-in">${f.a}</div></div>
-  </div>`).join('');
-
-document.getElementById('faq-list').addEventListener('click', e => {
-  const btn = e.target.closest('.q-btn'); if (!btn) return;
-  const q = btn.parentElement, a = q.querySelector('.q-a'), open = q.dataset.open === '1';
-  q.dataset.open = open ? '0' : '1';
-  btn.setAttribute('aria-expanded', String(!open));
-  a.style.height = open ? '0px' : a.scrollHeight + 'px';
-});
-addEventListener('resize', () => {
-  document.querySelectorAll('.q[data-open="1"] .q-a').forEach(a => a.style.height = a.scrollHeight + 'px');
-});
-
-/* ═══ Форма ═══ */
-const form = document.getElementById('form'), done = document.getElementById('form-done');
-form.addEventListener('submit', async e => {
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(form));
-
-  // Без настроенного эндпоинта — открываем Telegram с готовым текстом.
-  if (!CONFIG.formEndpoint){
-    const text = `Здравствуйте! Меня зовут ${data.name}.\nСвязь: ${data.contact}\n\nЧто делается руками:\n${data.task}`;
-    window.open('https://t.me/'+CONFIG.telegram+'?text='+encodeURIComponent(text), '_blank');
-    return;
-  }
-  const btn = form.querySelector('button');
-  btn.disabled = true; btn.textContent = 'Отправляю…';
-  try{
-    const r = await fetch(CONFIG.formEndpoint, {
-      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify(data)
-    });
-    if (!r.ok) throw new Error(r.status);
-    form.hidden = true; done.hidden = false;
-    done.textContent = `${data.name}, письмо дошло. Отвечу сам, обычно в течение дня.`;
-  }catch(err){
-    btn.disabled = false; btn.innerHTML = 'Отправить <span class="arw">→</span>';
-    done.hidden = false;
-    done.style.borderColor = 'rgba(255,90,31,.4)';
-    done.style.background = 'rgba(255,90,31,.08)';
-    done.innerHTML = `Не отправилось — видимо, что-то со связью. Напишите напрямую: <a href="https://t.me/${CONFIG.telegram}" style="color:var(--accent)">@${CONFIG.telegram}</a>`;
-  }
-});
+const step=d=>{cur=(cur+d+WORKS.length)%WORKS.length;show()};
+document.getElementById('gal').addEventListener('click',e=>{const b=e.target.closest('.gcard');if(b)openLB(+b.dataset.i)});
+document.getElementById('lb-close').addEventListener('click',closeLB);
+document.getElementById('lb-prev').addEventListener('click',()=>step(-1));
+document.getElementById('lb-next').addEventListener('click',()=>step(1));
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
 </script>
 </body>
 </html>
