@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Жумабек Есим — технолог-конструктор · торговое оборудование, POSM, мебель</title>
-<meta name="description" content="Технолог-конструктор, 16 лет опыта. Проектирую торговое оборудование, POSM и мебель — от эскиза до готового изделия на полке: чертежи, 3D, файлы для ЧПУ, контроль на производстве.">
+<title>Жумабек Есим — технолог-конструктор торгового оборудования, POSM и мебели</title>
+<meta name="description" content="Технолог-конструктор торгового оборудования, POSM и мебели. 16 лет опыта в Алматы: конструкторская документация, 3D-модели, файлы для ЧПУ, контроль на производстве. 145 проектов в портфолио.">
 <meta name="theme-color" content="#0c0d10">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Жумабек Есим — технолог-конструктор">
-<meta property="og:description" content="16 лет проектирую торговое оборудование, POSM и мебель. От эскиза до полки в магазине.">
+<meta property="og:title" content="Жумабек Есим — технолог-конструктор торгового оборудования, POSM и мебели">
+<meta property="og:description" content="16 лет опыта в Алматы. Конструкторская документация, 3D-модели, файлы для ЧПУ, контроль на производстве. 145 проектов в портфолио.">
 <meta property="og:locale" content="ru_RU">
 <link rel="canonical" href="https://zhumabekyessim-lang.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
   "@type": "Person",
   "name": "Жумабек Есим",
   "jobTitle": "Технолог-конструктор",
-  "description": "Технолог-конструктор с 16-летним опытом проектирования торгового оборудования, POSM-материалов и мебели: от эскиза и 3D-модели до конструкторской документации, файлов для ЧПУ и контроля на производстве.",
+  "description": "Технолог-конструктор торгового оборудования, POSM и мебели. 16 лет опыта в Алматы: конструкторская документация, 3D-модели, файлы для ЧПУ, контроль на производстве.",
   "url": "https://zhumabekyessim-lang.github.io/",
   "knowsAbout": ["Конструирование торгового оборудования", "POSM", "Технологическая подготовка производства", "SolidWorks", "Fusion 360", "3ds Max", "Вакуумная формовка", "ЧПУ-фрезеровка", "Автоматизация проектирования"]
 }
@@ -134,6 +134,10 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .hero-media{position:relative}
 .hero-frame{position:relative;border:1px solid var(--line-2);border-radius:var(--r3);overflow:hidden;background:var(--bg-1);aspect-ratio:1/1;max-width:480px;margin-left:auto;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
 .hero-frame img{width:100%;height:100%;object-fit:cover}
+.hero-photo-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--fg-3);text-align:center;background:
+  repeating-linear-gradient(135deg,var(--bg-2) 0 2px,transparent 2px 18px)}
+.hero-photo-ph svg{opacity:.55}
+.hero-photo-ph span{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;max-width:16ch}
 .hero-corner{position:absolute;width:14px;height:14px;z-index:2}
 .hero-corner.tl{top:10px;left:10px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)}
 .hero-corner.br{bottom:10px;right:10px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)}
@@ -317,10 +321,10 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
     <div class="hero-grid">
       <div>
         <div class="eyebrow" data-cfg="eyebrow">Технолог-конструктор · Алматы</div>
-        <h1 class="rv">От эскиза до <span class="hl">полки в магазине</span></h1>
+        <h1 class="rv">Технолог-конструктор торгового оборудования, <span class="hl">POSM</span> и мебели</h1>
         <p class="hero-sub rv">
-          16 лет проектирую торговое оборудование, POSM и мебель — и довожу до готового изделия:
-          чертежи, 3D, файлы для станка, контроль на производстве.
+          16 лет опыта в Алматы. Разрабатываю конструкторскую документацию, 3D-модели и файлы
+          для ЧПУ, контролирую сборку на производстве.
         </p>
         <div class="hero-cta rv">
           <a href="#works" class="btn btn-1 btn-lg">Смотреть работы <span class="arw">→</span></a>
@@ -335,7 +339,13 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
       <div class="hero-media rv">
         <div class="hero-frame">
           <span class="hero-corner tl"></span><span class="hero-corner br"></span>
-          <img src="assets/work/covers/138.webp" alt="Шелфтокер для торгового зала — 3D-визуализация" width="1080" height="1080">
+          <!-- Плейсхолдер под личное фото. Чтобы поставить своё —
+               замените блок .hero-photo-ph ниже на:
+               <img src="assets/portrait.webp" alt="Жумабек Есим" width="1080" height="1080"> -->
+          <div class="hero-photo-ph">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+            <span>Место под вашу фотографию</span>
+          </div>
         </div>
         <div class="hero-chip">
           <b>145</b><span>завершённых проектов</span>
@@ -600,7 +610,7 @@ const LANGS = [
   for(const[k,v]of Object.entries(t))document.querySelectorAll(`[data-cfg="${k}"]`).forEach(e=>e.textContent=v);
   const h={'phone':'tel:'+CONFIG.phoneRaw,'email':'mailto:'+CONFIG.email};
   for(const[k,v]of Object.entries(h))document.querySelectorAll(`[data-cfg-href="${k}"]`).forEach(e=>e.href=v);
-  document.title=CONFIG.name+' — '+CONFIG.role+' · торговое оборудование, POSM, мебель';
+  document.title=CONFIG.name+' — '+CONFIG.role+' торгового оборудования, POSM и мебели';
 })();
 
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
