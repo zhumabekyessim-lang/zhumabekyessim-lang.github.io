@@ -120,7 +120,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .hstat span{font-size:13px;color:var(--fg-3);line-height:1.35;display:block;max-width:16ch}
 /* featured image справа */
 .hero-media{position:relative}
-.hero-frame{position:relative;border:1px solid var(--line-2);border-radius:var(--r3);overflow:hidden;background:var(--bg-1);aspect-ratio:4/3;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+.hero-frame{position:relative;border:1px solid var(--line-2);border-radius:var(--r3);overflow:hidden;background:var(--bg-1);aspect-ratio:1/1;max-width:480px;margin-left:auto;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
 .hero-frame img{width:100%;height:100%;object-fit:cover}
 .hero-corner{position:absolute;width:14px;height:14px;z-index:2}
 .hero-corner.tl{top:10px;left:10px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)}
@@ -129,19 +129,17 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .hero-chip b{font-family:var(--mono);font-size:22px;color:var(--accent);letter-spacing:-.02em}
 .hero-chip span{font-size:12.5px;color:var(--fg-2);line-height:1.3;max-width:14ch}
 
-/* ── галерея работ ── */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
-.gcard{position:relative;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;background:var(--bg-1);aspect-ratio:4/3;transition:border-color var(--t),transform var(--t)}
-.gcard.wide{grid-column:span 2;aspect-ratio:16/9}
-.gcard img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow) var(--ease),opacity var(--t)}
-.gcard:hover{border-color:var(--line-2);transform:translateY(-2px)}
-.gcard:hover img{transform:scale(1.045)}
-.gcard-info{position:absolute;inset:auto 0 0;padding:var(--s6) var(--s4) var(--s4);background:linear-gradient(transparent,rgba(8,9,11,.9) 68%);opacity:0;transform:translateY(6px);transition:opacity var(--t),transform var(--t)}
+/* ── галерея работ ──
+   Квадратные авторские обложки с ArtStation 1:1 в квадратных ячейках —
+   ничего не обрезается и не растягивается. Полное изображение — в лайтбоксе. */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:var(--s3)}
+.gcard{position:relative;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;background:var(--bg-1);aspect-ratio:1/1;transition:border-color var(--t),transform var(--t);padding:0}
+.gcard img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow) var(--ease)}
+.gcard:hover{border-color:var(--accent);transform:translateY(-2px);z-index:2}
+.gcard:hover img{transform:scale(1.05)}
+.gcard-info{position:absolute;inset:auto 0 0;padding:var(--s5) var(--s3) var(--s3);background:linear-gradient(transparent,rgba(8,9,11,.88) 72%);opacity:0;transform:translateY(6px);transition:opacity var(--t),transform var(--t);pointer-events:none;text-align:left}
 .gcard:hover .gcard-info,.gcard:focus-visible .gcard-info{opacity:1;transform:none}
-.gcard-info b{display:block;font-size:15px;font-weight:500;letter-spacing:-.02em;margin-bottom:3px}
-.gcard-info span{font-family:var(--mono);font-size:11.5px;color:var(--fg-2);letter-spacing:.02em}
-.gtag{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:100px;background:rgba(12,13,16,.72);backdrop-filter:blur(6px);border:1px solid var(--line-2);color:var(--fg-2)}
-.gtag.photo{color:#8fe0a8;border-color:rgba(95,179,122,.4);background:rgba(20,40,28,.7)}
+.gcard-info b{display:block;font-size:13px;font-weight:500;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .gal-more{display:flex;justify-content:center;margin-top:var(--s7)}
 
 /* ── что умею (capabilities) ── */
@@ -220,6 +218,8 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 .lb-cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:var(--fg-2);font-size:14.5px}
 .lb-cap b{color:var(--fg);font-weight:500}
 .lb-cap span{font-family:var(--mono);font-size:12px;color:var(--fg-3);display:block;margin-top:4px}
+.lb-cap a{color:var(--accent)}
+.lb-cap a:hover{text-decoration:underline}
 .lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(28,31,36,.8);border:1px solid var(--line-2);color:var(--fg);font-size:22px;display:grid;place-items:center;transition:background var(--t-fast),border-color var(--t-fast)}
 .lb-btn:hover{background:var(--bg-2);border-color:var(--accent)}
 .lb-prev{left:20px}.lb-next{right:20px}
@@ -235,8 +235,6 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 @media(max-width:1000px){
   .hero-grid{grid-template-columns:1fr;gap:var(--s7)}
   .hero-media{max-width:520px}
-  .gal{grid-template-columns:repeat(2,1fr)}
-  .gcard.wide{grid-column:span 2}
   .caps{grid-template-columns:repeat(2,1fr)}
   .auto-grid{grid-template-columns:1fr;gap:var(--s6)}
   .skills{grid-template-columns:1fr}
@@ -259,13 +257,13 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   .hero{padding:112px 0 var(--s9)}
   .hero-cta .btn{flex:1;justify-content:center}
   .hero-stats{gap:var(--s5)}
-  .gal{grid-template-columns:1fr}
-  .gcard,.gcard.wide{grid-column:auto;aspect-ratio:4/3}
+  /* обложки квадратные — на телефоне 3 плотные колонки, как на ArtStation */
+  .gal{grid-template-columns:repeat(3,1fr);gap:6px}
+  .gcard{border-radius:var(--r1)}
   .caps{grid-template-columns:1fr}
   .auto-stats{grid-template-columns:1fr}
   .auto{padding:var(--s6)}
   .lb-prev{left:8px}.lb-next{right:8px}
-  .gcard-info{opacity:1;transform:none;background:linear-gradient(transparent,rgba(8,9,11,.82) 60%)}
 }
 @media(max-width:430px){.brand small{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
@@ -325,7 +323,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
       <div class="hero-media rv">
         <div class="hero-frame">
           <span class="hero-corner tl"></span><span class="hero-corner br"></span>
-          <img src="assets/work/02-shelftalker.jpg" alt="Шелфтокер для торгового зала — 3D-визуализация" width="1600" height="1002">
+          <img src="assets/work/covers/138.webp" alt="Шелфтокер для торгового зала — 3D-визуализация" width="460" height="460">
         </div>
         <div class="hero-chip">
           <b>143</b><span>работы на ArtStation</span>
@@ -342,14 +340,15 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
       <div class="eyebrow">01 / Работы</div>
       <h2>Что стоит в магазинах</h2>
       <p class="lead" style="margin-top:24px">
-        Торговое оборудование, POSM и городская мебель для реальных брендов. Часть — рендеры на этапе
-        проектирования, часть — фото уже с производства и из торговых залов. Нажмите, чтобы увеличить.
+        Все 143 проекта: торговое оборудование, POSM, городская мебель и отделка магазинов.
+        Часть — рендеры на этапе проектирования, часть — фото с производства и из торговых залов.
+        Нажмите на любую работу, чтобы посмотреть целиком.
       </p>
     </div>
     <div class="gal rv" id="gal"></div>
     <div class="gal-more rv">
       <a href="#" data-cfg-href="artstation" target="_blank" rel="noopener" class="btn btn-2 btn-lg">
-        Все 143 работы на ArtStation <span class="arw">→</span>
+        Профиль на ArtStation <span class="arw">→</span>
       </a>
     </div>
   </div>
@@ -553,19 +552,10 @@ const CONFIG = {
    ▲▲▲ НИЖЕ РЕДАКТИРОВАТЬ НЕ НУЖНО ▲▲▲
    ═══════════════════════════════════════════════════════════ */
 
-/* работы: thumb — превью для сетки, full — оригинал для лайтбокса */
-const WORKS = [
-  {f:'02-shelftalker', t:'Шелфтокер «Старый Мельник»', tag:'Полочный POSM · пиво',        photo:false, wide:true},
-  {f:'01-pyramid',     t:'Прикассовый дисплей «LemoBoom»', tag:'Прикасса · напитки',       photo:false, wide:false},
-  {f:'09-display',     t:'Дисплей-стойка EFES',        tag:'Концепт → конструктив',        photo:false, wide:false},
-  {f:'07-pallet',      t:'Паллетный дисплей «LemoBoom»', tag:'В торговой сети',            photo:true,  wide:true},
-  {f:'03-display',     t:'Напольный дисплей «Party Club»', tag:'Дисплей · вино',           photo:false, wide:false},
-  {f:'05-display',     t:'Дисплей «Всё в Дом»',        tag:'Реализовано в цеху',           photo:true,  wide:false},
-  {f:'04-parasite',    t:'Полочный дисплей EFES',      tag:'«Паразит» · пиво',             photo:false, wide:false},
-  {f:'10-display',     t:'Дисплей для вина',           tag:'Торговое оборудование · дерево',photo:false, wide:true},
-  {f:'08-candyrack',   t:'Стеллаж-развал',             tag:'Оборудование · дерево + металл',photo:false, wide:false},
-  {f:'06-bin',         t:'Уличная урна',               tag:'Городская мебель · металл',    photo:false, wide:false}
-];
+/* Все 143 работы с ArtStation: [номер файла, название, код работы на ArtStation].
+   Сетка — авторские квадратные обложки assets/work/covers/NNN.webp,
+   лайтбокс — полное изображение assets/work/full/NNN.webp. */
+const WORKS=[['001','Арка','WXql1G'],['002','Shop in shop','P664bL'],['003','Изготовление мебели и рекламы для магазина разливных напитков','bg5D8m'],['004','Изготовление мебели и рекламы для магазина здорового питания','QKnRNl'],['005','Паллета','zxGyRm'],['006','Паллета','a030r8'],['007','Барная стойка','XJzgJa'],['008','Изготовление мебели и рекламы для магазина разливных напитков','V22LxZ'],['009','Паллета','3E4mAB'],['010','Паллета','y4k9K8'],['011','Trade Island','3EqlNE'],['012','БАРНАЯ СТОЙКА','JrrE6Z'],['013','Паллета','lGx3Go'],['014','Паллета','6LbnwW'],['015','Торговый островок','vbbEDE'],['016','BAR COUNTER','OvmqLe'],['017','Паллета','4N8wll'],['018','Паллета','LR8gEP'],['019','Trade Island','qeRmbD'],['020','Торговый островок','98NRPa'],['021','Паллета','xDZvq2'],['022','Дисплей','nJygQr'],['023','BAR COUNTER','L4e5qR'],['024','Trade Island','Bk3odD'],['025','Торец','x34v8O'],['026','Торец','y4xLn3'],['027','Торговый островок','V2kJNX'],['028','Торговый островок','qeRmbn'],['029','Торец','0l3Yzy'],['030','Торец','P6em61'],['031','НЕИЛ БАР','L4eRJ0'],['032','Изготовление мебели и рекламы для магазина разливных напитков','6LLd6w'],['033','Торец','OvmyG6'],['034','Торец','nJJv2o'],['035','Изготовление мебели и рекламы для СТО','6Lbn60'],['036','Мебель для салона красоты','QKKWYL'],['037','Торец','xDygY2'],['038','Торец','PXkRg3'],['039','Мебель для салона красоты','oJJZok'],['040','РЕСЕПШЕН','eRRQo6'],['041','Арка с полками','L49Env'],['042','Арка','3EP8rA'],['043','Изготовление мебели и рекламы для магазина белья','eRJdYD'],['044','Торговое оборудование для магазина','rllO1L'],['045','Фотозона','XJ1Bga'],['046','Паллета с формовкой','V2xgE5'],['047','РЕСЕПШЕН','bg5DVk'],['048','РЕСЕПШЕН','YGKBqP'],['049','Формавка','K3QlnX'],['050','Дисплей','oJJxLq'],['051','РЕСЕПШЕН','0llEX4'],['052','РЕСЕПШЕН','8BBrdn'],['053','Дисплей','8BBrWR'],['054','Дисплей','K33y0W'],['055','РЕСЕПШЕН','rllOR2'],['056','БАРНАЯ СТОЙКА','x33OVX'],['057','Дисплей','PXyge3'],['058','Дисплей','Ezz984'],['059','Стол','lGbOJY'],['060','Камеры хранения','YGGJyb'],['061','Прикасса','4NX9l4'],['062','Прикасса','1N4xXe'],['063','КАМЕРА ХРАНЕНИЯ','K3OevW'],['064','Тетрис','QKKEqZ'],['065','Дисплей','yDZ2on'],['066','Дисплей','w0ZvrO'],['067','Стеллаж','3Er9bg'],['068','Стол деревянный','Jrnvbz'],['069','Дисплей','XgDNgw'],['070','Дисплей','rll0QO'],['071','Стол деревянный','K3Lezr'],['072','Стол из мдф','98XE3y'],['073','Дисплей','RKKLRv'],['074','Дисплей','mAA6N9'],['075','Стол деревянный','Zlzadx'],['076','Стеллаж','OvdGEy'],['077','Дисплей','y44Qw8'],['078','Дисплей','L44k0P'],['079','Branded grill','DL5nNR'],['080','Пергола','oJdAYW'],['081','Прикасса','nJJ2GE'],['082','Горка','NqG2b1'],['083','Урна','gRq00E'],['084','Пергола','5W4XlE'],['085','ВОГОР','L4eRmK'],['086','Прикасса','K33gJR'],['087','Урна','vbxDDO'],['088','Урна','rleJlE'],['089','Роллер','5W3XkE'],['090','Прикасса','y44Kz8'],['091','Пергола','rleA1J'],['092','Лавочка','4N3998'],['093','Паразит','3EqadY'],['094','Стоппер','lGGNQa'],['095','Качеля','QKPr3E'],['096','Урна','0l543G'],['097','Стоппер','0l3dzY'],['098','pyramid','kQaNnn'],['099','Лавочка','Ovdo0v'],['100','Урна','vbx2qY'],['101','Шелфтокер раздвижной','QKnRa4'],['102','Шелфтокер','XJ1ba3'],['103','Лавочка','V2kJyP'],['104','Лавочка','L4l3dw'],['105','Стоппер','dyygwx'],['106','Showbox','m85A1E'],['107','Лавочка','wrq005'],['108','Урна из металла','L448wK'],['109','Паразит','Bkk9kr'],['110','Паразиты','y44EgJ'],['111','Лавочка','lGlDDz'],['112','Пергола','2B58Xv'],['113','Страйп лента','GvvmyW'],['114','Страйп лента','rllWlE'],['115','Лавочка','vbx2OA'],['116','Качеля','eR4aNG'],['117','Equipment for exhibitions','9E2KZN'],['118','Candy Rack','rJZvZ2'],['119','Качеля','qJP9Vy'],['120','Metal hooks for commercial equipment','6NkedV'],['121','Candy Rack','6NkewV'],['122','Торговый островок','RKKDBv'],['123','Hanging bottle holder','dKgy63'],['124','Tobacco box','PXyg4o'],['125','Дисплей','EvELBe'],['126','Дисплей','elDaOw'],['127','Табак-бокс','mAA599'],['128','Торговый островок','qJJ2ea'],['129','Дисплей','QXRrbd'],['130','Дисплей','g0G2YG'],['131','Торговый островок','9883QN'],['132','Торговый островок','DLLdBn'],['133','Дисплей','m85A0Z'],['134','Дисплей','39LEZg'],['135','Мебель для Алкомаркета','BkkvQ6'],['136','Паразит','DvNLmy'],['137','Дисплей','g0G2zm'],['138','Шелфтокер','w0ZrmV'],['139','Дисплей','rJZlv2'],['140','Дисплей','8bkB5n'],['141','Паразит','n02JZr'],['142','Дисплей','39ad6B'],['143','Дисплей','YBRgbb']];
 
 const CAPS = [
   {n:'01', t:'Проектирование и КД', d:'Чертежи, 3D-модели, спецификации на новые изделия и модификации. Разработка узлов и сборочных единиц для производственного участка.'},
@@ -613,12 +603,11 @@ const LANGS = [
 
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-/* ── галерея ── */
+/* ── галерея: авторские обложки 1:1, без обрезки ── */
 document.getElementById('gal').innerHTML = WORKS.map((w,i)=>`
-  <button class="gcard${w.wide?' wide':''}" data-i="${i}" aria-label="${esc(w.t)}">
-    <span class="gtag${w.photo?' photo':''}">${w.photo?'Фото':'3D'}</span>
-    <img src="assets/work/thumb/${w.f}.jpg" alt="${esc(w.t)}" loading="lazy">
-    <span class="gcard-info"><b>${esc(w.t)}</b><span>${esc(w.tag)}</span></span>
+  <button class="gcard" data-i="${i}" aria-label="${esc(w[1])}">
+    <img src="assets/work/covers/${w[0]}.webp" alt="${esc(w[1])}" loading="${i<12?'eager':'lazy'}" width="460" height="460">
+    <span class="gcard-info"><b>${esc(w[1])}</b></span>
   </button>`).join('');
 
 /* ── что умею ── */
@@ -659,9 +648,11 @@ function openLB(i){cur=i;show();lb.classList.add('open');document.body.style.ove
 function closeLB(){lb.classList.remove('open');document.body.style.overflow=''}
 function show(){
   const w=WORKS[cur];
-  lbImg.src='assets/work/'+w.f+'.jpg';lbImg.alt=w.t;
-  lbCap.innerHTML=`<b>${esc(w.t)}</b><span>${esc(w.tag)}</span>`;
+  lbImg.src='assets/work/full/'+w[0]+'.webp';lbImg.alt=w[1];
+  lbCap.innerHTML=`<b>${esc(w[1])}</b><span><a href="https://www.artstation.com/artwork/${w[2]}" target="_blank" rel="noopener">открыть на ArtStation ↗</a></span>`;
   lbCount.textContent=(cur+1)+' / '+WORKS.length;
+  // подгрузить соседей, чтобы листалось без ожидания
+  [1,-1].forEach(d=>{const n=WORKS[(cur+d+WORKS.length)%WORKS.length];new Image().src='assets/work/full/'+n[0]+'.webp'});
 }
 const step=d=>{cur=(cur+d+WORKS.length)%WORKS.length;show()};
 document.getElementById('gal').addEventListener('click',e=>{const b=e.target.closest('.gcard');if(b)openLB(+b.dataset.i)});
