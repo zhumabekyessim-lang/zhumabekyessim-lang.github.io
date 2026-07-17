@@ -118,6 +118,7 @@ h1{font-size:clamp(38px,6.2vw,72px);letter-spacing:-.045em}
 h2{font-size:clamp(28px,4vw,46px)}
 h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .lead{font-size:clamp(17px,2vw,20px);color:var(--fg-2);line-height:1.55;max-width:64ch}
+.counter{font-variant-numeric:tabular-nums;color:var(--accent)}
 
 /* ── HERO ── */
 .hero{padding:150px 0 var(--s9)}
@@ -345,7 +346,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow">01 / Работы</div>
-      <h2>145 реализованных проектов</h2>
+      <h2><span class="counter" id="worksCounter" data-target="145">145</span> реализованных проектов</h2>
       <p class="lead" style="margin-top:24px">
         Торговое оборудование, POSM, оформление магазинов и городская мебель. В галерее собраны
         3D-визуализации, фотографии производства и готовых изделий.
@@ -639,6 +640,29 @@ navlinks.addEventListener('click',e=>{if(e.target.tagName==='A'){navlinks.classL
    его высоты, и блок навсегда остаётся с opacity:0. */
 const io=new IntersectionObserver((ents)=>{ents.forEach((en,i)=>{if(!en.isIntersecting)return;setTimeout(()=>en.target.classList.add('in'),i*60);io.unobserve(en.target)})},{threshold:0,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+
+/* ── счётчик 0 → 145 при появлении на экране ── */
+(function(){
+  const el=document.getElementById('worksCounter');
+  if(!el)return;
+  const target=parseInt(el.dataset.target,10);
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce)return; // значение уже стоит в разметке (145) — просто оставляем как есть
+  const cio=new IntersectionObserver(ents=>{
+    ents.forEach(en=>{
+      if(!en.isIntersecting)return;
+      cio.unobserve(en.target);
+      const dur=1400, start=performance.now();
+      const ease=t=>1-Math.pow(1-t,3);
+      (function frame(now){
+        const p=Math.min((now-start)/dur,1);
+        el.textContent=Math.round(ease(p)*target);
+        if(p<1)requestAnimationFrame(frame);
+      })(start);
+    });
+  },{threshold:.6});
+  cio.observe(el);
+})();
 
 /* ── лайтбокс ── */
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),lbCount=document.getElementById('lb-count');
