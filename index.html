@@ -639,7 +639,10 @@ burger.addEventListener('click',()=>{const o=navlinks.classList.toggle('open');b
 navlinks.addEventListener('click',e=>{if(e.target.tagName==='A'){navlinks.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
 
 /* ── появление ── */
-const io=new IntersectionObserver((ents)=>{ents.forEach((en,i)=>{if(!en.isIntersecting)return;setTimeout(()=>en.target.classList.add('in'),i*60);io.unobserve(en.target)})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+/* threshold:0 — обязательно. При threshold>0 очень высокий блок (галерея
+   ~19000px) физически не может достичь порога: экран показывает лишь ~5%
+   его высоты, и блок навсегда остаётся с opacity:0. */
+const io=new IntersectionObserver((ents)=>{ents.forEach((en,i)=>{if(!en.isIntersecting)return;setTimeout(()=>en.target.classList.add('in'),i*60);io.unobserve(en.target)})},{threshold:0,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));
 
 /* ── лайтбокс ── */
