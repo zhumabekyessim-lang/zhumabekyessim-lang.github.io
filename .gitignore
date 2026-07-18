@@ -4,3 +4,4 @@
 # которые не должны видеть ни клиенты, ни конкуренты.
 STRATEGY.md
 SPEC.md
+B2B-STRATEGY.md

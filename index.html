@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Жумабек Есим — технолог-конструктор POSM</title>
-<meta name="description" content="Технолог-конструктор POSM. Более 16 лет опыта: конструкторская документация, 3D-модели, файлы для ЧПУ, сопровождение производства от проектирования до контроля сборки. 145 проектов в портфолио.">
+<title>Жумабек Есим — инженерная разработка POSM и торгового оборудования</title>
+<meta name="description" content="Инженерная разработка POSM, дисплеев и торгового оборудования для серийного производства. Конструкторская документация, production-ready 3D, файлы для ЧПУ, оптимизация технологичности. 145 реализованных проектов.">
 <meta name="theme-color" content="#0c0d10">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Жумабек Есим — технолог-конструктор POSM">
-<meta property="og:description" content="Более 16 лет опыта. Конструкторская документация, 3D-модели, файлы для ЧПУ, сопровождение производства от проектирования до контроля сборки. 145 проектов в портфолио.">
+<meta property="og:title" content="Жумабек Есим — инженерная разработка POSM и торгового оборудования">
+<meta property="og:description" content="Сохранить замысел дизайнера — и сделать изделие технологичнее: проще в изготовлении, сборке и логистике. 16+ лет, 145 реализованных проектов.">
 <meta property="og:locale" content="ru_RU">
 <link rel="canonical" href="https://zhumabekyessim-lang.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,10 +19,10 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Жумабек Есим",
-  "jobTitle": "Технолог-конструктор",
-  "description": "Технолог-конструктор POSM. Более 16 лет опыта в Алматы: конструкторская документация, 3D-модели, файлы для ЧПУ, сопровождение производства от проектирования до контроля сборки.",
+  "jobTitle": "Инженер-конструктор",
+  "description": "Инженерная разработка POSM, дисплеев и торгового оборудования для серийного производства: конструкторская документация, production-ready 3D-модели, файлы для ЧПУ, оптимизация технологичности изделий.",
   "url": "https://zhumabekyessim-lang.github.io/",
-  "knowsAbout": ["Конструирование торгового оборудования", "POSM", "Технологическая подготовка производства", "SolidWorks", "Fusion 360", "3ds Max", "Вакуумная формовка", "ЧПУ-фрезеровка", "Автоматизация проектирования"]
+  "knowsAbout": ["POSM", "Retail Displays", "Паллетные дисплеи", "Торговое оборудование", "Технологичность конструкции (DFM)", "Серийное производство", "Конструкторская документация", "ЧПУ-фрезеровка", "Вакуумная формовка", "Fusion 360", "SolidWorks", "Автоматизация проектирования"]
 }
 </script>
 <style>
@@ -120,6 +120,18 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .lead{font-size:clamp(17px,2vw,20px);color:var(--fg-2);line-height:1.55;max-width:64ch}
 .counter{font-variant-numeric:tabular-nums;color:var(--accent)}
 
+/* ── манифест: главная мысль сайта одной полосой ── */
+.manifest{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:var(--s8) 0}
+.manifest p{font-size:clamp(21px,2.9vw,32px);font-weight:500;letter-spacing:-.03em;line-height:1.3;max-width:30ch}
+.manifest .hl{color:var(--accent)}
+
+/* ── честная оговорка в секции оптимизации ── */
+.opt-note{margin-top:var(--s6);padding:var(--s5) var(--s6);border-left:2px solid var(--accent);background:var(--bg-1);border-radius:0 var(--r2) var(--r2) 0;color:var(--fg-2);font-size:15px;line-height:1.6;max-width:72ch}
+
+/* ── переключатель языка ── */
+.lang-btn{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;border:1px solid var(--line-2);border-radius:var(--r2);background:none;padding:9px 13px;color:var(--fg-2);transition:border-color var(--t-fast),color var(--t-fast)}
+.lang-btn:hover{border-color:var(--accent);color:var(--fg)}
+
 /* ── HERO ── */
 .hero{padding:150px 0 var(--s9)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s8);align-items:center}
@@ -174,29 +186,14 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .astat b{display:block;font-family:var(--mono);font-size:clamp(24px,2.6vw,30px);color:var(--accent);letter-spacing:-.03em;margin-bottom:7px}
 .astat span{font-size:13px;color:var(--fg-3);line-height:1.35;display:block}
 
-/* ── опыт (таймлайн) ── */
-.tl{position:relative;padding-left:0}
-.job{display:grid;grid-template-columns:210px 1fr;gap:var(--s6);padding:var(--s6) 0;border-top:1px solid var(--line);transition:background var(--t)}
-.job:last-child{border-bottom:1px solid var(--line)}
-.job:hover{background:linear-gradient(90deg,var(--bg-1),transparent)}
-.job-when{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);line-height:1.5}
-.job-when b{display:block;color:var(--accent);font-weight:500;margin-top:4px;font-size:12px}
-.job-what h3{margin-bottom:4px}
-.job-role{font-family:var(--mono);font-size:12.5px;color:var(--fg-2);text-transform:uppercase;letter-spacing:.04em;margin-bottom:var(--s3)}
-.job-what p{font-size:14.5px;color:var(--fg-2);line-height:1.55;max-width:70ch}
-
-/* ── навыки ── */
+/* ── колонки тегов (производственный контекст) ── */
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s6)}
 .skill-col h4{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em;font-weight:400;margin-bottom:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
 .tags{display:flex;flex-wrap:wrap;gap:var(--s2)}
 .tags span{font-family:var(--mono);font-size:13px;color:var(--fg-2);border:1px solid var(--line);border-radius:var(--r1);padding:7px 12px;transition:border-color var(--t-fast),color var(--t-fast)}
 .tags span:hover{border-color:var(--accent);color:var(--fg)}
-.langs{display:flex;flex-direction:column;gap:var(--s3)}
-.lang{display:flex;justify-content:space-between;align-items:baseline;font-size:14.5px;padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
-.lang b{font-weight:500}
-.lang span{font-family:var(--mono);font-size:12px;color:var(--fg-3)}
 
-/* ── о себе ── */
+/* ── подход ── */
 .about-grid{display:grid;grid-template-columns:1fr;gap:var(--s6);max-width:760px}
 .about-grid p{font-size:17.5px;line-height:1.65;color:var(--fg-2)}
 .about-grid p strong{color:var(--fg);font-weight:500}
@@ -249,9 +246,6 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   .auto-grid{grid-template-columns:1fr;gap:var(--s6)}
   .skills{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr;gap:var(--s7)}
-  .job{grid-template-columns:1fr;gap:var(--s2)}
-  .job-when{display:flex;gap:var(--s4);align-items:baseline}
-  .job-when b{margin-top:0}
 }
 @media(max-width:940px){
   .nav-links{position:fixed;inset:66px 0 auto;flex-direction:column;align-items:stretch;gap:0;background:rgba(12,13,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:var(--s3) var(--pad) var(--s5);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity var(--t),transform var(--t)}
@@ -291,16 +285,17 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   <div class="wrap nav-in">
     <a href="#top" class="brand">
       <span class="brand-mark" data-cfg="initials">—</span>
-      <span><span data-cfg="name">Имя</span><small data-cfg="role">роль</small></span>
+      <span><span data-cfg="name">Имя</span><small data-i="brandRole">инженер-конструктор</small></span>
     </a>
     <div class="nav-links" id="navlinks">
-      <a href="#works">Работы</a>
-      <a href="#skills-do">Что умею</a>
-      <a href="#experience">Опыт</a>
-      <a href="#about">О себе</a>
+      <a href="#optimization" data-i="navOpt">Инженерия</a>
+      <a href="#deliverables" data-i="navDeliv">Заказчику</a>
+      <a href="#works" data-i="navWorks">Работы</a>
+      <a href="#approach" data-i="navAppr">Подход</a>
     </div>
     <div class="nav-cta">
-      <a href="#contact" class="btn btn-1">Связаться</a>
+      <button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button>
+      <a href="#contact" class="btn btn-1" data-i="navCta">Обсудить проект</a>
       <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span></button>
     </div>
   </div>
@@ -313,16 +308,16 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow" data-cfg="eyebrow">Технолог-конструктор · Алматы</div>
-        <h1 class="rv">Технолог-конструктор <span class="hl">POSM</span></h1>
-        <p class="hero-sub rv">
-          Более 16 лет занимаюсь разработкой конструкторской документации, созданием 3D-моделей
-          и файлов для ЧПУ. Сопровождаю проекты на всех этапах производства — от проектирования
-          до контроля сборки готовых изделий.
+        <div class="eyebrow" data-i="heroEyebrow">Инженерная разработка · Алматы</div>
+        <h1 class="rv" data-i="heroH1">Инженерная разработка <span class="hl">POSM</span> и торгового оборудования</h1>
+        <p class="hero-sub rv" data-i="heroSub">
+          Более 16 лет готовлю дисплеи, промо-конструкции и торговое оборудование к серийному
+          производству. Задача в каждом проекте — сохранить замысел дизайнера и сделать изделие
+          технологичнее: проще в изготовлении, сборке и логистике.
         </p>
         <div class="hero-cta rv">
-          <a href="#works" class="btn btn-1 btn-lg">Смотреть работы <span class="arw">→</span></a>
-          <a href="#contact" class="btn btn-2 btn-lg">Связаться</a>
+          <a href="#works" class="btn btn-1 btn-lg"><span data-i="heroCta1">Смотреть работы</span> <span class="arw">→</span></a>
+          <a href="#contact" class="btn btn-2 btn-lg" data-i="heroCta2">Обсудить проект</a>
         </div>
       </div>
       <div class="hero-media rv">
@@ -333,7 +328,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
                <img src="assets/portrait.webp" alt="Жумабек Есим" width="1080" height="1080"> -->
           <div class="hero-photo-ph">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
-            <span>Место под вашу фотографию</span>
+            <span data-i="photoPh">Место под вашу фотографию</span>
           </div>
         </div>
       </div>
@@ -341,33 +336,76 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   </div>
 </section>
 
-<!-- РАБОТЫ -->
-<section class="sec" id="works">
+<!-- МАНИФЕСТ -->
+<section class="manifest">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow">01 / Работы</div>
-      <h2><span class="counter" id="worksCounter" data-target="145">145</span> реализованных проектов</h2>
-      <p class="lead" style="margin-top:24px">
-        Торговое оборудование, POSM, оформление магазинов и городская мебель. В галерее собраны
-        3D-визуализации, фотографии производства и готовых изделий.
-      </p>
-    </div>
-    <div class="gal rv" id="gal"></div>
+    <p class="rv" data-i="manifest">Красивый макет — половина работы. Инженерия начинается там,
+    где изделие становится <span class="hl">проще в изготовлении</span>, быстрее в сборке
+    и экономичнее в серии — не меняя того, как оно выглядит.</p>
   </div>
 </section>
 
-<!-- ЧТО УМЕЮ -->
-<section class="sec" id="skills-do" style="padding-top:0">
+<!-- ИНЖЕНЕРНАЯ ПРОРАБОТКА -->
+<section class="sec" id="optimization">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">02 / Полный цикл</div>
-      <h2>Что делаю под ключ</h2>
-      <p class="lead" style="margin-top:24px">
-        Беру изделие от идеи и довожу до цеха. Не только «нарисовать красиво» — но и сделать так,
-        чтобы это собралось, встало на станок и не рассыпалось на монтаже.
+      <div class="eyebrow" data-i="optEyebrow">01 / Инженерная проработка</div>
+      <h2 data-i="optH2">Что проверяется в каждом решении</h2>
+      <p class="lead" style="margin-top:24px" data-i="optLead">
+        Каждое конструктивное решение оценивается не только на прочность и внешний вид, но и по
+        влиянию на сложность изготовления, время производства, трудоёмкость сборки и экономику
+        проекта. Если конструкцию можно упростить без потери вида, надёжности и функции —
+        заказчик получает альтернативный вариант.
+      </p>
+    </div>
+    <div class="caps rv" id="opt-cards"></div>
+    <div class="opt-note rv" data-i="optNote">
+      Экономия возможна не в каждом проекте: иногда конструкция уже рациональна. Но проверка
+      технологичности до запуска в цех в любом случае снижает риск переделок и сдвига сроков.
+    </div>
+  </div>
+</section>
+
+<!-- ЧТО ПОЛУЧАЕТ ЗАКАЗЧИК -->
+<section class="sec" id="deliverables" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow" data-i="delivEyebrow">02 / Результат работы</div>
+      <h2 data-i="delivH2">Что получает заказчик</h2>
+      <p class="lead" style="margin-top:24px" data-i="delivLead">
+        Комплект, с которым производство запускается без расшифровки и доработок.
       </p>
     </div>
     <div class="caps rv" id="caps"></div>
+  </div>
+</section>
+
+<!-- ПРОИЗВОДСТВЕННЫЙ КОНТЕКСТ -->
+<section class="sec" id="manufacturing" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow" data-i="mfgEyebrow">03 / Производство</div>
+      <h2 data-i="mfgH2">Конструкция проектируется под технологию</h2>
+      <p class="lead" style="margin-top:24px" data-i="mfgLead">
+        Инженерная разработка — часть производства, а не отдельный CAD-процесс. Решения
+        принимаются с учётом того, на каком оборудовании изделие будет изготовлено, из каких
+        материалов, как соберётся, как поедет и как встанет в торговой точке.
+      </p>
+    </div>
+    <div class="skills rv">
+      <div class="skill-col">
+        <h4 data-i="mfgCol1">Технологии</h4>
+        <div class="tags" id="mfg-tech"></div>
+      </div>
+      <div class="skill-col">
+        <h4 data-i="mfgCol2">Материалы</h4>
+        <div class="tags" id="mfg-mat"></div>
+      </div>
+      <div class="skill-col">
+        <h4 data-i="mfgCol3">Типовые форматы</h4>
+        <div class="tags" id="mfg-fmt"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -377,104 +415,66 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
     <div class="auto rv">
       <div class="auto-grid">
         <div>
-          <div class="badge">● Как я работаю</div>
-          <h2>Часть рутины я переложил на скрипты</h2>
-          <p>
-            Проектирование — это тысячи повторяющихся операций: расставить крепёж, нарезать
-            соединения, назначить кромки, переименовать детали под спецификацию. Я написал под
-            Fusion 360 <strong>собственную систему из восьми инструментов</strong>, которая делает
-            это за меня.
+          <div class="badge" data-i="autoBadge">● Системная инженерия</div>
+          <h2 data-i="autoH2">Собственные инструменты автоматизации</h2>
+          <p data-i="autoP1">
+            Чтобы сократить повторяющиеся операции, снизить влияние человеческого фактора и
+            ускорить выпуск документации, я разработал собственный набор инструментов для
+            Fusion 360 — <strong>восемь модулей</strong>, автоматизирующих типовые конструкторские
+            задачи: крепёж, соединения, кромки, номенклатуру деталей.
           </p>
-          <p>
-            Меньше ручных часов на однотипной работе — и меньше ошибок, которые всплывают на
-            раскрое, когда материал уже испорчен. Среди конструкторов такой подход встречается
-            редко: обычно эти задачи каждый раз решают заново руками.
+          <p data-i="autoP2">
+            Для заказчика это предсказуемость: стабильная скорость выпуска КД, меньше ошибок
+            в спецификациях и быстрые итерации, когда дизайн меняется по ходу проекта.
+            В серийных задачах инструменты дают повторяемость — однотипные изделия
+            проектируются по одним правилам.
           </p>
         </div>
-        <div class="auto-stats">
-          <div class="astat"><b>8</b><span>собственных инструментов в ежедневной работе</span></div>
-          <div class="astat"><b>120+</b><span>параметров изделия в одной модели проекта</span></div>
-          <div class="astat"><b>ЧПУ</b><span>готовые файлы для фрезеровки и лазера без ручной доводки</span></div>
-          <div class="astat"><b>−ручной труд</b><span>однотипные операции убраны из процесса</span></div>
-        </div>
+        <div class="auto-stats" id="auto-stats"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ОПЫТ -->
-<section class="sec" id="experience" style="padding-top:0">
+<!-- РАБОТЫ -->
+<section class="sec" id="works" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">03 / Опыт</div>
-      <h2>16 лет у станка и за чертежом</h2>
-      <p class="lead" style="margin-top:24px">
-        Мебельное производство, торговое оборудование, реклама, городская мебель. Десять лет из них —
-        на одном производстве.
+      <div class="eyebrow" data-i="worksEyebrow">04 / Работы</div>
+      <h2><span class="counter" id="worksCounter" data-target="145">145</span> <span data-i="worksH2">реализованных проектов</span></h2>
+      <p class="lead" style="margin-top:24px" data-i="worksLead">
+        Паллетные дисплеи, промо-стойки, прикассовые зоны, брендированное торговое оборудование,
+        shop-in-shop и городская мебель. За каждым изделием в галерее — конструкторская
+        документация, по которой оно было изготовлено.
       </p>
     </div>
-    <div class="tl rv" id="tl"></div>
+    <div class="gal rv" id="gal"></div>
   </div>
 </section>
 
-<!-- НАВЫКИ -->
-<section class="sec" id="stack" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv" style="margin-bottom:40px">
-      <div class="eyebrow">04 / Инструменты</div>
-      <h2 style="font-size:clamp(22px,2.6vw,30px)">Чем работаю</h2>
-    </div>
-    <div class="skills rv">
-      <div class="skill-col">
-        <h4>CAD и конструирование</h4>
-        <div class="tags" id="sk-cad"></div>
-      </div>
-      <div class="skill-col">
-        <h4>3D и визуализация</h4>
-        <div class="tags" id="sk-3d"></div>
-      </div>
-      <div class="skill-col">
-        <h4>Компетенции</h4>
-        <div class="tags" id="sk-comp"></div>
-      </div>
-    </div>
-    <div class="skills rv" style="margin-top:48px">
-      <div class="skill-col">
-        <h4>Языки</h4>
-        <div class="langs" id="langs"></div>
-      </div>
-      <div class="skill-col" style="grid-column:span 2">
-        <h4>Производство</h4>
-        <div class="tags" id="sk-prod"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- О СЕБЕ -->
-<section class="sec" id="about" style="padding-top:0">
+<!-- ПОДХОД -->
+<section class="sec" id="approach" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">05 / О себе</div>
-      <h2>Коротко</h2>
+      <div class="eyebrow" data-i="apprEyebrow">05 / Подход</div>
+      <h2 data-i="apprH2">Чертёж — результат, а не работа</h2>
     </div>
     <div class="about-grid rv">
-      <p>
-        Меня зовут Жумабек. Шестнадцать лет я проектирую то, что вы видите в магазинах и не замечаете:
-        стойки, дисплеи, барные зоны, прикассы, мебель. Работа, где ошибка не остаётся на экране —
-        она приезжает на склад в виде испорченного листа и сорванного монтажа.
+      <p data-i="apprP1">
+        Моя работа — не выпуск чертежей. Чертёж — это итог. Работа — найти конструктивное
+        решение, при котором изделие сохраняет замысел дизайнера и при этом становится
+        рациональнее в производстве.
       </p>
-      <p>
-        Я прошёл весь путь: от эскиза и 3D-модели до файлов для станка и контроля собираемости в цеху
-        рядом с макетчиками. <strong>Могу просчитать тендер, собрать презентацию с 3D-визуализацией,
-        подготовить конструкторскую документацию и файлы для производства</strong> — и продумать
-        технологию так, чтобы убрать лишний ручной труд.
+      <p data-i="apprP2">
+        Иногда небольшое инженерное изменение — другой способ соединения, другой раскрой листа,
+        другая последовательность сборки — <strong>заметно упрощает изготовление, не меняя
+        внешнего вида</strong>. На рендере такие решения не видны. Они видны в цехе: во времени
+        изготовления, в трудоёмкости сборки и в стоимости тиража.
       </p>
-      <p>
-        Последнее — отдельная история: часть повторяющейся работы я переложил на собственные скрипты,
-        которые пишу под свою же рутину. Это не отдельная профессия, а способ делать конструкторскую
-        работу быстрее и точнее — и мне интересно продолжать искать в рутине места, где технология
-        может её ускорить.
+      <p data-i="apprP3">
+        Поэтому в каждом проекте я работаю в двух ролях: как конструктор — чтобы изделие было
+        прочным и собираемым, и как технолог — чтобы оно было изготовлено рационально.
+        Шестнадцать лет практики из этих двух ролей и складываются.
       </p>
     </div>
   </div>
@@ -485,22 +485,23 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   <div class="sec wrap">
     <div class="contact-grid">
       <div class="rv">
-        <div class="eyebrow">06 / Контакты</div>
-        <h2>Давайте познакомимся</h2>
-        <p class="lead">
-          Если что-то из этого откликнулось или есть вопрос по одной из работ — пишите или
-          звоните, отвечаю сам. Все 145 проектов — здесь, на этом сайте.
+        <div class="eyebrow" data-i="ctcEyebrow">06 / Контакты</div>
+        <h2 data-i="ctcH2">Обсудить проект</h2>
+        <p class="lead" data-i="ctcLead">
+          Пришлите макет, эскиз или ТЗ — вернусь с инженерной оценкой: как изделие рациональнее
+          изготовить, из каких материалов и что в конструкции можно упростить. Рабочие языки —
+          русский, казахский, английский.
         </p>
       </div>
       <div class="rv">
         <div class="cways">
           <a class="cway" data-cfg-href="phone">
             <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
-            <span class="cway-t"><small>Телефон · звонок или WhatsApp</small><b data-cfg="phone-label">+7 000 000-00-00</b></span>
+            <span class="cway-t"><small data-i="ctcPhone">Телефон · звонок или WhatsApp</small><b data-cfg="phone-label">+7 000 000-00-00</b></span>
           </a>
           <a class="cway" data-cfg-href="email">
             <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-            <span class="cway-t"><small>Почта</small><b data-cfg="email-label">mail@example.com</b></span>
+            <span class="cway-t"><small data-i="ctcMail">Почта</small><b data-cfg="email-label">mail@example.com</b></span>
           </a>
         </div>
       </div>
@@ -512,11 +513,11 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 
 <footer>
   <div class="wrap foot">
-    <p><span data-cfg="name">Имя</span> · <span data-cfg="role">технолог-конструктор</span> · 2026</p>
+    <p><span data-cfg="name">Имя</span> · <span data-i="footRole">инженерная разработка POSM</span> · 2026</p>
     <div class="foot-links">
-      <a href="#works">Работы</a>
-      <a href="#experience">Опыт</a>
-      <a href="#contact">Контакты</a>
+      <a href="#works" data-i="footWorks">Работы</a>
+      <a href="#optimization" data-i="footOpt">Инженерия</a>
+      <a href="#contact" data-i="footCtc">Контакты</a>
     </div>
   </div>
 </footer>
@@ -537,9 +538,8 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
    ═══════════════════════════════════════════════════════════ */
 const CONFIG = {
   name:       'Жумабек Есим',
+  nameEn:     'Zhumabek Yessim',
   initials:   'ЖЕ',
-  role:       'технолог-конструктор',
-  city:       'Алматы',
   phone:      '+7 777 577-4405',           // отображается как есть
   phoneRaw:   '+77775774405',              // для ссылки звонка/WhatsApp (только цифры и +)
   email:      'zhumabekyessim@gmail.com'
@@ -555,76 +555,148 @@ const CONFIG = {
    лайтбокс — полное изображение assets/work/full/NNN.webp в исходной пропорции. */
 const WORKS=[['145','Баркетки','P4mD2o'],['144','Дисплей','8vlgvq'],['001','Арка','WXql1G'],['002','Shop in shop','P664bL'],['003','Изготовление мебели и рекламы для магазина разливных напитков','bg5D8m'],['004','Изготовление мебели и рекламы для магазина здорового питания','QKnRNl'],['005','Паллета','zxGyRm'],['006','Паллета','a030r8'],['007','Барная стойка','XJzgJa'],['008','Изготовление мебели и рекламы для магазина разливных напитков','V22LxZ'],['009','Паллета','3E4mAB'],['010','Паллета','y4k9K8'],['011','Trade Island','3EqlNE'],['012','БАРНАЯ СТОЙКА','JrrE6Z'],['013','Паллета','lGx3Go'],['014','Паллета','6LbnwW'],['015','Торговый островок','vbbEDE'],['016','BAR COUNTER','OvmqLe'],['017','Паллета','4N8wll'],['018','Паллета','LR8gEP'],['019','Trade Island','qeRmbD'],['020','Торговый островок','98NRPa'],['021','Паллета','xDZvq2'],['022','Дисплей','nJygQr'],['023','BAR COUNTER','L4e5qR'],['024','Trade Island','Bk3odD'],['025','Торец','x34v8O'],['026','Торец','y4xLn3'],['027','Торговый островок','V2kJNX'],['028','Торговый островок','qeRmbn'],['029','Торец','0l3Yzy'],['030','Торец','P6em61'],['031','НЕИЛ БАР','L4eRJ0'],['032','Изготовление мебели и рекламы для магазина разливных напитков','6LLd6w'],['033','Торец','OvmyG6'],['034','Торец','nJJv2o'],['035','Изготовление мебели и рекламы для СТО','6Lbn60'],['036','Мебель для салона красоты','QKKWYL'],['037','Торец','xDygY2'],['038','Торец','PXkRg3'],['039','Мебель для салона красоты','oJJZok'],['040','РЕСЕПШЕН','eRRQo6'],['041','Арка с полками','L49Env'],['042','Арка','3EP8rA'],['043','Изготовление мебели и рекламы для магазина белья','eRJdYD'],['044','Торговое оборудование для магазина','rllO1L'],['045','Фотозона','XJ1Bga'],['046','Паллета с формовкой','V2xgE5'],['047','РЕСЕПШЕН','bg5DVk'],['048','РЕСЕПШЕН','YGKBqP'],['049','Формавка','K3QlnX'],['050','Дисплей','oJJxLq'],['051','РЕСЕПШЕН','0llEX4'],['052','РЕСЕПШЕН','8BBrdn'],['053','Дисплей','8BBrWR'],['054','Дисплей','K33y0W'],['055','РЕСЕПШЕН','rllOR2'],['056','БАРНАЯ СТОЙКА','x33OVX'],['057','Дисплей','PXyge3'],['058','Дисплей','Ezz984'],['059','Стол','lGbOJY'],['060','Камеры хранения','YGGJyb'],['061','Прикасса','4NX9l4'],['062','Прикасса','1N4xXe'],['063','КАМЕРА ХРАНЕНИЯ','K3OevW'],['064','Тетрис','QKKEqZ'],['065','Дисплей','yDZ2on'],['066','Дисплей','w0ZvrO'],['067','Стеллаж','3Er9bg'],['068','Стол деревянный','Jrnvbz'],['069','Дисплей','XgDNgw'],['070','Дисплей','rll0QO'],['071','Стол деревянный','K3Lezr'],['072','Стол из мдф','98XE3y'],['073','Дисплей','RKKLRv'],['074','Дисплей','mAA6N9'],['075','Стол деревянный','Zlzadx'],['076','Стеллаж','OvdGEy'],['077','Дисплей','y44Qw8'],['078','Дисплей','L44k0P'],['079','Branded grill','DL5nNR'],['080','Пергола','oJdAYW'],['081','Прикасса','nJJ2GE'],['082','Горка','NqG2b1'],['083','Урна','gRq00E'],['084','Пергола','5W4XlE'],['085','ВОГОР','L4eRmK'],['086','Прикасса','K33gJR'],['087','Урна','vbxDDO'],['088','Урна','rleJlE'],['089','Роллер','5W3XkE'],['090','Прикасса','y44Kz8'],['091','Пергола','rleA1J'],['092','Лавочка','4N3998'],['093','Паразит','3EqadY'],['094','Стоппер','lGGNQa'],['095','Качеля','QKPr3E'],['096','Урна','0l543G'],['097','Стоппер','0l3dzY'],['098','pyramid','kQaNnn'],['099','Лавочка','Ovdo0v'],['100','Урна','vbx2qY'],['101','Шелфтокер раздвижной','QKnRa4'],['102','Шелфтокер','XJ1ba3'],['103','Лавочка','V2kJyP'],['104','Лавочка','L4l3dw'],['105','Стоппер','dyygwx'],['106','Showbox','m85A1E'],['107','Лавочка','wrq005'],['108','Урна из металла','L448wK'],['109','Паразит','Bkk9kr'],['110','Паразиты','y44EgJ'],['111','Лавочка','lGlDDz'],['112','Пергола','2B58Xv'],['113','Страйп лента','GvvmyW'],['114','Страйп лента','rllWlE'],['115','Лавочка','vbx2OA'],['116','Качеля','eR4aNG'],['117','Equipment for exhibitions','9E2KZN'],['118','Candy Rack','rJZvZ2'],['119','Качеля','qJP9Vy'],['120','Metal hooks for commercial equipment','6NkedV'],['121','Candy Rack','6NkewV'],['122','Торговый островок','RKKDBv'],['123','Hanging bottle holder','dKgy63'],['124','Tobacco box','PXyg4o'],['125','Дисплей','EvELBe'],['126','Дисплей','elDaOw'],['127','Табак-бокс','mAA599'],['128','Торговый островок','qJJ2ea'],['129','Дисплей','QXRrbd'],['130','Дисплей','g0G2YG'],['131','Торговый островок','9883QN'],['132','Торговый островок','DLLdBn'],['133','Дисплей','m85A0Z'],['134','Дисплей','39LEZg'],['135','Мебель для Алкомаркета','BkkvQ6'],['136','Паразит','DvNLmy'],['137','Дисплей','g0G2zm'],['138','Шелфтокер','w0ZrmV'],['139','Дисплей','rJZlv2'],['140','Дисплей','8bkB5n'],['141','Паразит','n02JZr'],['142','Дисплей','39ad6B'],['143','Дисплей','YBRgbb']];
 
+/* ── Контент секций. Каждая запись: {ru, en} — перерисовывается при смене языка ── */
+
+/* 01 / Инженерная проработка: что проверяется в каждом решении */
+const OPT = [
+  {n:'01', ru:{t:'Расход материала', d:'Конструкция и раскрой считаются от листа. Меньше отхода — ниже себестоимость каждой единицы тиража.'},
+           en:{t:'Material usage', d:'Structure and nesting are calculated from the sheet. Less waste — lower unit cost across the production run.'}},
+  {n:'02', ru:{t:'Количество деталей и крепежа', d:'Каждая лишняя деталь — это операция, время сборки и точка возможной ошибки. Лишнее убирается на этапе проектирования.'},
+           en:{t:'Parts and fasteners', d:'Every extra part is an operation, assembly time and a potential error. The unnecessary is removed at the design stage.'}},
+  {n:'03', ru:{t:'Число операций', d:'Конструкция проектируется под станок и оснастку, а не под доводку вручную. Меньше переходов между участками — короче цикл.'},
+           en:{t:'Number of operations', d:'Designed for the machine and tooling, not for manual rework. Fewer transitions between workstations — shorter cycle.'}},
+  {n:'04', ru:{t:'Последовательность сборки', d:'Порядок сборки закладывается в конструкцию заранее: узлы собираются без подгонки и специнструмента.'},
+           en:{t:'Assembly sequence', d:'The order of assembly is built into the design: units go together without fitting or special tools.'}},
+  {n:'05', ru:{t:'Логистика', d:'Плоская упаковка, разборные узлы, меньший объём перевозки. Для тиражных POSM это заметная часть стоимости проекта.'},
+           en:{t:'Logistics', d:'Flat packing, knock-down units, smaller shipping volume. For serial POSM this is a significant share of project cost.'}},
+  {n:'06', ru:{t:'Монтаж и сервис', d:'Заменяемые элементы и доступ к узлам: конструкция обслуживается в торговой точке без демонтажа.'},
+           en:{t:'Installation and service', d:'Replaceable elements and access to components: the fixture is serviced in-store without dismantling.'}}
+];
+
+/* 02 / Что получает заказчик */
 const CAPS = [
-  {n:'01', t:'Проектирование и КД', d:'Чертежи, 3D-модели, спецификации на новые изделия и модификации. Разработка узлов и сборочных единиц для производственного участка.'},
-  {n:'02', t:'Файлы для производства', d:'Подготовка под ЧПУ-фрезеровку, лазерную и плоттерную резку, широкоформатную печать. Готово к станку без ручной доводки.'},
-  {n:'03', t:'Технологическая подготовка', d:'Маршрутные и операционные карты, карты раскроя, расчёт габаритов, прочности, веса и материалоёмкости под возможности цеха.'},
-  {n:'04', t:'Формовка и 3D-печать', d:'Проектирование матриц для вакуумной формовки пластика. Подготовка файлов для 3D-печати прототипов и производственных образцов.'},
-  {n:'05', t:'3D-визуализация', d:'Фотореалистичный рендер для презентации клиенту и защиты в тендере. 3ds Max, Corona — картинка, по которой продают идею.'},
-  {n:'06', t:'Сопровождение производства', d:'Авторский надзор, проверка собираемости и технологичности вместе с макетчиками. Изделие доходит до полки таким, как задумано.'}
+  {n:'01', ru:{t:'Конструкторская документация', d:'Чертежи, спецификации и схемы сборки, по которым работает цех и проверяется результат.'},
+           en:{t:'Engineering documentation', d:'Drawings, BOMs and assembly schemes the shop floor works from and quality is checked against.'}},
+  {n:'02', ru:{t:'Производственные 3D-модели', d:'Модели, по которым можно изготавливать, а не только презентовать: с толщинами, крепежом и допусками.'},
+           en:{t:'Production-ready 3D models', d:'Models you can manufacture from, not only present: with thicknesses, fasteners and tolerances.'}},
+  {n:'03', ru:{t:'Файлы для ЧПУ', d:'Фрезеровка, лазерная и плоттерная резка, вакуумная формовка. Файлы встают на станок без ручной доводки.'},
+           en:{t:'CNC manufacturing files', d:'Routing, laser and plotter cutting, vacuum forming. Files go to the machine without manual rework.'}},
+  {n:'04', ru:{t:'Инженерная оптимизация', d:'Альтернативные конструктивные решения там, где изделие можно упростить без потери вида и функции.'},
+           en:{t:'Engineering optimization', d:'Alternative solutions where the product can be simplified without losing its look or function.'}},
+  {n:'05', ru:{t:'Подбор материалов', d:'Под задачу, тираж, бюджет и условия эксплуатации: от акрила и ПЭТ до металла и ЛДСП.'},
+           en:{t:'Material selection', d:'For the task, run size, budget and service conditions: from acrylic and PET to metal and chipboard.'}},
+  {n:'06', ru:{t:'Сопровождение производства', d:'Проверка собираемости, доработка прототипа, авторский надзор до серийного запуска.'},
+           en:{t:'Production support', d:'Assembly checks, prototype refinement and supervision up to serial launch.'}}
 ];
 
-const JOBS = [
-  {from:'Апр 2025', to:'Мар 2026', dur:'1 год', sector:'Рекламно-производственное агентство · POSM и BTL', role:'Дизайнер-конструктор', d:'Адаптация международных бренд- и POSM-гайдлайнов под рынок Казахстана. КД и 3D торгового оборудования и рекламных конструкций, файлы для ЧПУ, лазера, термоформовки и печати. Сопровождение производства.'},
-  {from:'Фев 2024', to:'Мар 2025', dur:'1 год 2 мес', sector:'Производство уличной и металлической мебели', role:'Инженер-конструктор', d:'КД (чертежи, 3D, спецификации) на металлическую мебель и городскую уличную мебель. Технологическая документация и карты раскроя, расчёт параметров, испытания опытных образцов, повышение технологичности.'},
-  {from:'Авг 2023', to:'Янв 2024', dur:'6 мес', sector:'Производство торгового оборудования и рекламы', role:'Инженер-конструктор', d:'КД для производства торгового оборудования и рекламы из разных материалов. Просчёт материалов, консультирование исполнителей на участке.'},
-  {from:'Июн 2021', to:'Июн 2023', dur:'2 года 1 мес', sector:'Производство рекламно-сувенирной продукции', role:'Дизайнер-конструктор', d:'Проектирование торгового оборудования и рекламной продукции для серийного производства. Выпуск КД: чертежи, карты кроя, схемы присадки. Фотореалистичный рендер для презентаций клиенту.'},
-  {from:'Сен 2010', to:'Сен 2020', dur:'10 лет 1 мес', sector:'Мебельное производство · розничная сеть', role:'Конструктор мебели', d:'Дизайн мебели и архитектурных форм, предпроизводственная подготовка файлов. Работа с клиентом, выезд на замер, просчёт сметной стоимости. Десять лет на одном производстве.'},
-  {from:'Авг 2008', to:'Сен 2010', dur:'2 года 2 мес', sector:'Рекламное агентство полного цикла', role:'Дизайнер-консультант', d:'Разработка фирменного стиля, вёрстка печатной продукции, дизайн вывесок, объёмных букв, лайтбоксов и табличек. Предпроизводственная подготовка файлов.'}
-];
-
-const SK = {
-  cad:  ['SolidWorks','SolidWorks Swood','Fusion 360','CorelDRAW'],
-  d3:   ['3ds Max','Corona Renderer','Adobe Photoshop','3D-моделирование','Текстурирование'],
-  comp: ['Разработка КД','Чтение чертежей','Авторский надзор','Производственный контроль','Проектная документация'],
-  prod: ['ЧПУ-фрезеровка','Лазерная резка','Плоттерная резка','Широкоформатная печать','Вакуумная формовка','3D-печать','Карты раскроя','Схемы присадки']
+/* 03 / Производственный контекст: технологии · материалы · форматы */
+const MFG = {
+  tech: {ru:['ЧПУ-фрезеровка','Лазерная резка','Плоттерная резка','УФ- и широкоформатная печать','Вакуумная формовка','Гибка металла и проволоки','3D-печать'],
+         en:['CNC routing','Laser cutting','Plotter cutting','UV & large-format print','Vacuum forming','Metal & wire bending','3D printing']},
+  mat:  {ru:['Акрил','ПЭТ','ПВХ','МДФ','ЛДСП','Фанера','Металл'],
+         en:['Acrylic','PET','PVC','MDF','Chipboard','Plywood','Metal']},
+  fmt:  {ru:['Паллетные дисплеи','Шелфтокеры','Прикассовые зоны','Бренд-зоны','Промо-стойки','Shop-in-shop','Торговые островки'],
+         en:['Pallet displays','Shelf talkers','Checkout zones','Brand zones','Promo stands','Shop-in-shop','Retail islands']}
 };
-const LANGS = [
-  {l:'Казахский', lv:'родной'},
-  {l:'Русский',   lv:'C2 — свободно'},
-  {l:'Английский',lv:'B1 — средний'}
-];
 
-/* ── подстановка CONFIG ── */
-(function(){
-  const t={
-    'name':CONFIG.name,'initials':CONFIG.initials,'role':CONFIG.role,
-    'eyebrow':CONFIG.role.charAt(0).toUpperCase()+CONFIG.role.slice(1)+' · '+CONFIG.city,
-    'phone-label':CONFIG.phone,'email-label':CONFIG.email
-  };
-  for(const[k,v]of Object.entries(t))document.querySelectorAll(`[data-cfg="${k}"]`).forEach(e=>e.textContent=v);
-  const h={'phone':'tel:'+CONFIG.phoneRaw,'email':'mailto:'+CONFIG.email};
-  for(const[k,v]of Object.entries(h))document.querySelectorAll(`[data-cfg-href="${k}"]`).forEach(e=>e.href=v);
-  document.title=CONFIG.name+' — '+CONFIG.role+' POSM';
-})();
+/* 04 / Автоматизация: плитки статистики */
+const AUTO_STATS = [
+  {ru:{b:'8', s:'собственных инструментов в ежедневной работе'},       en:{b:'8', s:'in-house tools in daily engineering work'}},
+  {ru:{b:'120+', s:'параметров изделия в одной модели проекта'},        en:{b:'120+', s:'product parameters in a single project model'}},
+  {ru:{b:'−ошибки', s:'типовые операции выполняются по одним правилам'},en:{b:'−errors', s:'routine operations follow the same rules'}},
+  {ru:{b:'итерации', s:'правка дизайна не требует перечерчивания вручную'},en:{b:'iterations', s:'design changes don\'t require manual redrawing'}}
+];
 
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-/* ── галерея: авторские обложки 1:1, без обрезки ── */
+/* ── подстановка CONFIG (не зависит от языка) ── */
+(function(){
+  const t={'name':CONFIG.name,'initials':CONFIG.initials,'phone-label':CONFIG.phone,'email-label':CONFIG.email};
+  for(const[k,v]of Object.entries(t))document.querySelectorAll(`[data-cfg="${k}"]`).forEach(e=>e.textContent=v);
+  const h={'phone':'tel:'+CONFIG.phoneRaw,'email':'mailto:'+CONFIG.email};
+  for(const[k,v]of Object.entries(h))document.querySelectorAll(`[data-cfg-href="${k}"]`).forEach(e=>e.href=v);
+})();
+
+/* ═══ ДВУЯЗЫЧНОСТЬ ═══════════════════════════════════════════
+   Русские тексты живут в разметке (SEO-версия). EN-словарь ниже.
+   Ключ — значение атрибута data-i. Значение — innerHTML. */
+const I18N_EN = {
+  brandRole:'mechanical engineer',
+  navOpt:'Engineering', navDeliv:'Deliverables', navWorks:'Portfolio', navAppr:'Approach', navCta:'Discuss a project',
+  heroEyebrow:'Engineering development · Almaty',
+  heroH1:'Engineering development for <span class="hl">POSM</span> and retail equipment',
+  heroSub:'For over 16 years I have been preparing displays, promo structures and retail equipment for serial production. The goal in every project: preserve the designer\'s intent while making the product easier to manufacture, assemble and ship.',
+  heroCta1:'View portfolio', heroCta2:'Discuss a project',
+  photoPh:'Photo placeholder',
+  manifest:'A beautiful design is half the work. Engineering begins where a product becomes <span class="hl">easier to manufacture</span>, faster to assemble and more economical in series — without changing how it looks.',
+  optEyebrow:'01 / Engineering review', optH2:'What every decision is checked against',
+  optLead:'Every engineering decision is evaluated not only for strength and appearance, but for its impact on manufacturing complexity, production time, assembly effort and overall project economics. When a structure can be simplified without compromising look, reliability or function, the client receives an alternative solution.',
+  optNote:'Savings are not possible in every project — sometimes the structure is already rational. But a manufacturability review before production always reduces the risk of rework and missed deadlines.',
+  delivEyebrow:'02 / Deliverables', delivH2:'What clients receive',
+  delivLead:'A package the workshop can run with — without decoding or rework.',
+  mfgEyebrow:'03 / Manufacturing', mfgH2:'Designed for the technology',
+  mfgLead:'Engineering is part of manufacturing, not an isolated CAD process. Every decision accounts for the machinery the product will be made on, the materials, how it assembles, ships and installs in-store.',
+  mfgCol1:'Technologies', mfgCol2:'Materials', mfgCol3:'Typical formats',
+  autoBadge:'● Systematic engineering', autoH2:'In-house automation tools',
+  autoP1:'To reduce repetitive work, minimize human error and speed up documentation, I built my own set of Fusion 360 automation tools — <strong>eight modules</strong> that handle routine engineering operations: fasteners, joints, edge banding, part nomenclature.',
+  autoP2:'For the client this means predictability: stable documentation output, fewer BOM errors and fast iterations when the design changes mid-project. In serial work the tools ensure repeatability — products of one family are engineered by the same rules.',
+  worksEyebrow:'04 / Portfolio', worksH2:'delivered projects',
+  worksLead:'Pallet displays, promo stands, checkout zones, branded retail fixtures, shop-in-shop and street furniture. Behind every item in this gallery is the engineering documentation it was manufactured from.',
+  apprEyebrow:'05 / Approach', apprH2:'The drawing is the result, not the work',
+  apprP1:'My work is not producing drawings. The drawing is the outcome. The work is finding an engineering solution that preserves the designer\'s concept while making the product more rational to manufacture.',
+  apprP2:'Sometimes a small engineering change — a different joint, a different sheet layout, a different assembly sequence — <strong>significantly simplifies production without affecting appearance</strong>. Such decisions are invisible on a render. They are visible on the shop floor: in manufacturing time, assembly effort and the cost of the run.',
+  apprP3:'That is why in every project I work in two roles: as a design engineer — so the product is strong and assemblable, and as a process engineer — so it is manufactured rationally. Sixteen years of practice are built from these two roles.',
+  ctcEyebrow:'06 / Contact', ctcH2:'Discuss a project',
+  ctcLead:'Send a layout, sketch or brief — I will come back with an engineering assessment: how to produce the item rationally, from which materials, and what can be simplified. Working languages: Russian, Kazakh, English.',
+  ctcPhone:'Phone · call or WhatsApp', ctcMail:'Email',
+  footRole:'engineering development for POSM', footWorks:'Portfolio', footOpt:'Engineering', footCtc:'Contact'
+};
+const TITLES = {
+  ru:'Жумабек Есим — инженерная разработка POSM и торгового оборудования',
+  en:'Zhumabek Yessim — engineering development for POSM and retail equipment'
+};
+
+/* RU-тексты собираются из разметки один раз при загрузке */
+const I18N_RU = {};
+document.querySelectorAll('[data-i]').forEach(e=>{I18N_RU[e.dataset.i]=e.innerHTML});
+
+let LANG = localStorage.getItem('lang')==='en' ? 'en' : 'ru';
+
+function renderContent(){
+  const L=LANG;
+  document.getElementById('opt-cards').innerHTML = OPT.map(c=>`
+    <div class="cap"><div class="cap-n">${c.n}</div><h3>${esc(c[L].t)}</h3><p>${esc(c[L].d)}</p></div>`).join('');
+  document.getElementById('caps').innerHTML = CAPS.map(c=>`
+    <div class="cap"><div class="cap-n">${c.n}</div><h3>${esc(c[L].t)}</h3><p>${esc(c[L].d)}</p></div>`).join('');
+  const tagHtml=a=>a.map(s=>`<span>${esc(s)}</span>`).join('');
+  document.getElementById('mfg-tech').innerHTML=tagHtml(MFG.tech[L]);
+  document.getElementById('mfg-mat').innerHTML=tagHtml(MFG.mat[L]);
+  document.getElementById('mfg-fmt').innerHTML=tagHtml(MFG.fmt[L]);
+  document.getElementById('auto-stats').innerHTML = AUTO_STATS.map(s=>`
+    <div class="astat"><b>${esc(s[L].b)}</b><span>${esc(s[L].s)}</span></div>`).join('');
+}
+
+function setLang(lang){
+  LANG=lang; localStorage.setItem('lang',lang);
+  document.documentElement.lang=lang;
+  const dict = lang==='en' ? I18N_EN : I18N_RU;
+  document.querySelectorAll('[data-i]').forEach(e=>{
+    const v=dict[e.dataset.i]; if(v!==undefined)e.innerHTML=v;
+  });
+  document.querySelectorAll('[data-cfg="name"]').forEach(e=>e.textContent = lang==='en'?CONFIG.nameEn:CONFIG.name);
+  document.getElementById('langBtn').textContent = lang==='en' ? 'RU' : 'EN';
+  document.title = TITLES[lang];
+  renderContent();
+}
+document.getElementById('langBtn').addEventListener('click',()=>setLang(LANG==='en'?'ru':'en'));
+setLang(LANG);
+
+/* ── галерея: квадратные обложки 1:1 (названия работ не переводятся) ── */
 document.getElementById('gal').innerHTML = WORKS.map((w,i)=>`
-  <button class="gcard" data-i="${i}" aria-label="${esc(w[1])}">
+  <button class="gcard" data-gi="${i}" aria-label="${esc(w[1])}">
     <img src="assets/work/covers/${w[0]}.webp" alt="${esc(w[1])}" loading="${i<6?'eager':'lazy'}" width="1080" height="1080">
     <span class="gcard-info"><b>${esc(w[1])}</b></span>
   </button>`).join('');
-
-/* ── что умею ── */
-document.getElementById('caps').innerHTML = CAPS.map(c=>`
-  <div class="cap"><div class="cap-n">${c.n}</div><h3>${esc(c.t)}</h3><p>${esc(c.d)}</p></div>`).join('');
-
-/* ── опыт ── */
-document.getElementById('tl').innerHTML = JOBS.map(j=>`
-  <div class="job">
-    <div class="job-when">${j.from} — ${j.to}<b>${j.dur}</b></div>
-    <div class="job-what"><h3>${esc(j.sector)}</h3><div class="job-role">${esc(j.role)}</div><p>${esc(j.d)}</p></div>
-  </div>`).join('');
-
-/* ── навыки ── */
-const tagHtml=a=>a.map(s=>`<span>${esc(s)}</span>`).join('');
-document.getElementById('sk-cad').innerHTML=tagHtml(SK.cad);
-document.getElementById('sk-3d').innerHTML=tagHtml(SK.d3);
-document.getElementById('sk-comp').innerHTML=tagHtml(SK.comp);
-document.getElementById('sk-prod').innerHTML=tagHtml(SK.prod);
-document.getElementById('langs').innerHTML=LANGS.map(l=>`<div class="lang"><b>${esc(l.l)}</b><span>${esc(l.lv)}</span></div>`).join('');
 
 /* ── навигация ── */
 const nav=document.getElementById('nav');
@@ -678,7 +750,7 @@ function show(){
   [1,-1].forEach(d=>{const n=WORKS[(cur+d+WORKS.length)%WORKS.length];new Image().src='assets/work/full/'+n[0]+'.webp'});
 }
 const step=d=>{cur=(cur+d+WORKS.length)%WORKS.length;show()};
-document.getElementById('gal').addEventListener('click',e=>{const b=e.target.closest('.gcard');if(b)openLB(+b.dataset.i)});
+document.getElementById('gal').addEventListener('click',e=>{const b=e.target.closest('.gcard');if(b)openLB(+b.dataset.gi)});
 document.getElementById('lb-close').addEventListener('click',closeLB);
 document.getElementById('lb-prev').addEventListener('click',()=>step(-1));
 document.getElementById('lb-next').addEventListener('click',()=>step(1));
