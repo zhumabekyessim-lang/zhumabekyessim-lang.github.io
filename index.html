@@ -128,6 +128,36 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 /* ── честная оговорка в секции оптимизации ── */
 .opt-note{margin-top:var(--s6);padding:var(--s5) var(--s6);border-left:2px solid var(--accent);background:var(--bg-1);border-radius:0 var(--r2) var(--r2) 0;color:var(--fg-2);font-size:15px;line-height:1.6;max-width:72ch}
 
+/* ── видео ──
+   Фасад вместо iframe: до клика грузится только лёгкая заглушка,
+   YouTube подключается по требованию (быстрее и без слежки за
+   посетителем до того, как он сам нажал play). */
+.vid{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;background:var(--bg-1);width:100%;padding:0;display:block;cursor:pointer;transition:border-color var(--t),transform var(--t)}
+.vid:hover{border-color:var(--accent);transform:translateY(-2px)}
+.vid img,.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.vid-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(12,13,16,.72);border:1.5px solid var(--accent);display:grid;place-items:center;transition:background var(--t),transform var(--t);backdrop-filter:blur(4px)}
+.vid:hover .vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.06)}
+.vid-play svg{width:22px;height:22px;fill:var(--accent);margin-left:3px;transition:fill var(--t)}
+.vid:hover .vid-play svg{fill:#170b04}
+.vid-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--fg-3);text-align:center;padding:var(--s4);
+  background:repeating-linear-gradient(135deg,var(--bg-2) 0 2px,transparent 2px 16px)}
+.vid-empty span{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;line-height:1.4}
+.vid-cap{margin-top:var(--s3);font-size:14px;color:var(--fg-2);line-height:1.4}
+.vid-cap b{display:block;color:var(--fg);font-weight:500;font-size:15px;letter-spacing:-.01em;margin-bottom:3px}
+
+/* видео в работах — две крупные карточки */
+.works-vids{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);margin-bottom:var(--s7)}
+
+/* «было → стало»: сетка карточек инструментов */
+.ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4);margin-top:var(--s7)}
+.ba-card{background:var(--bg-1);border:1px solid var(--line);border-radius:var(--r2);padding:var(--s4);transition:border-color var(--t)}
+.ba-card:hover{border-color:var(--line-2)}
+.ba-card .vid{aspect-ratio:4/3;border-radius:var(--r1)}
+.ba-n{font-family:var(--mono);font-size:11px;color:var(--fg-3);letter-spacing:.05em;margin-bottom:var(--s3);display:flex;justify-content:space-between;align-items:center}
+.ba-badge{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,90,31,.3);background:var(--accent-soft);padding:2px 6px;border-radius:100px}
+.ba-card h4{font-size:14.5px;font-weight:500;letter-spacing:-.01em;margin:var(--s3) 0 4px;line-height:1.3}
+.ba-card p{font-size:12.5px;color:var(--fg-3);line-height:1.45}
+
 /* ── переключатель языка ── */
 .lang-btn{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;border:1px solid var(--line-2);border-radius:var(--r2);background:none;padding:9px 13px;color:var(--fg-2);transition:border-color var(--t-fast),color var(--t-fast);flex:none}
 .lang-btn:hover{border-color:var(--accent);color:var(--fg)}
@@ -246,6 +276,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   .auto-grid{grid-template-columns:1fr;gap:var(--s6)}
   .skills{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr;gap:var(--s7)}
+  .ba-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:940px){
   .nav-links{position:fixed;inset:66px 0 auto;flex-direction:column;align-items:stretch;gap:0;background:rgba(12,13,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:var(--s3) var(--pad) var(--s5);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity var(--t),transform var(--t)}
@@ -274,6 +305,9 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   .auto-stats{grid-template-columns:1fr}
   .auto{padding:var(--s6)}
   .lb-prev{left:8px}.lb-next{right:8px}
+  .works-vids{grid-template-columns:1fr;gap:var(--s4)}
+  .ba-grid{grid-template-columns:1fr;gap:var(--s3)}
+  .vid-play{width:52px;height:52px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r1)}
@@ -335,6 +369,23 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   </div>
 </section>
 
+<!-- РАБОТЫ -->
+<section class="sec" id="works">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow" data-i="worksEyebrow">01 / Работы</div>
+      <h2><span class="counter" id="worksCounter" data-target="145">145</span> <span data-i="worksH2">реализованных проектов</span></h2>
+      <p class="lead" style="margin-top:24px" data-i="worksLead">
+        Паллетные дисплеи, промо-стойки, прикассовые зоны, брендированное торговое оборудование,
+        shop-in-shop и городская мебель. За каждым изделием в галерее — конструкторская
+        документация, по которой оно было изготовлено.
+      </p>
+    </div>
+    <div class="works-vids rv" id="works-vids"></div>
+    <div class="gal rv" id="gal"></div>
+  </div>
+</section>
+
 <!-- МАНИФЕСТ -->
 <section class="manifest">
   <div class="wrap">
@@ -348,7 +399,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <section class="sec" id="optimization">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="optEyebrow">01 / Инженерная проработка</div>
+      <div class="eyebrow" data-i="optEyebrow">02 / Инженерная проработка</div>
       <h2 data-i="optH2">Что проверяется в каждом решении</h2>
       <p class="lead" style="margin-top:24px" data-i="optLead">
         Каждое конструктивное решение оценивается не только на прочность и внешний вид, но и по
@@ -369,7 +420,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <section class="sec" id="deliverables" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="delivEyebrow">02 / Результат работы</div>
+      <div class="eyebrow" data-i="delivEyebrow">03 / Результат работы</div>
       <h2 data-i="delivH2">Что получает заказчик</h2>
       <p class="lead" style="margin-top:24px" data-i="delivLead">
         Комплект, с которым производство запускается без расшифровки и доработок.
@@ -383,7 +434,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <section class="sec" id="manufacturing" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="mfgEyebrow">03 / Производство</div>
+      <div class="eyebrow" data-i="mfgEyebrow">04 / Производство</div>
       <h2 data-i="mfgH2">Конструкция проектируется под технологию</h2>
       <p class="lead" style="margin-top:24px" data-i="mfgLead">
         Инженерная разработка — часть производства, а не отдельный CAD-процесс. Решения
@@ -432,22 +483,15 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
         <div class="auto-stats" id="auto-stats"></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- РАБОТЫ -->
-<section class="sec" id="works" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow" data-i="worksEyebrow">04 / Работы</div>
-      <h2><span class="counter" id="worksCounter" data-target="145">145</span> <span data-i="worksH2">реализованных проектов</span></h2>
-      <p class="lead" style="margin-top:24px" data-i="worksLead">
-        Паллетные дисплеи, промо-стойки, прикассовые зоны, брендированное торговое оборудование,
-        shop-in-shop и городская мебель. За каждым изделием в галерее — конструкторская
-        документация, по которой оно было изготовлено.
+    <div class="sec-head rv" style="margin:var(--s9) 0 0;max-width:640px">
+      <h3 style="font-size:clamp(19px,2.2vw,24px);margin-bottom:12px" data-i="baH3">Было → стало</h3>
+      <p style="font-size:15.5px;color:var(--fg-2);line-height:1.55" data-i="baLead">
+        Короткие записи экрана: слева — как операция выполняется вручную, справа — как её делает
+        инструмент. Разница видна не в качестве результата, а во времени и числе действий.
       </p>
     </div>
-    <div class="gal rv" id="gal"></div>
+    <div class="ba-grid rv" id="ba-grid"></div>
   </div>
 </section>
 
@@ -588,6 +632,38 @@ const CAPS = [
            en:{t:'Production support', d:'Assembly checks, prototype refinement and supervision up to serial launch.'}}
 ];
 
+/* ═══════════════════════════════════════════════════════════
+   ВИДЕО. Чтобы добавить ролик — впишите ID из ссылки YouTube:
+   https://www.youtube.com/watch?v=dQw4w9WgXcQ → id:'dQw4w9WgXcQ'
+   https://youtu.be/dQw4w9WgXcQ                → id:'dQw4w9WgXcQ'
+   Пустой id ('') — на месте ролика остаётся заглушка.
+   ═══════════════════════════════════════════════════════════ */
+
+/* Видео в разделе «Работы» (2 шт.) */
+const WORK_VIDS = [
+  {id:'', ru:{t:'Видео 1', d:'Подпись к ролику'}, en:{t:'Video 1', d:'Video caption'}},
+  {id:'', ru:{t:'Видео 2', d:'Подпись к ролику'}, en:{t:'Video 2', d:'Video caption'}}
+];
+
+/* «Было → стало»: 8 инструментов автоматизации.
+   Первые шесть — реальные модули из POSM Engine, названия можно менять. */
+const BEFORE_AFTER = [
+  {id:'', ru:{t:'Параметры проекта', d:'120+ параметров задаются один раз и связывают всю модель'},
+          en:{t:'Project parameters', d:'120+ parameters set once, driving the whole model'}},
+  {id:'', ru:{t:'Соединения шип-паз', d:'Нарезка соединений с предпросмотром вместо ручного построения'},
+          en:{t:'Tab-and-slot joints', d:'Joint cutting with live preview instead of manual modelling'}},
+  {id:'', ru:{t:'Присадка под крепёж', d:'Конфирматы и эксцентрики расставляются по правилам'},
+          en:{t:'Fastener drilling', d:'Confirmats and cams placed by rules, not by hand'}},
+  {id:'', ru:{t:'Кромки для спецификации', d:'Назначение кромок и подсчёт метража для BOM'},
+          en:{t:'Edge banding for BOM', d:'Edge assignment and length calculation for the BOM'}},
+  {id:'', ru:{t:'Копирование узлов', d:'Тиражирование деталей и сборок с сохранением связей'},
+          en:{t:'Component cloning', d:'Duplicating parts and assemblies, keeping references'}},
+  {id:'', ru:{t:'Номенклатура деталей', d:'Переименование по единым правилам вместо ручного ввода'},
+          en:{t:'Part nomenclature', d:'Renaming by one rule set instead of manual entry'}},
+  {id:'', ru:{t:'Инструмент 07', d:'Подпись задачи'}, en:{t:'Tool 07', d:'Task caption'}},
+  {id:'', ru:{t:'Инструмент 08', d:'Подпись задачи'}, en:{t:'Tool 08', d:'Task caption'}}
+];
+
 /* 03 / Производственный контекст: технологии · материалы · форматы */
 const MFG = {
   tech: {ru:['ЧПУ-фрезеровка','Лазерная резка','Плоттерная резка','УФ- и широкоформатная печать','Вакуумная формовка','Гибка металла и проволоки','3D-печать'],
@@ -627,18 +703,18 @@ const I18N_EN = {
   heroSub:'For over 16 years I have been preparing displays, promo structures and retail equipment for serial production. The goal in every project: preserve the designer\'s intent while making the product easier to manufacture, assemble and ship.',
   heroCta1:'View portfolio', heroCta2:'Discuss a project',
   manifest:'A beautiful design is half the work. Engineering begins where a product becomes <span class="hl">easier to manufacture</span>, faster to assemble and more economical in series — without changing how it looks.',
-  optEyebrow:'01 / Engineering review', optH2:'What every decision is checked against',
+  optEyebrow:'02 / Engineering review', optH2:'What every decision is checked against',
   optLead:'Every engineering decision is evaluated not only for strength and appearance, but for its impact on manufacturing complexity, production time, assembly effort and overall project economics. When a structure can be simplified without compromising look, reliability or function, the client receives an alternative solution.',
   optNote:'Savings are not possible in every project — sometimes the structure is already rational. But a manufacturability review before production always reduces the risk of rework and missed deadlines.',
-  delivEyebrow:'02 / Deliverables', delivH2:'What clients receive',
+  delivEyebrow:'03 / Deliverables', delivH2:'What clients receive',
   delivLead:'A package the workshop can run with — without decoding or rework.',
-  mfgEyebrow:'03 / Manufacturing', mfgH2:'Designed for the technology',
+  mfgEyebrow:'04 / Manufacturing', mfgH2:'Designed for the technology',
   mfgLead:'Engineering is part of manufacturing, not an isolated CAD process. Every decision accounts for the machinery the product will be made on, the materials, how it assembles, ships and installs in-store.',
   mfgCol1:'Technologies', mfgCol2:'Materials', mfgCol3:'Typical formats',
   autoBadge:'● Systematic engineering', autoH2:'In-house automation tools',
   autoP1:'To reduce repetitive work, minimize human error and speed up documentation, I built my own set of Fusion 360 automation tools — <strong>eight modules</strong> that handle routine engineering operations: fasteners, joints, edge banding, part nomenclature.',
   autoP2:'For the client this means predictability: stable documentation output, fewer BOM errors and fast iterations when the design changes mid-project. In serial work the tools ensure repeatability — products of one family are engineered by the same rules.',
-  worksEyebrow:'04 / Portfolio', worksH2:'delivered projects',
+  worksEyebrow:'01 / Portfolio', worksH2:'delivered projects',
   worksLead:'Pallet displays, promo stands, checkout zones, branded retail fixtures, shop-in-shop and street furniture. Behind every item in this gallery is the engineering documentation it was manufactured from.',
   apprEyebrow:'05 / Approach', apprH2:'The drawing is the result, not the work',
   apprP1:'My work is not producing drawings. The drawing is the outcome. The work is finding an engineering solution that preserves the designer\'s concept while making the product more rational to manufacture.',
@@ -672,7 +748,44 @@ function renderContent(){
   document.getElementById('mfg-fmt').innerHTML=tagHtml(MFG.fmt[L]);
   document.getElementById('auto-stats').innerHTML = AUTO_STATS.map(s=>`
     <div class="astat"><b>${esc(s[L].b)}</b><span>${esc(s[L].s)}</span></div>`).join('');
+
+  /* видео: до клика — только заглушка, iframe подключается по требованию */
+  const emptyTxt = L==='en' ? 'Video slot' : 'Место под видео';
+  const playLabel = L==='en' ? 'Play video' : 'Смотреть видео';
+  const vidBox = v => v.id
+    ? `<button class="vid" data-yt="${esc(v.id)}" aria-label="${esc(playLabel)}: ${esc(v[L].t)}">
+         <img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="${esc(v[L].t)}" loading="lazy">
+         <span class="vid-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+       </button>`
+    : `<div class="vid" role="img" aria-label="${esc(emptyTxt)}">
+         <div class="vid-empty">
+           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3z"/></svg>
+           <span>${esc(emptyTxt)}</span>
+         </div>
+       </div>`;
+
+  document.getElementById('works-vids').innerHTML = WORK_VIDS.map(v=>`
+    <div>${vidBox(v)}<div class="vid-cap"><b>${esc(v[L].t)}</b>${esc(v[L].d)}</div></div>`).join('');
+
+  document.getElementById('ba-grid').innerHTML = BEFORE_AFTER.map((v,i)=>`
+    <div class="ba-card">
+      <div class="ba-n"><span>${String(i+1).padStart(2,'0')}</span><span class="ba-badge">${L==='en'?'before → after':'было → стало'}</span></div>
+      ${vidBox(v)}
+      <h4>${esc(v[L].t)}</h4><p>${esc(v[L].d)}</p>
+    </div>`).join('');
 }
+
+/* клик по заглушке — подставляем плеер (youtube-nocookie: без трекинга до просмотра) */
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.vid[data-yt]'); if(!b)return;
+  const id=b.dataset.yt;
+  const f=document.createElement('iframe');
+  f.src=`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+  f.title=b.getAttribute('aria-label')||'video';
+  f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  f.allowFullscreen=true;
+  b.replaceChildren(f);
+});
 
 function setLang(lang){
   LANG=lang; localStorage.setItem('lang',lang);
