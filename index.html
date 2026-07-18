@@ -641,8 +641,12 @@ const CAPS = [
 
 /* Видео в разделе «Работы» (2 шт.) */
 const WORK_VIDS = [
-  {id:'', ru:{t:'Видео 1', d:'Подпись к ролику'}, en:{t:'Video 1', d:'Video caption'}},
-  {id:'', ru:{t:'Видео 2', d:'Подпись к ролику'}, en:{t:'Video 2', d:'Video caption'}}
+  {id:'Bnw0DnxgOIE',
+   ru:{t:'Изготовление торговых островков', d:'Производство в Алматы: от раскроя до готовой конструкции'},
+   en:{t:'Manufacturing retail islands', d:'Production in Almaty: from cutting to the finished fixture'}},
+  {id:'Bb1_kil_91E',
+   ru:{t:'Отзыв заказчика', d:'О работе над проектом — со стороны клиента'},
+   en:{t:'Client testimonial', d:'Working on the project — from the client\'s side'}}
 ];
 
 /* «Было → стало»: 8 инструментов автоматизации.
@@ -752,9 +756,16 @@ function renderContent(){
   /* видео: до клика — только заглушка, iframe подключается по требованию */
   const emptyTxt = L==='en' ? 'Video slot' : 'Место под видео';
   const playLabel = L==='en' ? 'Play video' : 'Смотреть видео';
-  const vidBox = v => v.id
+  /* maxresdefault (1280×720) есть не у всех роликов. Когда его нет,
+     YouTube отдаёт не ошибку, а серую заглушку 120×90 — поэтому
+     проверяем ещё и размер, иначе на месте превью будет серый квадрат. */
+  const fb = id => `if(!this.dataset.fb){this.dataset.fb=1;this.src='https://i.ytimg.com/vi/${id}/hqdefault.jpg'}`;
+  const vidBox = (v,eager) => v.id
     ? `<button class="vid" data-yt="${esc(v.id)}" aria-label="${esc(playLabel)}: ${esc(v[L].t)}">
-         <img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="${esc(v[L].t)}" loading="lazy">
+         <img src="https://i.ytimg.com/vi/${esc(v.id)}/maxresdefault.jpg"
+              onload="if(this.naturalWidth<320){${fb(esc(v.id))}}"
+              onerror="${fb(esc(v.id))}"
+              alt="${esc(v[L].t)}" loading="${eager?'eager':'lazy'}">
          <span class="vid-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
        </button>`
     : `<div class="vid" role="img" aria-label="${esc(emptyTxt)}">
@@ -765,7 +776,7 @@ function renderContent(){
        </div>`;
 
   document.getElementById('works-vids').innerHTML = WORK_VIDS.map(v=>`
-    <div>${vidBox(v)}<div class="vid-cap"><b>${esc(v[L].t)}</b>${esc(v[L].d)}</div></div>`).join('');
+    <div>${vidBox(v,true)}<div class="vid-cap"><b>${esc(v[L].t)}</b>${esc(v[L].d)}</div></div>`).join('');
 
   document.getElementById('ba-grid').innerHTML = BEFORE_AFTER.map((v,i)=>`
     <div class="ba-card">
