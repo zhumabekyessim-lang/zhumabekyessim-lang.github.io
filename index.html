@@ -258,7 +258,8 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s8);align-items:center}
 .hero h1{margin-bottom:var(--s5)}
 .hero h1 .hl{color:var(--accent)}
-.hero-sub{font-size:clamp(17px,2.1vw,20px);color:var(--fg-2);max-width:52ch;line-height:1.5;margin-bottom:var(--s7)}
+.hero-sub{font-size:clamp(17px,2.1vw,20px);color:var(--fg-2);max-width:52ch;line-height:1.5;margin-bottom:var(--s4)}
+.hero-sig{font-size:14.5px;color:var(--fg-3);line-height:1.5;max-width:52ch;margin-bottom:var(--s7)}
 .hero-cta{display:flex;gap:var(--s3);flex-wrap:wrap;margin-bottom:var(--s8)}
 /* featured image справа */
 .hero-media{position:relative}
@@ -449,6 +450,10 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
           производству. Задача в каждом проекте — сохранить замысел дизайнера и сделать изделие
           технологичнее: проще в изготовлении, сборке и логистике.
         </p>
+        <p class="hero-sig rv" data-i="heroSig">
+          Инженер-конструктор POSM в Алматы. Конструкторская документация и подготовка
+          торгового оборудования к серийному производству — Казахстан.
+        </p>
         <div class="hero-cta rv">
           <a href="#works" class="btn btn-1 btn-lg"><span data-i="heroCta1">Смотреть работы</span> <span class="arw">→</span></a>
           <a href="#contact" class="btn btn-2 btn-lg" data-i="heroCta2">Обсудить проект</a>
@@ -515,7 +520,13 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
     <div class="sec-head rv">
       <div class="eyebrow" data-i="optEyebrow">02 / Инженерная проработка</div>
       <h2 data-i="optH2">Что проверяется в каждом решении</h2>
-      <p class="lead" style="margin-top:24px" data-i="optLead">
+      <p class="lead" style="margin-top:24px" data-i="optIntro">
+        Дизайн POSM определяет внешний вид конструкции, инженерная разработка — способ её
+        изготовления. Инженер выбирает материалы и соединения, проверяет прочность и собираемость,
+        готовит чертежи, спецификации и файлы для ЧПУ. Без этого этапа макет остаётся
+        изображением, которое производство не может воспроизвести серийно.
+      </p>
+      <p class="lead" style="margin-top:16px" data-i="optLead">
         Каждое конструктивное решение оценивается не только на прочность и внешний вид, но и по
         влиянию на сложность изготовления, время производства, трудоёмкость сборки и экономику
         проекта. Если конструкцию можно упростить без потери вида, надёжности и функции —
@@ -550,7 +561,14 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
     <div class="sec-head rv">
       <div class="eyebrow" data-i="mfgEyebrow">04 / Производство</div>
       <h2 data-i="mfgH2">Конструкция проектируется под технологию</h2>
-      <p class="lead" style="margin-top:24px" data-i="mfgLead">
+      <p class="lead" style="margin-top:24px" data-i="mfgIntro">
+        Чтобы подготовить POSM-конструкцию к производству, дизайн-макет переводят
+        в конструкторскую документацию: чертежи, спецификации и файлы для станков. Конструкция
+        пересчитывается под лист и оборудование — сокращается число деталей и крепежа,
+        закладывается последовательность сборки. Первый образец собирается и корректируется
+        до запуска тиража.
+      </p>
+      <p class="lead" style="margin-top:16px" data-i="mfgLead">
         Инженерная разработка — часть производства, а не отдельный CAD-процесс. Решения
         принимаются с учётом того, на каком оборудовании изделие будет изготовлено, из каких
         материалов, как соберётся, как поедет и как встанет в торговой точке.
@@ -761,14 +779,14 @@ const OPT = [
 
 /* 02 / Что получает заказчик */
 const CAPS = [
-  {n:'01', ru:{t:'Конструкторская документация', d:'Чертежи, спецификации и схемы сборки, по которым работает цех и проверяется результат.'},
-           en:{t:'Engineering documentation', d:'Drawings, BOMs and assembly schemes the shop floor works from and quality is checked against.'}},
+  {n:'01', ru:{t:'Конструкторская документация', d:'Конструкторская документация на торговое оборудование включает сборочные и деталировочные чертежи, спецификации (BOM) и схемы сборки. По ней цех изготавливает изделие, а заказчик проверяет результат. Комплект дополняется production-ready 3D-моделями с толщинами, крепежом и допусками.'},
+           en:{t:'Engineering documentation', d:'Engineering documentation for retail equipment includes assembly and part drawings, bills of materials (BOM) and assembly schemes. The workshop manufactures from it and the client checks the result against it. The package is completed by production-ready 3D models with thicknesses, fasteners and tolerances.'}},
   {n:'02', ru:{t:'Производственные 3D-модели', d:'Модели, по которым можно изготавливать, а не только презентовать: с толщинами, крепежом и допусками.'},
            en:{t:'Production-ready 3D models', d:'Models you can manufacture from, not only present: with thicknesses, fasteners and tolerances.'}},
-  {n:'03', ru:{t:'Файлы для ЧПУ', d:'Фрезеровка, лазерная и плоттерная резка, вакуумная формовка. Файлы встают на станок без ручной доводки.'},
-           en:{t:'CNC manufacturing files', d:'Routing, laser and plotter cutting, vacuum forming. Files go to the machine without manual rework.'}},
-  {n:'04', ru:{t:'Инженерная оптимизация', d:'Альтернативные конструктивные решения там, где изделие можно упростить без потери вида и функции.'},
-           en:{t:'Engineering optimization', d:'Alternative solutions where the product can be simplified without losing its look or function.'}},
+  {n:'03', ru:{t:'Файлы для ЧПУ', d:'Для запуска POSM в производство нужны конструкторская документация — чертежи, спецификации, схемы сборки, — production-ready 3D-модели и файлы для станков: ЧПУ-фрезеровки, лазерной и плоттерной резки, вакуумной формовки. Комплект дополняют карты раскроя и порядок сборки. Такой пакет цех запускает без расшифровки.'},
+           en:{t:'CNC manufacturing files', d:'Launching POSM into production requires engineering documentation — drawings, BOMs, assembly schemes — production-ready 3D models and machine files: CNC routing, laser and plotter cutting, vacuum forming. Nesting layouts and the assembly sequence complete the package. A workshop runs such a package without decoding.'}},
+  {n:'04', ru:{t:'Инженерная оптимизация', d:'Конструкцию упрощают для серии за счёт сокращения деталей и крепежа, раскроя под стандартный лист и последовательности сборки без подгонки. Каждое решение проверяется по влиянию на время изготовления, трудоёмкость сборки и логистику. Внешний вид изделия при этом не меняется.'},
+           en:{t:'Engineering optimization', d:'A structure is simplified for series by reducing parts and fasteners, nesting for a standard sheet and an assembly sequence without fitting. Every decision is checked for its impact on manufacturing time, assembly effort and logistics. The product\'s appearance does not change.'}},
   {n:'05', ru:{t:'Подбор материалов', d:'Под задачу, тираж, бюджет и условия эксплуатации: от акрила и ПЭТ до металла и ЛДСП.'},
            en:{t:'Material selection', d:'For the task, run size, budget and service conditions: from acrylic and PET to metal and chipboard.'}},
   {n:'06', ru:{t:'Сопровождение производства', d:'Проверка собираемости, доработка прототипа, авторский надзор до серийного запуска.'},
@@ -955,13 +973,16 @@ const I18N_EN = {
   heroH1:'Engineering development for <span class="hl">POSM</span> and retail equipment',
   heroSub:'For over 16 years I have been preparing displays, promo structures and retail equipment for serial production. The goal in every project: preserve the designer\'s intent while making the product easier to manufacture, assemble and ship.',
   heroCta1:'View portfolio', heroCta2:'Discuss a project',
+  heroSig:'POSM design engineer in Almaty. Engineering documentation and preparation of retail equipment for serial production — Kazakhstan.',
   manifest:'A beautiful design is half the work. Engineering begins where a product becomes <span class="hl">easier to manufacture</span>, faster to assemble and more economical in series — without changing how it looks.',
   optEyebrow:'02 / Engineering review', optH2:'What every decision is checked against',
+  optIntro:'POSM design defines how a fixture looks; engineering development defines how it is manufactured. The engineer selects materials and joints, verifies strength and assembly, prepares drawings, BOMs and CNC files. Without this stage the layout remains an image that a factory cannot reproduce serially.',
   optLead:'Every engineering decision is evaluated not only for strength and appearance, but for its impact on manufacturing complexity, production time, assembly effort and overall project economics. When a structure can be simplified without compromising look, reliability or function, the client receives an alternative solution.',
   optNote:'Savings are not possible in every project — sometimes the structure is already rational. But a manufacturability review before production always reduces the risk of rework and missed deadlines.',
   delivEyebrow:'03 / Deliverables', delivH2:'What clients receive',
   delivLead:'A package the workshop can run with — without decoding or rework.',
   mfgEyebrow:'04 / Manufacturing', mfgH2:'Designed for the technology',
+  mfgIntro:'To prepare a POSM fixture for production, the design layout is converted into engineering documentation: drawings, BOMs and machine files. The structure is recalculated for the sheet and the machinery — parts and fasteners are reduced, the assembly sequence is built in. The first sample is assembled and corrected before the run.',
   mfgLead:'Engineering is part of manufacturing, not an isolated CAD process. Every decision accounts for the machinery the product will be made on, the materials, how it assembles, ships and installs in-store.',
   mfgCol1:'Technologies', mfgCol2:'Materials', mfgCol3:'Typical formats',
   mfgNote:'Material selection for the run size and budget is part of the <a href="https://wa.me/77775774405" target="_blank" rel="noopener">engineering assessment</a>.',
