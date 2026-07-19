@@ -465,8 +465,11 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   </div>
 </section>
 
-<!-- АВТОМАТИЗАЦИЯ -->
-<section class="sec" id="automation" style="padding-top:0">
+<!-- АВТОМАТИЗАЦИЯ.
+     Секция временно скрыта: ждём записи экрана для блока «Было → стало».
+     Чтобы показать обратно — в блоке настроек внизу файла поставьте
+     SHOW_AUTOMATION = true. Ничего больше менять не нужно. -->
+<section class="sec" id="automation" style="padding-top:0" hidden>
   <div class="wrap">
     <div class="auto rv">
       <div class="auto-grid">
@@ -593,6 +596,13 @@ const CONFIG = {
   phoneRaw:   '+77775774405',              // для ссылки звонка/WhatsApp (только цифры и +)
   email:      'zhumabekyessim@gmail.com'
 };
+
+/* Показывать ли секцию «Собственные инструменты автоматизации»
+   (описание, плитки и блок «Было → стало»).
+   Сейчас скрыта: ждём записи экрана для восьми инструментов.
+   Когда видео появятся — впишите ID в массив BEFORE_AFTER ниже
+   и поменяйте false на true. Больше ничего менять не нужно. */
+const SHOW_AUTOMATION = false;
 /* ═══════════════════════════════════════════════════════════
    ▲▲▲ НИЖЕ РЕДАКТИРОВАТЬ НЕ НУЖНО ▲▲▲
    ═══════════════════════════════════════════════════════════ */
@@ -766,8 +776,10 @@ function renderContent(){
   document.getElementById('mfg-tech').innerHTML=tagHtml(MFG.tech[L]);
   document.getElementById('mfg-mat').innerHTML=tagHtml(MFG.mat[L]);
   document.getElementById('mfg-fmt').innerHTML=tagHtml(MFG.fmt[L]);
-  document.getElementById('auto-stats').innerHTML = AUTO_STATS.map(s=>`
-    <div class="astat"><b>${esc(s[L].b)}</b><span>${esc(s[L].s)}</span></div>`).join('');
+  if(SHOW_AUTOMATION){
+    document.getElementById('auto-stats').innerHTML = AUTO_STATS.map(s=>`
+      <div class="astat"><b>${esc(s[L].b)}</b><span>${esc(s[L].s)}</span></div>`).join('');
+  }
 
   /* видео: до клика — только заглушка, iframe подключается по требованию */
   const emptyTxt = L==='en' ? 'Video slot' : 'Место под видео';
@@ -794,13 +806,18 @@ function renderContent(){
   document.getElementById('works-vids').innerHTML = WORK_VIDS.map(v=>`
     <div>${vidBox(v,true)}<div class="vid-cap"><b>${esc(v[L].t)}</b>${esc(v[L].d)}</div></div>`).join('');
 
-  document.getElementById('ba-grid').innerHTML = BEFORE_AFTER.map((v,i)=>`
-    <div class="ba-card">
-      <div class="ba-n"><span>${String(i+1).padStart(2,'0')}</span><span class="ba-badge">${L==='en'?'before → after':'было → стало'}</span></div>
-      ${vidBox(v)}
-      <h4>${esc(v[L].t)}</h4><p>${esc(v[L].d)}</p>
-    </div>`).join('');
+  if(SHOW_AUTOMATION){
+    document.getElementById('ba-grid').innerHTML = BEFORE_AFTER.map((v,i)=>`
+      <div class="ba-card">
+        <div class="ba-n"><span>${String(i+1).padStart(2,'0')}</span><span class="ba-badge">${L==='en'?'before → after':'было → стало'}</span></div>
+        ${vidBox(v)}
+        <h4>${esc(v[L].t)}</h4><p>${esc(v[L].d)}</p>
+      </div>`).join('');
+  }
 }
+
+/* переключатель секции автоматизации */
+document.getElementById('automation').hidden = !SHOW_AUTOMATION;
 
 /* клик по заглушке — подставляем плеер (youtube-nocookie: без трекинга до просмотра) */
 document.addEventListener('click',e=>{
