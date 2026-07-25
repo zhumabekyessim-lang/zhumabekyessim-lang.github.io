@@ -120,7 +120,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   position:fixed;inset:0 0 auto;height:80vh;z-index:0;pointer-events:none;
   background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
   background-size:56px 56px;
-  mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000,transparent 72%);opacity:.6;
+  mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,var(--bg),transparent 72%);opacity:.6;
 }
 .bg-glow{
   position:fixed;top:-32vh;left:50%;width:120vw;height:80vh;transform:translateX(-50%);
@@ -134,10 +134,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .nav.stuck{background:rgba(12,13,16,.72);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
 .brand{display:flex;align-items:center;gap:11px;font-weight:600;letter-spacing:-.02em}
-.brand-mark{width:30px;height:30px;border:1.5px solid var(--accent);border-radius:var(--r1);display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--accent);flex:none}
+.brand-mark{width:30px;height:30px;border:1.5px solid var(--accent);border-radius:var(--r1);display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;color:var(--accent);flex:none}
 .brand small{display:block;font-family:var(--mono);font-size:11px;color:var(--fg-3);font-weight:400;letter-spacing:0}
 .nav-links{display:flex;gap:var(--s6);align-items:center}
-.nav-links a{font-size:14.5px;color:var(--fg-2);position:relative;padding:4px 0;transition:color var(--t-fast)}
+.nav-links a{font-size:15px;color:var(--fg-2);position:relative;padding:4px 0;transition:color var(--t-fast)}
 .nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform var(--t) var(--ease)}
 .nav-links a:hover{color:var(--fg)}
 .nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
@@ -161,7 +161,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 /* ── типографика ── */
 .sec{padding:var(--s10) 0;position:relative}
 .sec-head{margin-bottom:var(--s8);max-width:780px}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--fg-3);text-transform:uppercase;margin-bottom:var(--s5)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:var(--fg-3);text-transform:uppercase;margin-bottom:var(--s5)}
 .eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
 h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.08}
 h1{font-size:clamp(38px,6.2vw,72px);letter-spacing:-.045em}
@@ -176,7 +176,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .manifest .hl{color:var(--accent)}
 
 /* ── честная оговорка в секции оптимизации ── */
-.opt-note{margin-top:var(--s6);padding:var(--s5) var(--s6);border-left:2px solid var(--accent);background:var(--bg-1);border-radius:0 var(--r2) var(--r2) 0;color:var(--fg-2);font-size:15px;line-height:1.6;max-width:72ch}
+.opt-note{margin-top:var(--s6);padding:var(--s5) var(--s6);border-left:2px solid var(--accent);background:var(--bg-1);border-top-right-radius:var(--r2);border-bottom-right-radius:var(--r2);color:var(--fg-2);font-size:15px;line-height:1.6;max-width:72ch}
 
 /* ── видео ──
    Фасад вместо iframe: до клика грузится только лёгкая заглушка,
@@ -190,8 +190,8 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .vid-play svg{width:22px;height:22px;fill:var(--accent);margin-left:3px;transition:fill var(--t)}
 .vid:hover .vid-play svg{fill:#170b04}
 .vid-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--fg-3);text-align:center;padding:var(--s4);
-  background:repeating-linear-gradient(135deg,var(--bg-2) 0 2px,transparent 2px 16px)}
-.vid-empty span{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;line-height:1.4}
+  background:var(--bg-1)}
+.vid-empty span{font-family:var(--mono);font-size:11px;letter-spacing:.04em;line-height:1.4}
 .vid-cap{margin-top:var(--s3);font-size:14px;color:var(--fg-2);line-height:1.4}
 .vid-cap b{display:block;color:var(--fg);font-weight:500;font-size:15px;letter-spacing:-.01em;margin-bottom:3px}
 
@@ -204,9 +204,9 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .ba-card:hover{border-color:var(--line-2)}
 .ba-card .vid{aspect-ratio:4/3;border-radius:var(--r1)}
 .ba-n{font-family:var(--mono);font-size:11px;color:var(--fg-3);letter-spacing:.05em;margin-bottom:var(--s3);display:flex;justify-content:space-between;align-items:center}
-.ba-badge{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,90,31,.3);background:var(--accent-soft);padding:2px 6px;border-radius:100px}
-.ba-card h4{font-size:14.5px;font-weight:500;letter-spacing:-.01em;margin:var(--s3) 0 4px;line-height:1.3}
-.ba-card p{font-size:12.5px;color:var(--fg-3);line-height:1.45}
+.ba-badge{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,90,31,.3);background:var(--accent-soft);padding:2px 6px;border-radius:100px}
+.ba-card h4{font-size:15px;font-weight:500;letter-spacing:-.01em;margin:var(--s3) 0 4px;line-height:1.3}
+.ba-card p{font-size:14px;color:var(--fg-3);line-height:1.45}
 
 /* ── FAQ (details/summary — работает без JS) ── */
 .faq{max-width:860px}
@@ -215,7 +215,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .faq summary{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);padding:var(--s5) 0;cursor:pointer;list-style:none;transition:color var(--t-fast)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary:hover{color:var(--accent)}
-.faq summary h3{font-size:16.5px;font-weight:500;letter-spacing:-.015em;line-height:1.4}
+.faq summary h3{font-size:17px;font-weight:500;letter-spacing:-.015em;line-height:1.4}
 .faq-ic{flex:none;width:18px;height:18px;position:relative}
 .faq-ic::before,.faq-ic::after{content:'';position:absolute;background:currentColor;left:50%;top:50%}
 .faq-ic::before{width:12px;height:1.5px;transform:translate(-50%,-50%)}
@@ -229,7 +229,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 /* ── таблицы технологий и материалов ── */
 .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r2);background:var(--bg-1)}
 .tbl{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5;min-width:640px}
-.tbl th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:400;color:var(--fg-3);text-align:left;padding:var(--s4) var(--s5);border-bottom:1px solid var(--line-2)}
+.tbl th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:400;color:var(--fg-3);text-align:left;padding:var(--s4) var(--s5);border-bottom:1px solid var(--line-2)}
 .tbl td{padding:var(--s4) var(--s5);border-bottom:1px solid var(--line);color:var(--fg-2);vertical-align:top}
 .tbl tr:last-child td{border-bottom:0}
 .tbl td:first-child{color:var(--fg);font-weight:500;white-space:nowrap}
@@ -245,7 +245,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
 .case{background:var(--bg-1);border:1px solid var(--line);border-radius:var(--r2);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s4)}
 .case-head b{display:block;font-size:17px;font-weight:600;letter-spacing:-.02em}
-.case-head span{font-family:var(--mono);font-size:11.5px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.05em}
+.case-head span{font-family:var(--mono);font-size:11px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.05em}
 .case dl div{margin-bottom:var(--s3)}
 .case dt{font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
 .case dd{font-size:14px;color:var(--fg-2);line-height:1.5}
@@ -259,8 +259,8 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s8);align-items:center}
 .hero h1{margin-bottom:var(--s5)}
 .hero h1 .hl{color:var(--accent)}
-.hero-sub{font-size:clamp(17px,2.1vw,20px);color:var(--fg-2);max-width:52ch;line-height:1.5;margin-bottom:var(--s4)}
-.hero-sig{font-size:14.5px;color:var(--fg-3);line-height:1.5;max-width:52ch;margin-bottom:var(--s7)}
+.hero-sub{font-size:clamp(17px,2vw,20px);color:var(--fg-2);max-width:52ch;line-height:1.5;margin-bottom:var(--s4)}
+.hero-sig{font-size:15px;color:var(--fg-3);line-height:1.5;max-width:52ch;margin-bottom:var(--s7)}
 .hero-cta{display:flex;gap:var(--s3);flex-wrap:wrap;margin-bottom:var(--s8)}
 /* featured image справа */
 .hero-media{position:relative}
@@ -280,7 +280,7 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .gcard:hover img{transform:scale(1.05)}
 .gcard-info{position:absolute;inset:auto 0 0;padding:var(--s5) var(--s3) var(--s3);background:linear-gradient(transparent,rgba(8,9,11,.88) 72%);opacity:0;transform:translateY(6px);transition:opacity var(--t),transform var(--t);pointer-events:none;text-align:left}
 .gcard:hover .gcard-info,.gcard:focus-visible .gcard-info{opacity:1;transform:none}
-.gcard-info b{display:block;font-size:13px;font-weight:500;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gcard-info b{display:block;font-size:14px;font-weight:500;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .gal-more{display:flex;justify-content:center;margin-top:var(--s7)}
 
 /* ── что умею (capabilities) ── */
@@ -289,32 +289,32 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 .cap::before{content:'';position:absolute;top:0;left:0;width:12px;height:12px;border-top:1px solid var(--accent);border-left:1px solid var(--accent);opacity:0;transition:opacity var(--t)}
 .cap:hover{border-color:var(--line-2);background:var(--bg-2);transform:translateY(-2px)}
 .cap:hover::before{opacity:1}
-.cap-n{font-family:var(--mono);font-size:12px;color:var(--fg-3);margin-bottom:var(--s5);letter-spacing:.05em}
+.cap-n{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);margin-bottom:var(--s5);letter-spacing:.05em}
 .cap h3{margin-bottom:var(--s3)}
-.cap p{font-size:14.5px;color:var(--fg-2);line-height:1.55}
+.cap p{font-size:15px;color:var(--fg-2);line-height:1.55}
 
 /* ── автоматизация (преимущество) ── */
 .auto{border:1px solid var(--line-2);border-radius:var(--r3);background:linear-gradient(160deg,var(--accent-soft),transparent 60%),var(--bg-1);padding:var(--s8);position:relative;overflow:hidden}
 .auto-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--s8);align-items:center}
-.auto .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,90,31,.35);background:var(--accent-soft);padding:4px 11px;border-radius:100px;margin-bottom:var(--s5)}
+.auto .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,90,31,.35);background:var(--accent-soft);padding:4px 11px;border-radius:100px;margin-bottom:var(--s5)}
 .auto h2{font-size:clamp(24px,3vw,34px);margin-bottom:var(--s4);max-width:20ch}
 .auto p{color:var(--fg-2);line-height:1.6;margin-bottom:var(--s4);max-width:54ch}
 .auto p strong{color:var(--fg);font-weight:500}
 .auto-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
 .astat{background:var(--bg-1);padding:var(--s6) var(--s5)}
-.astat b{display:block;font-family:var(--mono);font-size:clamp(24px,2.6vw,30px);color:var(--accent);letter-spacing:-.03em;margin-bottom:7px}
-.astat span{font-size:13px;color:var(--fg-3);line-height:1.35;display:block}
+.astat b{display:block;font-family:var(--mono);font-size:clamp(24px,3vw,34px);color:var(--accent);letter-spacing:-.03em;margin-bottom:7px}
+.astat span{font-size:14px;color:var(--fg-3);line-height:1.35;display:block}
 
 /* ── колонки тегов (производственный контекст) ── */
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s6)}
 .skill-col h3{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em;font-weight:400;margin-bottom:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
 .tags{display:flex;flex-wrap:wrap;gap:var(--s2)}
-.tags span{font-family:var(--mono);font-size:13px;color:var(--fg-2);border:1px solid var(--line);border-radius:var(--r1);padding:7px 12px;transition:border-color var(--t-fast),color var(--t-fast)}
+.tags span{font-family:var(--mono);font-size:12.5px;color:var(--fg-2);border:1px solid var(--line);border-radius:var(--r1);padding:7px 12px;transition:border-color var(--t-fast),color var(--t-fast)}
 .tags span:hover{border-color:var(--accent);color:var(--fg)}
 
 /* ── подход ── */
 .about-grid{display:grid;grid-template-columns:1fr;gap:var(--s6);max-width:760px}
-.about-grid p{font-size:17.5px;line-height:1.65;color:var(--fg-2)}
+.about-grid p{font-size:17px;line-height:1.65;color:var(--fg-2)}
 .about-grid p strong{color:var(--fg);font-weight:500}
 
 /* ── контакты ── */
@@ -336,26 +336,26 @@ h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
 /* ── подвал ── */
 footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-index:1}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);flex-wrap:wrap}
-.foot p{font-size:13.5px;color:var(--fg-3)}
+.foot p{font-size:14px;color:var(--fg-3)}
 .foot-links{display:flex;gap:var(--s5)}
-.foot-links a{font-size:13.5px;color:var(--fg-3);transition:color var(--t-fast)}
+.foot-links a{font-size:14px;color:var(--fg-3);transition:color var(--t-fast)}
 .foot-links a:hover{color:var(--fg)}
 
 /* ── лайтбокс ── */
 .lb{position:fixed;inset:0;z-index:100;background:rgba(7,8,10,.95);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:var(--s6)}
 .lb.open{display:flex}
 .lb-img{max-width:min(1180px,94vw);max-height:82vh;border-radius:var(--r2);object-fit:contain;box-shadow:0 30px 90px -20px #000}
-.lb-cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:var(--fg-2);font-size:14.5px}
+.lb-cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:var(--fg-2);font-size:15px}
 .lb-cap b{color:var(--fg);font-weight:500}
-.lb-cap span{font-family:var(--mono);font-size:12px;color:var(--fg-3);display:block;margin-top:4px}
+.lb-cap span{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);display:block;margin-top:4px}
 .lb-cap a{color:var(--accent)}
 .lb-cap a:hover{text-decoration:underline}
 .lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(28,31,36,.8);border:1px solid var(--line-2);color:var(--fg);font-size:22px;display:grid;place-items:center;transition:background var(--t-fast),border-color var(--t-fast)}
 .lb-btn:hover{background:var(--bg-2);border-color:var(--accent)}
 .lb-prev{left:20px}.lb-next{right:20px}
-.lb-close{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(28,31,36,.8);border:1px solid var(--line-2);color:var(--fg);font-size:20px;display:grid;place-items:center}
+.lb-close{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(28,31,36,.8);border:1px solid var(--line-2);color:var(--fg);font-size:22px;display:grid;place-items:center}
 .lb-close:hover{border-color:var(--accent)}
-.lb-count{position:absolute;top:26px;left:24px;font-family:var(--mono);font-size:13px;color:var(--fg-3)}
+.lb-count{position:absolute;top:26px;left:24px;font-family:var(--mono);font-size:12.5px;color:var(--fg-3)}
 
 /* ── появление ── */
 .rv{opacity:0;transform:translateY(18px);transition:opacity var(--t-slow) var(--ease),transform var(--t-slow) var(--ease)}
@@ -387,14 +387,13 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
      поэтому в узких вьюпортах оставляем только знак ЖЕ. */
   .brand span:not(.brand-mark){display:none}
   .nav-cta{gap:var(--s2)}
-  .nav-cta .btn{padding:9px 13px;font-size:13px}
-  .lang-btn{padding:8px 10px;font-size:12px}
+  .nav-cta .btn{padding:9px 13px;font-size:14px}
+  .lang-btn{padding:8px 10px;font-size:12.5px}
   .hero{padding:112px 0 var(--s9)}
   .hero-cta .btn{flex:1;justify-content:center}
   /* обложки квадратные — на телефоне 2 колонки, чтобы работы читались крупно */
   .gal{grid-template-columns:repeat(2,1fr);gap:var(--s3)}
   .gcard{border-radius:var(--r2)}
-  .gcard-info b{font-size:14px}
   .caps{grid-template-columns:1fr}
   .auto-stats{grid-template-columns:1fr}
   .auto{padding:var(--s6)}
@@ -404,7 +403,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   .vid-play{width:52px;height:52px}
   .cases{grid-template-columns:1fr}
   /* таблицы на телефоне прокручиваются по горизонтали внутри рамки */
-  .tbl{min-width:560px;font-size:13.5px}
+  .tbl{min-width:560px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r1)}
@@ -444,7 +443,6 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow" data-i="heroEyebrow">Инженерная разработка · Алматы</div>
         <h1 class="rv" data-i="heroH1">Инженерная разработка <span class="hl">POSM</span> и торгового оборудования</h1>
         <p class="hero-sub rv" data-i="heroSub">
           Более 16 лет готовлю дисплеи, промо-конструкции и торговое оборудование к серийному
@@ -474,7 +472,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <section class="sec" id="works">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="worksEyebrow">01 / Работы</div>
+      <div class="eyebrow" data-i="worksEyebrow">Работы</div>
       <h2><span class="counter" id="worksCounter" data-target="145">145</span> <span data-i="worksH2">реализованных проектов</span></h2>
       <p class="lead" style="margin-top:24px" data-i="worksLead">
         Паллетные дисплеи, промо-стойки, прикассовые зоны, брендированное торговое оборудование,
@@ -498,7 +496,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
     <div class="gal rv" id="gal"></div>
     <div class="sec-head rv" style="margin:var(--s9) 0 var(--s5);max-width:640px">
       <h3 style="font-size:clamp(19px,2.2vw,24px);margin-bottom:12px" data-i="worksVidH3">Видео</h3>
-      <p style="font-size:15.5px;color:var(--fg-2);line-height:1.55" data-i="worksVidLead">
+      <p style="font-size:15px;color:var(--fg-2);line-height:1.55" data-i="worksVidLead">
         Производство изделий в цехе и отзывы заказчиков о готовых проектах.
       </p>
     </div>
@@ -519,7 +517,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <section class="sec" id="optimization">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="optEyebrow">02 / Инженерная проработка</div>
+      <div class="eyebrow" data-i="optEyebrow">Инженерная проработка</div>
       <h2 data-i="optH2">Что проверяется в каждом решении</h2>
       <p class="lead" style="margin-top:24px" data-i="optIntro">
         Дизайн POSM определяет внешний вид конструкции, инженерная разработка — способ её
@@ -546,7 +544,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <section class="sec" id="deliverables" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="delivEyebrow">03 / Результат работы</div>
+      <div class="eyebrow" data-i="delivEyebrow">Результат работы</div>
       <h2 data-i="delivH2">Что получает заказчик</h2>
       <p class="lead" style="margin-top:24px" data-i="delivLead">
         Комплект, с которым производство запускается без расшифровки и доработок.
@@ -560,7 +558,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <section class="sec" id="manufacturing" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="mfgEyebrow">04 / Производство</div>
+      <div class="eyebrow" data-i="mfgEyebrow">Производство</div>
       <h2 data-i="mfgH2">Конструкция проектируется под технологию</h2>
       <p class="lead" style="margin-top:24px" data-i="mfgIntro">
         Чтобы подготовить POSM-конструкцию к производству, дизайн-макет переводят
@@ -622,7 +620,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 
     <div class="sec-head rv" style="margin:var(--s9) 0 0;max-width:640px">
       <h3 style="font-size:clamp(19px,2.2vw,24px);margin-bottom:12px" data-i="baH3">Было → стало</h3>
-      <p style="font-size:15.5px;color:var(--fg-2);line-height:1.55" data-i="baLead">
+      <p style="font-size:15px;color:var(--fg-2);line-height:1.55" data-i="baLead">
         Короткие записи экрана: слева — как операция выполняется вручную, справа — как её делает
         инструмент. Разница видна не в качестве результата, а во времени и числе действий.
       </p>
@@ -635,7 +633,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <section class="sec" id="approach" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="apprEyebrow">05 / Подход</div>
+      <div class="eyebrow" data-i="apprEyebrow">Подход</div>
       <h2 data-i="apprH2">Чертёж — результат, а не работа</h2>
     </div>
     <div class="about-grid rv">
@@ -663,7 +661,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
 <section class="sec" id="faq" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="faqEyebrow">06 / Вопросы</div>
+      <div class="eyebrow" data-i="faqEyebrow">Вопросы</div>
       <h2 data-i="faqH2">Вопросы и ответы</h2>
     </div>
     <div class="faq rv" id="faq-list"></div>
@@ -677,7 +675,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   <div class="sec wrap">
     <div class="contact-grid">
       <div class="rv">
-        <div class="eyebrow" data-i="ctcEyebrow">07 / Контакты</div>
+        <div class="eyebrow" data-i="ctcEyebrow">Контакты</div>
         <h2 data-i="ctcH2">Обсудить проект</h2>
         <p class="lead" data-i="ctcLead">
           Пришлите макет, эскиз или ТЗ — вернусь с инженерной оценкой: как изделие рациональнее
@@ -970,38 +968,37 @@ const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&qu
 const I18N_EN = {
   brandRole:'mechanical engineer',
   navOpt:'Engineering', navDeliv:'Deliverables', navWorks:'Portfolio', navAppr:'Approach', navCta:'Discuss a project',
-  heroEyebrow:'Engineering development · Almaty',
   heroH1:'Engineering development for <span class="hl">POSM</span> and retail equipment',
   heroSub:'For over 16 years I have been preparing displays, promo structures and retail equipment for serial production. The goal in every project: preserve the designer\'s intent while making the product easier to manufacture, assemble and ship.',
   heroCta1:'View portfolio', heroCta2:'Discuss a project',
   heroSig:'POSM design engineer in Almaty. Engineering documentation and preparation of retail equipment for serial production — Kazakhstan.',
   manifest:'A beautiful design is half the work. Engineering begins where a product becomes <span class="hl">easier to manufacture</span>, faster to assemble and more economical in series — without changing how it looks.',
-  optEyebrow:'02 / Engineering review', optH2:'What every decision is checked against',
+  optEyebrow:'Engineering review', optH2:'What every decision is checked against',
   optIntro:'POSM design defines how a fixture looks; engineering development defines how it is manufactured. The engineer selects materials and joints, verifies strength and assembly, prepares drawings, BOMs and CNC files. Without this stage the layout remains an image that a factory cannot reproduce serially.',
   optLead:'Every engineering decision is evaluated not only for strength and appearance, but for its impact on manufacturing complexity, production time, assembly effort and overall project economics. When a structure can be simplified without compromising look, reliability or function, the client receives an alternative solution.',
   optNote:'Savings are not possible in every project — sometimes the structure is already rational. But a manufacturability review before production always reduces the risk of rework and missed deadlines.',
-  delivEyebrow:'03 / Deliverables', delivH2:'What clients receive',
+  delivEyebrow:'Deliverables', delivH2:'What clients receive',
   delivLead:'A package the workshop can run with — without decoding or rework.',
-  mfgEyebrow:'04 / Manufacturing', mfgH2:'Designed for the technology',
+  mfgEyebrow:'Manufacturing', mfgH2:'Designed for the technology',
   mfgIntro:'To prepare a POSM fixture for production, the design layout is converted into engineering documentation: drawings, BOMs and machine files. The structure is recalculated for the sheet and the machinery — parts and fasteners are reduced, the assembly sequence is built in. The first sample is assembled and corrected before the run.',
   mfgLead:'Engineering is part of manufacturing, not an isolated CAD process. Every decision accounts for the machinery the product will be made on, the materials, how it assembles, ships and installs in-store.',
   mfgCol1:'Technologies', mfgCol2:'Materials', mfgCol3:'Typical formats',
   mfgNote:'Material selection for the run size and budget is part of the <a href="https://wa.me/77775774405" target="_blank" rel="noopener">engineering assessment</a>.',
   casesH3:'Selected case studies',
   casesNote:'Full portfolio — <a href="https://wa.me/77775774405" target="_blank" rel="noopener">on request</a>.',
-  faqEyebrow:'06 / FAQ', faqH2:'Questions and answers',
+  faqEyebrow:'FAQ', faqH2:'Questions and answers',
   faqCta:'Didn\'t find the answer — write: <a href="https://wa.me/77775774405" target="_blank" rel="noopener">+7 777 577-4405</a> (WhatsApp).',
   autoBadge:'● Systematic engineering', autoH2:'In-house automation tools',
   autoP1:'To reduce repetitive work, minimize human error and speed up documentation, I built my own set of Fusion 360 automation tools — <strong>eight modules</strong> that handle routine engineering operations: fasteners, joints, edge banding, part nomenclature.',
   autoP2:'For the client this means predictability: stable documentation output, fewer BOM errors and fast iterations when the design changes mid-project. In serial work the tools ensure repeatability — products of one family are engineered by the same rules.',
-  worksEyebrow:'01 / Portfolio', worksH2:'delivered projects',
+  worksEyebrow:'Portfolio', worksH2:'delivered projects',
   worksVidH3:'Video', worksVidLead:'Production on the shop floor and client feedback on completed projects.',
   worksLead:'Pallet displays, promo stands, checkout zones, branded retail fixtures, shop-in-shop and street furniture. Behind every item in this gallery is the engineering documentation it was manufactured from.',
-  apprEyebrow:'05 / Approach', apprH2:'The drawing is the result, not the work',
+  apprEyebrow:'Approach', apprH2:'The drawing is the result, not the work',
   apprP1:'My work is not producing drawings. The drawing is the outcome. The work is finding an engineering solution that preserves the designer\'s concept while making the product more rational to manufacture.',
   apprP2:'Sometimes a small engineering change — a different joint, a different sheet layout, a different assembly sequence — <strong>significantly simplifies production without affecting appearance</strong>. Such decisions are invisible on a render. They are visible on the shop floor: in manufacturing time, assembly effort and the cost of the run.',
   apprP3:'That is why in every project I work in two roles: as a design engineer — so the product is strong and assemblable, and as a process engineer — so it is manufactured rationally. Sixteen years of practice are built from these two roles.',
-  ctcEyebrow:'07 / Contact', ctcH2:'Discuss a project',
+  ctcEyebrow:'Contact', ctcH2:'Discuss a project',
   ctcLead:'Send a layout, sketch or brief — I will come back with an engineering assessment: how to produce the item rationally, from which materials, and what can be simplified. Working languages: Russian, Kazakh, English.',
   ctcPhone:'Phone · call or WhatsApp', ctcMail:'Email',
   footRole:'engineering development for POSM', footWorks:'Portfolio', footOpt:'Engineering', footCtc:'Contact'
