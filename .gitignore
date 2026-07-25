@@ -5,3 +5,10 @@
 STRATEGY.md
 SPEC.md
 B2B-STRATEGY.md
+PRODUCT.md
+DESIGN.md
+
+# Инструменты разработки — не контент сайта.
+# Репозиторий публичный и с .nojekyll, поэтому лишнее сюда не кладём.
+.claude/
+.impeccable/
