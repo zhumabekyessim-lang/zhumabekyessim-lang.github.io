@@ -98,7 +98,7 @@
       <div class="tbl-wrap"><table class="tbl" id="tbl-tech"></table></div>
       <div class="tbl-h" data-i="mfgCol2">Материалы</div>
       <div class="tbl-wrap"><table class="tbl" id="tbl-mat"></table></div>
-      <p class="tbl-note" data-i="mfgNote">Подбор материала под тираж и бюджет — в рамках
+      <p class="tbl-note" data-i="mfgNote">Подбор материала под тираж и бюджет — часть
       <a href="https://wa.me/77775774405" target="_blank" rel="noopener">инженерной оценки проекта</a>.</p>
     </div>
     <div class="skills rv" style="margin-top:var(--s7);grid-template-columns:1fr">
@@ -198,7 +198,7 @@ const OPT = [
   {n:'01', ru:{t:'Расход материала', d:'Конструкция и раскрой считаются от листа. Меньше отхода — ниже себестоимость каждой единицы тиража.'},
            en:{t:'Material usage', d:'Structure and nesting are calculated from the sheet. Less waste — lower unit cost across the production run.'}},
   {n:'02', ru:{t:'Количество деталей и крепежа', d:'Каждая лишняя деталь — это операция, время сборки и точка возможной ошибки. Лишнее убирается на этапе проектирования.'},
-           en:{t:'Parts and fasteners', d:'Every extra part is an operation, assembly time and a potential error. The unnecessary is removed at the design stage.'}},
+           en:{t:'Parts and fasteners', d:'Every extra part is an operation, assembly time and a potential error. Anything redundant is removed at the design stage.'}},
   {n:'03', ru:{t:'Число операций', d:'Конструкция проектируется под станок и оснастку, а не под доводку вручную. Меньше переходов между участками — короче цикл.'},
            en:{t:'Number of operations', d:'Designed for the machine and tooling, not for manual rework. Fewer transitions between workstations — shorter cycle.'}},
   {n:'04', ru:{t:'Последовательность сборки', d:'Порядок сборки закладывается в конструкцию заранее: узлы собираются без подгонки и специнструмента.'},
@@ -222,7 +222,7 @@ const TECH_TABLE = {
     {ru:['УФ- и широкоформатная печать','Прямая печать по жёстким листам и рулонным материалам.','Брендинг панелей, графика дисплеев, баннеры'],
      en:['UV & large-format print','Direct printing on rigid sheets and roll materials.','Panel branding, display graphics, banners']},
     {ru:['Вакуумная формовка','Объёмные детали из листового пластика по фрезерованной матрице.','Ложементы, объёмные элементы, лотки'],
-     en:['Vacuum forming','Volumetric parts from sheet plastic over a routed mould.','Trays, volumetric elements, inserts']},
+     en:['Vacuum forming','3D parts formed from sheet plastic over a routed mould.','Trays, 3D elements, inserts']},
     {ru:['Гибка металла и проволоки','Каркасы и крепёжные элементы из прутка, трубы и листа.','Каркасы стоек, крючки, ценникодержатели'],
      en:['Metal & wire bending','Frames and fastening elements from rod, tube and sheet.','Stand frames, hooks, price-tag holders']},
     {ru:['3D-печать','Прототипы узлов и мелкие нестандартные детали.','Образцы соединений, клипсы, нетиповой крепёж'],
@@ -234,11 +234,11 @@ const MAT_TABLE = {
          en:['Material','When it is used','Strengths','Limitations']},
   rows: [
     {ru:['Акрил','Витринные и имиджевые элементы, где важны прозрачность и глянец.','Прозрачность, глянцевая поверхность, точный лазерный рез.','Хрупче ПЭТ, царапается, дороже.'],
-     en:['Acrylic','Display and image elements where clarity and gloss matter.','Transparency, glossy surface, precise laser cutting.','More brittle than PET, scratches, costs more.']},
+     en:['Acrylic','Display and brand elements where clarity and gloss matter.','Transparency, glossy surface, precise laser cutting.','More brittle than PET, scratches, costs more.']},
     {ru:['ПЭТ','Прозрачные детали в зоне контакта с покупателем.','Ударопрочность, легче и безопаснее стекла.','Меньшая жёсткость, царапается.'],
      en:['PET','Transparent parts in the shopper contact zone.','Impact resistance, lighter and safer than glass.','Lower stiffness, scratches.']},
     {ru:['ПВХ','Лёгкие панели, основа под печать, объёмные элементы.','Лёгкий, влагостойкий, хорошо печатается.','Ниже жёсткость, чувствителен к нагреву.'],
-     en:['PVC','Light panels, print substrate, volumetric elements.','Light, moisture-resistant, prints well.','Lower stiffness, heat-sensitive.']},
+     en:['PVC','Light panels, print substrate, 3D elements.','Light, moisture-resistant, prints well.','Lower stiffness, heat-sensitive.']},
     {ru:['МДФ','Корпуса и фигурные фасады под фрезеровку и окраску.','Однородная структура, точная фрезеровка, окрашенный вид.','Тяжёлый, требует защиты от влаги.'],
      en:['MDF','Bodies and shaped fronts for routing and painting.','Uniform structure, precise routing, painted finish.','Heavy, needs moisture protection.']},
     {ru:['ЛДСП','Корпусная основа тиражных конструкций.','Экономичность, готовая поверхность, быстрая сборка.','Сколы на кромках, ограничен в фигурном резе.'],
@@ -286,10 +286,10 @@ window.PAGE_TITLES = {
 window.PAGE_I18N_EN = {
   ...SHARED_I18N_EN,
   optEyebrow:'Engineering review', optH2:'What every decision is checked against',
-  optIntro:'POSM design defines how a fixture looks; engineering development defines how it is manufactured. The engineer selects materials and joints, verifies strength and assembly, prepares drawings, BOMs and CNC files. Without this stage the layout remains an image that a factory cannot reproduce serially.',
-  optLead:'Every engineering decision is evaluated not only for strength and appearance, but for its impact on manufacturing complexity, production time, assembly effort and overall project economics. When a structure can be simplified without compromising look, reliability or function, the client receives an alternative solution.',
-  optNote:'Savings are not possible in every project — sometimes the structure is already rational. But a manufacturability review before production always reduces the risk of rework and missed deadlines.',
-  mfgEyebrow:'Manufacturing', mfgH2:'Designed for the technology',
+  optIntro:'POSM design defines how a fixture looks; engineering defines how it is manufactured. The engineer selects materials and joints, verifies strength and assembly, prepares drawings, BOMs and CNC files. Without this stage the layout remains an image the factory cannot turn into a production run.',
+  optLead:'Every engineering decision is evaluated not only for strength and appearance, but for its impact on manufacturing complexity, production time, assembly effort and overall project economics. When a structure can be simplified without compromising look, reliability or function, the client gets an alternative version.',
+  optNote:'Savings are not possible in every project — sometimes the structure is already efficient. But a manufacturability review before production still reduces the risk of rework and missed deadlines.',
+  mfgEyebrow:'Manufacturing', mfgH2:'Designed around the manufacturing process',
   mfgIntro:'To prepare a POSM fixture for production, the design layout is converted into engineering documentation: drawings, BOMs and machine files. The structure is recalculated for the sheet and the machinery — parts and fasteners are reduced, the assembly sequence is built in. The first sample is assembled and corrected before the run.',
   mfgLead:'Engineering is part of manufacturing, not an isolated CAD process. Every decision accounts for the machinery the product will be made on, the materials, how it assembles, ships and installs in-store.',
   mfgCol1:'Technologies', mfgCol2:'Materials', mfgCol3:'Typical formats',

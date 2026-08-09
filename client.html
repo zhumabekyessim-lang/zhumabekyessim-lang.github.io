@@ -102,18 +102,18 @@
 <script src="shared.js"></script>
 <script>
 const CAPS = [
-  {n:'01', ru:{t:'Конструкторская документация', d:'Конструкторская документация на торговое оборудование включает сборочные и деталировочные чертежи, спецификации (BOM) и схемы сборки. По ней цех изготавливает изделие, а заказчик проверяет результат. Комплект дополняется production-ready 3D-моделями с толщинами, крепежом и допусками.'},
-           en:{t:'Engineering documentation', d:'Engineering documentation for retail equipment includes assembly and part drawings, bills of materials (BOM) and assembly schemes. The workshop manufactures from it and the client checks the result against it. The package is completed by production-ready 3D models with thicknesses, fasteners and tolerances.'}},
+  {n:'01', ru:{t:'Конструкторская документация', d:'Конструкторская документация на торговое оборудование включает сборочные и деталировочные чертежи, спецификации (BOM) и схемы сборки. По ней цех изготавливает изделие, а заказчик проверяет результат.'},
+           en:{t:'Engineering documentation', d:'Engineering documentation for retail equipment includes assembly and part drawings, bills of materials (BOM) and assembly diagrams. The workshop manufactures from it and the client checks the result against it.'}},
   {n:'02', ru:{t:'Производственные 3D-модели', d:'Модели, по которым можно изготавливать, а не только презентовать: с толщинами, крепежом и допусками.'},
            en:{t:'Production-ready 3D models', d:'Models you can manufacture from, not only present: with thicknesses, fasteners and tolerances.'}},
-  {n:'03', ru:{t:'Файлы для ЧПУ', d:'Для запуска POSM в производство нужны конструкторская документация — чертежи, спецификации, схемы сборки, — production-ready 3D-модели и файлы для станков: ЧПУ-фрезеровки, лазерной и плоттерной резки, вакуумной формовки. Комплект дополняют карты раскроя и порядок сборки. Такой пакет цех запускает без расшифровки.'},
-           en:{t:'CNC manufacturing files', d:'Launching POSM into production requires engineering documentation — drawings, BOMs, assembly schemes — production-ready 3D models and machine files: CNC routing, laser and plotter cutting, vacuum forming. Nesting layouts and the assembly sequence complete the package. A workshop runs such a package without decoding.'}},
-  {n:'04', ru:{t:'Инженерная оптимизация', d:'Конструкцию упрощают для серии за счёт сокращения деталей и крепежа, раскроя под стандартный лист и последовательности сборки без подгонки. Каждое решение проверяется по влиянию на время изготовления, трудоёмкость сборки и логистику. Внешний вид изделия при этом не меняется.'},
-           en:{t:'Engineering optimization', d:'A structure is simplified for series by reducing parts and fasteners, nesting for a standard sheet and an assembly sequence without fitting. Every decision is checked for its impact on manufacturing time, assembly effort and logistics. The product\'s appearance does not change.'}},
+  {n:'03', ru:{t:'Файлы для ЧПУ', d:'Для запуска POSM в производство — файлы для станков: ЧПУ-фрезеровки, лазерной и плоттерной резки, вакуумной формовки. Комплект дополняют карты раскроя и порядок сборки.'},
+           en:{t:'CNC manufacturing files', d:'Machine files to launch POSM into production: CNC routing, laser and plotter cutting, vacuum forming. Nesting layouts and the assembly sequence complete the package.'}},
+  {n:'04', ru:{t:'Инженерная оптимизация', d:'Конструкцию упрощают для серии: меньше деталей и крепежа, раскрой под стандартный лист, сборка без подгонки. Каждое решение проверяется по влиянию на время изготовления, трудоёмкость сборки и логистику. Внешний вид изделия при этом не меняется.'},
+           en:{t:'Engineering optimization', d:'The design is simplified for a production run: fewer parts and fasteners, nesting for standard sheets, an assembly sequence that needs no hand-fitting. Every decision is checked for its impact on manufacturing time, assembly effort and logistics. The product\'s appearance does not change.'}},
   {n:'05', ru:{t:'Подбор материалов', d:'Под задачу, тираж, бюджет и условия эксплуатации: от акрила и ПЭТ до металла и ЛДСП.'},
            en:{t:'Material selection', d:'For the task, run size, budget and service conditions: from acrylic and PET to metal and chipboard.'}},
   {n:'06', ru:{t:'Сопровождение производства', d:'Проверка собираемости, доработка прототипа, авторский надзор до серийного запуска.'},
-           en:{t:'Production support', d:'Assembly checks, prototype refinement and supervision up to serial launch.'}}
+           en:{t:'Production support', d:'Assembly checks, prototype refinement and supervision through to serial production.'}}
 ];
 
 window.PAGE_TITLES = {
@@ -124,7 +124,7 @@ window.PAGE_TITLES = {
 window.PAGE_I18N_EN = {
   ...SHARED_I18N_EN,
   delivEyebrow:'Deliverables', delivH2:'What clients receive',
-  delivLead:'A package the workshop can run with — without decoding or rework.'
+  delivLead:'A package the workshop can put straight into production, without guesswork or rework.'
 };
 
 window.renderContent = function(){

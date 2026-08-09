@@ -13,9 +13,9 @@ const SHARED_I18N_EN = {
   brandRole:'mechanical engineer',
   navWorks:'Portfolio', navOpt:'Engineering', navDeliv:'Deliverables', navAppr:'Approach', navCta:'Discuss a project',
   ctcEyebrow:'Contact', ctcH2:'Discuss a project',
-  ctcLead:'Send a layout, sketch or brief — I will come back with an engineering assessment: how to produce the item rationally, from which materials, and what can be simplified. Working languages: Russian, Kazakh, English.',
+  ctcLead:'Send a layout, sketch or brief — I will come back with an engineering assessment: the most efficient way to make the item, which materials to use, and what can be simplified. Working languages: Russian, Kazakh, English.',
   ctcPhone:'Phone · call or WhatsApp', ctcMail:'Email',
-  footRole:'engineering development for POSM', footWorks:'Portfolio', footOpt:'Engineering', footCtc:'Contact'
+  footRole:'POSM engineering', footWorks:'Portfolio', footOpt:'Engineering', footCtc:'Contact'
 };
 
 (function(){
