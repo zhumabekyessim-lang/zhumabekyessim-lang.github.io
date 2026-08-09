@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Инженерия — Жумабек Есим</title>
+<meta name="description" content="Инженерная проработка POSM: проверка технологичности, оптимизация конструкции, подбор материалов и технологий производства.">
+<meta name="theme-color" content="#0c0d10">
+<link rel="canonical" href="https://yessim.pro/engineering.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/onest-var-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/onest-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<!-- NAV - links point to pages, not anchors -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="./" class="brand">
+      <span class="brand-mark" data-cfg="initials">—</span>
+      <span><span data-cfg="name">Имя</span><small data-i="brandRole">инженер-конструктор</small></span>
+    </a>
+    <div class="nav-links" id="navlinks">
+      <a href="./" data-i="navWorks">Портфолио</a>
+      <a href="engineering.html" data-i="navOpt">Инженерия</a>
+      <a href="client.html" data-i="navDeliv">Заказчику</a>
+      <a href="approach.html" data-i="navAppr">Подход</a>
+    </div>
+    <div class="nav-cta">
+      <button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button>
+      <a href="#contact" class="btn btn-1" data-i="navCta">Обсудить проект</a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- PAGE HERO (simple heading, uses .page-hero class for padding) -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow" data-i="optEyebrow">Инженерная проработка</div>
+      <h1 data-i="optH2">Что проверяется в каждом решении</h1>
+      <p class="lead" style="margin-top:24px" data-i="optIntro">
+        Дизайн POSM определяет внешний вид конструкции, инженерная разработка — способ её
+        изготовления. Инженер выбирает материалы и соединения, проверяет прочность и собираемость,
+        готовит чертежи, спецификации и файлы для ЧПУ. Без этого этапа макет остаётся
+        изображением, которое производство не может воспроизвести серийно.
+      </p>
+      <p class="lead" style="margin-top:16px" data-i="optLead">
+        Каждое конструктивное решение оценивается не только на прочность и внешний вид, но и по
+        влиянию на сложность изготовления, время производства, трудоёмкость сборки и экономику
+        проекта. Если конструкцию можно упростить без потери вида, надёжности и функции —
+        заказчик получает альтернативный вариант.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- OPT CARDS -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="caps rv" id="opt-cards"></div>
+    <div class="opt-note rv" data-i="optNote">
+      Экономия возможна не в каждом проекте: иногда конструкция уже рациональна. Но проверка
+      технологичности до запуска в цех в любом случае снижает риск переделок и сдвига сроков.
+    </div>
+  </div>
+</section>
+
+<!-- ПРОИЗВОДСТВЕННЫЙ КОНТЕКСТ -->
+<section class="sec" id="manufacturing" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow" data-i="mfgEyebrow">Производство</div>
+      <h2 data-i="mfgH2">Конструкция проектируется под технологию</h2>
+      <p class="lead" style="margin-top:24px" data-i="mfgIntro">
+        Чтобы подготовить POSM-конструкцию к производству, дизайн-макет переводят
+        в конструкторскую документацию: чертежи, спецификации и файлы для станков. Конструкция
+        пересчитывается под лист и оборудование — сокращается число деталей и крепежа,
+        закладывается последовательность сборки. Первый образец собирается и корректируется
+        до запуска тиража.
+      </p>
+      <p class="lead" style="margin-top:16px" data-i="mfgLead">
+        Инженерная разработка — часть производства, а не отдельный CAD-процесс. Решения
+        принимаются с учётом того, на каком оборудовании изделие будет изготовлено, из каких
+        материалов, как соберётся, как поедет и как встанет в торговой точке.
+      </p>
+    </div>
+    <div class="rv">
+      <div class="tbl-h" data-i="mfgCol1">Технологии</div>
+      <div class="tbl-wrap"><table class="tbl" id="tbl-tech"></table></div>
+      <div class="tbl-h" data-i="mfgCol2">Материалы</div>
+      <div class="tbl-wrap"><table class="tbl" id="tbl-mat"></table></div>
+      <p class="tbl-note" data-i="mfgNote">Подбор материала под тираж и бюджет — в рамках
+      <a href="https://wa.me/77775774405" target="_blank" rel="noopener">инженерной оценки проекта</a>.</p>
+    </div>
+    <div class="skills rv" style="margin-top:var(--s7);grid-template-columns:1fr">
+      <div class="skill-col">
+        <h3 data-i="mfgCol3">Типовые форматы</h3>
+        <div class="tags" id="mfg-fmt"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- АВТОМАТИЗАЦИЯ (hidden by default) -->
+<section class="sec" id="automation" style="padding-top:0" hidden>
+  <div class="wrap">
+    <div class="auto rv">
+      <div class="auto-grid">
+        <div>
+          <div class="badge" data-i="autoBadge">● Системная инженерия</div>
+          <h2 data-i="autoH2">Собственные инструменты автоматизации</h2>
+          <p data-i="autoP1">
+            Чтобы сократить повторяющиеся операции, снизить влияние человеческого фактора и
+            ускорить выпуск документации, я разработал собственный набор инструментов для
+            Fusion 360 — <strong>восемь модулей</strong>, автоматизирующих типовые конструкторские
+            задачи: крепёж, соединения, кромки, номенклатуру деталей.
+          </p>
+          <p data-i="autoP2">
+            Для заказчика это предсказуемость: стабильная скорость выпуска КД, меньше ошибок
+            в спецификациях и быстрые итерации, когда дизайн меняется по ходу проекта.
+            В серийных задачах инструменты дают повторяемость — однотипные изделия
+            проектируются по одним правилам.
+          </p>
+        </div>
+        <div class="auto-stats" id="auto-stats"></div>
+      </div>
+    </div>
+
+    <div class="sec-head rv" style="margin:var(--s9) 0 0;max-width:640px">
+      <h3 style="font-size:clamp(19px,2.2vw,24px);margin-bottom:12px" data-i="baH3">Было → стало</h3>
+      <p style="font-size:15px;color:var(--fg-2);line-height:1.55" data-i="baLead">
+        Короткие записи экрана: слева — как операция выполняется вручную, справа — как её делает
+        инструмент. Разница видна не в качестве результата, а во времени и числе действий.
+      </p>
+    </div>
+    <div class="ba-grid rv" id="ba-grid"></div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<section class="contact" id="contact">
+  <div class="sec wrap">
+    <div class="contact-grid">
+      <div class="rv">
+        <div class="eyebrow" data-i="ctcEyebrow">Контакты</div>
+        <h2 data-i="ctcH2">Обсудить проект</h2>
+        <p class="lead" data-i="ctcLead">
+          Пришлите макет, эскиз или ТЗ — вернусь с инженерной оценкой: как изделие рациональнее
+          изготовить, из каких материалов и что в конструкции можно упростить. Рабочие языки —
+          русский, казахский, английский.
+        </p>
+      </div>
+      <div class="rv">
+        <div class="cways">
+          <a class="cway" data-cfg-href="phone">
+            <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
+            <span class="cway-t"><small data-i="ctcPhone">Телефон · звонок или WhatsApp</small><b data-cfg="phone-label">+7 000 000-00-00</b></span>
+          </a>
+          <a class="cway" data-cfg-href="email">
+            <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span class="cway-t"><small data-i="ctcMail">Почта</small><b data-cfg="email-label">mail@example.com</b></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p><span data-cfg="name">Имя</span> · <span data-i="footRole">инженерная разработка POSM</span> · 2026</p>
+    <div class="foot-links">
+      <a href="./" data-i="footWorks">Портфолио</a>
+      <a href="engineering.html" data-i="footOpt">Инженерия</a>
+      <a href="#contact" data-i="footCtc">Контакты</a>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+/* PAGE-SPECIFIC DATA AND RENDERING */
+
+const SHOW_AUTOMATION = false;
+
+const OPT = [
+  {n:'01', ru:{t:'Расход материала', d:'Конструкция и раскрой считаются от листа. Меньше отхода — ниже себестоимость каждой единицы тиража.'},
+           en:{t:'Material usage', d:'Structure and nesting are calculated from the sheet. Less waste — lower unit cost across the production run.'}},
+  {n:'02', ru:{t:'Количество деталей и крепежа', d:'Каждая лишняя деталь — это операция, время сборки и точка возможной ошибки. Лишнее убирается на этапе проектирования.'},
+           en:{t:'Parts and fasteners', d:'Every extra part is an operation, assembly time and a potential error. The unnecessary is removed at the design stage.'}},
+  {n:'03', ru:{t:'Число операций', d:'Конструкция проектируется под станок и оснастку, а не под доводку вручную. Меньше переходов между участками — короче цикл.'},
+           en:{t:'Number of operations', d:'Designed for the machine and tooling, not for manual rework. Fewer transitions between workstations — shorter cycle.'}},
+  {n:'04', ru:{t:'Последовательность сборки', d:'Порядок сборки закладывается в конструкцию заранее: узлы собираются без подгонки и специнструмента.'},
+           en:{t:'Assembly sequence', d:'The order of assembly is built into the design: units go together without fitting or special tools.'}},
+  {n:'05', ru:{t:'Логистика', d:'Плоская упаковка, разборные узлы, меньший объём перевозки. Для тиражных POSM это заметная часть стоимости проекта.'},
+           en:{t:'Logistics', d:'Flat packing, knock-down units, smaller shipping volume. For serial POSM this is a significant share of project cost.'}},
+  {n:'06', ru:{t:'Монтаж и сервис', d:'Заменяемые элементы и доступ к узлам: конструкция обслуживается в торговой точке без демонтажа.'},
+           en:{t:'Installation and service', d:'Replaceable elements and access to components: the fixture is serviced in-store without dismantling.'}}
+];
+
+const TECH_TABLE = {
+  head: {ru:['Технология','Что делает','Типовые изделия'],
+         en:['Technology','What it does','Typical products']},
+  rows: [
+    {ru:['ЧПУ-фрезеровка','Раскрой и фигурная обработка листовых материалов: МДФ, ЛДСП, фанера, акрил.','Корпуса дисплеев, полки, торговые островки'],
+     en:['CNC routing','Cutting and shaped machining of sheet materials: MDF, chipboard, plywood, acrylic.','Display bodies, shelves, retail islands']},
+    {ru:['Лазерная резка','Точный рез акрила и тонкого листового металла; кромка не требует доводки.','Шелфтокеры, логотипы, декоративные элементы'],
+     en:['Laser cutting','Precise cutting of acrylic and thin sheet metal; the edge needs no rework.','Shelf talkers, logos, decorative elements']},
+    {ru:['Плоттерная резка','Контурная резка плёнок и тонких пластиков.','Аппликации, стопперы, графика на изделиях'],
+     en:['Plotter cutting','Contour cutting of films and thin plastics.','Appliqués, stoppers, product graphics']},
+    {ru:['УФ- и широкоформатная печать','Прямая печать по жёстким листам и рулонным материалам.','Брендинг панелей, графика дисплеев, баннеры'],
+     en:['UV & large-format print','Direct printing on rigid sheets and roll materials.','Panel branding, display graphics, banners']},
+    {ru:['Вакуумная формовка','Объёмные детали из листового пластика по фрезерованной матрице.','Ложементы, объёмные элементы, лотки'],
+     en:['Vacuum forming','Volumetric parts from sheet plastic over a routed mould.','Trays, volumetric elements, inserts']},
+    {ru:['Гибка металла и проволоки','Каркасы и крепёжные элементы из прутка, трубы и листа.','Каркасы стоек, крючки, ценникодержатели'],
+     en:['Metal & wire bending','Frames and fastening elements from rod, tube and sheet.','Stand frames, hooks, price-tag holders']},
+    {ru:['3D-печать','Прототипы узлов и мелкие нестандартные детали.','Образцы соединений, клипсы, нетиповой крепёж'],
+     en:['3D printing','Prototypes of joints and small non-standard parts.','Joint samples, clips, custom fasteners']}
+  ]
+};
+const MAT_TABLE = {
+  head: {ru:['Материал','Когда применяется','Плюсы','Ограничения'],
+         en:['Material','When it is used','Strengths','Limitations']},
+  rows: [
+    {ru:['Акрил','Витринные и имиджевые элементы, где важны прозрачность и глянец.','Прозрачность, глянцевая поверхность, точный лазерный рез.','Хрупче ПЭТ, царапается, дороже.'],
+     en:['Acrylic','Display and image elements where clarity and gloss matter.','Transparency, glossy surface, precise laser cutting.','More brittle than PET, scratches, costs more.']},
+    {ru:['ПЭТ','Прозрачные детали в зоне контакта с покупателем.','Ударопрочность, легче и безопаснее стекла.','Меньшая жёсткость, царапается.'],
+     en:['PET','Transparent parts in the shopper contact zone.','Impact resistance, lighter and safer than glass.','Lower stiffness, scratches.']},
+    {ru:['ПВХ','Лёгкие панели, основа под печать, объёмные элементы.','Лёгкий, влагостойкий, хорошо печатается.','Ниже жёсткость, чувствителен к нагреву.'],
+     en:['PVC','Light panels, print substrate, volumetric elements.','Light, moisture-resistant, prints well.','Lower stiffness, heat-sensitive.']},
+    {ru:['МДФ','Корпуса и фигурные фасады под фрезеровку и окраску.','Однородная структура, точная фрезеровка, окрашенный вид.','Тяжёлый, требует защиты от влаги.'],
+     en:['MDF','Bodies and shaped fronts for routing and painting.','Uniform structure, precise routing, painted finish.','Heavy, needs moisture protection.']},
+    {ru:['ЛДСП','Корпусная основа тиражных конструкций.','Экономичность, готовая поверхность, быстрая сборка.','Сколы на кромках, ограничен в фигурном резе.'],
+     en:['Chipboard','The carcass of serial fixtures.','Economical, pre-finished surface, fast assembly.','Edge chipping, limited shaped cutting.']},
+    {ru:['Фанера','Несущие элементы и видимая «древесная» эстетика.','Прочность на изгиб, легче МДФ.','Разброс качества листов, кромка требует обработки.'],
+     en:['Plywood','Load-bearing elements and visible wood aesthetics.','Bending strength, lighter than MDF.','Sheet quality varies, edges need finishing.']},
+    {ru:['Металл','Каркасы, нагруженные узлы, антивандальные изделия.','Прочность, долговечность, малое сечение при той же нагрузке.','Тяжелее и дороже в обработке, нужна покраска или цинкование.'],
+     en:['Metal','Frames, loaded joints, vandal-proof fixtures.','Strength, durability, small section at equal load.','Heavier and costlier to process, needs painting or galvanizing.']}
+  ]
+};
+const MFG = {
+  fmt:  {ru:['Паллетные дисплеи','Шелфтокеры','Прикассовые зоны','Бренд-зоны','Промо-стойки','Shop-in-shop','Торговые островки'],
+         en:['Pallet displays','Shelf talkers','Checkout zones','Brand zones','Promo stands','Shop-in-shop','Retail islands']}
+};
+
+const BEFORE_AFTER = [
+  {id:'', ru:{t:'Параметры проекта', d:'120+ параметров задаются один раз и связывают всю модель'},
+          en:{t:'Project parameters', d:'120+ parameters set once, driving the whole model'}},
+  {id:'', ru:{t:'Соединения шип-паз', d:'Нарезка соединений с предпросмотром вместо ручного построения'},
+          en:{t:'Tab-and-slot joints', d:'Joint cutting with live preview instead of manual modelling'}},
+  {id:'', ru:{t:'Присадка под крепёж', d:'Конфирматы и эксцентрики расставляются по правилам'},
+          en:{t:'Fastener drilling', d:'Confirmats and cams placed by rules, not by hand'}},
+  {id:'', ru:{t:'Кромки для спецификации', d:'Назначение кромок и подсчёт метража для BOM'},
+          en:{t:'Edge banding for BOM', d:'Edge assignment and length calculation for the BOM'}},
+  {id:'', ru:{t:'Копирование узлов', d:'Тиражирование деталей и сборок с сохранением связей'},
+          en:{t:'Component cloning', d:'Duplicating parts and assemblies, keeping references'}},
+  {id:'', ru:{t:'Номенклатура деталей', d:'Переименование по единым правилам вместо ручного ввода'},
+          en:{t:'Part nomenclature', d:'Renaming by one rule set instead of manual entry'}},
+  {id:'', ru:{t:'Инструмент 07', d:'Подпись задачи'}, en:{t:'Tool 07', d:'Task caption'}},
+  {id:'', ru:{t:'Инструмент 08', d:'Подпись задачи'}, en:{t:'Tool 08', d:'Task caption'}}
+];
+
+const AUTO_STATS = [
+  {ru:{b:'8', s:'собственных инструментов в ежедневной работе'},       en:{b:'8', s:'in-house tools in daily engineering work'}},
+  {ru:{b:'120+', s:'параметров изделия в одной модели проекта'},        en:{b:'120+', s:'product parameters in a single project model'}},
+  {ru:{b:'−ошибки', s:'типовые операции выполняются по одним правилам'},en:{b:'−errors', s:'routine operations follow the same rules'}},
+  {ru:{b:'итерации', s:'правка дизайна не требует перечерчивания вручную'},en:{b:'iterations', s:'design changes don\'t require manual redrawing'}}
+];
+
+window.PAGE_TITLES = {
+  ru:'Инженерия — Жумабек Есим',
+  en:'Engineering — Zhumabek Yessim'
+};
+
+window.PAGE_I18N_EN = {
+  ...SHARED_I18N_EN,
+  optEyebrow:'Engineering review', optH2:'What every decision is checked against',
+  optIntro:'POSM design defines how a fixture looks; engineering development defines how it is manufactured. The engineer selects materials and joints, verifies strength and assembly, prepares drawings, BOMs and CNC files. Without this stage the layout remains an image that a factory cannot reproduce serially.',
+  optLead:'Every engineering decision is evaluated not only for strength and appearance, but for its impact on manufacturing complexity, production time, assembly effort and overall project economics. When a structure can be simplified without compromising look, reliability or function, the client receives an alternative solution.',
+  optNote:'Savings are not possible in every project — sometimes the structure is already rational. But a manufacturability review before production always reduces the risk of rework and missed deadlines.',
+  mfgEyebrow:'Manufacturing', mfgH2:'Designed for the technology',
+  mfgIntro:'To prepare a POSM fixture for production, the design layout is converted into engineering documentation: drawings, BOMs and machine files. The structure is recalculated for the sheet and the machinery — parts and fasteners are reduced, the assembly sequence is built in. The first sample is assembled and corrected before the run.',
+  mfgLead:'Engineering is part of manufacturing, not an isolated CAD process. Every decision accounts for the machinery the product will be made on, the materials, how it assembles, ships and installs in-store.',
+  mfgCol1:'Technologies', mfgCol2:'Materials', mfgCol3:'Typical formats',
+  mfgNote:'Material selection for the run size and budget is part of the <a href="https://wa.me/77775774405" target="_blank" rel="noopener">engineering assessment</a>.',
+  autoBadge:'● Systematic engineering', autoH2:'In-house automation tools',
+  autoP1:'To reduce repetitive work, minimize human error and speed up documentation, I built my own set of Fusion 360 automation tools — <strong>eight modules</strong> that handle routine engineering operations: fasteners, joints, edge banding, part nomenclature.',
+  autoP2:'For the client this means predictability: stable documentation output, fewer BOM errors and fast iterations when the design changes mid-project. In serial work the tools ensure repeatability — products of one family are engineered by the same rules.',
+  baH3:'Before → after', baLead:'Short screen recordings: the left side shows the manual operation, the right side shows the tool doing it. The difference is not in quality, but in time and number of actions.'
+};
+
+window.renderContent = function(){
+  const L = LANG;
+  document.getElementById('opt-cards').innerHTML = OPT.map(c=>`
+    <div class="cap"><div class="cap-n">${c.n}</div><h3>${esc(c[L].t)}</h3><p>${esc(c[L].d)}</p></div>`).join('');
+
+  const tagHtml = a => a.map(s=>`<span>${esc(s)}</span>`).join('');
+  document.getElementById('mfg-fmt').innerHTML = tagHtml(MFG.fmt[L]);
+
+  const tblHtml = t => `<thead><tr>${t.head[L].map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead>
+    <tbody>${t.rows.map(r=>`<tr>${r[L].map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  document.getElementById('tbl-tech').innerHTML = tblHtml(TECH_TABLE);
+  document.getElementById('tbl-mat').innerHTML = tblHtml(MAT_TABLE);
+
+  if(SHOW_AUTOMATION){
+    const emptyTxt = L==='en' ? 'Video slot' : 'Место под видео';
+    const playLabel = L==='en' ? 'Play video' : 'Смотреть видео';
+    const fb = id => `if(!this.dataset.fb){this.dataset.fb=1;this.src='https://i.ytimg.com/vi/${id}/hqdefault.jpg'}`;
+    const vidBox = v => v.id
+      ? `<button class="vid" data-yt="${esc(v.id)}" aria-label="${esc(playLabel)}: ${esc(v[L].t)}">
+           <img src="https://i.ytimg.com/vi/${esc(v.id)}/maxresdefault.jpg"
+                onload="if(this.naturalWidth<320){${fb(esc(v.id))}}"
+                onerror="${fb(esc(v.id))}"
+                alt="${esc(v[L].t)}" loading="lazy">
+           <span class="vid-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+         </button>`
+      : `<div class="vid" role="img" aria-label="${esc(emptyTxt)}">
+           <div class="vid-empty">
+             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3z"/></svg>
+             <span>${esc(emptyTxt)}</span>
+           </div>
+         </div>`;
+
+    document.getElementById('auto-stats').innerHTML = AUTO_STATS.map(s=>`
+      <div class="astat"><b>${esc(s[L].b)}</b><span>${esc(s[L].s)}</span></div>`).join('');
+    document.getElementById('ba-grid').innerHTML = BEFORE_AFTER.map((v,i)=>`
+      <div class="ba-card">
+        <div class="ba-n"><span>${String(i+1).padStart(2,'0')}</span><span class="ba-badge">${L==='en'?'before → after':'было → стало'}</span></div>
+        ${vidBox(v)}
+        <h4>${esc(v[L].t)}</h4><p>${esc(v[L].d)}</p>
+      </div>`).join('');
+  }
+};
+
+document.getElementById('automation').hidden = !SHOW_AUTOMATION;
+setLang(LANG);
+</script>
+</body>
+</html>

@@ -18,6 +18,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://yessim.pro/assets/og.jpg">
 <link rel="canonical" href="https://yessim.pro/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/onest-var-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/onest-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
@@ -52,382 +55,11 @@
   "priceRange": "по запросу"
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "Чем инженерная разработка POSM отличается от дизайна?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Дизайн определяет, как конструкция выглядит; инженерная разработка — как её изготовить. На этом этапе выбираются материалы и способы соединения, проверяется прочность и собираемость, готовятся чертежи, спецификации и файлы для станков. Дизайн-макет становится изделием, которое можно воспроизводить серийно с предсказуемой стоимостью."}},
-    {"@type": "Question", "name": "В каком формате передаётся конструкторская документация?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Комплект включает сборочные и деталировочные чертежи, спецификации (BOM) и схемы сборки. По договорённости передаются исходные 3D-модели — работа ведётся в Fusion 360 и SolidWorks. Форматы файлов согласуются под программы и станки конкретного производства."}},
-    {"@type": "Question", "name": "Что входит в комплект для запуска производства?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Конструкторская документация, production-ready 3D-модели и файлы для станков: ЧПУ-фрезеровка, лазерная и плоттерная резка, вакуумная формовка. Дополнительно — карты раскроя и порядок сборки. Комплект рассчитан на запуск без расшифровки и доработок со стороны цеха."}},
-    {"@type": "Question", "name": "Возможно ли сопровождение производства после запуска в цех?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Да. Сопровождение включает проверку собираемости первого образца, доработку прототипа и авторский надзор до выхода серии. Ошибки, найденные на образце, исправляются в документации до тиража."}},
-    {"@type": "Question", "name": "Какие материалы используются при изготовлении торгового оборудования?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Основные материалы — акрил, ПЭТ, ПВХ, МДФ, ЛДСП, фанера и металл. Выбор зависит от тиража, бюджета, нагрузки и условий эксплуатации в торговой точке. В одном изделии материалы обычно комбинируются: например, каркас из ЛДСП или металла и прозрачные элементы из ПЭТ."}},
-    {"@type": "Question", "name": "Какие технологии производства применяются?",
-     "acceptedAnswer": {"@type": "Answer", "text": "ЧПУ-фрезеровка, лазерная и плоттерная резка, УФ- и широкоформатная печать, вакуумная формовка, гибка металла и проволоки, 3D-печать прототипов. Конструкция проектируется под конкретный станок и оснастку, поэтому набор операций определяется на этапе разработки."}},
-    {"@type": "Question", "name": "В каком виде передаются файлы для ЧПУ?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Файлы готовятся под конкретный станок: раскрой с учётом листа и инструмента, глубины и диаметры под крепёж, технологические зазоры. Форматы — векторные и CAD-форматы, которые принимает оборудование производства; они согласуются заранее. Ручная доводка после станка не требуется."}},
-    {"@type": "Question", "name": "Возможна ли оптимизация уже готового макета под производство?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Да, это типовая задача. Готовый дизайн-макет проверяется на технологичность: число деталей и операций, раскрой, сборка, упаковка. Если конструкцию можно упростить без изменения внешнего вида, заказчик получает альтернативный вариант с обоснованием."}},
-    {"@type": "Question", "name": "Как готовится POSM-конструкция к серийному производству?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Конструкция пересчитывается под лист и станок: сокращается число деталей и крепежа, закладывается последовательность сборки, проверяются упаковка и логистика. Первый образец собирается и корректируется до запуска тиража. Цель — чтобы каждая следующая единица серии повторялась без подгонки."}},
-    {"@type": "Question", "name": "На каких языках ведётся работа с заказчиком?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Русский, казахский и английский. Документация оформляется на языке заказчика или производства по договорённости."}}
-  ]
-}
-</script>
-<style>
-/* Шрифты — self-host (assets/fonts, вариативные woff2): ноль сторонних
-   доменов до первого рендера. Сабсеты latin/cyr/cyr-ext, как у Google Fonts. */
-@font-face{font-family:'Onest';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/onest-var-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'Onest';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/onest-var-cyr.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Onest';font-style:normal;font-weight:400 700;font-display:swap;src:url(assets/fonts/onest-var-cyr-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(assets/fonts/jbmono-var-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(assets/fonts/jbmono-var-cyr.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(assets/fonts/jbmono-var-cyr-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-
-/* ═══════════════════════════════════════════════════════════
-   ТОКЕНЫ. Меняешь тут — меняется весь сайт.
-   ═══════════════════════════════════════════════════════════ */
-:root{
-  --bg:#0c0d10;
-  --bg-1:#141619;
-  --bg-2:#1c1f24;
-  --fg:#edeef0;
-  --fg-2:#a2a8b0;
-  --fg-3:#7f8791;
-  --line:rgba(255,255,255,.08);
-  --line-2:rgba(255,255,255,.15);
-  --accent:#ff5a1f;
-  --accent-2:#ff8352;
-  --accent-soft:rgba(255,90,31,.13);
-
-  --font:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Consolas,monospace;
-
-  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;
-  --s6:32px;--s7:48px;--s8:64px;--s9:96px;--s10:132px;
-
-  --r1:3px;--r2:6px;--r3:12px;
-  --maxw:1180px;--pad:24px;
-
-  --ease:cubic-bezier(.22,1,.36,1);
-  --t-fast:.18s;--t:.4s;--t-slow:.7s;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  background:var(--bg);color:var(--fg);
-  font-family:var(--font);font-size:17px;line-height:1.6;letter-spacing:-.01em;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;cursor:pointer}
-
-/* фон-«миллиметровка» только у шапки страницы */
-.bg-grid{
-  position:fixed;inset:0 0 auto;height:80vh;z-index:0;pointer-events:none;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:56px 56px;
-  mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,var(--bg),transparent 72%);opacity:.6;
-}
-.bg-glow{
-  position:fixed;top:-32vh;left:50%;width:120vw;height:80vh;transform:translateX(-50%);
-  z-index:0;pointer-events:none;filter:blur(30px);
-  background:radial-gradient(ellipse at center,rgba(255,90,31,.10),transparent 60%);
-}
-.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);position:relative;z-index:1}
-
-/* ── навигация ── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid transparent;transition:background var(--t),border-color var(--t),backdrop-filter var(--t)}
-.nav.stuck{background:rgba(12,13,16,.72);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:600;letter-spacing:-.02em}
-.brand-mark{width:30px;height:30px;border:1.5px solid var(--accent);border-radius:var(--r1);display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;color:var(--accent);flex:none}
-.brand small{display:block;font-family:var(--mono);font-size:11px;color:var(--fg-3);font-weight:400;letter-spacing:0}
-.nav-links{display:flex;gap:var(--s6);align-items:center}
-.nav-links a{font-size:15px;color:var(--fg-2);position:relative;padding:4px 0;transition:color var(--t-fast)}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform var(--t) var(--ease)}
-.nav-links a:hover{color:var(--fg)}
-.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
-.nav-cta{display:flex;align-items:center;gap:var(--s4);flex:none}
-.burger{display:none;width:40px;height:40px;background:none;border:1px solid var(--line-2);border-radius:var(--r2);place-items:center;flex:none}
-.burger span{display:block;width:16px;height:1.5px;background:var(--fg);position:relative}
-.burger span::before,.burger span::after{content:'';position:absolute;left:0;width:16px;height:1.5px;background:var(--fg)}
-.burger span::before{top:-5px}.burger span::after{top:5px}
-
-/* ── кнопки ── */
-.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:var(--r2);border:1px solid transparent;font-size:15px;font-weight:500;white-space:nowrap;transition:transform var(--t-fast),background var(--t-fast),border-color var(--t-fast),color var(--t-fast)}
-.btn:active{transform:translateY(1px)}
-.btn-1{background:var(--accent);color:#170b04;font-weight:600}
-.btn-1:hover{background:var(--accent-2)}
-.btn-2{border-color:var(--line-2);color:var(--fg)}
-.btn-2:hover{border-color:var(--fg-3);background:var(--bg-2)}
-.btn-lg{padding:15px 26px;font-size:16px}
-.btn .arw{transition:transform var(--t)}
-.btn:hover .arw{transform:translateX(3px)}
-
-/* ── типографика ── */
-.sec{padding:var(--s10) 0;position:relative}
-.sec-head{margin-bottom:var(--s8);max-width:780px}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:var(--fg-3);text-transform:uppercase;margin-bottom:var(--s5)}
-.eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
-h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.08}
-h1{font-size:clamp(38px,6.2vw,72px);letter-spacing:-.045em}
-h2{font-size:clamp(28px,4vw,46px)}
-h3{font-size:19px;letter-spacing:-.02em;line-height:1.3}
-.lead{font-size:clamp(17px,2vw,20px);color:var(--fg-2);line-height:1.55;max-width:64ch}
-.counter{font-variant-numeric:tabular-nums;color:var(--accent)}
-
-/* ── манифест: главная мысль сайта одной полосой ── */
-.manifest{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:var(--s8) 0}
-.manifest p{font-size:clamp(21px,2.9vw,32px);font-weight:500;letter-spacing:-.03em;line-height:1.3;max-width:30ch}
-.manifest .hl{color:var(--accent)}
-
-/* ── честная оговорка в секции оптимизации ── */
-.opt-note{margin-top:var(--s6);padding:var(--s5) var(--s6);border-left:2px solid var(--accent);background:var(--bg-1);border-top-right-radius:var(--r2);border-bottom-right-radius:var(--r2);color:var(--fg-2);font-size:15px;line-height:1.6;max-width:72ch}
-
-/* ── видео ──
-   Фасад вместо iframe: до клика грузится только лёгкая заглушка,
-   YouTube подключается по требованию (быстрее и без слежки за
-   посетителем до того, как он сам нажал play). */
-.vid{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;background:var(--bg-1);width:100%;padding:0;display:block;cursor:pointer;transition:border-color var(--t),transform var(--t)}
-.vid:hover{border-color:var(--accent);transform:translateY(-2px)}
-.vid img,.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
-.vid-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(12,13,16,.72);border:1.5px solid var(--accent);display:grid;place-items:center;transition:background var(--t),transform var(--t);backdrop-filter:blur(4px)}
-.vid:hover .vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.06)}
-.vid-play svg{width:22px;height:22px;fill:var(--accent);margin-left:3px;transition:fill var(--t)}
-.vid:hover .vid-play svg{fill:#170b04}
-.vid-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--fg-3);text-align:center;padding:var(--s4);
-  background:var(--bg-1)}
-.vid-empty span{font-family:var(--mono);font-size:11px;letter-spacing:.04em;line-height:1.4}
-.vid-cap{margin-top:var(--s3);font-size:14px;color:var(--fg-2);line-height:1.4}
-.vid-cap b{display:block;color:var(--fg);font-weight:500;font-size:15px;letter-spacing:-.01em;margin-bottom:3px}
-
-/* видео в работах — две крупные карточки */
-.works-vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--s5)}
-
-/* «было → стало»: сетка карточек инструментов */
-.ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4);margin-top:var(--s7)}
-.ba-card{background:var(--bg-1);border:1px solid var(--line);border-radius:var(--r2);padding:var(--s4);transition:border-color var(--t)}
-.ba-card:hover{border-color:var(--line-2)}
-.ba-card .vid{aspect-ratio:4/3;border-radius:var(--r1)}
-.ba-n{font-family:var(--mono);font-size:11px;color:var(--fg-3);letter-spacing:.05em;margin-bottom:var(--s3);display:flex;justify-content:space-between;align-items:center}
-.ba-badge{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,90,31,.3);background:var(--accent-soft);padding:2px 6px;border-radius:100px}
-.ba-card h4{font-size:15px;font-weight:500;letter-spacing:-.01em;margin:var(--s3) 0 4px;line-height:1.3}
-.ba-card p{font-size:14px;color:var(--fg-3);line-height:1.45}
-
-/* ── FAQ (details/summary — работает без JS) ── */
-.faq{max-width:860px}
-.faq details{border-bottom:1px solid var(--line)}
-.faq details:first-child{border-top:1px solid var(--line)}
-.faq summary{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);padding:var(--s5) 0;cursor:pointer;list-style:none;transition:color var(--t-fast)}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary:hover{color:var(--accent)}
-.faq summary h3{font-size:17px;font-weight:500;letter-spacing:-.015em;line-height:1.4}
-.faq-ic{flex:none;width:18px;height:18px;position:relative}
-.faq-ic::before,.faq-ic::after{content:'';position:absolute;background:currentColor;left:50%;top:50%}
-.faq-ic::before{width:12px;height:1.5px;transform:translate(-50%,-50%)}
-.faq-ic::after{width:1.5px;height:12px;transform:translate(-50%,-50%);transition:transform var(--t) var(--ease),opacity var(--t)}
-.faq details[open] .faq-ic::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
-.faq details p{padding:0 0 var(--s5);font-size:15px;color:var(--fg-2);line-height:1.6;max-width:70ch}
-.faq-cta{margin-top:var(--s6);font-size:15px;color:var(--fg-2)}
-.faq-cta a{color:var(--accent);font-weight:500}
-.faq-cta a:hover{text-decoration:underline}
-
-/* ── таблицы технологий и материалов ── */
-.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r2);background:var(--bg-1)}
-.tbl{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5;min-width:640px}
-.tbl th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:400;color:var(--fg-3);text-align:left;padding:var(--s4) var(--s5);border-bottom:1px solid var(--line-2)}
-.tbl td{padding:var(--s4) var(--s5);border-bottom:1px solid var(--line);color:var(--fg-2);vertical-align:top}
-.tbl tr:last-child td{border-bottom:0}
-.tbl td:first-child{color:var(--fg);font-weight:500;white-space:nowrap}
-.tbl tbody tr{transition:background var(--t-fast)}
-.tbl tbody tr:hover{background:var(--bg-2)}
-.tbl-note{margin-top:var(--s5);font-size:14px;color:var(--fg-3)}
-.tbl-note a{color:var(--accent)}
-.tbl-note a:hover{text-decoration:underline}
-.tbl-h{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em;margin:var(--s7) 0 var(--s4)}
-.tbl-h:first-of-type{margin-top:0}
-
-/* ── кейсы (карточки) ── */
-.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
-.case{background:var(--bg-1);border:1px solid var(--line);border-radius:var(--r2);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s4)}
-.case-head b{display:block;font-size:17px;font-weight:600;letter-spacing:-.02em}
-.case-head span{font-family:var(--mono);font-size:11px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.05em}
-.case dl div{margin-bottom:var(--s3)}
-.case dt{font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
-.case dd{font-size:14px;color:var(--fg-2);line-height:1.5}
-
-/* ── переключатель языка ── */
-.lang-btn{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;border:1px solid var(--line-2);border-radius:var(--r2);background:none;padding:9px 13px;color:var(--fg-2);transition:border-color var(--t-fast),color var(--t-fast);flex:none}
-.lang-btn:hover{border-color:var(--accent);color:var(--fg)}
-
-/* ── HERO ── */
-.hero{padding:150px 0 var(--s9)}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s8);align-items:center}
-.hero h1{margin-bottom:var(--s5)}
-.hero h1 .hl{color:var(--accent)}
-.hero-sub{font-size:clamp(17px,2vw,20px);color:var(--fg-2);max-width:52ch;line-height:1.5;margin-bottom:var(--s4)}
-.hero-sig{font-size:15px;color:var(--fg-3);line-height:1.5;max-width:52ch;margin-bottom:var(--s7)}
-.hero-cta{display:flex;gap:var(--s3);flex-wrap:wrap;margin-bottom:var(--s8)}
-/* featured image справа */
-.hero-media{position:relative}
-.hero-frame{position:relative;border:1px solid var(--line-2);border-radius:var(--r3);overflow:hidden;background:var(--bg-1);aspect-ratio:1/1;max-width:480px;margin-left:auto;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
-.hero-frame img{width:100%;height:100%;object-fit:cover}
-.hero-corner{position:absolute;width:14px;height:14px;z-index:2}
-.hero-corner.tl{top:10px;left:10px;border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent)}
-.hero-corner.br{bottom:10px;right:10px;border-bottom:1.5px solid var(--accent);border-right:1.5px solid var(--accent)}
-
-/* ── галерея работ ──
-   Квадратные обложки 1:1 в квадратных ячейках — ничего не обрезается
-   и не растягивается. Полное изображение — в лайтбоксе. */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
-.gcard{position:relative;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;background:var(--bg-1);aspect-ratio:1/1;transition:border-color var(--t),transform var(--t);padding:0}
-.gcard img{width:100%;height:100%;object-fit:cover;transition:transform var(--t-slow) var(--ease)}
-.gcard:hover{border-color:var(--accent);transform:translateY(-2px);z-index:2}
-.gcard:hover img{transform:scale(1.05)}
-.gcard-info{position:absolute;inset:auto 0 0;padding:var(--s5) var(--s3) var(--s3);background:linear-gradient(transparent,rgba(8,9,11,.88) 72%);opacity:0;transform:translateY(6px);transition:opacity var(--t),transform var(--t);pointer-events:none;text-align:left}
-.gcard:hover .gcard-info,.gcard:focus-visible .gcard-info{opacity:1;transform:none}
-.gcard-info b{display:block;font-size:14px;font-weight:500;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gal-more{display:flex;justify-content:center;margin-top:var(--s7)}
-
-/* ── что умею (capabilities) ── */
-.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
-.cap{background:var(--bg-1);border:1px solid var(--line);border-radius:var(--r2);padding:var(--s6);transition:border-color var(--t),background var(--t),transform var(--t);position:relative;overflow:hidden}
-.cap::before{content:'';position:absolute;top:0;left:0;width:12px;height:12px;border-top:1px solid var(--accent);border-left:1px solid var(--accent);opacity:0;transition:opacity var(--t)}
-.cap:hover{border-color:var(--line-2);background:var(--bg-2);transform:translateY(-2px)}
-.cap:hover::before{opacity:1}
-.cap-n{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);margin-bottom:var(--s5);letter-spacing:.05em}
-.cap h3{margin-bottom:var(--s3)}
-.cap p{font-size:15px;color:var(--fg-2);line-height:1.55}
-
-/* ── автоматизация (преимущество) ── */
-.auto{border:1px solid var(--line-2);border-radius:var(--r3);background:linear-gradient(160deg,var(--accent-soft),transparent 60%),var(--bg-1);padding:var(--s8);position:relative;overflow:hidden}
-.auto-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--s8);align-items:center}
-.auto .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,90,31,.35);background:var(--accent-soft);padding:4px 11px;border-radius:100px;margin-bottom:var(--s5)}
-.auto h2{font-size:clamp(24px,3vw,34px);margin-bottom:var(--s4);max-width:20ch}
-.auto p{color:var(--fg-2);line-height:1.6;margin-bottom:var(--s4);max-width:54ch}
-.auto p strong{color:var(--fg);font-weight:500}
-.auto-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
-.astat{background:var(--bg-1);padding:var(--s6) var(--s5)}
-.astat b{display:block;font-family:var(--mono);font-size:clamp(24px,3vw,34px);color:var(--accent);letter-spacing:-.03em;margin-bottom:7px}
-.astat span{font-size:14px;color:var(--fg-3);line-height:1.35;display:block}
-
-/* ── колонки тегов (производственный контекст) ── */
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s6)}
-.skill-col h3{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em;font-weight:400;margin-bottom:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
-.tags{display:flex;flex-wrap:wrap;gap:var(--s2)}
-.tags span{font-family:var(--mono);font-size:12.5px;color:var(--fg-2);border:1px solid var(--line);border-radius:var(--r1);padding:7px 12px;transition:border-color var(--t-fast),color var(--t-fast)}
-.tags span:hover{border-color:var(--accent);color:var(--fg)}
-
-/* ── подход ── */
-.about-grid{display:grid;grid-template-columns:1fr;gap:var(--s6);max-width:760px}
-.about-grid p{font-size:17px;line-height:1.65;color:var(--fg-2)}
-.about-grid p strong{color:var(--fg);font-weight:500}
-
-/* ── контакты ── */
-.contact{border-top:1px solid var(--line)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s9);align-items:start}
-/* min-width:0 — иначе grid-колонка не сжимается ниже ширины своего
-   содержимого и распирает страницу на узких экранах */
-.contact-grid>*{min-width:0}
-.lead{overflow-wrap:break-word}
-.contact h2{margin-bottom:var(--s5);max-width:14ch}
-.cways{display:flex;flex-direction:column;gap:var(--s3)}
-.cway{display:flex;align-items:center;gap:var(--s4);padding:var(--s5);border:1px solid var(--line);border-radius:var(--r2);background:var(--bg-1);transition:border-color var(--t),background var(--t),transform var(--t)}
-.cway:hover{border-color:var(--line-2);background:var(--bg-2);transform:translateX(3px)}
-.cway-ic{width:44px;height:44px;flex:none;border:1px solid var(--line-2);border-radius:var(--r2);display:grid;place-items:center;color:var(--accent)}
-.cway-ic svg{width:20px;height:20px}
-.cway-t small{display:block;font-family:var(--mono);font-size:11px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
-.cway-t b{font-size:17px;font-weight:500;letter-spacing:-.01em}
-
-/* ── подвал ── */
-footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-index:1}
-.foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s5);flex-wrap:wrap}
-.foot p{font-size:14px;color:var(--fg-3)}
-.foot-links{display:flex;gap:var(--s5)}
-.foot-links a{font-size:14px;color:var(--fg-3);transition:color var(--t-fast)}
-.foot-links a:hover{color:var(--fg)}
-
-/* ── лайтбокс ── */
-.lb{position:fixed;inset:0;z-index:100;background:rgba(7,8,10,.95);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:var(--s6)}
-.lb.open{display:flex}
-.lb-img{max-width:min(1180px,94vw);max-height:82vh;border-radius:var(--r2);object-fit:contain;box-shadow:0 30px 90px -20px #000}
-.lb-cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:var(--fg-2);font-size:15px}
-.lb-cap b{color:var(--fg);font-weight:500}
-.lb-cap span{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);display:block;margin-top:4px}
-.lb-cap a{color:var(--accent)}
-.lb-cap a:hover{text-decoration:underline}
-.lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(28,31,36,.8);border:1px solid var(--line-2);color:var(--fg);font-size:22px;display:grid;place-items:center;transition:background var(--t-fast),border-color var(--t-fast)}
-.lb-btn:hover{background:var(--bg-2);border-color:var(--accent)}
-.lb-prev{left:20px}.lb-next{right:20px}
-.lb-close{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(28,31,36,.8);border:1px solid var(--line-2);color:var(--fg);font-size:22px;display:grid;place-items:center}
-.lb-close:hover{border-color:var(--accent)}
-.lb-count{position:absolute;top:26px;left:24px;font-family:var(--mono);font-size:12.5px;color:var(--fg-3)}
-
-/* ── появление ── */
-.rv{opacity:0;transform:translateY(18px);transition:opacity var(--t-slow) var(--ease),transform var(--t-slow) var(--ease)}
-.rv.in{opacity:1;transform:none}
-
-/* ── адаптив ── */
-@media(max-width:1000px){
-  .hero-grid{grid-template-columns:1fr;gap:var(--s7)}
-  .hero-media{max-width:520px}
-  .caps{grid-template-columns:repeat(2,1fr)}
-  .auto-grid{grid-template-columns:1fr;gap:var(--s6)}
-  .skills{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr;gap:var(--s7)}
-  .ba-grid{grid-template-columns:repeat(2,1fr)}
-  .cases{grid-template-columns:1fr}
-}
-@media(max-width:940px){
-  .nav-links{position:fixed;inset:66px 0 auto;flex-direction:column;align-items:stretch;gap:0;background:rgba(12,13,16,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:var(--s3) var(--pad) var(--s5);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity var(--t),transform var(--t)}
-  .nav-links.open{opacity:1;transform:none;pointer-events:auto}
-  .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
-  .nav-links a::after{display:none}
-  .burger{display:grid}
-}
-@media(max-width:760px){
-  :root{--s9:64px;--s10:80px;--pad:20px}
-  body{font-size:16px}
-  /* Шапка на телефоне: бургер обязан помещаться. Имя рядом со знаком
-     переносилось на две строки и выдавливало бургер за край экрана —
-     поэтому в узких вьюпортах оставляем только знак ЖЕ. */
-  .brand span:not(.brand-mark){display:none}
-  .nav-cta{gap:var(--s2)}
-  .nav-cta .btn{padding:9px 13px;font-size:14px}
-  .lang-btn{padding:8px 10px;font-size:12.5px}
-  .hero{padding:112px 0 var(--s9)}
-  .hero-cta .btn{flex:1;justify-content:center}
-  /* обложки квадратные — на телефоне 2 колонки, чтобы работы читались крупно */
-  .gal{grid-template-columns:repeat(2,1fr);gap:var(--s3)}
-  .gcard{border-radius:var(--r2)}
-  .caps{grid-template-columns:1fr}
-  .auto-stats{grid-template-columns:1fr}
-  .auto{padding:var(--s6)}
-  .lb-prev{left:8px}.lb-next{right:8px}
-  .works-vids{grid-template-columns:1fr;gap:var(--s4)}
-  .ba-grid{grid-template-columns:1fr;gap:var(--s3)}
-  .vid-play{width:52px;height:52px}
-  .cases{grid-template-columns:1fr}
-  /* таблицы на телефоне прокручиваются по горизонтали внутри рамки */
-  .tbl{min-width:560px}
-}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r1)}
-::selection{background:var(--accent);color:#170b04}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="bg-grid"></div>
-<div class="bg-glow"></div>
 
 <!-- НАВИГАЦИЯ -->
 <nav class="nav" id="nav">
@@ -437,10 +69,10 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
       <span><span data-cfg="name">Имя</span><small data-i="brandRole">инженер-конструктор</small></span>
     </a>
     <div class="nav-links" id="navlinks">
-      <a href="#works" data-i="navWorks">Работы</a>
-      <a href="#optimization" data-i="navOpt">Инженерия</a>
-      <a href="#deliverables" data-i="navDeliv">Заказчику</a>
-      <a href="#approach" data-i="navAppr">Подход</a>
+      <a href="#works" data-i="navWorks">Портфолио</a>
+      <a href="engineering.html" data-i="navOpt">Инженерия</a>
+      <a href="client.html" data-i="navDeliv">Заказчику</a>
+      <a href="approach.html" data-i="navAppr">Подход</a>
     </div>
     <div class="nav-cta">
       <button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button>
@@ -468,7 +100,7 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
           торгового оборудования к серийному производству — Казахстан.
         </p>
         <div class="hero-cta rv">
-          <a href="#works" class="btn btn-1 btn-lg"><span data-i="heroCta1">Смотреть работы</span> <span class="arw">→</span></a>
+          <a href="#works" class="btn btn-1 btn-lg"><span data-i="heroCta1">Смотреть портфолио</span> <span class="arw">→</span></a>
           <a href="#contact" class="btn btn-2 btn-lg" data-i="heroCta2">Обсудить проект</a>
         </div>
       </div>
@@ -482,11 +114,11 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   </div>
 </section>
 
-<!-- РАБОТЫ -->
+<!-- ПОРТФОЛИО -->
 <section class="sec" id="works">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow" data-i="worksEyebrow">Работы</div>
+      <div class="eyebrow" data-i="worksEyebrow">Портфолио</div>
       <h2><span class="counter" id="worksCounter" data-target="145">145</span> <span data-i="worksH2">реализованных проектов</span></h2>
       <p class="lead" style="margin-top:24px" data-i="worksLead">
         Паллетные дисплеи, промо-стойки, прикассовые зоны, брендированное торговое оборудование,
@@ -494,11 +126,6 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
         документация, по которой оно было изготовлено.
       </p>
     </div>
-    <!-- ИЗБРАННЫЕ КЕЙСЫ.
-         Каркас скрыт (SHOW_CASES в настройках): ждём реальные данные
-         по 3–5 проектам — клиент, сфера, задача, решение, результат.
-         Плейсхолдеры вида «[Название клиента]» заполняются в массиве
-         CASES внизу файла, после чего SHOW_CASES = true. -->
     <div id="cases-block" hidden>
       <div class="sec-head rv" style="margin:0 0 var(--s5);max-width:640px">
         <h3 style="font-size:clamp(19px,2.2vw,24px);margin-bottom:12px" data-i="casesH3">Избранные кейсы</h3>
@@ -524,163 +151,6 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
     <p class="rv" data-i="manifest">Красивый макет — половина работы. Инженерия начинается там,
     где изделие становится <span class="hl">проще в изготовлении</span>, быстрее в сборке
     и экономичнее в серии — не меняя того, как оно выглядит.</p>
-  </div>
-</section>
-
-<!-- ИНЖЕНЕРНАЯ ПРОРАБОТКА -->
-<section class="sec" id="optimization">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow" data-i="optEyebrow">Инженерная проработка</div>
-      <h2 data-i="optH2">Что проверяется в каждом решении</h2>
-      <p class="lead" style="margin-top:24px" data-i="optIntro">
-        Дизайн POSM определяет внешний вид конструкции, инженерная разработка — способ её
-        изготовления. Инженер выбирает материалы и соединения, проверяет прочность и собираемость,
-        готовит чертежи, спецификации и файлы для ЧПУ. Без этого этапа макет остаётся
-        изображением, которое производство не может воспроизвести серийно.
-      </p>
-      <p class="lead" style="margin-top:16px" data-i="optLead">
-        Каждое конструктивное решение оценивается не только на прочность и внешний вид, но и по
-        влиянию на сложность изготовления, время производства, трудоёмкость сборки и экономику
-        проекта. Если конструкцию можно упростить без потери вида, надёжности и функции —
-        заказчик получает альтернативный вариант.
-      </p>
-    </div>
-    <div class="caps rv" id="opt-cards"></div>
-    <div class="opt-note rv" data-i="optNote">
-      Экономия возможна не в каждом проекте: иногда конструкция уже рациональна. Но проверка
-      технологичности до запуска в цех в любом случае снижает риск переделок и сдвига сроков.
-    </div>
-  </div>
-</section>
-
-<!-- ЧТО ПОЛУЧАЕТ ЗАКАЗЧИК -->
-<section class="sec" id="deliverables" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow" data-i="delivEyebrow">Результат работы</div>
-      <h2 data-i="delivH2">Что получает заказчик</h2>
-      <p class="lead" style="margin-top:24px" data-i="delivLead">
-        Комплект, с которым производство запускается без расшифровки и доработок.
-      </p>
-    </div>
-    <div class="caps rv" id="caps"></div>
-  </div>
-</section>
-
-<!-- ПРОИЗВОДСТВЕННЫЙ КОНТЕКСТ -->
-<section class="sec" id="manufacturing" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow" data-i="mfgEyebrow">Производство</div>
-      <h2 data-i="mfgH2">Конструкция проектируется под технологию</h2>
-      <p class="lead" style="margin-top:24px" data-i="mfgIntro">
-        Чтобы подготовить POSM-конструкцию к производству, дизайн-макет переводят
-        в конструкторскую документацию: чертежи, спецификации и файлы для станков. Конструкция
-        пересчитывается под лист и оборудование — сокращается число деталей и крепежа,
-        закладывается последовательность сборки. Первый образец собирается и корректируется
-        до запуска тиража.
-      </p>
-      <p class="lead" style="margin-top:16px" data-i="mfgLead">
-        Инженерная разработка — часть производства, а не отдельный CAD-процесс. Решения
-        принимаются с учётом того, на каком оборудовании изделие будет изготовлено, из каких
-        материалов, как соберётся, как поедет и как встанет в торговой точке.
-      </p>
-    </div>
-    <div class="rv">
-      <div class="tbl-h" data-i="mfgCol1">Технологии</div>
-      <div class="tbl-wrap"><table class="tbl" id="tbl-tech"></table></div>
-      <div class="tbl-h" data-i="mfgCol2">Материалы</div>
-      <div class="tbl-wrap"><table class="tbl" id="tbl-mat"></table></div>
-      <p class="tbl-note" data-i="mfgNote">Подбор материала под тираж и бюджет — в рамках
-      <a href="https://wa.me/77775774405" target="_blank" rel="noopener">инженерной оценки проекта</a>.</p>
-    </div>
-    <div class="skills rv" style="margin-top:var(--s7);grid-template-columns:1fr">
-      <div class="skill-col">
-        <h3 data-i="mfgCol3">Типовые форматы</h3>
-        <div class="tags" id="mfg-fmt"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- АВТОМАТИЗАЦИЯ.
-     Секция временно скрыта: ждём записи экрана для блока «Было → стало».
-     Чтобы показать обратно — в блоке настроек внизу файла поставьте
-     SHOW_AUTOMATION = true. Ничего больше менять не нужно. -->
-<section class="sec" id="automation" style="padding-top:0" hidden>
-  <div class="wrap">
-    <div class="auto rv">
-      <div class="auto-grid">
-        <div>
-          <div class="badge" data-i="autoBadge">● Системная инженерия</div>
-          <h2 data-i="autoH2">Собственные инструменты автоматизации</h2>
-          <p data-i="autoP1">
-            Чтобы сократить повторяющиеся операции, снизить влияние человеческого фактора и
-            ускорить выпуск документации, я разработал собственный набор инструментов для
-            Fusion 360 — <strong>восемь модулей</strong>, автоматизирующих типовые конструкторские
-            задачи: крепёж, соединения, кромки, номенклатуру деталей.
-          </p>
-          <p data-i="autoP2">
-            Для заказчика это предсказуемость: стабильная скорость выпуска КД, меньше ошибок
-            в спецификациях и быстрые итерации, когда дизайн меняется по ходу проекта.
-            В серийных задачах инструменты дают повторяемость — однотипные изделия
-            проектируются по одним правилам.
-          </p>
-        </div>
-        <div class="auto-stats" id="auto-stats"></div>
-      </div>
-    </div>
-
-    <div class="sec-head rv" style="margin:var(--s9) 0 0;max-width:640px">
-      <h3 style="font-size:clamp(19px,2.2vw,24px);margin-bottom:12px" data-i="baH3">Было → стало</h3>
-      <p style="font-size:15px;color:var(--fg-2);line-height:1.55" data-i="baLead">
-        Короткие записи экрана: слева — как операция выполняется вручную, справа — как её делает
-        инструмент. Разница видна не в качестве результата, а во времени и числе действий.
-      </p>
-    </div>
-    <div class="ba-grid rv" id="ba-grid"></div>
-  </div>
-</section>
-
-<!-- ПОДХОД -->
-<section class="sec" id="approach" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow" data-i="apprEyebrow">Подход</div>
-      <h2 data-i="apprH2">Чертёж — результат, а не работа</h2>
-    </div>
-    <div class="about-grid rv">
-      <p data-i="apprP1">
-        Моя работа — не выпуск чертежей. Чертёж — это итог. Работа — найти конструктивное
-        решение, при котором изделие сохраняет замысел дизайнера и при этом становится
-        рациональнее в производстве.
-      </p>
-      <p data-i="apprP2">
-        Иногда небольшое инженерное изменение — другой способ соединения, другой раскрой листа,
-        другая последовательность сборки — <strong>заметно упрощает изготовление, не меняя
-        внешнего вида</strong>. На рендере такие решения не видны. Они видны в цехе: во времени
-        изготовления, в трудоёмкости сборки и в стоимости тиража.
-      </p>
-      <p data-i="apprP3">
-        Поэтому в каждом проекте я работаю в двух ролях: как конструктор — чтобы изделие было
-        прочным и собираемым, и как технолог — чтобы оно было изготовлено рационально.
-        Шестнадцать лет практики из этих двух ролей и складываются.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ВОПРОСЫ -->
-<section class="sec" id="faq" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow" data-i="faqEyebrow">Вопросы</div>
-      <h2 data-i="faqH2">Вопросы и ответы</h2>
-    </div>
-    <div class="faq rv" id="faq-list"></div>
-    <p class="faq-cta rv" data-i="faqCta">Не нашли ответ — напишите:
-    <a href="https://wa.me/77775774405" target="_blank" rel="noopener">+7 777 577-4405</a> (WhatsApp).</p>
   </div>
 </section>
 
@@ -719,8 +189,8 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   <div class="wrap foot">
     <p><span data-cfg="name">Имя</span> · <span data-i="footRole">инженерная разработка POSM</span> · 2026</p>
     <div class="foot-links">
-      <a href="#works" data-i="footWorks">Работы</a>
-      <a href="#optimization" data-i="footOpt">Инженерия</a>
+      <a href="#works" data-i="footWorks">Портфолио</a>
+      <a href="engineering.html" data-i="footOpt">Инженерия</a>
       <a href="#contact" data-i="footCtc">Контакты</a>
     </div>
   </div>
@@ -736,84 +206,12 @@ footer{border-top:1px solid var(--line);padding:var(--s7) 0;position:relative;z-
   <div class="lb-cap" id="lb-cap"></div>
 </div>
 
+<script src="shared.js"></script>
 <script>
-/* ═══════════════════════════════════════════════════════════
-   ▼▼▼ ЕДИНСТВЕННОЕ, ЧТО НУЖНО РЕДАКТИРОВАТЬ ▼▼▼
-   ═══════════════════════════════════════════════════════════ */
-const CONFIG = {
-  name:       'Жумабек Есим',
-  nameEn:     'Zhumabek Yessim',
-  initials:   'ЖЕ',
-  phone:      '+7 777 577-4405',           // отображается как есть
-  phoneRaw:   '+77775774405',              // для ссылки звонка/WhatsApp (только цифры и +)
-  email:      'zhumabekyessim@gmail.com'
-};
-
-/* Показывать ли секцию «Собственные инструменты автоматизации»
-   (описание, плитки и блок «Было → стало»).
-   Сейчас скрыта: ждём записи экрана для восьми инструментов.
-   Когда видео появятся — впишите ID в массив BEFORE_AFTER ниже
-   и поменяйте false на true. Больше ничего менять не нужно. */
-const SHOW_AUTOMATION = false;
-
-/* Показывать ли блок «Избранные кейсы» в разделе «Работы».
-   Скрыт: ждём реальные данные по 3–5 проектам (клиент, сфера, задача,
-   решение, результат с цифрами). Заполните массив CASES ниже
-   и поменяйте false на true. Данные НЕ выдумываются. */
 const SHOW_CASES = false;
-/* ═══════════════════════════════════════════════════════════
-   ▲▲▲ НИЖЕ РЕДАКТИРОВАТЬ НЕ НУЖНО ▲▲▲
-   ═══════════════════════════════════════════════════════════ */
 
-/* Все 145 работ: [номер файла, название, внутренний код]. Новые добавляются
-   В НАЧАЛО массива (новейшая первой), номер файла — следующий свободный.
-   Сетка — квадратные обложки assets/work/covers/NNN.webp (1080×1080,
-   центральный кроп из полного изображения),
-   лайтбокс — полное изображение assets/work/full/NNN.webp в исходной пропорции. */
 const WORKS=[['144','Дисплей','8vlgvq'],['001','Арка','WXql1G'],['002','Shop in shop','P664bL'],['003','Изготовление мебели и рекламы для магазина разливных напитков','bg5D8m'],['004','Изготовление мебели и рекламы для магазина здорового питания','QKnRNl'],['005','Паллета','zxGyRm'],['006','Паллета','a030r8'],['007','Барная стойка','XJzgJa'],['008','Изготовление мебели и рекламы для магазина разливных напитков','V22LxZ'],['009','Паллета','3E4mAB'],['010','Паллета','y4k9K8'],['011','Trade Island','3EqlNE'],['012','БАРНАЯ СТОЙКА','JrrE6Z'],['013','Паллета','lGx3Go'],['014','Паллета','6LbnwW'],['015','Торговый островок','vbbEDE'],['016','BAR COUNTER','OvmqLe'],['017','Паллета','4N8wll'],['018','Паллета','LR8gEP'],['019','Trade Island','qeRmbD'],['020','Торговый островок','98NRPa'],['021','Паллета','xDZvq2'],['022','Дисплей','nJygQr'],['023','BAR COUNTER','L4e5qR'],['024','Trade Island','Bk3odD'],['025','Торец','x34v8O'],['026','Торец','y4xLn3'],['027','Торговый островок','V2kJNX'],['028','Торговый островок','qeRmbn'],['029','Торец','0l3Yzy'],['030','Торец','P6em61'],['031','НЕИЛ БАР','L4eRJ0'],['032','Изготовление мебели и рекламы для магазина разливных напитков','6LLd6w'],['033','Торец','OvmyG6'],['034','Торец','nJJv2o'],['035','Изготовление мебели и рекламы для СТО','6Lbn60'],['036','Мебель для салона красоты','QKKWYL'],['037','Торец','xDygY2'],['038','Торец','PXkRg3'],['039','Мебель для салона красоты','oJJZok'],['040','РЕСЕПШЕН','eRRQo6'],['041','Арка с полками','L49Env'],['042','Арка','3EP8rA'],['043','Изготовление мебели и рекламы для магазина белья','eRJdYD'],['044','Торговое оборудование для магазина','rllO1L'],['045','Фотозона','XJ1Bga'],['046','Паллета с формовкой','V2xgE5'],['047','РЕСЕПШЕН','bg5DVk'],['048','РЕСЕПШЕН','YGKBqP'],['049','Формавка','K3QlnX'],['050','Дисплей','oJJxLq'],['051','РЕСЕПШЕН','0llEX4'],['052','РЕСЕПШЕН','8BBrdn'],['053','Дисплей','8BBrWR'],['054','Дисплей','K33y0W'],['055','РЕСЕПШЕН','rllOR2'],['056','БАРНАЯ СТОЙКА','x33OVX'],['057','Дисплей','PXyge3'],['058','Дисплей','Ezz984'],['059','Стол','lGbOJY'],['060','Камеры хранения','YGGJyb'],['061','Прикасса','4NX9l4'],['062','Прикасса','1N4xXe'],['063','КАМЕРА ХРАНЕНИЯ','K3OevW'],['064','Тетрис','QKKEqZ'],['065','Дисплей','yDZ2on'],['066','Дисплей','w0ZvrO'],['067','Стеллаж','3Er9bg'],['068','Стол деревянный','Jrnvbz'],['069','Дисплей','XgDNgw'],['070','Дисплей','rll0QO'],['071','Стол деревянный','K3Lezr'],['072','Стол из мдф','98XE3y'],['145','Баркетки','P4mD2o'],['073','Дисплей','RKKLRv'],['074','Дисплей','mAA6N9'],['075','Стол деревянный','Zlzadx'],['076','Стеллаж','OvdGEy'],['077','Дисплей','y44Qw8'],['078','Дисплей','L44k0P'],['079','Branded grill','DL5nNR'],['080','Пергола','oJdAYW'],['081','Прикасса','nJJ2GE'],['082','Горка','NqG2b1'],['083','Урна','gRq00E'],['084','Пергола','5W4XlE'],['085','ВОГОР','L4eRmK'],['086','Прикасса','K33gJR'],['087','Урна','vbxDDO'],['088','Урна','rleJlE'],['089','Роллер','5W3XkE'],['090','Прикасса','y44Kz8'],['091','Пергола','rleA1J'],['092','Лавочка','4N3998'],['093','Паразит','3EqadY'],['094','Стоппер','lGGNQa'],['095','Качеля','QKPr3E'],['096','Урна','0l543G'],['097','Стоппер','0l3dzY'],['098','pyramid','kQaNnn'],['099','Лавочка','Ovdo0v'],['100','Урна','vbx2qY'],['101','Шелфтокер раздвижной','QKnRa4'],['102','Шелфтокер','XJ1ba3'],['103','Лавочка','V2kJyP'],['104','Лавочка','L4l3dw'],['105','Стоппер','dyygwx'],['106','Showbox','m85A1E'],['107','Лавочка','wrq005'],['108','Урна из металла','L448wK'],['109','Паразит','Bkk9kr'],['110','Паразиты','y44EgJ'],['111','Лавочка','lGlDDz'],['112','Пергола','2B58Xv'],['113','Страйп лента','GvvmyW'],['114','Страйп лента','rllWlE'],['115','Лавочка','vbx2OA'],['116','Качеля','eR4aNG'],['117','Equipment for exhibitions','9E2KZN'],['118','Candy Rack','rJZvZ2'],['119','Качеля','qJP9Vy'],['120','Metal hooks for commercial equipment','6NkedV'],['121','Candy Rack','6NkewV'],['122','Торговый островок','RKKDBv'],['123','Hanging bottle holder','dKgy63'],['124','Tobacco box','PXyg4o'],['125','Дисплей','EvELBe'],['126','Дисплей','elDaOw'],['127','Табак-бокс','mAA599'],['128','Торговый островок','qJJ2ea'],['129','Дисплей','QXRrbd'],['130','Дисплей','g0G2YG'],['131','Торговый островок','9883QN'],['132','Торговый островок','DLLdBn'],['133','Дисплей','m85A0Z'],['134','Дисплей','39LEZg'],['135','Мебель для Алкомаркета','BkkvQ6'],['136','Паразит','DvNLmy'],['137','Дисплей','g0G2zm'],['138','Шелфтокер','w0ZrmV'],['139','Дисплей','rJZlv2'],['140','Дисплей','8bkB5n'],['141','Паразит','n02JZr'],['142','Дисплей','39ad6B'],['143','Дисплей','YBRgbb']];
 
-/* ── Контент секций. Каждая запись: {ru, en} — перерисовывается при смене языка ── */
-
-/* 01 / Инженерная проработка: что проверяется в каждом решении */
-const OPT = [
-  {n:'01', ru:{t:'Расход материала', d:'Конструкция и раскрой считаются от листа. Меньше отхода — ниже себестоимость каждой единицы тиража.'},
-           en:{t:'Material usage', d:'Structure and nesting are calculated from the sheet. Less waste — lower unit cost across the production run.'}},
-  {n:'02', ru:{t:'Количество деталей и крепежа', d:'Каждая лишняя деталь — это операция, время сборки и точка возможной ошибки. Лишнее убирается на этапе проектирования.'},
-           en:{t:'Parts and fasteners', d:'Every extra part is an operation, assembly time and a potential error. The unnecessary is removed at the design stage.'}},
-  {n:'03', ru:{t:'Число операций', d:'Конструкция проектируется под станок и оснастку, а не под доводку вручную. Меньше переходов между участками — короче цикл.'},
-           en:{t:'Number of operations', d:'Designed for the machine and tooling, not for manual rework. Fewer transitions between workstations — shorter cycle.'}},
-  {n:'04', ru:{t:'Последовательность сборки', d:'Порядок сборки закладывается в конструкцию заранее: узлы собираются без подгонки и специнструмента.'},
-           en:{t:'Assembly sequence', d:'The order of assembly is built into the design: units go together without fitting or special tools.'}},
-  {n:'05', ru:{t:'Логистика', d:'Плоская упаковка, разборные узлы, меньший объём перевозки. Для тиражных POSM это заметная часть стоимости проекта.'},
-           en:{t:'Logistics', d:'Flat packing, knock-down units, smaller shipping volume. For serial POSM this is a significant share of project cost.'}},
-  {n:'06', ru:{t:'Монтаж и сервис', d:'Заменяемые элементы и доступ к узлам: конструкция обслуживается в торговой точке без демонтажа.'},
-           en:{t:'Installation and service', d:'Replaceable elements and access to components: the fixture is serviced in-store without dismantling.'}}
-];
-
-/* 02 / Что получает заказчик */
-const CAPS = [
-  {n:'01', ru:{t:'Конструкторская документация', d:'Конструкторская документация на торговое оборудование включает сборочные и деталировочные чертежи, спецификации (BOM) и схемы сборки. По ней цех изготавливает изделие, а заказчик проверяет результат. Комплект дополняется production-ready 3D-моделями с толщинами, крепежом и допусками.'},
-           en:{t:'Engineering documentation', d:'Engineering documentation for retail equipment includes assembly and part drawings, bills of materials (BOM) and assembly schemes. The workshop manufactures from it and the client checks the result against it. The package is completed by production-ready 3D models with thicknesses, fasteners and tolerances.'}},
-  {n:'02', ru:{t:'Производственные 3D-модели', d:'Модели, по которым можно изготавливать, а не только презентовать: с толщинами, крепежом и допусками.'},
-           en:{t:'Production-ready 3D models', d:'Models you can manufacture from, not only present: with thicknesses, fasteners and tolerances.'}},
-  {n:'03', ru:{t:'Файлы для ЧПУ', d:'Для запуска POSM в производство нужны конструкторская документация — чертежи, спецификации, схемы сборки, — production-ready 3D-модели и файлы для станков: ЧПУ-фрезеровки, лазерной и плоттерной резки, вакуумной формовки. Комплект дополняют карты раскроя и порядок сборки. Такой пакет цех запускает без расшифровки.'},
-           en:{t:'CNC manufacturing files', d:'Launching POSM into production requires engineering documentation — drawings, BOMs, assembly schemes — production-ready 3D models and machine files: CNC routing, laser and plotter cutting, vacuum forming. Nesting layouts and the assembly sequence complete the package. A workshop runs such a package without decoding.'}},
-  {n:'04', ru:{t:'Инженерная оптимизация', d:'Конструкцию упрощают для серии за счёт сокращения деталей и крепежа, раскроя под стандартный лист и последовательности сборки без подгонки. Каждое решение проверяется по влиянию на время изготовления, трудоёмкость сборки и логистику. Внешний вид изделия при этом не меняется.'},
-           en:{t:'Engineering optimization', d:'A structure is simplified for series by reducing parts and fasteners, nesting for a standard sheet and an assembly sequence without fitting. Every decision is checked for its impact on manufacturing time, assembly effort and logistics. The product\'s appearance does not change.'}},
-  {n:'05', ru:{t:'Подбор материалов', d:'Под задачу, тираж, бюджет и условия эксплуатации: от акрила и ПЭТ до металла и ЛДСП.'},
-           en:{t:'Material selection', d:'For the task, run size, budget and service conditions: from acrylic and PET to metal and chipboard.'}},
-  {n:'06', ru:{t:'Сопровождение производства', d:'Проверка собираемости, доработка прототипа, авторский надзор до серийного запуска.'},
-           en:{t:'Production support', d:'Assembly checks, prototype refinement and supervision up to serial launch.'}}
-];
-
-/* ═══════════════════════════════════════════════════════════
-   ВИДЕО. Чтобы добавить ролик — впишите ID из ссылки YouTube:
-   https://www.youtube.com/watch?v=dQw4w9WgXcQ → id:'dQw4w9WgXcQ'
-   https://youtu.be/dQw4w9WgXcQ                → id:'dQw4w9WgXcQ'
-   Пустой id ('') — на месте ролика остаётся заглушка.
-   ═══════════════════════════════════════════════════════════ */
-
-/* Видео в разделе «Работы». Сначала изделия и производство, затем отзывы. */
 const WORK_VIDS = [
   {id:'Bnw0DnxgOIE',
    ru:{t:'Изготовление торговых островков', d:'Производство в Алматы: от раскроя до готовой конструкции'},
@@ -832,119 +230,6 @@ const WORK_VIDS = [
    en:{t:'Client feedback', d:'Feedback on completed projects'}}
 ];
 
-/* «Было → стало»: 8 инструментов автоматизации.
-   Первые шесть — реальные модули из POSM Engine, названия можно менять. */
-const BEFORE_AFTER = [
-  {id:'', ru:{t:'Параметры проекта', d:'120+ параметров задаются один раз и связывают всю модель'},
-          en:{t:'Project parameters', d:'120+ parameters set once, driving the whole model'}},
-  {id:'', ru:{t:'Соединения шип-паз', d:'Нарезка соединений с предпросмотром вместо ручного построения'},
-          en:{t:'Tab-and-slot joints', d:'Joint cutting with live preview instead of manual modelling'}},
-  {id:'', ru:{t:'Присадка под крепёж', d:'Конфирматы и эксцентрики расставляются по правилам'},
-          en:{t:'Fastener drilling', d:'Confirmats and cams placed by rules, not by hand'}},
-  {id:'', ru:{t:'Кромки для спецификации', d:'Назначение кромок и подсчёт метража для BOM'},
-          en:{t:'Edge banding for BOM', d:'Edge assignment and length calculation for the BOM'}},
-  {id:'', ru:{t:'Копирование узлов', d:'Тиражирование деталей и сборок с сохранением связей'},
-          en:{t:'Component cloning', d:'Duplicating parts and assemblies, keeping references'}},
-  {id:'', ru:{t:'Номенклатура деталей', d:'Переименование по единым правилам вместо ручного ввода'},
-          en:{t:'Part nomenclature', d:'Renaming by one rule set instead of manual entry'}},
-  {id:'', ru:{t:'Инструмент 07', d:'Подпись задачи'}, en:{t:'Tool 07', d:'Task caption'}},
-  {id:'', ru:{t:'Инструмент 08', d:'Подпись задачи'}, en:{t:'Tool 08', d:'Task caption'}}
-];
-
-/* 04 / Производственный контекст: таблицы технологий и материалов + форматы.
-   Ячейки — 1–2 предложения, только проверяемые отраслевые факты. */
-const TECH_TABLE = {
-  head: {ru:['Технология','Что делает','Типовые изделия'],
-         en:['Technology','What it does','Typical products']},
-  rows: [
-    {ru:['ЧПУ-фрезеровка','Раскрой и фигурная обработка листовых материалов: МДФ, ЛДСП, фанера, акрил.','Корпуса дисплеев, полки, торговые островки'],
-     en:['CNC routing','Cutting and shaped machining of sheet materials: MDF, chipboard, plywood, acrylic.','Display bodies, shelves, retail islands']},
-    {ru:['Лазерная резка','Точный рез акрила и тонкого листового металла; кромка не требует доводки.','Шелфтокеры, логотипы, декоративные элементы'],
-     en:['Laser cutting','Precise cutting of acrylic and thin sheet metal; the edge needs no rework.','Shelf talkers, logos, decorative elements']},
-    {ru:['Плоттерная резка','Контурная резка плёнок и тонких пластиков.','Аппликации, стопперы, графика на изделиях'],
-     en:['Plotter cutting','Contour cutting of films and thin plastics.','Appliqués, stoppers, product graphics']},
-    {ru:['УФ- и широкоформатная печать','Прямая печать по жёстким листам и рулонным материалам.','Брендинг панелей, графика дисплеев, баннеры'],
-     en:['UV & large-format print','Direct printing on rigid sheets and roll materials.','Panel branding, display graphics, banners']},
-    {ru:['Вакуумная формовка','Объёмные детали из листового пластика по фрезерованной матрице.','Ложементы, объёмные элементы, лотки'],
-     en:['Vacuum forming','Volumetric parts from sheet plastic over a routed mould.','Trays, volumetric elements, inserts']},
-    {ru:['Гибка металла и проволоки','Каркасы и крепёжные элементы из прутка, трубы и листа.','Каркасы стоек, крючки, ценникодержатели'],
-     en:['Metal & wire bending','Frames and fastening elements from rod, tube and sheet.','Stand frames, hooks, price-tag holders']},
-    {ru:['3D-печать','Прототипы узлов и мелкие нестандартные детали.','Образцы соединений, клипсы, нетиповой крепёж'],
-     en:['3D printing','Prototypes of joints and small non-standard parts.','Joint samples, clips, custom fasteners']}
-  ]
-};
-const MAT_TABLE = {
-  head: {ru:['Материал','Когда применяется','Плюсы','Ограничения'],
-         en:['Material','When it is used','Strengths','Limitations']},
-  rows: [
-    {ru:['Акрил','Витринные и имиджевые элементы, где важны прозрачность и глянец.','Прозрачность, глянцевая поверхность, точный лазерный рез.','Хрупче ПЭТ, царапается, дороже.'],
-     en:['Acrylic','Display and image elements where clarity and gloss matter.','Transparency, glossy surface, precise laser cutting.','More brittle than PET, scratches, costs more.']},
-    {ru:['ПЭТ','Прозрачные детали в зоне контакта с покупателем.','Ударопрочность, легче и безопаснее стекла.','Меньшая жёсткость, царапается.'],
-     en:['PET','Transparent parts in the shopper contact zone.','Impact resistance, lighter and safer than glass.','Lower stiffness, scratches.']},
-    {ru:['ПВХ','Лёгкие панели, основа под печать, объёмные элементы.','Лёгкий, влагостойкий, хорошо печатается.','Ниже жёсткость, чувствителен к нагреву.'],
-     en:['PVC','Light panels, print substrate, volumetric elements.','Light, moisture-resistant, prints well.','Lower stiffness, heat-sensitive.']},
-    {ru:['МДФ','Корпуса и фигурные фасады под фрезеровку и окраску.','Однородная структура, точная фрезеровка, окрашенный вид.','Тяжёлый, требует защиты от влаги.'],
-     en:['MDF','Bodies and shaped fronts for routing and painting.','Uniform structure, precise routing, painted finish.','Heavy, needs moisture protection.']},
-    {ru:['ЛДСП','Корпусная основа тиражных конструкций.','Экономичность, готовая поверхность, быстрая сборка.','Сколы на кромках, ограничен в фигурном резе.'],
-     en:['Chipboard','The carcass of serial fixtures.','Economical, pre-finished surface, fast assembly.','Edge chipping, limited shaped cutting.']},
-    {ru:['Фанера','Несущие элементы и видимая «древесная» эстетика.','Прочность на изгиб, легче МДФ.','Разброс качества листов, кромка требует обработки.'],
-     en:['Plywood','Load-bearing elements and visible wood aesthetics.','Bending strength, lighter than MDF.','Sheet quality varies, edges need finishing.']},
-    {ru:['Металл','Каркасы, нагруженные узлы, антивандальные изделия.','Прочность, долговечность, малое сечение при той же нагрузке.','Тяжелее и дороже в обработке, нужна покраска или цинкование.'],
-     en:['Metal','Frames, loaded joints, vandal-proof fixtures.','Strength, durability, small section at equal load.','Heavier and costlier to process, needs painting or galvanizing.']}
-  ]
-};
-const MFG = {
-  fmt:  {ru:['Паллетные дисплеи','Шелфтокеры','Прикассовые зоны','Бренд-зоны','Промо-стойки','Shop-in-shop','Торговые островки'],
-         en:['Pallet displays','Shelf talkers','Checkout zones','Brand zones','Promo stands','Shop-in-shop','Retail islands']}
-};
-
-/* 06 / Вопросы и ответы. Тексты дублируются в JSON-LD FAQPage в <head> —
-   при правке ответа здесь поменяйте его и там. */
-const FAQ_ITEMS = [
-  {ru:{q:'Чем инженерная разработка POSM отличается от дизайна?',
-       a:'Дизайн определяет, как конструкция выглядит; инженерная разработка — как её изготовить. На этом этапе выбираются материалы и способы соединения, проверяется прочность и собираемость, готовятся чертежи, спецификации и файлы для станков. Дизайн-макет становится изделием, которое можно воспроизводить серийно с предсказуемой стоимостью.'},
-   en:{q:'How does POSM engineering differ from design?',
-       a:'Design defines how a fixture looks; engineering development defines how to manufacture it. At this stage materials and joints are selected, strength and assembly are verified, and drawings, BOMs and machine files are prepared. The design layout becomes a product that can be reproduced serially at a predictable cost.'}},
-  {ru:{q:'В каком формате передаётся конструкторская документация?',
-       a:'Комплект включает сборочные и деталировочные чертежи, спецификации (BOM) и схемы сборки. По договорённости передаются исходные 3D-модели — работа ведётся в Fusion 360 и SolidWorks. Форматы файлов согласуются под программы и станки конкретного производства.'},
-   en:{q:'In what format is engineering documentation delivered?',
-       a:'The package includes assembly and part drawings, bills of materials and assembly schemes. Source 3D models can be handed over by agreement — the work is done in Fusion 360 and SolidWorks. File formats are matched to the software and machinery of the specific factory.'}},
-  {ru:{q:'Что входит в комплект для запуска производства?',
-       a:'Конструкторская документация, production-ready 3D-модели и файлы для станков: ЧПУ-фрезеровка, лазерная и плоттерная резка, вакуумная формовка. Дополнительно — карты раскроя и порядок сборки. Комплект рассчитан на запуск без расшифровки и доработок со стороны цеха.'},
-   en:{q:'What is included in the production launch package?',
-       a:'Engineering documentation, production-ready 3D models and machine files: CNC routing, laser and plotter cutting, vacuum forming. Nesting layouts and the assembly sequence are added on top. The package is meant to launch without decoding or rework by the workshop.'}},
-  {ru:{q:'Возможно ли сопровождение производства после запуска в цех?',
-       a:'Да. Сопровождение включает проверку собираемости первого образца, доработку прототипа и авторский надзор до выхода серии. Ошибки, найденные на образце, исправляются в документации до тиража.'},
-   en:{q:'Is production support available after the workshop launch?',
-       a:'Yes. Support includes assembly checks of the first sample, prototype refinement and supervision until the serial run. Issues found on the sample are fixed in the documentation before the run.'}},
-  {ru:{q:'Какие материалы используются при изготовлении торгового оборудования?',
-       a:'Основные материалы — акрил, ПЭТ, ПВХ, МДФ, ЛДСП, фанера и металл. Выбор зависит от тиража, бюджета, нагрузки и условий эксплуатации в торговой точке. В одном изделии материалы обычно комбинируются: например, каркас из ЛДСП или металла и прозрачные элементы из ПЭТ.'},
-   en:{q:'What materials are used to manufacture retail equipment?',
-       a:'The core materials are acrylic, PET, PVC, MDF, chipboard, plywood and metal. The choice depends on run size, budget, load and in-store service conditions. A single fixture usually combines them: for example, a chipboard or metal carcass with transparent PET elements.'}},
-  {ru:{q:'Какие технологии производства применяются?',
-       a:'ЧПУ-фрезеровка, лазерная и плоттерная резка, УФ- и широкоформатная печать, вакуумная формовка, гибка металла и проволоки, 3D-печать прототипов. Конструкция проектируется под конкретный станок и оснастку, поэтому набор операций определяется на этапе разработки.'},
-   en:{q:'Which manufacturing technologies are used?',
-       a:'CNC routing, laser and plotter cutting, UV and large-format printing, vacuum forming, metal and wire bending, 3D-printed prototypes. The structure is designed for specific machines and tooling, so the set of operations is fixed at the development stage.'}},
-  {ru:{q:'В каком виде передаются файлы для ЧПУ?',
-       a:'Файлы готовятся под конкретный станок: раскрой с учётом листа и инструмента, глубины и диаметры под крепёж, технологические зазоры. Форматы — векторные и CAD-форматы, которые принимает оборудование производства; они согласуются заранее. Ручная доводка после станка не требуется.'},
-   en:{q:'In what form are CNC files delivered?',
-       a:'Files are prepared for the specific machine: nesting per sheet and tool, depths and diameters for fasteners, technological clearances. Formats are the vector and CAD formats the factory\'s machinery accepts; they are agreed in advance. No manual rework is needed after the machine.'}},
-  {ru:{q:'Возможна ли оптимизация уже готового макета под производство?',
-       a:'Да, это типовая задача. Готовый дизайн-макет проверяется на технологичность: число деталей и операций, раскрой, сборка, упаковка. Если конструкцию можно упростить без изменения внешнего вида, заказчик получает альтернативный вариант с обоснованием.'},
-   en:{q:'Can a finished layout be optimized for production?',
-       a:'Yes, this is a routine task. A finished design layout is reviewed for manufacturability: part count, operations, nesting, assembly, packing. If the structure can be simplified without changing its appearance, the client receives an alternative solution with reasoning.'}},
-  {ru:{q:'Как готовится POSM-конструкция к серийному производству?',
-       a:'Конструкция пересчитывается под лист и станок: сокращается число деталей и крепежа, закладывается последовательность сборки, проверяются упаковка и логистика. Первый образец собирается и корректируется до запуска тиража. Цель — чтобы каждая следующая единица серии повторялась без подгонки.'},
-   en:{q:'How is a POSM fixture prepared for serial production?',
-       a:'The structure is recalculated for the sheet and the machine: parts and fasteners are reduced, the assembly sequence is built in, packing and logistics are verified. The first sample is assembled and corrected before the run. The goal is for every following unit to repeat without fitting.'}},
-  {ru:{q:'На каких языках ведётся работа с заказчиком?',
-       a:'Русский, казахский и английский. Документация оформляется на языке заказчика или производства по договорённости.'},
-   en:{q:'In which languages is the work conducted?',
-       a:'Russian, Kazakh and English. Documentation is prepared in the client\'s or the factory\'s language by agreement.'}}
-];
-
-/* Избранные кейсы — каркас. НЕ выдумывать данные: плейсхолдеры
-   заполняются реальными проектами, затем SHOW_CASES = true. */
 const CASES = [
   {ru:{client:'[Название клиента]', sphere:'[Сфера: алкомаркет / салон / СТО]',
        task:'[Задача: 1–2 предложения]', sol:'[Решение: какой конструктивный подход выбран и почему]',
@@ -958,124 +243,30 @@ const CASES = [
    en:{client:'[Client name]', sphere:'[Industry]', task:'[Task]', sol:'[Solution]', res:'[Result]'}}
 ];
 
-/* 04 / Автоматизация: плитки статистики */
-const AUTO_STATS = [
-  {ru:{b:'8', s:'собственных инструментов в ежедневной работе'},       en:{b:'8', s:'in-house tools in daily engineering work'}},
-  {ru:{b:'120+', s:'параметров изделия в одной модели проекта'},        en:{b:'120+', s:'product parameters in a single project model'}},
-  {ru:{b:'−ошибки', s:'типовые операции выполняются по одним правилам'},en:{b:'−errors', s:'routine operations follow the same rules'}},
-  {ru:{b:'итерации', s:'правка дизайна не требует перечерчивания вручную'},en:{b:'iterations', s:'design changes don\'t require manual redrawing'}}
-];
+window.PAGE_TITLES = {
+  ru:'Жумабек Есим — инженерная разработка POSM и торгового оборудования',
+  en:'Zhumabek Yessim — engineering development for POSM and retail equipment'
+};
 
-const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-
-/* ── подстановка CONFIG (не зависит от языка) ── */
-(function(){
-  const t={'name':CONFIG.name,'initials':CONFIG.initials,'phone-label':CONFIG.phone,'email-label':CONFIG.email};
-  for(const[k,v]of Object.entries(t))document.querySelectorAll(`[data-cfg="${k}"]`).forEach(e=>e.textContent=v);
-  const h={'phone':'tel:'+CONFIG.phoneRaw,'email':'mailto:'+CONFIG.email};
-  for(const[k,v]of Object.entries(h))document.querySelectorAll(`[data-cfg-href="${k}"]`).forEach(e=>e.href=v);
-})();
-
-/* ═══ ДВУЯЗЫЧНОСТЬ ═══════════════════════════════════════════
-   Русские тексты живут в разметке (SEO-версия). EN-словарь ниже.
-   Ключ — значение атрибута data-i. Значение — innerHTML. */
-const I18N_EN = {
-  brandRole:'mechanical engineer',
-  navOpt:'Engineering', navDeliv:'Deliverables', navWorks:'Portfolio', navAppr:'Approach', navCta:'Discuss a project',
+window.PAGE_I18N_EN = {
+  ...SHARED_I18N_EN,
   heroH1:'Engineering development for <span class="hl">POSM</span> and retail equipment',
   heroSub:'For over 16 years I have been preparing displays, promo structures and retail equipment for serial production. The goal in every project: preserve the designer\'s intent while making the product easier to manufacture, assemble and ship.',
   heroCta1:'View portfolio', heroCta2:'Discuss a project',
   heroSig:'POSM design engineer in Almaty. Engineering documentation and preparation of retail equipment for serial production — Kazakhstan.',
   manifest:'A beautiful design is half the work. Engineering begins where a product becomes <span class="hl">easier to manufacture</span>, faster to assemble and more economical in series — without changing how it looks.',
-  optEyebrow:'Engineering review', optH2:'What every decision is checked against',
-  optIntro:'POSM design defines how a fixture looks; engineering development defines how it is manufactured. The engineer selects materials and joints, verifies strength and assembly, prepares drawings, BOMs and CNC files. Without this stage the layout remains an image that a factory cannot reproduce serially.',
-  optLead:'Every engineering decision is evaluated not only for strength and appearance, but for its impact on manufacturing complexity, production time, assembly effort and overall project economics. When a structure can be simplified without compromising look, reliability or function, the client receives an alternative solution.',
-  optNote:'Savings are not possible in every project — sometimes the structure is already rational. But a manufacturability review before production always reduces the risk of rework and missed deadlines.',
-  delivEyebrow:'Deliverables', delivH2:'What clients receive',
-  delivLead:'A package the workshop can run with — without decoding or rework.',
-  mfgEyebrow:'Manufacturing', mfgH2:'Designed for the technology',
-  mfgIntro:'To prepare a POSM fixture for production, the design layout is converted into engineering documentation: drawings, BOMs and machine files. The structure is recalculated for the sheet and the machinery — parts and fasteners are reduced, the assembly sequence is built in. The first sample is assembled and corrected before the run.',
-  mfgLead:'Engineering is part of manufacturing, not an isolated CAD process. Every decision accounts for the machinery the product will be made on, the materials, how it assembles, ships and installs in-store.',
-  mfgCol1:'Technologies', mfgCol2:'Materials', mfgCol3:'Typical formats',
-  mfgNote:'Material selection for the run size and budget is part of the <a href="https://wa.me/77775774405" target="_blank" rel="noopener">engineering assessment</a>.',
-  casesH3:'Selected case studies',
-  casesNote:'Full portfolio — <a href="https://wa.me/77775774405" target="_blank" rel="noopener">on request</a>.',
-  faqEyebrow:'FAQ', faqH2:'Questions and answers',
-  faqCta:'Didn\'t find the answer — write: <a href="https://wa.me/77775774405" target="_blank" rel="noopener">+7 777 577-4405</a> (WhatsApp).',
-  autoBadge:'● Systematic engineering', autoH2:'In-house automation tools',
-  autoP1:'To reduce repetitive work, minimize human error and speed up documentation, I built my own set of Fusion 360 automation tools — <strong>eight modules</strong> that handle routine engineering operations: fasteners, joints, edge banding, part nomenclature.',
-  autoP2:'For the client this means predictability: stable documentation output, fewer BOM errors and fast iterations when the design changes mid-project. In serial work the tools ensure repeatability — products of one family are engineered by the same rules.',
   worksEyebrow:'Portfolio', worksH2:'delivered projects',
-  worksVidH3:'Video', worksVidLead:'Production on the shop floor and client feedback on completed projects.',
   worksLead:'Pallet displays, promo stands, checkout zones, branded retail fixtures, shop-in-shop and street furniture. Behind every item in this gallery is the engineering documentation it was manufactured from.',
-  apprEyebrow:'Approach', apprH2:'The drawing is the result, not the work',
-  apprP1:'My work is not producing drawings. The drawing is the outcome. The work is finding an engineering solution that preserves the designer\'s concept while making the product more rational to manufacture.',
-  apprP2:'Sometimes a small engineering change — a different joint, a different sheet layout, a different assembly sequence — <strong>significantly simplifies production without affecting appearance</strong>. Such decisions are invisible on a render. They are visible on the shop floor: in manufacturing time, assembly effort and the cost of the run.',
-  apprP3:'That is why in every project I work in two roles: as a design engineer — so the product is strong and assemblable, and as a process engineer — so it is manufactured rationally. Sixteen years of practice are built from these two roles.',
-  ctcEyebrow:'Contact', ctcH2:'Discuss a project',
-  ctcLead:'Send a layout, sketch or brief — I will come back with an engineering assessment: how to produce the item rationally, from which materials, and what can be simplified. Working languages: Russian, Kazakh, English.',
-  ctcPhone:'Phone · call or WhatsApp', ctcMail:'Email',
-  footRole:'engineering development for POSM', footWorks:'Portfolio', footOpt:'Engineering', footCtc:'Contact'
-};
-const TITLES = {
-  ru:'Жумабек Есим — инженерная разработка POSM и торгового оборудования',
-  en:'Zhumabek Yessim — engineering development for POSM and retail equipment'
+  worksVidH3:'Video', worksVidLead:'Production on the shop floor and client feedback on completed projects.',
+  casesH3:'Selected case studies',
+  casesNote:'Full portfolio — <a href="https://wa.me/77775774405" target="_blank" rel="noopener">on request</a>.'
 };
 
-/* RU-тексты собираются из разметки один раз при загрузке */
-const I18N_RU = {};
-document.querySelectorAll('[data-i]').forEach(e=>{I18N_RU[e.dataset.i]=e.innerHTML});
+window.renderContent = function(){
+  const L = LANG;
 
-let LANG = localStorage.getItem('lang')==='en' ? 'en' : 'ru';
-
-function renderContent(){
-  const L=LANG;
-  document.getElementById('opt-cards').innerHTML = OPT.map(c=>`
-    <div class="cap"><div class="cap-n">${c.n}</div><h3>${esc(c[L].t)}</h3><p>${esc(c[L].d)}</p></div>`).join('');
-  document.getElementById('caps').innerHTML = CAPS.map(c=>`
-    <div class="cap"><div class="cap-n">${c.n}</div><h3>${esc(c[L].t)}</h3><p>${esc(c[L].d)}</p></div>`).join('');
-  const tagHtml=a=>a.map(s=>`<span>${esc(s)}</span>`).join('');
-  document.getElementById('mfg-fmt').innerHTML=tagHtml(MFG.fmt[L]);
-
-  /* таблицы технологий и материалов */
-  const tblHtml=t=>`<thead><tr>${t.head[L].map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead>
-    <tbody>${t.rows.map(r=>`<tr>${r[L].map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody>`;
-  document.getElementById('tbl-tech').innerHTML=tblHtml(TECH_TABLE);
-  document.getElementById('tbl-mat').innerHTML=tblHtml(MAT_TABLE);
-
-  /* FAQ */
-  document.getElementById('faq-list').innerHTML = FAQ_ITEMS.map(f=>`
-    <details>
-      <summary><h3>${esc(f[L].q)}</h3><span class="faq-ic"></span></summary>
-      <p>${esc(f[L].a)}</p>
-    </details>`).join('');
-
-  /* кейсы (каркас; включаются флагом SHOW_CASES) */
-  if(SHOW_CASES){
-    const lbl = L==='en'
-      ? {task:'Task', sol:'Solution', res:'Result'}
-      : {task:'Задача', sol:'Решение', res:'Результат'};
-    document.getElementById('cases').innerHTML = CASES.map(c=>`
-      <div class="case">
-        <div class="case-head"><b>${esc(c[L].client)}</b><span>${esc(c[L].sphere)}</span></div>
-        <dl>
-          <div><dt>${lbl.task}</dt><dd>${esc(c[L].task)}</dd></div>
-          <div><dt>${lbl.sol}</dt><dd>${esc(c[L].sol)}</dd></div>
-          <div><dt>${lbl.res}</dt><dd>${esc(c[L].res)}</dd></div>
-        </dl>
-      </div>`).join('');
-  }
-  if(SHOW_AUTOMATION){
-    document.getElementById('auto-stats').innerHTML = AUTO_STATS.map(s=>`
-      <div class="astat"><b>${esc(s[L].b)}</b><span>${esc(s[L].s)}</span></div>`).join('');
-  }
-
-  /* видео: до клика — только заглушка, iframe подключается по требованию */
   const emptyTxt = L==='en' ? 'Video slot' : 'Место под видео';
   const playLabel = L==='en' ? 'Play video' : 'Смотреть видео';
-  /* maxresdefault (1280×720) есть не у всех роликов. Когда его нет,
-     YouTube отдаёт не ошибку, а серую заглушку 120×90 — поэтому
-     проверяем ещё и размер, иначе на месте превью будет серый квадрат. */
   const fb = id => `if(!this.dataset.fb){this.dataset.fb=1;this.src='https://i.ytimg.com/vi/${id}/hqdefault.jpg'}`;
   const vidBox = (v,eager) => v.id
     ? `<button class="vid" data-yt="${esc(v.id)}" aria-label="${esc(playLabel)}: ${esc(v[L].t)}">
@@ -1095,76 +286,38 @@ function renderContent(){
   document.getElementById('works-vids').innerHTML = WORK_VIDS.map(v=>`
     <div>${vidBox(v,true)}<div class="vid-cap"><b>${esc(v[L].t)}</b>${esc(v[L].d)}</div></div>`).join('');
 
-  if(SHOW_AUTOMATION){
-    document.getElementById('ba-grid').innerHTML = BEFORE_AFTER.map((v,i)=>`
-      <div class="ba-card">
-        <div class="ba-n"><span>${String(i+1).padStart(2,'0')}</span><span class="ba-badge">${L==='en'?'before → after':'было → стало'}</span></div>
-        ${vidBox(v)}
-        <h4>${esc(v[L].t)}</h4><p>${esc(v[L].d)}</p>
+  if(SHOW_CASES){
+    const lbl = L==='en'
+      ? {task:'Task', sol:'Solution', res:'Result'}
+      : {task:'Задача', sol:'Решение', res:'Результат'};
+    document.getElementById('cases').innerHTML = CASES.map(c=>`
+      <div class="case">
+        <div class="case-head"><b>${esc(c[L].client)}</b><span>${esc(c[L].sphere)}</span></div>
+        <dl>
+          <div><dt>${lbl.task}</dt><dd>${esc(c[L].task)}</dd></div>
+          <div><dt>${lbl.sol}</dt><dd>${esc(c[L].sol)}</dd></div>
+          <div><dt>${lbl.res}</dt><dd>${esc(c[L].res)}</dd></div>
+        </dl>
       </div>`).join('');
   }
-}
+};
 
-/* переключатели скрытых блоков */
-document.getElementById('automation').hidden = !SHOW_AUTOMATION;
 document.getElementById('cases-block').hidden = !SHOW_CASES;
 
-/* клик по заглушке — подставляем плеер (youtube-nocookie: без трекинга до просмотра) */
-document.addEventListener('click',e=>{
-  const b=e.target.closest('.vid[data-yt]'); if(!b)return;
-  const id=b.dataset.yt;
-  const f=document.createElement('iframe');
-  f.src=`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-  f.title=b.getAttribute('aria-label')||'video';
-  f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-  f.allowFullscreen=true;
-  b.replaceChildren(f);
-});
-
-function setLang(lang){
-  LANG=lang; localStorage.setItem('lang',lang);
-  document.documentElement.lang=lang;
-  const dict = lang==='en' ? I18N_EN : I18N_RU;
-  document.querySelectorAll('[data-i]').forEach(e=>{
-    const v=dict[e.dataset.i]; if(v!==undefined)e.innerHTML=v;
-  });
-  document.querySelectorAll('[data-cfg="name"]').forEach(e=>e.textContent = lang==='en'?CONFIG.nameEn:CONFIG.name);
-  document.getElementById('langBtn').textContent = lang==='en' ? 'RU' : 'EN';
-  document.title = TITLES[lang];
-  renderContent();
-}
-document.getElementById('langBtn').addEventListener('click',()=>setLang(LANG==='en'?'ru':'en'));
-setLang(LANG);
-
-/* ── галерея: квадратные обложки 1:1 (названия работ не переводятся) ── */
+/* галерея: квадратные обложки 1:1 */
 document.getElementById('gal').innerHTML = WORKS.map((w,i)=>`
   <button class="gcard" data-gi="${i}" aria-label="${esc(w[1])}">
-    <img src="assets/work/covers/${w[0]}.webp" alt="${esc(w[1])}" loading="${i<6?'eager':'lazy'}" width="1080" height="1080">
+    <span class="gcard-img"><img src="assets/work/covers/${w[0]}.webp" alt="${esc(w[1])}" loading="${i<6?'eager':'lazy'}" width="1080" height="1080"></span>
     <span class="gcard-info"><b>${esc(w[1])}</b></span>
   </button>`).join('');
 
-/* ── навигация ── */
-const nav=document.getElementById('nav');
-const onScroll=()=>nav.classList.toggle('stuck',scrollY>20);
-addEventListener('scroll',onScroll,{passive:true});onScroll();
-const burger=document.getElementById('burger'),navlinks=document.getElementById('navlinks');
-burger.addEventListener('click',()=>{const o=navlinks.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
-navlinks.addEventListener('click',e=>{if(e.target.tagName==='A'){navlinks.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
-
-/* ── появление ── */
-/* threshold:0 — обязательно. При threshold>0 очень высокий блок (галерея
-   ~19000px) физически не может достичь порога: экран показывает лишь ~5%
-   его высоты, и блок навсегда остаётся с opacity:0. */
-const io=new IntersectionObserver((ents)=>{ents.forEach((en,i)=>{if(!en.isIntersecting)return;setTimeout(()=>en.target.classList.add('in'),i*60);io.unobserve(en.target)})},{threshold:0,rootMargin:'0px 0px -6% 0px'});
-document.querySelectorAll('.rv').forEach(e=>io.observe(e));
-
-/* ── счётчик 0 → 145 при появлении на экране ── */
+/* счётчик 0 → 145 */
 (function(){
   const el=document.getElementById('worksCounter');
   if(!el)return;
   const target=parseInt(el.dataset.target,10);
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce)return; // значение уже стоит в разметке (145) — просто оставляем как есть
+  if(reduce)return;
   const cio=new IntersectionObserver(ents=>{
     ents.forEach(en=>{
       if(!en.isIntersecting)return;
@@ -1181,7 +334,7 @@ document.querySelectorAll('.rv').forEach(e=>io.observe(e));
   cio.observe(el);
 })();
 
-/* ── лайтбокс ── */
+/* лайтбокс */
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),lbCount=document.getElementById('lb-count');
 let cur=0;
 function openLB(i){cur=i;show();lb.classList.add('open');document.body.style.overflow='hidden'}
@@ -1191,7 +344,6 @@ function show(){
   lbImg.src='assets/work/full/'+w[0]+'.webp';lbImg.alt=w[1];
   lbCap.innerHTML=`<b>${esc(w[1])}</b>`;
   lbCount.textContent=(cur+1)+' / '+WORKS.length;
-  // подгрузить соседей, чтобы листалось без ожидания
   [1,-1].forEach(d=>{const n=WORKS[(cur+d+WORKS.length)%WORKS.length];new Image().src='assets/work/full/'+n[0]+'.webp'});
 }
 const step=d=>{cur=(cur+d+WORKS.length)%WORKS.length;show()};
@@ -1201,6 +353,8 @@ document.getElementById('lb-prev').addEventListener('click',()=>step(-1));
 document.getElementById('lb-next').addEventListener('click',()=>step(1));
 lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
 addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+
+setLang(LANG);
 </script>
 </body>
 </html>
