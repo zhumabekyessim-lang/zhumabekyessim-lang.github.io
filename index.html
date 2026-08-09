@@ -222,7 +222,7 @@ const WORK_VIDS = [
   {id:'F3eWH1gYtVI',
    ru:{t:'Паллетный дисплей', d:'Промо-конструкция для торговой точки'},
    en:{t:'Pallet display', d:'Promo fixture for the sales floor'}},
-  {id:'Bb1_kil_91E',
+  {id:'Bb1_kil_91E', thumb:'hq',   /* maxres у этого ролика на YouTube нет — брать сразу hq, иначе 404 в консоли */
    ru:{t:'Отзыв заказчика', d:'О работе над проектом'},
    en:{t:'Client testimonial', d:'About the work on the project'}},
   {id:'O_pxDQFbEKw',
@@ -270,7 +270,7 @@ window.renderContent = function(){
   const fb = id => `if(!this.dataset.fb){this.dataset.fb=1;this.src='https://i.ytimg.com/vi/${id}/hqdefault.jpg'}`;
   const vidBox = (v,eager) => v.id
     ? `<button class="vid" data-yt="${esc(v.id)}" aria-label="${esc(playLabel)}: ${esc(v[L].t)}">
-         <img src="https://i.ytimg.com/vi/${esc(v.id)}/maxresdefault.jpg"
+         <img src="https://i.ytimg.com/vi/${esc(v.id)}/${v.thumb==='hq'?'hqdefault':'maxresdefault'}.jpg"
               onload="if(this.naturalWidth<320){${fb(esc(v.id))}}"
               onerror="${fb(esc(v.id))}"
               alt="${esc(v[L].t)}" loading="${eager?'eager':'lazy'}">

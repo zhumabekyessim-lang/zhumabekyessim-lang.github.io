@@ -189,6 +189,25 @@ window.renderContent = function(){
     </details>`).join('');
 };
 
+/* FAQPage-разметка строится из FAQ_ITEMS — того же массива, из которого
+   рисуется сама страница. Второй копии текста нет, поэтому разойтись с тем,
+   что видит читатель, разметка не может. Язык всегда русский: shared.js
+   отдаёт ru по умолчанию, именно его получает краулер на первом заходе. */
+(function(){
+  const ld = document.createElement('script');
+  ld.type = 'application/ld+json';
+  ld.textContent = JSON.stringify({
+    '@context':'https://schema.org',
+    '@type':'FAQPage',
+    mainEntity: FAQ_ITEMS.map(f=>({
+      '@type':'Question',
+      name: f.ru.q,
+      acceptedAnswer:{'@type':'Answer', text: f.ru.a}
+    }))
+  });
+  document.head.appendChild(ld);
+})();
+
 setLang(LANG);
 </script>
 </body>
