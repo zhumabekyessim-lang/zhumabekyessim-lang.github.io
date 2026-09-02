@@ -1,5 +1,5 @@
 const CONFIG = {
-  name:       'Жумабек Есим',
+  name:       'Есим Жумабек',
   nameEn:     'Zhumabek Yessim',
   initials:   'ЖЕ',
   phone:      '+7 777 577-4405',
