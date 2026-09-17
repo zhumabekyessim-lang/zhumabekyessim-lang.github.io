@@ -15,3 +15,10 @@ DESIGN.md
 CLAUDE.md
 SECURITY.md
 security-findings.md
+
+# Служебные файлы агентов и отчёты о сбоях — тоже не контент сайта.
+# AGENTS.md — рабочие инструкции, тот же случай, что CLAUDE.md.
+AGENTS.md
+.agents/
+.codex/
+ErrorReports/
