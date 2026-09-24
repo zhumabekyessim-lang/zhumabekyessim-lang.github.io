@@ -30,6 +30,16 @@ document.querySelectorAll('[data-i]').forEach(e=>{I18N_RU[e.dataset.i]=e.innerHT
 
 let LANG = localStorage.getItem('lang')==='en' ? 'en' : 'ru';
 
+/* стаж: 17 лет с августа 2026, +1 каждое 1 августа. В разметке стоит «17 лет»
+   на случай выключенного JS; меньше 17 не бывает — на случай сбитых часов. */
+function yearsText(lang){
+  const d=new Date();
+  const n=Math.max(17, 17+d.getFullYear()-2026-(d.getMonth()<7?1:0));
+  if(lang==='en') return n+'\u00a0years';
+  const a=n%10, b=n%100;
+  return n+'\u00a0'+(a===1&&b!==11 ? 'год' : a>=2&&a<=4&&(b<12||b>14) ? 'года' : 'лет');
+}
+
 function setLang(lang){
   LANG=lang; localStorage.setItem('lang',lang);
   document.documentElement.lang=lang;
@@ -37,6 +47,7 @@ function setLang(lang){
   document.querySelectorAll('[data-i]').forEach(e=>{
     const v=dict[e.dataset.i]; if(v!==undefined)e.innerHTML=v;
   });
+  document.querySelectorAll('[data-years]').forEach(e=>e.textContent=yearsText(lang));
   document.querySelectorAll('[data-cfg="name"]').forEach(e=>e.textContent = lang==='en'?CONFIG.nameEn:CONFIG.name);
   document.getElementById('langBtn').textContent = lang==='en' ? 'RU' : 'EN';
   if(window.PAGE_TITLES) document.title = window.PAGE_TITLES[lang];
