@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Есим Жумабек — инженерная разработка POSM и торгового оборудования</title>
-<meta name="description" content="Инженерная разработка POSM, дисплеев и торгового оборудования для серийного производства. Конструкторская документация, production-ready 3D, файлы для ЧПУ, оптимизация технологичности. 145 реализованных проектов.">
+<meta name="description" content="Инженерная разработка POSM, дисплеев и торгового оборудования для серийного производства. Конструкторская документация, production-ready 3D, файлы для ЧПУ, оптимизация технологичности.">
 <meta name="theme-color" content="#0c0d10">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Есим Жумабек — инженерная разработка POSM и торгового оборудования">
-<meta property="og:description" content="Сохранить замысел дизайнера — и сделать изделие технологичнее: проще в изготовлении, сборке и логистике. 16+ лет, 145 реализованных проектов.">
+<meta property="og:description" content="Беру макет, подбираю материал, разбиваю изделие на детали, продумываю крепёж и сборку. Внешний вид оставляю как у дизайнера.">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://yessim.pro/">
 <meta property="og:image" content="https://yessim.pro/assets/og.jpg">
@@ -89,15 +89,13 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <h1 class="rv" data-i="heroH1">Инженерная разработка <span class="hl">POSM</span> и торгового оборудования</h1>
+        <h1 class="rv" data-i="heroH1">Проектирую <span class="hl">POSM</span> под серийное производство</h1>
         <p class="hero-sub rv" data-i="heroSub">
-          Более 16 лет готовлю дисплеи, промо-конструкции и торговое оборудование к серийному
-          производству. Задача в каждом проекте — сохранить замысел дизайнера и сделать изделие
-          технологичнее: проще в изготовлении, сборке и логистике.
+          Беру макет, подбираю материал, разбиваю изделие на детали, продумываю крепёж и сборку.
+          Внешний вид оставляю как у&nbsp;дизайнера. Этим занимаюсь <span data-years>17&nbsp;лет</span>.
         </p>
         <p class="hero-sig rv" data-i="heroSig">
-          Инженер-конструктор POSM в Алматы (Казахстан). Конструкторская документация
-          и подготовка торгового оборудования к серийному производству.
+          Алматы · чертежи, 3D под цех, файлы для ЧПУ, карты раскроя
         </p>
         <div class="hero-cta rv">
           <a href="#works" class="btn btn-1 btn-lg"><span data-i="heroCta1">Смотреть портфолио</span> <span class="arw">→</span></a>
@@ -119,11 +117,10 @@
   <div class="wrap">
     <div class="sec-head rv">
       <div class="eyebrow" data-i="worksEyebrow">Портфолио</div>
-      <h2><span class="counter" id="worksCounter" data-target="145">145</span> <span data-i="worksH2">реализованных проектов</span></h2>
+      <h2 data-i="worksH2">Что я спроектировал</h2>
       <p class="lead" style="margin-top:24px" data-i="worksLead">
-        Паллетные дисплеи, промо-стойки, прикассовые зоны, брендированное торговое оборудование,
-        shop-in-shop и городская мебель. За каждым изделием в галерее — конструкторская
-        документация, по которой оно изготовлено.
+        Паллеты, дисплеи, прикассовые зоны, торговые островки, мебель для магазинов и для улицы.
+        Где-то фото готового изделия, где-то рендер.
       </p>
     </div>
     <div id="cases-block" hidden>
@@ -250,13 +247,13 @@ window.PAGE_TITLES = {
 
 window.PAGE_I18N_EN = {
   ...SHARED_I18N_EN,
-  heroH1:'Engineering for <span class="hl">POSM</span> and retail equipment',
-  heroSub:'For over 16 years I have been preparing displays, promo stands and retail equipment for serial production. The goal in every project: preserve the designer\'s intent while making the product easier to manufacture, assemble and ship.',
+  heroH1:'I engineer <span class="hl">POSM</span> for volume production',
+  heroSub:'I take the design, pick the materials, break it down into parts and work out the fasteners and assembly. I keep the look the way the designer made it. I\'ve been doing this for <span data-years>17&nbsp;years</span>.',
   heroCta1:'View portfolio', heroCta2:'Discuss a project',
-  heroSig:'POSM design engineer in Almaty, Kazakhstan. Engineering documentation and preparation of retail equipment for serial production.',
+  heroSig:'Almaty · drawings, 3D for the shop floor, CNC files, cutting layouts',
   manifest:'A beautiful design is half the work. Engineering begins where a product becomes <span class="hl">easier to manufacture</span>, faster to assemble and cheaper to produce at volume, without changing how it looks.',
-  worksEyebrow:'Portfolio', worksH2:'projects delivered',
-  worksLead:'Pallet displays, promo stands, checkout zones, branded retail fixtures, shop-in-shop and street furniture. Behind every item in this gallery is the engineering documentation it was manufactured from.',
+  worksEyebrow:'Portfolio', worksH2:'What I\'ve engineered',
+  worksLead:'Pallet displays, display stands, checkout zones, retail islands, shop and street furniture. Some are photos of the finished piece, some are renders.',
   worksVidH3:'Video', worksVidLead:'Production on the shop floor and client feedback on completed projects.',
   casesH3:'Selected case studies',
   casesNote:'Full portfolio — <a href="https://wa.me/77775774405" target="_blank" rel="noopener">on request</a>.'
@@ -310,29 +307,6 @@ document.getElementById('gal').innerHTML = WORKS.map((w,i)=>`
     <span class="gcard-img"><img src="assets/work/covers/${w[0]}.webp" alt="${esc(w[1])}" loading="${i<6?'eager':'lazy'}" width="1080" height="1080"></span>
     <span class="gcard-info"><b>${esc(w[1])}</b></span>
   </button>`).join('');
-
-/* счётчик 0 → 145 */
-(function(){
-  const el=document.getElementById('worksCounter');
-  if(!el)return;
-  const target=parseInt(el.dataset.target,10);
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce)return;
-  const cio=new IntersectionObserver(ents=>{
-    ents.forEach(en=>{
-      if(!en.isIntersecting)return;
-      cio.unobserve(en.target);
-      const dur=1400, start=performance.now();
-      const ease=t=>1-Math.pow(1-t,3);
-      (function frame(now){
-        const p=Math.min((now-start)/dur,1);
-        el.textContent=Math.round(ease(p)*target);
-        if(p<1)requestAnimationFrame(frame);
-      })(start);
-    });
-  },{threshold:.6});
-  cio.observe(el);
-})();
 
 /* лайтбокс */
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),lbCount=document.getElementById('lb-count');
