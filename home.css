@@ -110,7 +110,7 @@ img{height:auto}
 .pen-in{transition:opacity .2s linear}
 .pen.up .pen-in{opacity:.5}
 /* без закрепления (без JS, без движения): готовое фото и еле видный контур */
-.dw #dw-obj{opacity:.22}
+.dw #dw-obj{opacity:0}
 .dw #dw-dim,.dw #dw-lead,.dw .ghost{opacity:0}
 
 /* закреплённая сцена от прокрутки — класс pin ставит скрипт в head, если движение не отключено.
