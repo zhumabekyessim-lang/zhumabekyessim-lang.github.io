@@ -257,7 +257,7 @@
   <div class="lb-bg"></div>
   <figure class="lb-fig">
     <img class="lb-img" id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1080" height="1080">
-    <figcaption class="lb-cap"><span id="lb-n"></span> · <span id="lb-t"></span></figcaption>
+    <figcaption class="lb-cap"><span id="lb-t"></span></figcaption>
   </figure>
   <button class="lb-btn lb-x" type="button" aria-label="Закрыть просмотр" data-ia="aria-label:lbClose"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
   <button class="lb-btn lb-prev" type="button" aria-label="Предыдущая работа" data-ia="aria-label:lbPrev"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5L7 10l5.5 5.5"/></svg></button>
@@ -395,7 +395,6 @@ const PAGE_ATTR_EN = {
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const span = (v, a, b) => clamp((v - a) / (b - a));
-  const pad = (n, w = 2) => String(n).padStart(w, '0');
   const isEn = () => LANG === 'en';
 
   /* общий цикл прокрутки: один rAF на кадр */
@@ -628,6 +627,7 @@ const PAGE_ATTR_EN = {
       shade.style.opacity = (.6 * (1 - span(q, .55, 1))).toFixed(3);
       gDim.style.opacity = gLead.style.opacity = (1 - span(q, 0, .3)).toFixed(3);
       gObj.style.opacity = (1 - span(q, .6, 1)).toFixed(3);
+      ghost.style.opacity = (.2 * (1 - span(q, .6, 1))).toFixed(3);
       bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
       if (hint) hint.style.opacity = (1 - span(p, 0, .08)).toFixed(3);
     }
@@ -707,7 +707,7 @@ const PAGE_ATTR_EN = {
   function lightbox() {
     const lb = $('#lb'), grid = $('#grid');
     if (!lb || !grid) return;
-    const img = $('#lb-img'), num = $('#lb-n'), ttl = $('#lb-t'), cap = $('.lb-cap', lb), bg = $('.lb-bg', lb);
+    const img = $('#lb-img'), ttl = $('#lb-t'), cap = $('.lb-cap', lb), bg = $('.lb-bg', lb);
     const bX = $('.lb-x', lb), bP = $('.lb-prev', lb), bN = $('.lb-next', lb);
     const chrome = [bX, bP, bN, cap];
     const links = $$('.wk-a', grid);
@@ -718,7 +718,6 @@ const PAGE_ATTR_EN = {
       const a = list[i], im = a.querySelector('img'), full = a.getAttribute('href');
       img.src = im.currentSrc || im.src;
       img.alt = im.alt;
-      num.textContent = pad(i + 1) + ' / ' + pad(list.length);
       ttl.textContent = a.dataset.t || im.alt;
       const pre = new Image();
       pre.onload = () => { if (list[cur] === a) img.src = full; };
