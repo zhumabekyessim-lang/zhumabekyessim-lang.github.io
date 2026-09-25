@@ -433,7 +433,7 @@ const PAGE_ATTR_EN = {
       const id = esc(w[0]), t = esc(w[1]);
       return `<li class="wk" data-k="${kindOf(w[1])}" style="--d:${(i % 4 * .06).toFixed(2)}s"><a class="wk-a" href="assets/work/full/${id}.webp" data-t="${t}">`
         + `<span class="wk-im"><img src="assets/work/covers/${id}.webp" alt="${t}" width="1080" height="1080" loading="${i < 8 ? 'eager' : 'lazy'}" decoding="async">${MARKS}</span>`
-        + `<span class="wk-cap"><span class="wk-n">${pad(i + 1, 3)}</span><span class="wk-t">${t}</span><span class="wk-go" aria-hidden="true"></span></span></a></li>`;
+        + `<span class="wk-cap"><span class="wk-t">${t}</span><span class="wk-go" aria-hidden="true"></span></span></a></li>`;
     }).join('');
   }
   function labelGallery() {

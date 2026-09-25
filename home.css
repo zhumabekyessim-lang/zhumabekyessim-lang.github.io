@@ -158,7 +158,6 @@ html:not(.js) .chips{display:none}
 .wk-a:hover .mk::before,.wk-a:focus-visible .mk::before{transform:scaleX(1)}
 .wk-a:hover .mk::after,.wk-a:focus-visible .mk::after{transform:scaleY(1)}
 .wk-cap{display:flex;align-items:baseline;gap:10px;padding:12px 2px 0}
-.wk-n{flex:none;font:400 11px/1 var(--mono);letter-spacing:.06em;color:var(--fg-3)}
 .wk-t{min-width:0;font-size:15px;line-height:1.35;color:var(--fg-2);overflow-wrap:anywhere;transition:color .18s}
 .wk-go{flex:none;margin-left:auto;font:400 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);opacity:0;transform:translateX(-6px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
 .wk-a:hover .wk-t,.wk-a:focus-visible .wk-t{color:var(--fg)}
