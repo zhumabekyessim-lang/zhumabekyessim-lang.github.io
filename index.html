@@ -55,127 +55,186 @@
   "priceRange": "по запросу"
 }
 </script>
+<!-- js — скрипты работают; pin — закреплённая сцена первого экрана (не ставится при «уменьшить движение») -->
+<script>document.documentElement.classList.add('js');if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('pin')</script>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="home.css">
 </head>
 <body>
+<a class="skip" href="#main" data-i="skip">К содержанию</a>
 
-<div class="bg-grid"></div>
-
-<!-- НАВИГАЦИЯ -->
+<!-- НАВИГАЦИЯ: id и data-атрибуты — опора shared.js (#nav .stuck, #navlinks .open, #burger, #langBtn) -->
 <nav class="nav" id="nav">
   <div class="wrap nav-in">
     <a href="#top" class="brand">
-      <span class="brand-mark" data-cfg="initials">—</span>
-      <span><span data-cfg="name">Имя</span><small data-i="brandRole">инженер-конструктор</small></span>
+      <span class="brand-mark" data-cfg="initials" aria-hidden="true">ЖЕ</span>
+      <span class="brand-tx"><b data-cfg="name">Есим Жумабек</b><small data-i="brandRole">инженер-конструктор</small></span>
     </a>
     <div class="nav-links" id="navlinks">
       <a href="#works" data-i="navWorks">Портфолио</a>
       <a href="engineering.html" data-i="navOpt">Инженерия</a>
       <a href="client.html" data-i="navDeliv">Заказчику</a>
       <a href="approach.html" data-i="navAppr">Подход</a>
+      <a href="#contact" class="btn btn-1 nav-menu-cta" data-i="navCta">Обсудить проект</a>
     </div>
     <div class="nav-cta">
-      <button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button>
-      <a href="#contact" class="btn btn-1" data-i="navCta">Обсудить проект</a>
-      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span></button>
+      <a href="#contact" class="btn btn-2 btn-sm" data-i="navCta">Обсудить проект</a>
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">EN</button>
+      <button class="burger" id="burger" type="button" aria-label="Меню" data-ia="aria-label:menu" aria-expanded="false" aria-controls="navlinks"><i></i><i></i></button>
     </div>
   </div>
+  <div class="ruler" aria-hidden="true"><i id="ruler-fill"></i></div>
 </nav>
 
-<main id="top">
+<main id="main">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <h1 class="rv" data-i="heroH1">Проектирую <span class="hl">POSM</span> под серийное производство</h1>
-        <p class="hero-sub rv" data-i="heroSub">
-          Беру макет, подбираю материал, разбиваю изделие на детали, продумываю крепёж и сборку.
-          Внешний вид оставляю как у&nbsp;дизайнера. Этим занимаюсь <span data-years>17&nbsp;лет</span>.
-        </p>
-        <p class="hero-sig rv" data-i="heroSig">
-          Алматы · чертежи, 3D под цех, файлы для ЧПУ, карты раскроя
-        </p>
-        <div class="hero-cta rv">
-          <a href="#works" class="btn btn-1 btn-lg"><span data-i="heroCta1">Смотреть портфолио</span> <span class="arw">→</span></a>
-          <a href="#contact" class="btn btn-2 btn-lg" data-i="heroCta2">Обсудить проект</a>
+<!-- ПЕРВЫЙ ЭКРАН: плоттер вычерчивает изделие, прокрутка ведёт анимацию -->
+<section class="hero" id="top" aria-labelledby="hero-h">
+  <div class="hero-stage">
+    <div class="wrap hero-in">
+      <div class="hero-tx">
+        <h1 class="h1" id="hero-h" data-i="heroH1">Проектирую <span class="hl">POSM</span> под серийное производство</h1>
+        <p class="lead hero-lead rv" style="--d:.34s" data-i="heroSub">Беру макет, подбираю материал, разбиваю изделие на детали, продумываю крепёж и сборку. Внешний вид оставляю как у&nbsp;дизайнера. Этим занимаюсь <span data-years>17&nbsp;лет</span>.</p>
+        <p class="meta hero-meta rv" style="--d:.38s" data-i="heroSig">Алматы · чертежи, 3D под цех, файлы для ЧПУ, карты раскроя</p>
+        <div class="hero-cta rv" style="--d:.42s">
+          <a href="#works" class="btn btn-1"><span data-i="heroCta1">Смотреть портфолио</span> <span class="arw" aria-hidden="true">→</span></a>
+          <a href="#contact" class="btn btn-2" data-i="heroCta2">Обсудить проект</a>
         </div>
       </div>
-      <div class="hero-media rv">
-        <div class="hero-frame">
-          <span class="hero-corner tl"></span><span class="hero-corner br"></span>
-          <img src="assets/portrait.webp" alt="Есим Жумабек — инженер-конструктор POSM" width="699" height="699" fetchpriority="high">
+
+      <figure class="xf rv" id="xf" style="--d:.1s">
+        <div class="xf-frame">
+          <div class="xf-photo">
+            <img src="assets/work/covers/144.webp" alt="Напольный дисплей Old Spice в цеху: хромированный корпус, серый топпер, красная вставка с двумя полками" data-ia="alt:heroImgAlt" width="1080" height="1080" fetchpriority="high" decoding="async">
+            <div class="xf-shade"></div>
+          </div>
+          <!-- Операции пера: data-op="s" — линия, "t" — подпись (печатается по буквам), "d" — точка выноски.
+               Подписи двуязычные: текст — data-i (RU здесь, EN в PAGE_I18N_EN), ход пера по строке считается из геометрии -->
+          <svg class="xf-svg dw" id="dwg" viewBox="0 0 1080 1080" role="img" aria-labelledby="dwg-t" focusable="false">
+          <title id="dwg-t" data-i="dwgTitle">Чертёж напольного дисплея поверх фото: топпер, боковина, две полки, цоколь. Габариты 800 на 1500 мм, размер полки 250 мм</title>
+          <g id="dw-obj">
+            <path class="ln" data-op="s" d="M313 290 L299 132 Q297 110 320 106 Q535 30 750 104 Q773 108 772 130 L757 290 Q535 380 313 290 Z"/>
+            <path class="ln" data-op="s" d="M313 290 L334 872 Q336 893 356 898 Q540 964 712 893 Q731 887 733 866 L757 290"/>
+            <path class="ln ln-2" data-op="s" d="M401 97 H666 V177 H401 Z"/>
+            <path class="ln ln-2" data-op="s" d="M401 156 H666"/>
+            <path class="ln ln-2" data-op="s" d="M350 380 Q350 366 364 366 H708 Q722 366 721 380 L709 742 Q708 757 694 757 H384 Q369 757 368 742 Z"/>
+            <path class="ln ln-2" data-op="s" d="M362 421 H709 L706 556 H365 Z"/>
+            <path class="ln ln-2" data-op="s" d="M371 588 H701 L698 700 H374 Z"/>
+            <path class="ln ln-2" data-op="s" d="M456 924 A84 98 0 0 1 624 920"/>
+          </g>
+          <g id="dw-dim">
+            <path class="dm" data-op="s" d="M298 120 V20"/>
+            <path class="dm" data-op="s" d="M773 120 V20"/>
+            <path class="dm" data-op="s" d="M290 46 L306 30 M298 38 H773 M765 46 L781 30"/>
+            <text class="tx-dim" data-op="t" data-i="dwgW" x="535" y="28" text-anchor="middle">800 мм</text>
+            <path class="dm" data-op="s" d="M548 68 H866"/>
+            <path class="dm" data-op="s" d="M552 930 H866"/>
+            <path class="dm" data-op="s" d="M844 76 L860 60 M852 68 V930 M844 938 L860 922"/>
+            <text class="tx-dim" data-op="t" data-i="dwgH" x="842" y="499" text-anchor="middle" transform="rotate(-90 842 499)">1500 мм</text>
+            <path class="dm" data-op="s" d="M714 556 H808"/>
+            <path class="dm" data-op="s" d="M712 700 H808"/>
+            <path class="dm" data-op="s" d="M792 564 L808 548 M800 556 V700 M792 708 L808 692"/>
+            <text class="tx-dim" data-op="t" data-i="dwgS" x="790" y="628" text-anchor="middle" transform="rotate(-90 790 628)">250 мм</text>
+          </g>
+          <g id="dw-lead">
+            <circle class="dot" data-op="d" cx="352" cy="192" r="4.5"/>
+            <path class="ld" data-op="s" d="M352 192 L282 150 H48"/>
+            <text class="l1" data-op="t" data-i="dwgMdf" x="48" y="110">МДФ</text> <text data-op="t" data-i="dwgPaint" x="48" y="140">ОКРАСКА</text>
+            <circle class="dot" data-op="d" cx="338" cy="462" r="4.5"/>
+            <path class="ld" data-op="s" d="M338 462 L298 450 H48"/>
+            <text class="l1" data-op="t" data-i="dwgPvs" x="48" y="410">ПВС</text> <text data-op="t" data-i="dwgVinyl" x="48" y="440">ВИНИЛ</text>
+            <circle class="dot" data-op="d" cx="410" cy="572" r="4.5"/>
+            <path class="ld" data-op="s" d="M410 572 L108 583"/>
+            <text class="l1" data-op="t" data-i="dwgPvs" x="48" y="590">ПВС</text> <text data-op="t" data-i="dwgUv" x="48" y="620">УФ-ПЕЧАТЬ</text>
+            <circle class="dot" data-op="d" cx="534" cy="874" r="4.5"/>
+            <path class="ld" data-op="s" d="M534 874 L262 806 H48"/>
+            <text data-op="t" data-i="dwg3d" x="48" y="796">3D-ПЕЧАТЬ</text>
+          </g>
+          <g class="pen" id="pen" aria-hidden="true"><g class="pen-in"><circle r="6"/><path d="M-17 0 H-9 M9 0 H17 M0 -17 V-9 M0 9 V17"/><circle class="tip" r="1.8"/></g></g>
+          </svg>
+          <div class="xf-scan" aria-hidden="true"></div>
         </div>
-      </div>
+        <figcaption class="xf-cap">
+          <span class="meta" data-i="xfCap">От чертежа к&nbsp;изделию · дисплей Old&nbsp;Spice · фото из&nbsp;цеха</span>
+          <span class="xf-prog" aria-hidden="true"><span data-i="xfFrom">Чертёж</span><span class="xf-bar"><i id="xf-bar"></i></span><span data-i="xfTo">Изделие</span></span>
+        </figcaption>
+      </figure>
     </div>
+    <p class="hero-hint" aria-hidden="true" data-i="heroHint">Прокрутите ↓</p>
   </div>
 </section>
 
-<!-- ПОРТФОЛИО -->
-<section class="sec" id="works">
+<!-- ПОРТФОЛИО: карточки собираются из WORKS, фильтр — по типу изделия -->
+<section class="sec pf" id="works" aria-labelledby="pf-h">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="eyebrow" data-i="worksEyebrow">Портфолио</div>
-      <h2 data-i="worksH2">Что я спроектировал</h2>
-      <p class="lead" style="margin-top:24px" data-i="worksLead">
-        Паллеты, дисплеи, прикассовые зоны, торговые островки, мебель для магазинов и для улицы.
-        Где-то фото готового изделия, где-то рендер.
-      </p>
+    <div class="pf-head">
+      <p class="eb rv" data-i="worksEyebrow">Портфолио</p>
+      <h2 class="h2 rv" id="pf-h" style="--d:.04s" data-i="worksH2">Что я спроектировал</h2>
+      <p class="lead rv" style="--d:.08s" data-i="worksLead">Паллеты, дисплеи, прикассовые зоны, торговые островки, мебель для магазинов и для улицы. Где-то фото готового изделия, где-то рендер.</p>
     </div>
     <div id="cases-block" hidden>
-      <div class="sec-head rv" style="margin:0 0 var(--s5);max-width:640px">
+      <div class="sec-head rv" style="margin:var(--s7) 0 var(--s5);max-width:640px">
         <h3 style="font-size:clamp(19px,2.2vw,24px);margin-bottom:12px" data-i="casesH3">Избранные кейсы</h3>
       </div>
       <div class="cases rv" id="cases"></div>
       <p class="tbl-note" data-i="casesNote">Полное портфолио — <a href="https://wa.me/77775774405" target="_blank" rel="noopener">по запросу</a>.</p>
-      <div style="height:var(--s8)"></div>
     </div>
-    <div class="gal rv" id="gal"></div>
-    <div class="sec-head rv" style="margin:var(--s9) 0 var(--s5);max-width:640px">
-      <h3 style="font-size:clamp(19px,2.2vw,24px);margin-bottom:12px" data-i="worksVidH3">Видео</h3>
-      <p style="font-size:15px;color:var(--fg-2);line-height:1.55" data-i="worksVidLead">
-        Производство изделий в цехе и отзывы заказчиков о готовых проектах.
-      </p>
+    <div class="chips rv" role="group" aria-label="Фильтр по типу изделия" data-ia="aria-label:chips" style="--d:.1s">
+      <button class="chip" type="button" data-k="all" aria-pressed="true" data-i="chipAll">Все</button>
+      <button class="chip" type="button" data-k="pal" aria-pressed="false" data-i="chipPal">Паллеты</button>
+      <button class="chip" type="button" data-k="dis" aria-pressed="false" data-i="chipDis">Дисплеи</button>
+      <button class="chip" type="button" data-k="tor" aria-pressed="false" data-i="chipTor">Торцы</button>
+      <button class="chip" type="button" data-k="kas" aria-pressed="false" data-i="chipKas">Прикассы</button>
+      <button class="chip" type="button" data-k="isl" aria-pressed="false" data-i="chipIsl">Островки</button>
+      <button class="chip" type="button" data-k="mbl" aria-pressed="false" data-i="chipMbl">Мебель</button>
+      <button class="chip" type="button" data-k="out" aria-pressed="false" data-i="chipOut">Улица</button>
+      <button class="chip" type="button" data-k="oth" aria-pressed="false" data-i="chipOth">Полка и прочее</button>
+    </div>
+    <p class="sr-only" id="pf-live" aria-live="polite"></p>
+    <ul class="grid" id="grid"></ul>
+
+    <div class="vids-head">
+      <h3 class="vids-h rv" data-i="worksVidH3">Видео</h3>
+      <p class="vids-lead rv" data-i="worksVidLead">Производство изделий в цехе и отзывы заказчиков о готовых проектах.</p>
     </div>
     <div class="works-vids rv" id="works-vids"></div>
   </div>
 </section>
 
 <!-- МАНИФЕСТ -->
-<section class="manifest">
+<section class="mf" aria-labelledby="mf-h">
   <div class="wrap">
-    <p class="rv" data-i="manifest">Красивый макет — половина работы. Инженерия начинается там,
-    где изделие становится <span class="hl">проще в изготовлении</span>, быстрее в сборке
-    и экономичнее в серии — не меняя того, как оно выглядит.</p>
+    <h2 class="eb rv" id="mf-h" data-i="mfEyebrow">Подход</h2>
+    <p class="mf-t" data-i="manifest">Красивый макет&nbsp;— половина работы. Инженерия начинается там, где изделие становится <span class="nb"><span class="key">проще в&nbsp;изготовлении</span>,</span> <span class="nb"><span class="key">быстрее в&nbsp;сборке</span></span> <span class="nb">и&nbsp;<span class="key">экономичнее в&nbsp;серии</span>&nbsp;—</span> не&nbsp;меняя того, как оно выглядит.</p>
   </div>
 </section>
 
-<!-- КОНТАКТЫ -->
-<section class="contact" id="contact">
-  <div class="sec wrap">
-    <div class="contact-grid">
-      <div class="rv">
-        <div class="eyebrow" data-i="ctcEyebrow">Контакты</div>
-        <h2 data-i="ctcH2">Обсудить проект</h2>
-        <p class="lead" data-i="ctcLead">
-          Пришлите макет, эскиз или ТЗ — вернусь с инженерной оценкой: как изделие рациональнее
-          изготовить, из каких материалов и что в конструкции можно упростить. Рабочие языки —
-          русский, казахский, английский.
-        </p>
+<!-- КОНТАКТЫ: штамп чертежа, значения — из CONFIG (shared.js) -->
+<section class="sec ct" id="contact" aria-labelledby="ct-h">
+  <div class="wrap ct-in">
+    <div class="ct-tx">
+      <p class="eb rv" data-i="ctcEyebrow">Контакты</p>
+      <h2 class="h2 rv" id="ct-h" style="--d:.04s" data-i="ctcH2">Обсудить проект</h2>
+      <p class="lead rv" style="--d:.08s" data-i="ctcLead">Пришлите макет, эскиз или ТЗ — вернусь с инженерной оценкой: как изделие рациональнее изготовить, из каких материалов и что в конструкции можно упростить. Рабочие языки — русский, казахский, английский.</p>
+      <div class="ct-cta rv" style="--d:.12s">
+        <a class="btn btn-1" data-cfg-href="wa" href="https://wa.me/77775774405" target="_blank" rel="noopener"><span data-i="ctcWa">Написать в WhatsApp</span> <span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-2" data-cfg-href="phone" href="tel:+77775774405" data-i="ctcCall">Позвонить</a>
       </div>
-      <div class="rv">
-        <div class="cways">
-          <a class="cway" data-cfg-href="phone">
-            <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
-            <span class="cway-t"><small data-i="ctcPhone">Телефон · звонок или WhatsApp</small><b data-cfg="phone-label">+7 000 000-00-00</b></span>
-          </a>
-          <a class="cway" data-cfg-href="email">
-            <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-            <span class="cway-t"><small data-i="ctcMail">Почта</small><b data-cfg="email-label">mail@example.com</b></span>
-          </a>
-        </div>
-      </div>
+    </div>
+    <div class="st-wrap">
+      <dl class="st">
+        <div class="st-c" style="--i:0"><dt class="st-k" data-i="stBy">Разработал</dt><dd class="st-v" data-cfg="name">Есим Жумабек</dd></div>
+        <div class="st-c" style="--i:1"><dt class="st-k" data-i="ctcPhone">Телефон · звонок или WhatsApp</dt><dd class="st-v"><a data-cfg-href="phone" data-cfg="phone-label" href="tel:+77775774405">+7 777 577-4405</a></dd></div>
+        <div class="st-c h" style="--i:2"><dt class="st-k" data-i="stSheet">Лист</dt><dd class="st-v">1</dd></div>
+        <div class="st-c h" style="--i:3"><dt class="st-k" data-i="stSheets">Листов</dt><dd class="st-v">1</dd></div>
+        <div class="st-c c2" style="--i:4"><dt class="st-k" data-i="ctcMail">Почта</dt><dd class="st-v"><a data-cfg-href="email" data-cfg="email-label" href="mailto:zhumabekyessim@gmail.com">zhumabekyessim@gmail.com</a></dd></div>
+        <div class="st-c c2 h" style="--i:5"><dt class="st-k" data-i="stScale">Масштаб</dt><dd class="st-v">1:1</dd></div>
+        <div class="st-c c3 st-big" style="--i:6"><dt class="st-k" data-i="stTitle">Наименование</dt><dd class="st-v" data-i="stTitleV">Инженерная разработка POSM</dd></div>
+        <div class="st-c h" style="--i:7"><dt class="st-k" data-i="stCity">Город</dt><dd class="st-v" data-i="stCityV">Алматы</dd></div>
+        <div class="st-c c2" style="--i:8"><dt class="st-k" data-i="stLang">Языки</dt><dd class="st-v" data-i="stLangV">русский · казахский · английский</dd></div>
+        <div class="st-c c2" style="--i:9"><dt class="st-k" data-i="stIn">Принимаю</dt><dd class="st-v" data-i="stInV">макет · эскиз · ТЗ</dd></div>
+      </dl>
+      <span class="st-f t" aria-hidden="true"></span><span class="st-f r" aria-hidden="true"></span><span class="st-f b" aria-hidden="true"></span><span class="st-f l" aria-hidden="true"></span>
     </div>
   </div>
 </section>
@@ -184,7 +243,7 @@
 
 <footer>
   <div class="wrap foot">
-    <p><span data-cfg="name">Имя</span> · <span data-i="footRole">инженерная разработка POSM</span> · 2026</p>
+    <p><span data-cfg="name">Есим Жумабек</span> · <span data-i="footRole">инженерная разработка POSM</span> · 2026</p>
     <div class="foot-links">
       <a href="#works" data-i="footWorks">Портфолио</a>
       <a href="engineering.html" data-i="footOpt">Инженерия</a>
@@ -193,21 +252,60 @@
   </div>
 </footer>
 
-<!-- ЛАЙТБОКС -->
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр работы">
-  <button class="lb-close" id="lb-close" aria-label="Закрыть">✕</button>
-  <span class="lb-count" id="lb-count"></span>
-  <button class="lb-btn lb-prev" id="lb-prev" aria-label="Предыдущая">‹</button>
-  <img class="lb-img" id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-  <button class="lb-btn lb-next" id="lb-next" aria-label="Следующая">›</button>
-  <div class="lb-cap" id="lb-cap"></div>
+<!-- ЛАЙТБОКС: фото вырастает из карточки; ‹ › и стрелки листают, Esc закрывает -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lb-t" hidden>
+  <div class="lb-bg"></div>
+  <figure class="lb-fig">
+    <img class="lb-img" id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1080" height="1080">
+    <figcaption class="lb-cap"><span id="lb-n"></span> · <span id="lb-t"></span></figcaption>
+  </figure>
+  <button class="lb-btn lb-x" type="button" aria-label="Закрыть просмотр" data-ia="aria-label:lbClose"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+  <button class="lb-btn lb-prev" type="button" aria-label="Предыдущая работа" data-ia="aria-label:lbPrev"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5L7 10l5.5 5.5"/></svg></button>
+  <button class="lb-btn lb-next" type="button" aria-label="Следующая работа" data-ia="aria-label:lbNext"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg></button>
 </div>
 
 <script src="shared.js"></script>
 <script>
+/* shared.js не загрузился — снять классы движения: страница останется видимой, как без JS */
+if (typeof setLang !== 'function') document.documentElement.classList.remove('js', 'pin');
+
 const SHOW_CASES = false;
 
 const WORKS=[['144','Дисплей','8vlgvq'],['001','Арка','WXql1G'],['002','Shop in shop','P664bL'],['003','Изготовление мебели и рекламы для магазина разливных напитков','bg5D8m'],['004','Изготовление мебели и рекламы для магазина здорового питания','QKnRNl'],['005','Паллета','zxGyRm'],['006','Паллета','a030r8'],['007','Барная стойка','XJzgJa'],['008','Изготовление мебели и рекламы для магазина разливных напитков','V22LxZ'],['009','Паллета','3E4mAB'],['010','Паллета','y4k9K8'],['011','Trade Island','3EqlNE'],['012','БАРНАЯ СТОЙКА','JrrE6Z'],['013','Паллета','lGx3Go'],['014','Паллета','6LbnwW'],['015','Торговый островок','vbbEDE'],['016','BAR COUNTER','OvmqLe'],['017','Паллета','4N8wll'],['018','Паллета','LR8gEP'],['019','Trade Island','qeRmbD'],['020','Торговый островок','98NRPa'],['021','Паллета','xDZvq2'],['022','Дисплей','nJygQr'],['023','BAR COUNTER','L4e5qR'],['024','Trade Island','Bk3odD'],['025','Торец','x34v8O'],['026','Торец','y4xLn3'],['027','Торговый островок','V2kJNX'],['028','Торговый островок','qeRmbn'],['029','Торец','0l3Yzy'],['030','Торец','P6em61'],['031','НЕИЛ БАР','L4eRJ0'],['032','Изготовление мебели и рекламы для магазина разливных напитков','6LLd6w'],['033','Торец','OvmyG6'],['034','Торец','nJJv2o'],['035','Изготовление мебели и рекламы для СТО','6Lbn60'],['036','Мебель для салона красоты','QKKWYL'],['037','Торец','xDygY2'],['038','Торец','PXkRg3'],['039','Мебель для салона красоты','oJJZok'],['040','РЕСЕПШЕН','eRRQo6'],['041','Арка с полками','L49Env'],['042','Арка','3EP8rA'],['043','Изготовление мебели и рекламы для магазина белья','eRJdYD'],['044','Торговое оборудование для магазина','rllO1L'],['045','Фотозона','XJ1Bga'],['046','Паллета с формовкой','V2xgE5'],['047','РЕСЕПШЕН','bg5DVk'],['048','РЕСЕПШЕН','YGKBqP'],['049','Формавка','K3QlnX'],['050','Дисплей','oJJxLq'],['051','РЕСЕПШЕН','0llEX4'],['052','РЕСЕПШЕН','8BBrdn'],['053','Дисплей','8BBrWR'],['054','Дисплей','K33y0W'],['055','РЕСЕПШЕН','rllOR2'],['056','БАРНАЯ СТОЙКА','x33OVX'],['057','Дисплей','PXyge3'],['058','Дисплей','Ezz984'],['059','Стол','lGbOJY'],['060','Камеры хранения','YGGJyb'],['061','Прикасса','4NX9l4'],['062','Прикасса','1N4xXe'],['063','КАМЕРА ХРАНЕНИЯ','K3OevW'],['064','Тетрис','QKKEqZ'],['065','Дисплей','yDZ2on'],['066','Дисплей','w0ZvrO'],['067','Стеллаж','3Er9bg'],['068','Стол деревянный','Jrnvbz'],['069','Дисплей','XgDNgw'],['070','Дисплей','rll0QO'],['071','Стол деревянный','K3Lezr'],['072','Стол из мдф','98XE3y'],['145','Баркетки','P4mD2o'],['073','Дисплей','RKKLRv'],['074','Дисплей','mAA6N9'],['075','Стол деревянный','Zlzadx'],['076','Стеллаж','OvdGEy'],['077','Дисплей','y44Qw8'],['078','Дисплей','L44k0P'],['079','Branded grill','DL5nNR'],['080','Пергола','oJdAYW'],['081','Прикасса','nJJ2GE'],['082','Горка','NqG2b1'],['083','Урна','gRq00E'],['084','Пергола','5W4XlE'],['085','ВОГОР','L4eRmK'],['086','Прикасса','K33gJR'],['087','Урна','vbxDDO'],['088','Урна','rleJlE'],['089','Роллер','5W3XkE'],['090','Прикасса','y44Kz8'],['091','Пергола','rleA1J'],['092','Лавочка','4N3998'],['093','Паразит','3EqadY'],['094','Стоппер','lGGNQa'],['095','Качеля','QKPr3E'],['096','Урна','0l543G'],['097','Стоппер','0l3dzY'],['098','pyramid','kQaNnn'],['099','Лавочка','Ovdo0v'],['100','Урна','vbx2qY'],['101','Шелфтокер раздвижной','QKnRa4'],['102','Шелфтокер','XJ1ba3'],['103','Лавочка','V2kJyP'],['104','Лавочка','L4l3dw'],['105','Стоппер','dyygwx'],['106','Showbox','m85A1E'],['107','Лавочка','wrq005'],['108','Урна из металла','L448wK'],['109','Паразит','Bkk9kr'],['110','Паразиты','y44EgJ'],['111','Лавочка','lGlDDz'],['112','Пергола','2B58Xv'],['113','Страйп лента','GvvmyW'],['114','Страйп лента','rllWlE'],['115','Лавочка','vbx2OA'],['116','Качеля','eR4aNG'],['117','Equipment for exhibitions','9E2KZN'],['118','Candy Rack','rJZvZ2'],['119','Качеля','qJP9Vy'],['120','Metal hooks for commercial equipment','6NkedV'],['121','Candy Rack','6NkewV'],['122','Торговый островок','RKKDBv'],['123','Hanging bottle holder','dKgy63'],['124','Tobacco box','PXyg4o'],['125','Дисплей','EvELBe'],['126','Дисплей','elDaOw'],['127','Табак-бокс','mAA599'],['128','Торговый островок','qJJ2ea'],['129','Дисплей','QXRrbd'],['130','Дисплей','g0G2YG'],['131','Торговый островок','9883QN'],['132','Торговый островок','DLLdBn'],['133','Дисплей','m85A0Z'],['134','Дисплей','39LEZg'],['135','Мебель для Алкомаркета','BkkvQ6'],['136','Паразит','DvNLmy'],['137','Дисплей','g0G2zm'],['138','Шелфтокер','w0ZrmV'],['139','Дисплей','rJZlv2'],['140','Дисплей','8bkB5n'],['141','Паразит','n02JZr'],['142','Дисплей','39ad6B'],['143','Дисплей','YBRgbb']];
+
+/* Тип работы для фильтра — по ключевым словам названия: правила сверху вниз, первое
+   совпадение; не совпало ни одно — «Полка и прочее». Спорные названия разобраны по фото:
+   «Тетрис» — стеллаж; «Горка» и «ВОГОР» — настольные дисплеи; Shop in shop и Showbox —
+   бренд-зоны, как островки; табак-боксы стоят в прикассовой зоне; Branded grill — уличный
+   мангал; «Формавка» — вывеска на фасаде, «Баркетки» — лотки на полку.
+   Таблица соответствия (числа — для сверки, на странице они не показываются), 145 работ:
+     pal  Паллеты         10  Паллета ×9, Паллета с формовкой
+     dis  Дисплеи         31  Дисплей ×26, Арка ×2, Арка с полками, Горка, ВОГОР
+     tor  Торцы            8  Торец ×8
+     kas  Прикассы         9  Прикасса ×5, Candy Rack ×2, Tobacco box, Табак-бокс
+     isl  Островки        13  Торговый островок ×8, Trade Island ×3, Shop in shop, Showbox
+     mbl  Мебель          32  РЕСЕПШЕН ×6; Изготовление мебели и рекламы для магазина
+                              разливных напитков ×3, …здорового питания, …белья, …для СТО;
+                              Барная стойка, БАРНАЯ СТОЙКА ×2, BAR COUNTER ×2, НЕИЛ БАР;
+                              Мебель для салона красоты ×2, Мебель для Алкомаркета;
+                              Торговое оборудование для магазина; Стол, Стол деревянный ×3,
+                              Стол из мдф; Стеллаж ×2, Тетрис; Камеры хранения, КАМЕРА ХРАНЕНИЯ
+     out  Улица           21  Лавочка ×7, Урна ×5, Урна из металла, Пергола ×4, Качеля ×3,
+                              Branded grill
+     oth  Полка и прочее  21  Паразит ×4, Паразиты, Стоппер ×3, Шелфтокер ×2, Шелфтокер
+                              раздвижной, Страйп лента ×2, Роллер, pyramid, Hanging bottle
+                              holder, Metal hooks for commercial equipment, Баркетки,
+                              Формавка, Фотозона, Equipment for exhibitions
+   Новая работа в WORKS попадёт в тип сама, если в названии есть ключевое слово. */
+const WORK_KINDS = [
+  ['pal', /паллет/i],
+  ['tor', /торец/i],
+  ['kas', /прикасс|candy rack|tobacco|табак/i],
+  ['isl', /островок|trade island|shop in shop|showbox/i],
+  ['mbl', /мебел|ресепшен|барная стойка|bar counter|неил бар|стол|стеллаж|тетрис|камер[аы] хранения|торговое оборудование/i],
+  ['out', /урна|лавочка|пергола|качел|grill/i],
+  ['dis', /дисплей|арка|горка|вогор/i]
+];
 
 const WORK_VIDS = [
   {id:'Bnw0DnxgOIE',
@@ -247,88 +345,579 @@ window.PAGE_TITLES = {
 
 window.PAGE_I18N_EN = {
   ...SHARED_I18N_EN,
+  skip:'Skip to content',
   heroH1:'I engineer <span class="hl">POSM</span> for volume production',
   heroSub:'I take the design, pick the materials, break it down into parts and work out the fasteners and assembly. I keep the look the way the designer made it. I\'ve been doing this for <span data-years>17&nbsp;years</span>.',
   heroCta1:'View portfolio', heroCta2:'Discuss a project',
   heroSig:'Almaty · drawings, 3D for the shop floor, CNC files, cutting layouts',
-  manifest:'A beautiful design is half the work. Engineering begins where a product becomes <span class="hl">easier to manufacture</span>, faster to assemble and cheaper to produce at volume, without changing how it looks.',
+  heroHint:'Scroll ↓',
+  xfCap:'From drawing to product · Old&nbsp;Spice display · workshop photo',
+  xfFrom:'Drawing', xfTo:'Product',
+  dwgTitle:'Drawing of a floor display over the photo: topper, side panel, two shelves, plinth. Overall 800 by 1500 mm, shelf size 250 mm',
+  dwgW:'800 mm', dwgH:'1500 mm', dwgS:'250 mm',
+  dwgMdf:'MDF', dwgPaint:'PAINTED', dwgPvs:'PVS', dwgVinyl:'VINYL', dwgUv:'UV PRINT', dwg3d:'3D PRINT',
+  manifest:'A beautiful design is half the work. Engineering begins where a product becomes <span class="nb"><span class="key">easier to manufacture</span>,</span> <span class="key">faster to assemble</span> and <span class="key">cheaper to produce at volume</span>, without changing how it looks.',
+  mfEyebrow:'Approach',
   worksEyebrow:'Portfolio', worksH2:'What I\'ve engineered',
   worksLead:'Pallet displays, display stands, checkout zones, retail islands, shop and street furniture. Some are photos of the finished piece, some are renders.',
+  chipAll:'All', chipPal:'Pallets', chipDis:'Displays', chipTor:'Endcaps', chipKas:'Checkout',
+  chipIsl:'Retail islands', chipMbl:'Furniture', chipOut:'Outdoor', chipOth:'Shelf &amp; other',
   worksVidH3:'Video', worksVidLead:'Production on the shop floor and client feedback on completed projects.',
   casesH3:'Selected case studies',
-  casesNote:'Full portfolio — <a href="https://wa.me/77775774405" target="_blank" rel="noopener">on request</a>.'
+  casesNote:'Full portfolio — <a href="https://wa.me/77775774405" target="_blank" rel="noopener">on request</a>.',
+  ctcWa:'Message on WhatsApp', ctcCall:'Call',
+  stBy:'Designed by', stSheet:'Sheet', stSheets:'Sheets', stScale:'Scale',
+  stTitle:'Title', stTitleV:'POSM engineering',
+  stCity:'City', stCityV:'Almaty',
+  stLang:'Languages', stLangV:'Russian · Kazakh · English',
+  stIn:'Input', stInV:'layout · sketch · brief'
 };
 
-window.renderContent = function(){
-  const L = LANG;
+/* подписи в атрибутах (alt, aria-label): элемент помечен data-ia="атрибут:ключ",
+   RU берётся из разметки, EN — отсюда */
+const PAGE_ATTR_EN = {
+  heroImgAlt:'Old Spice floor display in the workshop: chrome body, grey topper, red insert with two shelves',
+  menu:'Menu',
+  chips:'Filter by product type',
+  lbClose:'Close viewer', lbPrev:'Previous work', lbNext:'Next work'
+};
 
-  const emptyTxt = L==='en' ? 'Video slot' : 'Место под видео';
-  const playLabel = L==='en' ? 'Play video' : 'Смотреть видео';
-  const fb = id => `if(!this.dataset.fb){this.dataset.fb=1;this.src='https://i.ytimg.com/vi/${id}/hqdefault.jpg'}`;
-  const vidBox = (v,eager) => v.id
-    ? `<button class="vid" data-yt="${esc(v.id)}" aria-label="${esc(playLabel)}: ${esc(v[L].t)}">
-         <img src="https://i.ytimg.com/vi/${esc(v.id)}/${v.thumb==='hq'?'hqdefault':'maxresdefault'}.jpg"
-              onload="if(this.naturalWidth<320){${fb(esc(v.id))}}"
-              onerror="${fb(esc(v.id))}"
-              alt="${esc(v[L].t)}" loading="${eager?'eager':'lazy'}">
-         <span class="vid-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-       </button>`
-    : `<div class="vid" role="img" aria-label="${esc(emptyTxt)}">
-         <div class="vid-empty">
-           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3z"/></svg>
-           <span>${esc(emptyTxt)}</span>
-         </div>
-       </div>`;
+/* ═══ Главная: чертёж первого экрана, галерея с фильтром и лайтбоксом, манифест, штамп.
+   Всё, что зависит от языка, пересобирает window.renderContent — его вызывает setLang. ═══ */
+(() => {
+  'use strict';
+  const root = document.documentElement;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasIO = 'IntersectionObserver' in window;
+  const EASE = 'cubic-bezier(.22,1,.36,1)';
+  const NS = 'http://www.w3.org/2000/svg';
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const span = (v, a, b) => clamp((v - a) / (b - a));
+  const pad = (n, w = 2) => String(n).padStart(w, '0');
+  const isEn = () => LANG === 'en';
 
-  document.getElementById('works-vids').innerHTML = WORK_VIDS.map(v=>`
-    <div>${vidBox(v,true)}<div class="vid-cap"><b>${esc(v[L].t)}</b>${esc(v[L].d)}</div></div>`).join('');
+  /* общий цикл прокрутки: один rAF на кадр */
+  const hooks = [], resizers = [];
+  let ticking = false, plot = null;
+  const frame = () => { ticking = false; const y = window.scrollY; hooks.forEach(f => f(y)); };
+  const request = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
 
-  if(SHOW_CASES){
-    const lbl = L==='en'
-      ? {task:'Task', sol:'Solution', res:'Result'}
-      : {task:'Задача', sol:'Решение', res:'Результат'};
-    document.getElementById('cases').innerHTML = CASES.map(c=>`
-      <div class="case">
-        <div class="case-head"><b>${esc(c[L].client)}</b><span>${esc(c[L].sphere)}</span></div>
-        <dl>
-          <div><dt>${lbl.task}</dt><dd>${esc(c[L].task)}</dd></div>
-          <div><dt>${lbl.sol}</dt><dd>${esc(c[L].sol)}</dd></div>
-          <div><dt>${lbl.res}</dt><dd>${esc(c[L].res)}</dd></div>
-        </dl>
-      </div>`).join('');
+  /* 1. Шапка: меню (.open) и фон после прокрутки (.stuck) ставит shared.js;
+        здесь — плотный фон при открытом меню, Esc, закрытие на широком экране, линейка прокрутки */
+  function header() {
+    const bar = $('#nav'), links = $('#navlinks'), burger = $('#burger'), fill = $('#ruler-fill');
+    if (!bar || !links || !burger) return;
+    const sync = () => bar.classList.toggle('menu-open', links.classList.contains('open'));
+    const close = () => { links.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); sync(); };
+    burger.addEventListener('click', sync);   /* shared.js уже переключил меню — его обработчик раньше */
+    links.addEventListener('click', sync);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && links.classList.contains('open')) { close(); burger.focus(); }
+    });
+    resizers.push(() => { if (window.innerWidth > 940 && links.classList.contains('open')) close(); });
+    if (fill) hooks.push(y => {
+      const max = root.scrollHeight - window.innerHeight;
+      fill.style.transform = 'scaleX(' + (max > 0 ? clamp(y / max).toFixed(4) : 0) + ')';
+    });
   }
-};
 
-document.getElementById('cases-block').hidden = !SHOW_CASES;
+  /* 2. Галерея: все работы из WORKS; обложки lazy, кроме первых двух рядов */
+  const kindOf = t => { const r = WORK_KINDS.find(k => k[1].test(t)); return r ? r[0] : 'oth'; };
+  const MARKS = '<span class="mk mk-tl"></span><span class="mk mk-tr"></span><span class="mk mk-bl"></span><span class="mk mk-br"></span>';
+  function gallery() {
+    const grid = $('#grid');
+    if (!grid) return;
+    grid.innerHTML = WORKS.map((w, i) => {
+      const id = esc(w[0]), t = esc(w[1]);
+      return `<li class="wk" data-k="${kindOf(w[1])}" style="--d:${(i % 4 * .06).toFixed(2)}s"><a class="wk-a" href="assets/work/full/${id}.webp" data-t="${t}">`
+        + `<span class="wk-im"><img src="assets/work/covers/${id}.webp" alt="${t}" width="1080" height="1080" loading="${i < 8 ? 'eager' : 'lazy'}" decoding="async">${MARKS}</span>`
+        + `<span class="wk-cap"><span class="wk-n">${pad(i + 1, 3)}</span><span class="wk-t">${t}</span><span class="wk-go" aria-hidden="true"></span></span></a></li>`;
+    }).join('');
+  }
+  function labelGallery() {
+    const go = isEn() ? 'Open' : 'Открыть', sfx = isEn() ? ' — open photo' : ' — открыть фото';
+    $$('#grid .wk-a').forEach(a => {
+      a.setAttribute('aria-label', a.dataset.t + sfx);
+      const g = a.querySelector('.wk-go');
+      if (g) g.textContent = go;
+    });
+  }
 
-/* галерея: квадратные обложки 1:1 */
-document.getElementById('gal').innerHTML = WORKS.map((w,i)=>`
-  <button class="gcard" data-gi="${i}" aria-label="${esc(w[1])}">
-    <span class="gcard-img"><img src="assets/work/covers/${w[0]}.webp" alt="${esc(w[1])}" loading="${i<6?'eager':'lazy'}" width="1080" height="1080"></span>
-    <span class="gcard-info"><b>${esc(w[1])}</b></span>
-  </button>`).join('');
+  /* 3. Появление: .rv ведёт shared.js; здесь первый экран, карточки и штамп */
+  function reveal() {
+    const hero = $('.hero'), later = $$('.st-wrap'), cards = $$('#grid .wk');
+    if (reduce || !hasIO) {
+      later.concat(cards).forEach(e => e.classList.add('is-in'));
+      if (hero) hero.classList.add('is-in');
+      return;
+    }
+    if (hero) requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('is-in')));
+    const make = th => new IntersectionObserver((ents, obs) => ents.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); obs.unobserve(e.target); }
+    }), { rootMargin: '0px 0px -6% 0px', threshold: th });
+    const io1 = make(.1), io2 = make(.35);
+    cards.forEach(e => io1.observe(e));
+    later.forEach(e => io2.observe(e));
+  }
 
-/* лайтбокс */
-const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),lbCount=document.getElementById('lb-count');
-let cur=0;
-function openLB(i){cur=i;show();lb.classList.add('open');document.body.style.overflow='hidden'}
-function closeLB(){lb.classList.remove('open');document.body.style.overflow=''}
-function show(){
-  const w=WORKS[cur];
-  lbImg.src='assets/work/full/'+w[0]+'.webp';lbImg.alt=w[1];
-  lbCap.innerHTML=`<b>${esc(w[1])}</b>`;
-  lbCount.textContent=(cur+1)+' / '+WORKS.length;
-  [1,-1].forEach(d=>{const n=WORKS[(cur+d+WORKS.length)%WORKS.length];new Image().src='assets/work/full/'+n[0]+'.webp'});
-}
-const step=d=>{cur=(cur+d+WORKS.length)%WORKS.length;show()};
-document.getElementById('gal').addEventListener('click',e=>{const b=e.target.closest('.gcard');if(b)openLB(+b.dataset.gi)});
-document.getElementById('lb-close').addEventListener('click',closeLB);
-document.getElementById('lb-prev').addEventListener('click',()=>step(-1));
-document.getElementById('lb-next').addEventListener('click',()=>step(1));
-lb.addEventListener('click',e=>{if(e.target===lb)closeLB()});
-addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+  /* 4. Слова — в маски: снаружи span.cls с overflow:hidden, внутри span, который выезжает.
+        Делит только по обычным пробелам: неразрывные держат слова вместе */
+  function splitWords(el, cls) {
+    if (!el || el.querySelector('.' + cls)) return;
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      const frag = document.createDocumentFragment();
+      node.nodeValue.replace(/[\t\n\r]+/g, ' ').split(/( +)/).forEach(part => {
+        if (!part) return;
+        if (part.split(' ').join('') === '') { frag.appendChild(document.createTextNode(part)); return; }
+        const w = document.createElement('span'), inner = document.createElement('span');
+        w.className = cls;
+        inner.textContent = part;
+        w.appendChild(inner);
+        frag.appendChild(w);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
 
-setLang(LANG);
+  /* 5. Первый экран: закреплённая сцена, всё — функция от прокрутки p = 0…1, назад отматывается.
+        0–.5 перо чертит контур, размеры, выноски; .5–.85 шторка снизу вверх открывает фото;
+        .85–1 выдержка на готовом фото. Возвращает { relabel } — пересборку подписей при смене языка */
+  function plotter() {
+    const hero = $('.hero'), stage = $('.hero-stage'), fig = $('#xf'), svg = $('#dwg');
+    if (!hero || !stage || !fig || !svg) { root.classList.remove('pin'); return null; }
+    const pen = $('#pen'), photo = $('.xf-photo', fig), img = $('img', fig), hint = $('.hero-hint', stage);
+    const shade = $('.xf-shade', fig), scan = $('.xf-scan', fig), bar = $('#xf-bar');
+    const gObj = $('#dw-obj', svg), gDim = $('#dw-dim', svg), gLead = $('#dw-lead', svg);
+    /* без закрепления — как без JS: готовое фото и еле видный контур */
+    const still = () => {
+      root.classList.remove('pin');
+      $$('[style]', fig).forEach(el => el.removeAttribute('style'));
+    };
+    const probe = svg.querySelector('path');
+    if (reduce || !root.classList.contains('pin') || !img || !probe || typeof probe.getTotalLength !== 'function') { still(); return null; }
+    /* подача и холостой ход задают соотношения; вся раскладка пера ложится в 0–DRAW прокрутки */
+    const FEED = 2100, RAPID = 12000, CHAR = .02, DOT = .04, DRAW = .5, SHOW = .85;
+    /* контур-призрак: при p = 0 рамка не пустая */
+    const ghost = gObj.cloneNode(true);
+    ghost.removeAttribute('id');
+    ghost.setAttribute('class', 'ghost');
+    ghost.setAttribute('aria-hidden', 'true');
+    $$('[data-op]', ghost).forEach(el => el.removeAttribute('data-op'));
+    svg.insertBefore(ghost, gObj);
+
+    let ops = [], segs = [], time = 0, scale = 1, p = -1, dead = false;
+
+    /* ход пера по подписи: от первой буквы к последней, на середине высоты букв.
+       JetBrains Mono моноширинный: шаг знака .6em + разрядка .08em; кегль — из CSS (на телефоне 32px),
+       число букв — из текущего языка. Поворот — из transform, сдвиг CSS (на телефоне верхняя строка
+       выноски приподнята) — из вычисленного стиля. На RU-десктопе совпадает с прежними data-p */
+    function textPath(op) {
+      const el = op.el, n = op.chars.length;
+      const rot = /rotate\(\s*(-?[\d.]+)/.exec(el.getAttribute('transform') || '');
+      const th = rot ? +rot[1] * Math.PI / 180 : 0;
+      const ux = Math.cos(th), uy = Math.sin(th), vx = Math.sin(th), vy = -Math.cos(th);
+      const cs = getComputedStyle(el), fs = parseFloat(cs.fontSize) || 24;
+      const len = n * .68 * fs, off = .29 * fs, back = el.getAttribute('text-anchor') === 'middle' ? len / 2 : 0;
+      let x = +el.getAttribute('x') - ux * back + vx * off, y = +el.getAttribute('y') - uy * back + vy * off;
+      const m = rot ? null : /matrix\(([^)]+)\)/.exec(cs.transform || '');
+      if (m) { const v = m[1].split(',').map(Number); x += v[4] || 0; y += v[5] || 0; }
+      op.a = { x, y };
+      op.b = { x: x + ux * len, y: y + uy * len };
+    }
+    /* раскладка по времени: рабочие ходы + холостые перемещения пера; перо встаёт на первую линию */
+    function timeline() {
+      segs = [];
+      time = 0;
+      let pos = ops[0].a;
+      const travel = to => {
+        const d = Math.hypot(to.x - pos.x, to.y - pos.y);
+        if (d > 1) {
+          const dur = Math.max(.02, d / RAPID);
+          segs.push({ k: 'm', t0: time, t1: time + dur, a: pos, b: to });
+          time += dur;
+        }
+        pos = to;
+      };
+      ops.forEach(op => {
+        travel(op.a);
+        segs.push({ k: op.k, t0: time, t1: time + op.dur, op });
+        time += op.dur;
+        pos = op.b;
+      });
+    }
+    /* операции пера из разметки: s — линия, t — подпись (печатается по буквам, tspan на букву), d — точка */
+    function build() {
+      ops = $$('[data-op]', svg).map(el => {
+        const k = el.dataset.op;
+        if (k === 's') {
+          const len = el.getTotalLength(), a = el.getPointAtLength(0), b = el.getPointAtLength(len);
+          return { k, el, len, a: { x: a.x, y: a.y }, b: { x: b.x, y: b.y }, dur: len / FEED };
+        }
+        if (k === 't') {
+          const text = el.textContent;   /* из разметки или только что из словаря setLang */
+          el.textContent = '';
+          const chars = Array.from(text).map(ch => {
+            const t = document.createElementNS(NS, 'tspan');
+            t.textContent = ch;
+            el.appendChild(t);
+            return t;
+          });
+          const op = { k, el, chars, dur: chars.length * CHAR };
+          textPath(op);
+          return op;
+        }
+        const c = { x: +el.getAttribute('cx'), y: +el.getAttribute('cy') };
+        return { k: 'd', el, a: c, b: c, dur: DOT };
+      });
+      timeline();
+    }
+    function penAt(x, y, up) {
+      pen.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') scale(' + scale.toFixed(3) + ')');
+      pen.classList.toggle('up', up);
+    }
+    /* операция на доле v = 0…1; в DOM пишет только изменения. Видимость ставится у всех трёх видов:
+       CSS .pin #dwg [data-op]{visibility:hidden} прячет всё, что не открыто здесь */
+    function setOp(op, v) {
+      if (op.v === v) return;
+      op.v = v;
+      const s = op.el.style;
+      if (op.k === 's') {
+        s.strokeDasharray = v < 1 ? op.len + ' ' + op.len : '';
+        s.strokeDashoffset = v < 1 ? (op.len * (1 - v)).toFixed(2) : '';
+        s.visibility = v > 0 ? 'visible' : 'hidden';
+        op.el.classList.toggle('hot', v > 0 && v < 1);
+      } else if (op.k === 't') {
+        const n = Math.ceil(v * op.chars.length);
+        s.visibility = v > 0 ? 'visible' : 'hidden';
+        op.chars.forEach((c, i) => { c.style.fillOpacity = i < n ? '' : '0'; });
+      } else {
+        s.visibility = v > 0 ? 'visible' : 'hidden';
+        s.opacity = v > 0 ? '' : '0';
+      }
+    }
+    /* чертёж в момент t времени пера, без памяти о прошлом кадре; перо — на конце текущей линии */
+    function drawTo(t) {
+      let cur = null, cv = 0;
+      segs.forEach(sg => {
+        const v = clamp((t - sg.t0) / (sg.t1 - sg.t0));
+        if (sg.op) setOp(sg.op, v);
+        if (!cur && t < sg.t1) { cur = sg; cv = v; }
+      });
+      pen.style.opacity = cur ? '1' : '0';
+      if (!cur) return;
+      const op = cur.op;
+      if (cur.k === 'm') penAt(cur.a.x + (cur.b.x - cur.a.x) * cv, cur.a.y + (cur.b.y - cur.a.y) * cv, true);
+      else if (cur.k === 's') { const pt = op.el.getPointAtLength(op.len * cv); penAt(pt.x, pt.y, t <= 0); }
+      else if (cur.k === 't') penAt(op.a.x + (op.b.x - op.a.x) * cv, op.a.y + (op.b.y - op.a.y) * cv, false);
+      else penAt(op.a.x, op.a.y, false);
+    }
+    /* фото не загрузилось — шторка стоит, остаётся чертёж */
+    const photoOk = () => !img.complete || img.naturalWidth > 0;
+    function render() {
+      drawTo(span(p, 0, DRAW) * time);
+      /* шторка снизу вверх за оранжевой линией: размеры и выноски гаснут первыми, контур — последним */
+      const q = photoOk() ? span(p, DRAW, SHOW) : 0, a = span(q, 0, .75), cut = ((1 - a) * 100).toFixed(2);
+      photo.style.webkitClipPath = photo.style.clipPath = 'inset(' + cut + '% 0 0 0)';
+      scan.style.transform = 'translateY(' + cut + '%)';
+      scan.style.opacity = a > 0 && a < 1 ? '1' : '0';
+      shade.style.opacity = (.6 * (1 - span(q, .55, 1))).toFixed(3);
+      gDim.style.opacity = gLead.style.opacity = (1 - span(q, 0, .3)).toFixed(3);
+      gObj.style.opacity = (1 - span(q, .6, 1)).toFixed(3);
+      bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+      if (hint) hint.style.opacity = (1 - span(p, 0, .08)).toFixed(3);
+    }
+    /* сцена выше экрана (телефон, планшет) прилипает низом: текст уходит вверх, чертёж остаётся в кадре;
+       кегль подписей зависит от ширины — ход пера по ним пересчитывается */
+    function measure() {
+      stage.style.setProperty('--stick', Math.min(0, window.innerHeight - stage.offsetHeight) + 'px');
+      const m = svg.getScreenCTM();
+      scale = m && m.a ? clamp(.6 / m.a, 1, 1.9) : 1;
+      ops.forEach(op => { if (op.k === 't') textPath(op); });
+      timeline();
+      p = -1;
+    }
+    function fail(err) { dead = true; still(); if (window.console) console.error(err); }
+    /* p — сдвиг прилипшей сцены внутри секции: 0 до закрепления, 1 после */
+    function update() {
+      if (dead || !root.classList.contains('pin')) return;
+      try {
+        const hr = hero.getBoundingClientRect(), sr = stage.getBoundingClientRect(), room = hr.height - sr.height;
+        const np = room > 1 ? clamp((sr.top - hr.top) / room) : 1;
+        if (np === p) return;
+        p = np;
+        render();
+      } catch (err) { fail(err); }
+    }
+    build();
+    measure();
+    hooks.push(update);
+    resizers.push(() => { if (!dead) measure(); });
+    if ('ResizeObserver' in window) new ResizeObserver(() => { if (dead) return; measure(); request(); }).observe(stage);
+    const again = () => { p = -1; request(); };
+    img.addEventListener('load', again);
+    img.addEventListener('error', again);
+    return {
+      /* смена языка: setLang уже подменил текст подписей — снова разложить буквы и ходы пера */
+      relabel() {
+        if (dead) return;
+        try { build(); p = -1; request(); } catch (err) { fail(err); }
+      }
+    };
+  }
+
+  /* 6. Фильтр портфолио с FLIP-перестройкой */
+  function filter() {
+    const chips = $$('.chip'), grid = $('#grid'), live = $('#pf-live');
+    if (!grid || !chips.length) return;
+    const items = $$('.wk', grid);
+    const apply = k => {
+      chips.forEach(c => c.setAttribute('aria-pressed', String(c.dataset.k === k)));
+      const first = new Map(items.map(el => [el, el.hidden ? null : el.getBoundingClientRect()]));
+      let n = 0;
+      items.forEach(el => {
+        const on = k === 'all' || el.dataset.k === k;
+        el.hidden = !on;
+        if (on) n++;
+      });
+      if (live) live.textContent = (isEn() ? 'Works shown: ' : 'Показано работ: ') + n;
+      if (reduce) return;
+      items.forEach(el => {
+        if (el.hidden) return;
+        el.classList.add('is-in');
+        const f = first.get(el), l = el.getBoundingClientRect();
+        if (!f) {
+          el.animate([{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }], { duration: 460, delay: 80, easing: EASE, fill: 'backwards' });
+          return;
+        }
+        const dx = f.left - l.left, dy = f.top - l.top;
+        if (Math.abs(dx) > .5 || Math.abs(dy) > .5) {
+          el.animate([{ transform: 'translate(' + dx + 'px,' + dy + 'px)' }, { transform: 'none' }], { duration: 560, easing: EASE });
+        }
+      });
+    };
+    chips.forEach(c => c.addEventListener('click', () => apply(c.dataset.k)));
+  }
+
+  /* 7. Лайтбокс: фото вырастает из карточки и возвращается в неё; листает показанные фильтром работы */
+  function lightbox() {
+    const lb = $('#lb'), grid = $('#grid');
+    if (!lb || !grid) return;
+    const img = $('#lb-img'), num = $('#lb-n'), ttl = $('#lb-t'), cap = $('.lb-cap', lb), bg = $('.lb-bg', lb);
+    const bX = $('.lb-x', lb), bP = $('.lb-prev', lb), bN = $('.lb-next', lb);
+    const chrome = [bX, bP, bN, cap];
+    const links = $$('.wk-a', grid);
+    let list = [], cur = 0, busy = false, sx = null, swiped = false;
+    const rectOf = a => a.querySelector('.wk-im').getBoundingClientRect();
+    const flipT = (r0, r1) => 'translate(' + (r0.left - r1.left) + 'px,' + (r0.top - r1.top) + 'px) scale(' + (r0.width / r1.width) + ')';
+    function show(i) {
+      const a = list[i], im = a.querySelector('img'), full = a.getAttribute('href');
+      img.src = im.currentSrc || im.src;
+      img.alt = im.alt;
+      num.textContent = pad(i + 1) + ' / ' + pad(list.length);
+      ttl.textContent = a.dataset.t || im.alt;
+      const pre = new Image();
+      pre.onload = () => { if (list[cur] === a) img.src = full; };
+      pre.src = full;
+      /* соседние — заранее, чтобы листание не ждало сеть */
+      if (list.length > 1) [1, -1].forEach(d => { new Image().src = list[(i + d + list.length) % list.length].getAttribute('href'); });
+    }
+    function open(a) {
+      list = links.filter(x => !x.closest('.wk').hidden);
+      cur = Math.max(0, list.indexOf(a));
+      show(cur);
+      lb.hidden = false;
+      root.classList.add('lb-open');
+      bX.focus({ preventScroll: true });
+      if (reduce) return;
+      const r1 = img.getBoundingClientRect();
+      img.animate([{ transform: flipT(rectOf(a), r1) }, { transform: 'none' }], { duration: 560, easing: EASE });
+      bg.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 280, easing: 'linear' });
+      chrome.forEach(el => el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, delay: 260, easing: 'linear', fill: 'backwards' }));
+    }
+    function close() {
+      if (lb.hidden || busy) return;
+      const a = list[cur];
+      const end = () => {
+        lb.hidden = true;
+        root.classList.remove('lb-open');
+        busy = false;
+        [img, bg].concat(chrome).forEach(el => el.getAnimations().forEach(x => x.cancel()));
+        if (a) a.focus({ preventScroll: true });
+      };
+      if (reduce) { end(); return; }
+      busy = true;
+      const r0 = a ? rectOf(a) : null, r1 = img.getBoundingClientRect();
+      const inView = !!r0 && r0.width > 0 && r0.bottom > 0 && r0.top < window.innerHeight;
+      const dur = inView ? 440 : 240;
+      const frames = inView ? [{ transform: 'none' }, { transform: flipT(r0, r1) }] : [{ opacity: 1 }, { opacity: 0 }];
+      const an = img.animate(frames, { duration: dur, easing: EASE, fill: 'forwards' });
+      bg.animate([{ opacity: 1 }, { opacity: 0 }], { duration: dur, easing: 'linear', fill: 'forwards' });
+      chrome.forEach(el => el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 140, easing: 'linear', fill: 'forwards' }));
+      an.onfinish = end;
+    }
+    function go(d) {
+      if (lb.hidden || busy || list.length < 2) return;
+      cur = (cur + d + list.length) % list.length;
+      show(cur);
+      if (!reduce) img.animate([{ opacity: .35, transform: 'translateX(' + (d * 28) + 'px)' }, { opacity: 1, transform: 'none' }], { duration: 420, easing: EASE });
+    }
+    grid.addEventListener('click', e => {
+      const a = e.target.closest('.wk-a');
+      if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      open(a);
+    });
+    bX.addEventListener('click', close);
+    bg.addEventListener('click', () => { if (swiped) { swiped = false; return; } close(); });
+    bP.addEventListener('click', () => go(-1));
+    bN.addEventListener('click', () => go(1));
+    lb.addEventListener('pointerdown', e => { sx = e.clientX; swiped = false; });
+    lb.addEventListener('pointerup', e => {
+      if (sx === null) return;
+      const dx = e.clientX - sx;
+      sx = null;
+      if (Math.abs(dx) > 48) { swiped = true; go(dx < 0 ? 1 : -1); }
+    });
+    document.addEventListener('keydown', e => {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') { e.preventDefault(); close(); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+      else if (e.key === 'Tab') {
+        const f = [bX, bP, bN], i = f.indexOf(document.activeElement);
+        e.preventDefault();
+        f[e.shiftKey ? (i <= 0 ? f.length - 1 : i - 1) : (i + 1) % f.length].focus();
+      }
+    });
+  }
+
+  /* 8. Манифест: строки выезжают из-под маски, ключевые слова подчёркиваются.
+        Слова режет renderContent (после каждой смены языка), строки считаются в момент показа */
+  function manifest() {
+    const mf = $('.mf'), txt = $('.mf-t');
+    if (!mf || !txt) return;
+    if (reduce || !hasIO) { mf.classList.add('is-in'); return; }
+    const io = new IntersectionObserver(en => {
+      if (!en[0].isIntersecting) return;
+      io.disconnect();
+      let line = -1, top = null;
+      $$('.mw', txt).forEach(w => {
+        const t = w.offsetTop;
+        if (top === null || Math.abs(t - top) > 6) { line++; top = t; }
+        w.dataset.line = line;
+        w.firstChild.style.setProperty('--d', (line * .1).toFixed(2) + 's');
+      });
+      $$('.key', txt).forEach(k => {
+        const w = k.querySelector('.mw');
+        k.style.setProperty('--kd', (.5 + (w ? +w.dataset.line : 0) * .1).toFixed(2) + 's');
+      });
+      requestAnimationFrame(() => mf.classList.add('is-in'));
+    }, { threshold: .4 });
+    io.observe(txt);
+  }
+
+  /* подписи в атрибутах: RU — из разметки при загрузке, EN — PAGE_ATTR_EN */
+  const ATTR_RU = {};
+  function applyAttrs() {
+    const dict = isEn() ? PAGE_ATTR_EN : ATTR_RU;
+    $$('[data-ia]').forEach(el => {
+      const pr = el.dataset.ia.split(':'), v = dict[pr[1]];
+      if (v != null) el.setAttribute(pr[0], v);
+    });
+  }
+
+  /* что-то упало — всё в конечном состоянии: видно без движения; на первом экране — фото с еле видным контуром */
+  function failsafe(err) {
+    root.classList.remove('js', 'pin');
+    const xf = $('#xf');
+    if (xf) $$('[style]', xf).forEach(el => el.removeAttribute('style'));
+    $$('.rv').forEach(el => el.classList.add('in'));
+    $$('.hero, .mf, .st-wrap, .wk').forEach(el => el.classList.add('is-in'));
+    if (err && window.console) console.error(err);
+  }
+
+  window.renderContent = function () {
+    const L = LANG;
+
+    /* видео: до клика — лёгкая заглушка, YouTube подключает shared.js по нажатию */
+    const emptyTxt = L === 'en' ? 'Video slot' : 'Место под видео';
+    const playLabel = L === 'en' ? 'Play video' : 'Смотреть видео';
+    const fb = id => `if(!this.dataset.fb){this.dataset.fb=1;this.src='https://i.ytimg.com/vi/${id}/hqdefault.jpg'}`;
+    const vidBox = (v, eager) => v.id
+      ? `<button class="vid" data-yt="${esc(v.id)}" aria-label="${esc(playLabel)}: ${esc(v[L].t)}">
+           <img src="https://i.ytimg.com/vi/${esc(v.id)}/${v.thumb === 'hq' ? 'hqdefault' : 'maxresdefault'}.jpg"
+                onload="if(this.naturalWidth<320){${fb(esc(v.id))}}"
+                onerror="${fb(esc(v.id))}"
+                alt="${esc(v[L].t)}" loading="${eager ? 'eager' : 'lazy'}">
+           <span class="vid-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+         </button>`
+      : `<div class="vid" role="img" aria-label="${esc(emptyTxt)}">
+           <div class="vid-empty">
+             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3z"/></svg>
+             <span>${esc(emptyTxt)}</span>
+           </div>
+         </div>`;
+    document.getElementById('works-vids').innerHTML = WORK_VIDS.map(v => `
+      <div>${vidBox(v, false)}<div class="vid-cap"><b>${esc(v[L].t)}</b>${esc(v[L].d)}</div></div>`).join('');
+
+    if (SHOW_CASES) {
+      const lbl = L === 'en'
+        ? {task:'Task', sol:'Solution', res:'Result'}
+        : {task:'Задача', sol:'Решение', res:'Результат'};
+      document.getElementById('cases').innerHTML = CASES.map(c => `
+        <div class="case">
+          <div class="case-head"><b>${esc(c[L].client)}</b><span>${esc(c[L].sphere)}</span></div>
+          <dl>
+            <div><dt>${lbl.task}</dt><dd>${esc(c[L].task)}</dd></div>
+            <div><dt>${lbl.sol}</dt><dd>${esc(c[L].sol)}</dd></div>
+            <div><dt>${lbl.res}</dt><dd>${esc(c[L].res)}</dd></div>
+          </dl>
+        </div>`).join('');
+    }
+
+    /* заголовок первого экрана и манифест: setLang только что заменил разметку — снова слова в маски */
+    const h1 = $('#hero-h');
+    if (h1) {
+      splitWords(h1, 'w');
+      $$('.w>span', h1).forEach((s, i) => s.style.setProperty('--d', (.05 + i * .07).toFixed(2) + 's'));
+      h1.classList.add('is-split');
+    }
+    splitWords($('.mf-t'), 'mw');
+    labelGallery();
+    applyAttrs();
+    if (plot) plot.relabel();
+  };
+
+  if (typeof setLang !== 'function') { failsafe(); return; }
+  try {
+    document.getElementById('cases-block').hidden = !SHOW_CASES;
+    $$('[data-ia]').forEach(el => { const pr = el.dataset.ia.split(':'); ATTR_RU[pr[1]] = el.getAttribute(pr[0]); });
+    /* WhatsApp — с того же номера, что в CONFIG (в shared.js ключа для него нет) */
+    $$('[data-cfg-href="wa"]').forEach(a => { a.href = 'https://wa.me/' + CONFIG.phoneRaw.replace(/[^0-9]/g, ''); });
+    header();
+    gallery();
+    reveal();
+    plot = plotter();
+    filter();
+    lightbox();
+    manifest();
+    window.addEventListener('scroll', request, { passive: true });
+    let rz = 0;
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(rz);
+      rz = requestAnimationFrame(() => { resizers.forEach(f => f()); frame(); });
+    });
+    setLang(LANG);
+    request();
+  } catch (err) {
+    failsafe(err);
+  }
+})();
 </script>
 </body>
 </html>
