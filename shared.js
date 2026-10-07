@@ -11,7 +11,7 @@ const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&qu
 
 const SHARED_I18N_EN = {
   brandRole:'mechanical engineer',
-  navWorks:'Portfolio', navOpt:'Engineering', navDeliv:'Deliverables', navAppr:'Approach', navCta:'Discuss a project',
+  navWorks:'Portfolio', navOpt:'Engineering', navDeliv:'Deliverables', navProj:'Projects', navAppr:'Approach', navCta:'Discuss a project',
   ctcEyebrow:'Contact', ctcH2:'Discuss a project',
   ctcLead:'Send a layout, sketch or brief — I will come back with an engineering assessment: the most efficient way to make the item, which materials to use, and what can be simplified. Working languages: Russian, Kazakh, English.',
   ctcPhone:'Phone · call or WhatsApp', ctcMail:'Email',

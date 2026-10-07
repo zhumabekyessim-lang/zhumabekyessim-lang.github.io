@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Проекты — Есим Жумабек</title>
+<meta name="description" content="Проекты S-Advertising: торцы, дисплеи, арка, стеллажи и паразиты для полок. Рендеры, чертежи в PDF и файлы DXF для ЧПУ — можно скачать.">
+<meta name="theme-color" content="#0c0d10">
+<link rel="canonical" href="https://yessim.pro/projects.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/onest-var-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/onest-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<style>
+.pj{padding:var(--s8) 0;border-top:1px solid var(--line)}
+.pj:first-of-type{border-top:0}
+.pj-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);align-items:start}
+.pj-n{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);letter-spacing:.05em;margin-bottom:var(--s4)}
+.pj h2{font-size:clamp(22px,2.6vw,30px);margin-bottom:var(--s4)}
+.pj-d{color:var(--fg-2);line-height:1.6;max-width:60ch}
+.pj-sp{margin-top:var(--s5);display:grid;gap:var(--s3)}
+.pj-sp div{display:grid;grid-template-columns:110px 1fr;gap:var(--s4);font-size:15px;border-top:1px solid var(--line);padding-top:var(--s3)}
+.pj-sp dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);padding-top:2px}
+.pj-sp dd{color:var(--fg)}
+.pj-dl{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
+.pj-dl .btn{min-height:44px;font-size:14px;padding:10px 16px}
+.pj-dl small{opacity:.7;font-weight:400}
+.pj-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--s3)}
+.pj-g button{padding:0;border:1px solid var(--line);border-radius:var(--r2);background:#fff;overflow:hidden;cursor:zoom-in;aspect-ratio:1/1;display:block}
+.pj-g button:first-child{grid-column:1/-1;aspect-ratio:4/3}
+.pj-g button:hover{border-color:var(--accent)}
+.pj-g img{width:100%;height:100%;object-fit:contain;display:block}
+.pj-ai{font-size:12.5px;color:var(--fg-3);margin-top:var(--s3)}
+.pj-note{font-size:14px;color:var(--fg-3);margin-top:var(--s7)}
+.pj-lb{position:fixed;inset:0;z-index:100;background:rgba(5,6,8,.94);display:flex;align-items:center;justify-content:center;padding:var(--s6)}
+.pj-lb[hidden]{display:none}
+.pj-lb img{max-width:100%;max-height:100%;object-fit:contain;background:#fff;border-radius:var(--r2)}
+.pj-lb button{position:absolute;width:48px;height:48px;border:1px solid var(--line-2);border-radius:50%;background:var(--bg-1);color:var(--fg);font-size:22px;cursor:pointer}
+.pj-lb .x{top:16px;right:16px}.pj-lb .pv{left:16px;top:50%}.pj-lb .nx{right:16px;top:50%}
+@media(max-width:860px){.pj-top{grid-template-columns:1fr;gap:var(--s5)}.pj-sp div{grid-template-columns:90px 1fr}}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="./" class="brand">
+      <span class="brand-mark" data-cfg="initials">—</span>
+      <span><span data-cfg="name">Имя</span><small data-i="brandRole">инженер-конструктор</small></span>
+    </a>
+    <div class="nav-links" id="navlinks">
+      <a href="./" data-i="navWorks">Портфолио</a>
+      <a href="engineering.html" data-i="navOpt">Инженерия</a>
+      <a href="client.html" data-i="navDeliv">Заказчику</a>
+      <a href="projects.html" data-i="navProj">Проекты</a>
+      <a href="approach.html" data-i="navAppr">Подход</a>
+    </div>
+    <div class="nav-cta">
+      <button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button>
+      <a href="#contact" class="btn btn-1" data-i="navCta">Обсудить проект</a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow" data-i="pjEyebrow">Проекты S-Advertising</div>
+      <h1 data-i="pjH1">Проекты с чертежами и файлами для ЧПУ</h1>
+      <p class="lead" style="margin-top:24px" data-i="pjLead">
+        Рендеры изделий и то, с чем идут в цех: сборочные чертежи в PDF и файлы DXF для резки и фрезеровки. Скачивайте и смотрите, как выглядит комплект.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap" id="pj"></div>
+  <div class="wrap"><p class="pj-note" data-i="pjNote">Показана только конструкторская часть. Количества, цены и условия — в коммерческом предложении.</p></div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="sec wrap">
+    <div class="contact-grid">
+      <div class="rv">
+        <div class="eyebrow" data-i="ctcEyebrow">Контакты</div>
+        <h2 data-i="ctcH2">Обсудить проект</h2>
+        <p class="lead" data-i="ctcLead">
+          Пришлите макет, эскиз или ТЗ — вернусь с инженерной оценкой: как изделие рациональнее
+          изготовить, из каких материалов и что в конструкции можно упростить. Рабочие языки —
+          русский, казахский, английский.
+        </p>
+      </div>
+      <div class="rv">
+        <div class="cways">
+          <a class="cway" data-cfg-href="phone">
+            <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 006 6L15 14l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
+            <span class="cway-t"><small data-i="ctcPhone">Телефон · звонок или WhatsApp</small><b data-cfg="phone-label">+7 000 000-00-00</b></span>
+          </a>
+          <a class="cway" data-cfg-href="email">
+            <span class="cway-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span class="cway-t"><small data-i="ctcMail">Почта</small><b data-cfg="email-label">mail@example.com</b></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p><span data-cfg="name">Имя</span> · <span data-i="footRole">инженерная разработка POSM</span> · 2026</p>
+    <div class="foot-links">
+      <a href="./" data-i="footWorks">Портфолио</a>
+      <a href="engineering.html" data-i="footOpt">Инженерия</a>
+      <a href="#contact" data-i="footCtc">Контакты</a>
+    </div>
+  </div>
+</footer>
+
+<div class="pj-lb" id="lb" role="dialog" aria-modal="true" hidden>
+  <img id="lb-img" alt="">
+  <button class="x" type="button" aria-label="Закрыть">×</button>
+  <button class="pv" type="button" aria-label="Назад">‹</button>
+  <button class="nx" type="button" aria-label="Вперёд">›</button>
+</div>
+
+<script src="shared.js"></script>
+<script>
+const B = 'assets/cases/';
+/* f: [файл, подпись RU, подпись EN, размер]; z — zip с DXF, p — PDF. ai — номера кадров, это ИИ-визуализации. */
+const PJ = [
+ {id:'torec-aktau', n:4, ru:{t:'Торец Coca-Cola с подсвеченным логотипом, Актау', d:'Торец стеллажа: красный корпус, подсвеченный логотип, полки под бутылки. Объёмный логотип режется фрезой 3,2 мм.', m:'ЛДСП красный 16 мм, акрил, ПВХ 3–8 мм, светодиодная лента, ПЭТ'}, en:{t:'Coca-Cola end-cap with backlit logo, Aktau', d:'Shelf end-cap: red body, backlit logo, bottle shelves. The 3D logo is cut with a 3.2 mm router bit.', m:'Red chipboard 16 mm, acrylic, PVC 3–8 mm, LED strip, PET'},
+  f:[['torec-aktau-dxf.zip','z',17]]},
+ {id:'arka', n:3, ru:{t:'Световая арка Coca-Cola, Талдыкорган', d:'Арка над проходом в магазине: белая рамка, объёмный логотип, неоновый контур. Подвешивается на тросах к перекрытию.', m:'Акрил 5 мм, светодиодная лента, тросы с фиксаторами; габарит 6380×3480 мм'}, en:{t:'Illuminated Coca-Cola arch, Taldykorgan', d:'An arch over a store aisle: white frame, 3D logo, neon outline. Hung on cables from the ceiling.', m:'Acrylic 5 mm, LED strip, cables with clamps; overall 6380×3480 mm'},
+  f:[['arka-dxf.zip','z',33]]},
+ {id:'alko-4yarusa', n:2, ru:{t:'Четырёхъярусный дисплей для алкомаркетов', d:'Напольный дисплей с яркими ярусами под категории напитков. Две версии: с подсветкой-кольцами и без.', m:'ЛДСП чёрный 16 мм, фанера, ПВХ 3 мм, печать винилом; габарит 1200×600×500 мм'}, en:{t:'Four-tier display for liquor stores', d:'Floor display with colour-coded tiers per drink category. Two versions: with light rings and without.', m:'Black chipboard 16 mm, plywood, PVC 3 mm, vinyl print; overall 1200×600×500 mm'}, f:[]},
+ {id:'alko-bez-topera', n:2, ru:{t:'Дисплей для алкомаркетов без топпера', d:'Облегчённая версия: чёрный корпус с вертикальными полосами, четыре полки, ценникодержатели.', m:'ЛДСП чёрный 16 мм, фанера, ПВХ 3 мм, ПЭТ 0,5 мм, виниловая печать'}, en:{t:'Liquor-store display without topper', d:'Lighter version: black body with vertical stripes, four shelves, price-tag holders.', m:'Black chipboard 16 mm, plywood, PVC 3 mm, PET 0.5 mm, vinyl print'},
+  f:[['alko-bez-topera-dxf.zip','z',8]]},
+ {id:'metall-stellazh', n:1, ru:{t:'Металлический дисплей для алкомаркетов', d:'Каркас из трубы с листовыми полками на рёбрах. Две модели: основная и облегчённая. Планограммы под бутылки 0,5–2,5 л и банки.', m:'Труба и листовой металл 0,8–1,2 мм, порошковая окраска; 600×1230×400 и 520×1230×322 мм'}, en:{t:'Metal display for liquor stores', d:'Tube frame with sheet-metal shelves on ribs. Two models: standard and lightweight. Planograms for 0.5–2.5 L bottles and cans.', m:'Tube and sheet metal 0.8–1.2 mm, powder coating; 600×1230×400 and 520×1230×322 mm'},
+  f:[['metall-600x1230x400.pdf','p','Чертёж 600×1230×400','Drawing 600×1230×400'],['metall-520x1230x322.pdf','p','Чертёж 520×1230×322','Drawing 520×1230×322'],['metall-dxf.zip','z',8]]},
+ {id:'parazit-cu', n:1, ru:{t:'Паразиты для полок: под ПЭТ-бутылку и под банку', d:'Крепятся к полке струбциной или стяжками. Вариант 76 — под ПЭТ, вариант 77 — под банку. Бренды Sprite и Coca-Cola.', m:'Листовой металл 1,2–3 мм, пруток, ПЭТ 0,75–1,5 мм; печать'}, en:{t:'Shelf parasites: for PET bottle and can', d:'Mount to the shelf with a clamp or ties. Model 76 for PET, model 77 for cans. Sprite and Coca-Cola.', m:'Sheet metal 1.2–3 mm, wire, PET 0.75–1.5 mm; print'},
+  f:[['parazit-76-pet.pdf','p','Чертёж 76 (ПЭТ)','Drawing 76 (PET)'],['parazit-77-banka.pdf','p','Чертёж 77 (банка)','Drawing 77 (can)'],['parazit-76-dxf.zip','z',4,'DXF 76'],['parazit-77-dxf.zip','z',4,'DXF 77']], ai:[5,6]},
+ {id:'torec-neon', n:1, ru:{t:'Торец Coca-Cola с неоновым логотипом, Алматы', d:'Торец стеллажа с неоновым логотипом на русском и казахском языках. Файлы DXF — трассы неона.', m:'ЛДСП красный, акрил, ПЭТ, гибкий неон 12 В, фанера'}, en:{t:'Coca-Cola end-cap with neon logo, Almaty', d:'Shelf end-cap with a neon logo in Russian and Kazakh. DXF files are neon routes.', m:'Red chipboard, acrylic, PET, flex neon 12 V, plywood'},
+  f:[['torec-neon-dxf.zip','z',2]]},
+ {id:'rebrending', n:1, ru:{t:'Ребрендинг стеллажей, Алматы', d:'Новый фасад на существующий стеллаж: колонна под холодильник, подсветка лентой.', m:'ЛДСП чёрный 16 мм, ПЭТ 0,75 мм, ПВХ 3 и 5 мм, светодиодная лента; 2000×2400 мм'}, en:{t:'Shelving rebrand, Almaty', d:'A new facade for an existing shelf run: fridge column, LED strip lighting.', m:'Black chipboard 16 mm, PET 0.75 mm, PVC 3 and 5 mm, LED strip; 2000×2400 mm'},
+  f:[['rebrending-chertezh.pdf','p','Чертёж','Drawing']]},
+ {id:'stakany-prikassa', n:3, ru:{t:'Держатель стаканов и прикассовый дисплей', d:'Шпонированный держатель на 220 бумажных стаканов 0,5 л с боксом для трубочек и прикассовый дисплей под бутылку.', m:'ЛДСП чёрный 16 мм, фанера 4 мм, шпон, ПВХ 0,8 мм, печать'}, en:{t:'Cup holder and checkout display', d:'Veneered holder for 220 paper cups (0.5 L) with a straw box, and a checkout display for a bottle.', m:'Black chipboard 16 mm, plywood 4 mm, veneer, PVC edge 0.8 mm, print'}, f:[]},
+ {id:'vigor', n:2, ru:{t:'Вигоры из ЛДСП', d:'Полка-вигор, сборка на конфирматах без клея. Версии Coca-Cola и BonAqua.', m:'ЛДСП белый 16 мм, кромка ПВХ 0,8 мм, плёнка с печатью; 1000×190×100 мм'}, en:{t:'Chipboard shelf tray', d:'Shelf tray assembled with confirmat screws, no glue. Coca-Cola and BonAqua versions.', m:'White chipboard 16 mm, PVC edge 0.8 mm, printed film; 1000×190×100 mm'},
+  f:[['vigor-sborka.pdf','p','Сборочный чертёж','Assembly drawing'],['vigor-gabarity.pdf','p','Габариты','Dimensions'],['vigor-dxf.zip','z',4]]}
+];
+const KB = {};  /* размеры файлов подставляет страница из ссылок не нужна — подписи без КБ */
+const DL = {
+  ru:{m:'Материалы', pdf:'Скачать чертёж (PDF)', dxf:'Скачать DXF', ai:'Кадры с пометкой — ИИ-визуализация по 3D-модели.', alt:'Рендер'},
+  en:{m:'Materials', pdf:'Download drawing (PDF)', dxf:'Download DXF', ai:'Marked frames are AI visualisations based on the 3D model.', alt:'Render'}
+};
+const IMGS = {'torec-aktau':3,'arka':2,'alko-4yarusa':4,'alko-bez-topera':2,'metall-stellazh':3,'parazit-cu':6,'torec-neon':1,'rebrending':1,'stakany-prikassa':3,'vigor':2};
+
+window.PAGE_TITLES = {ru:'Проекты — Есим Жумабек', en:'Projects — Zhumabek Yessim'};
+window.PAGE_I18N_EN = {
+  ...SHARED_I18N_EN,
+  pjEyebrow:'S-Advertising projects', pjH1:'Projects with drawings and CNC files',
+  pjLead:'Renders of the products and what goes to the workshop: assembly drawings in PDF and DXF files for cutting and routing. Download them to see what a package looks like.',
+  pjNote:'Only the engineering part is shown. Quantities, prices and terms are in the commercial proposal.'
+};
+
+let CUR = [], CI = 0;
+const lb = document.getElementById('lb'), lbi = document.getElementById('lb-img');
+function show(i){CI=(i+CUR.length)%CUR.length; lbi.src=CUR[CI][0]; lbi.alt=CUR[CI][1]}
+function openLb(list,i){CUR=list; show(i); lb.hidden=false; lb.querySelector('.x').focus()}
+lb.addEventListener('click',e=>{
+  if(e.target.classList.contains('pv')) show(CI-1);
+  else if(e.target.classList.contains('nx')) show(CI+1);
+  else if(e.target===lb||e.target.classList.contains('x')) lb.hidden=true;
+});
+addEventListener('keydown',e=>{
+  if(lb.hidden) return;
+  if(e.key==='Escape') lb.hidden=true;
+  if(e.key==='ArrowLeft') show(CI-1);
+  if(e.key==='ArrowRight') show(CI+1);
+});
+
+window.renderContent = function(){
+  const L = LANG, T = DL[L];
+  document.getElementById('pj').innerHTML = PJ.map((p,k)=>{
+    const c = p[L], cnt = IMGS[p.id];
+    const imgs = Array.from({length:cnt},(_,i)=>{
+      const ai = (p.ai||[]).includes(i+1);
+      return {src:`${B}${p.id}/${String(i+1).padStart(2,'0')}.webp`, alt:`${c.t} — ${ai?(L==='en'?'AI visualisation':'ИИ-визуализация'):T.alt} ${i+1}`, ai};
+    });
+    const btns = p.f.map(f=>{
+      const href = `${B}${p.id}/${f[0]}`;
+      if(f[1]==='p') return `<a class="btn btn-2" href="${href}" download>${esc(f[L==='en'?3:2])} <span class="arw" aria-hidden="true">↓</span></a>`;
+      const lab = f[3] ? f[3] : T.dxf;
+      return `<a class="btn btn-2" href="${href}" download>${esc(lab)} <small>· ${f[2]} ${L==='en'?'pcs':'шт.'}</small> <span class="arw" aria-hidden="true">↓</span></a>`;
+    }).join('');
+    const aiNote = imgs.some(x=>x.ai) ? `<p class="pj-ai">${T.ai}</p>` : '';
+    return `<article class="pj rv in" id="${p.id}">
+      <div class="pj-top">
+        <div>
+          <div class="pj-n">${String(k+1).padStart(2,'0')}</div>
+          <h2>${esc(c.t)}</h2>
+          <p class="pj-d">${esc(c.d)}</p>
+          <dl class="pj-sp"><div><dt>${T.m}</dt><dd>${esc(c.m)}</dd></div></dl>
+          ${btns?`<div class="pj-dl">${btns}</div>`:''}
+        </div>
+        <div>
+          <div class="pj-g" data-p="${k}">${imgs.map((x,i)=>`<button type="button" data-n="${i}" aria-label="${esc(x.alt)}"><img src="${x.src}" alt="${esc(x.alt)}" loading="${k<2?'eager':'lazy'}" decoding="async"></button>`).join('')}</div>
+          ${aiNote}
+        </div>
+      </div></article>`;
+  }).join('');
+  document.querySelectorAll('.pj-g').forEach(g=>g.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    const list=[...g.querySelectorAll('img')].map(im=>[im.src,im.alt]);
+    openLb(list,+b.dataset.n);
+  }));
+};
+
+setLang(LANG);
+</script>
+</body>
+</html>
